@@ -1,0 +1,37 @@
+{
+  "name": "mpakfm/graviton",
+  "description": "Graviton",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Sergey Fomin",
+      "email": "sfomin@costaserga.ru"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Library\\": "local/library/",
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "local/modules/{$name}/": ["type:bitrix-module"],
+      "local/components/{$name}/": ["type:bitrix-component"],
+      "local/templates/{$name}/": ["type:bitrix-theme"]
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "mpakfm/printu": "^2.0",
+    "phpunit/phpunit": "8.5",
+    "guzzlehttp/guzzle": "^7.4"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}
