@@ -1,0 +1,38 @@
+# Config
+/local/php_interface/root.php
+
+# Uploads and cache
+.phpunit.result.cache
+/upload/*
+!/upload/icons/
+*.tar
+*.tar.*
+*.zip*
+
+#bitrix
+/bitrix/*
+/upload
+
+# Tmp
+/_*/
+tmp.md
+tests/dump.sql
+tests/cookie/*
+
+# logs
+/local/log/
+
+# other
+.idea/
+/sitemap_iblock_*
+/vendor
+
+/*.csv
+/*.html
+/*.xml
+!/phpdoc.dist.xml
+/*.log
+/*.txt
+/*.png
+/*.jpg
+/*.sql
