@@ -19,6 +19,23 @@ $menuHeader = [
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
+$slider = [
+    "IBLOCK_TYPE"         => "catalog",
+    "IBLOCK_ID"           => 6,
+    "TOP_DEPTH"           => 2,
+    "SECTION_FIELDS"      => ["ID", "NAME", "DESCRIPTION"],
+    "SECTION_USER_FIELDS" => ["UF_SUBTITLE", "UF_RAM", "UF_HDD", "UF_CPU", "UF_SCREEN", "UF_SLIDER_BACK", "UF_SLIDER_PIC"],
+    //"SECTIONS"          => ["header"],
+    "VIEW_MODE"           => "LIST",
+    "SORT_BY1"            => "SORT",
+    "SORT_ORDER1"         => "ASC",
+    "SORT_BY2"            => "NAME",
+    "SORT_ORDER2"         => "ASC",
+    //"TITLE"             => "Меню",
+    "CACHE_TYPE"          => "Y",
+    "CACHE_TIME"          => "3600",
+    "CACHE_GROUPS"        => "Y",
+];
 
 $menuFooter = [
     "IBLOCK_TYPE"        => "content",
@@ -67,13 +84,19 @@ $frame = $this->createFrame()->begin();
     </div>
     <div class="box">
         <h3>Заготовки компонентов главной страницы</h3>
+
         <div style="margin: 20px;">
             <p>Меню в шапке</p>
             <?$APPLICATION->IncludeComponent("mpakfm:news.line", "top.menu", $menuHeader);?>
         </div>
+
+        <div style="margin: 20px;">
+            <p>Слайдер секций товарного каталога</p>
+            <?$APPLICATION->IncludeComponent("mpakfm:slider.section.list", "", $slider);?>
+        </div>
+
         <div style="margin: 20px;">
             <p>Меню в подвале</p>
-            <?//$APPLICATION->IncludeComponent("mpakfm:news.line", "footer.menu", $menuFooter);?>
             <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","",
                 Array(
                     "VIEW_MODE" => "TEXT",

@@ -102,15 +102,6 @@
 	margin: 0 10px 10px;
 	list-style: none;
 }
-.bx_catalog_text .bx_catalog_text_ul li ul.section-el-list {
-	float: none;
-	margin: 0 10px 10px;
-	list-style: none;
-	display: block;
-}
-.bx_catalog_text .bx_catalog_text_ul li ul.section-el-list li {
-	float: none;
-}
 
 .bx_catalog_text .bx_catalog_text_ul li:before { content: '' !important }
 
@@ -286,6 +277,21 @@
 }
 
 .bx_sitemap .bx_sitemap_ul li:before { content: '' !important }
+
+.slider_ul ul {
+	margin-left: 40px;
+}
+.slider-description {
+	font-size: 0.55em !important;
+}
+.slider-fields-list {
+	margin: 10px 20px;
+	font-size: 0.6em !important;
+}
+.slider-fields-list li {
+	list-style-type: none;
+	margin-top: 3px;
+}
 
 .bx_sitemap .bx_sitemap_li_title {
 	display: inline-block;

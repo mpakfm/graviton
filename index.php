@@ -8,8 +8,16 @@
  * @var CUser $USER
  */
 
+use Bitrix\Main\Page\Asset;
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Graviton");
+$APPLICATION->SetPageProperty('description', 'Graviton description');
+$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
+
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/main.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/menu.section.list.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/slider.section.list.css">', true);
 
 ?>
 
