@@ -1,0 +1,21 @@
+.news-line {
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.small {
+	display: inline-block;
+	margin: 20px;
+}
+.small span {
+	display: block;
+}
+.small img {
+	display: block;
+}
+.small a {
+	display: block;
+}
+.news-date-time {
+	color:#486DAA;
+}
