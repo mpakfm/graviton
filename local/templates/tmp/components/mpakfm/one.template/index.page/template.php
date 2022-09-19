@@ -19,6 +19,22 @@ $menuHeader = [
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
+$sliderNews = [
+    "IBLOCK_TYPE"            => "content",
+    "IBLOCKS"                => ["events", "news"], //news, events
+    "FIELD_CODE"             => ["ID", "CODE", "NAME", "PROPERTY_TOP_DATE", "PROPERTY_TOP_TITLE", "PROPERTY_TOP_PLACE"], // "PROPERTY_IS_PUB", "PROPERTY_TOP_DATE", "PROPERTY_IS_SLIDER"
+    "FILTER_REQUIRED_FIELDS" => ["PROPERTY_IS_PUB", "PROPERTY_IS_SLIDER"],
+
+    "IS_ACTIVE_DATE"     => false,
+    "SORT_BY1"           => "SORT",
+    "SORT_ORDER1"        => "ASC",
+    "SORT_BY2"           => "NAME",
+    "SORT_ORDER2"        => "ASC",
+    "TITLE"              => "Новости",
+    "CACHE_TYPE"         => "N",
+    "CACHE_TIME"         => "3600",
+    "CACHE_GROUPS"       => "Y",
+];
 $slider = [
     "IBLOCK_TYPE"         => "catalog",
     "IBLOCK_ID"           => 6,
@@ -86,17 +102,22 @@ $frame = $this->createFrame()->begin();
         <h3>Заготовки компонентов главной страницы</h3>
 
         <div style="margin: 20px;">
-            <p>Меню в шапке</p>
+            <p class="tmp-component-name">Меню в шапке</p>
             <?$APPLICATION->IncludeComponent("mpakfm:news.line", "top.menu", $menuHeader);?>
         </div>
 
         <div style="margin: 20px;">
-            <p>Слайдер секций товарного каталога</p>
+            <p class="tmp-component-name">Слайдер секций товарного каталога</p>
             <?$APPLICATION->IncludeComponent("mpakfm:slider.section.list", "", $slider);?>
         </div>
 
         <div style="margin: 20px;">
-            <p>Меню в подвале</p>
+            <p class="tmp-component-name">Слайдер Мероприятия и Новости</p>
+            <?$APPLICATION->IncludeComponent("mpakfm:slider.news", "slider.top", $sliderNews);?>
+        </div>
+
+        <div style="margin: 20px;">
+            <p class="tmp-component-name">Меню в подвале</p>
             <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","",
                 Array(
                     "VIEW_MODE" => "TEXT",
@@ -122,7 +143,7 @@ $frame = $this->createFrame()->begin();
 
         </div>
         <div style="margin: 20px;">
-            <p>Меню копирайта</p>
+            <p class="tmp-component-name">Меню копирайта</p>
             <?$APPLICATION->IncludeComponent("mpakfm:news.line", "top.menu", $menuCopyright);?>
         </div>
     </div>

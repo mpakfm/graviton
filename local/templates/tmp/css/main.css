@@ -50,3 +50,8 @@ body {
 .box {
     margin: 20px;
 }
+.tmp-component-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #9B1704;
+}
