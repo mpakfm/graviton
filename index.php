@@ -18,6 +18,7 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/main.css">', true);
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/menu.section.list.css">', true);
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/slider.section.list.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/css/index.cases.css">', true);
 
 ?>
 

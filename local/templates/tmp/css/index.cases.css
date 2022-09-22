@@ -1,0 +1,11 @@
+.case-preview {
+    margin: 20px;
+    width: 40%;
+    display: inline-block;
+}
+.case-preview p, .case-preview h4 {
+    padding: 10px;
+}
+.case-preview ul {
+    margin-left: 40px;
+}
