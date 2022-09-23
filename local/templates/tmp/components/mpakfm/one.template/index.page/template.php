@@ -33,6 +33,20 @@ $cases = [
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
+$partners = [
+    "IBLOCK_TYPE"        => "content",
+    "IBLOCKS"            => ["partners"],
+    "SECTIONS"           => ["header"],
+    "FIELD_CODE"         => ["ID", "CODE", "NAME", "PREVIEW_PICTURE"],
+    "SORT_BY1"           => "SORT",
+    "SORT_ORDER1"        => "ASC",
+    "SORT_BY2"           => "NAME",
+    "SORT_ORDER2"        => "ASC",
+    "TITLE"              => "Меню",
+    "CACHE_TYPE"         => "Y",
+    "CACHE_TIME"         => "3600",
+    "CACHE_GROUPS"       => "Y",
+];
 $sliderNews = [
     "IBLOCK_TYPE"            => "content",
     "IBLOCKS"                => ["events", "news"], //news, events
@@ -133,6 +147,11 @@ $frame = $this->createFrame()->begin();
         <div style="margin: 20px;">
             <p class="tmp-component-name">Кейсы</p>
             <?$APPLICATION->IncludeComponent("mpakfm:news.line", "index.case", $cases);?>
+        </div>
+
+        <div style="margin: 20px;">
+            <p class="tmp-component-name">Партнёры</p>
+            <?$APPLICATION->IncludeComponent("mpakfm:news.line", "index.partners", $partners);?>
         </div>
 
         <div style="margin: 20px;">
