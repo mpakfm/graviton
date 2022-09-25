@@ -9,12 +9,14 @@ define("HIDE_SIDEBAR", true);
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("Страница не найдена");?>
-<div class="content">
-    <h1>страница не найдена</h1>
-	<div class="bx-404-container">
-		<div class="bx-404-block"><img src="<?=SITE_DIR?>images/404.png" alt=""></div>
-		<div class="bx-404-text-block">Неправильно набран адрес, <br>или такой страницы на сайте больше не существует.</div>
-		<div class="">Вернитесь на <a href="<?=SITE_DIR?>">главную</a></div>
+<main class="main">
+    <div class="l-content">
+        <h1>Cтраница не найдена</h1>
+        <div class="news__container">
+            <div class="bx-404-block"><img src="<?=SITE_TEMPLATE_PATH?>/img/404.jpg" alt=""></div>
+            <div class="bx-404-text-block">Неправильно набран адрес, <br>или такой страницы на сайте больше не существует.</div>
+            <div class="bx-404-text-block">Вернитесь на <a href="/">главную</a></div>
+        </div>
 	</div>
-</div>
+</main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
