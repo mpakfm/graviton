@@ -132,6 +132,45 @@ $frame = $this->createFrame()->begin();
         <div style="margin: 20px;">
             <p class="tmp-component-name">Меню в шапке</p>
             <?$APPLICATION->IncludeComponent("mpakfm:news.line", "top.menu", $menuHeader);?>
+            <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","top",
+                Array(
+                    "VIEW_MODE" => "TEXT",
+                    "SHOW_PARENT_NAME" => "Y",
+                    "IBLOCK_TYPE" => "content",
+                    "IBLOCK_ID" => "5",
+                    //"SECTION_ID" => 16,
+                    "SECTION_CODE" => "header",
+                    "SECTION_URL" => "",
+                    "COUNT_ELEMENTS" => "Y",
+                    "TOP_DEPTH" => "4",
+                    "SECTION_FIELDS" => ["ID", "CODE", "NAME", "SORT"],
+                    "SECTION_USER_FIELDS" => ["UF_LINK", "UF_BLANK"],
+                    "ELEMENT_FIELDS" => ["ID", "CODE", "NAME", "SORT"],
+                    "ELEMENT_USER_FIELDS" => ["PROPERTY_LINK", "PROPERTY_LINK", "PROPERTY_BLANK", "PROPERTY_POPUP_CLASS"],
+                    "ADD_SECTIONS_CHAIN" => "Y",
+                    "CACHE_TYPE" => "N",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_NOTES" => "",
+                    "CACHE_GROUPS" => "Y"
+                )
+            );?>
+            <?$APPLICATION->IncludeComponent("mpakfm:slider.section.list", "", [
+                "IBLOCK_TYPE"         => "content",
+                "IBLOCK_ID"           => 5,
+                "TOP_DEPTH"           => 3,
+                "SECTION_FIELDS"      => ["ID", "NAME", "DESCRIPTION"],
+                "SECTION_USER_FIELDS" => ["UF_SUBTITLE", "UF_RAM", "UF_HDD", "UF_CPU", "UF_SCREEN", "UF_SLIDER_BACK", "UF_SLIDER_PIC"],
+                "SECTIONS"          => ["header"],
+                "VIEW_MODE"           => "LIST",
+                "SORT_BY1"            => "SORT",
+                "SORT_ORDER1"         => "ASC",
+                "SORT_BY2"            => "NAME",
+                "SORT_ORDER2"         => "ASC",
+                "TITLE"             => "Меню",
+                "CACHE_TYPE"          => "Y",
+                "CACHE_TIME"          => "3600",
+                "CACHE_GROUPS"        => "Y",
+            ]);?>
         </div>
 
         <div style="margin: 20px;">

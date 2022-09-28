@@ -11,9 +11,19 @@
 /** @var string $ITEM */
 /** @var string $OTHER */
 
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\CacheSelector;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+$APPLICATION->SetTitle("Graviton - Новости");
+$APPLICATION->SetPageProperty('description', 'Graviton description');
+$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
+
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/main.min.css">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $iblock = CacheSelector::getIblockId('news', 'content');
 
