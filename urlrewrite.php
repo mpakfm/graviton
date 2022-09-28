@@ -77,4 +77,11 @@ $arUrlRewrite=array (
         'PATH'      => '/local/pages/error.php',
         'SORT'      => 200,
     ),
+    array(
+        'CONDITION' => '#^/temp(/)?#',
+        'RULE'      => '',
+        'ID'        => null,
+        'PATH'      => '/local/pages/tmp.php',
+        'SORT'      => 200,
+    ),
 );

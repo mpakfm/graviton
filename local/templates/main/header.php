@@ -42,11 +42,13 @@ $searchParam = [
     <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="stylesheet" href="styles/main.min.css">
-    <link rel="stylesheet" href="styles/extend.css">
+<!--    <link rel="stylesheet" href="styles/main.min.css">-->
+<!--    <link rel="stylesheet" href="styles/extend.css">-->
+    <?$APPLICATION->ShowHead();?>
 </head>
 
 <body data-scroll-container>
+    <div id="panel"><?$APPLICATION->ShowPanel();?></div>
     <header class="header">
         <div class="l-default">
             <div class="header__wrapper">
