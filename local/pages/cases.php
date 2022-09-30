@@ -3,8 +3,8 @@
  * Created by PhpStorm
  * Project: graviton
  * User:    mpak
- * Date:    25.09.2022
- * Time:    16:21
+ * Date:    29.09.2022
+ * Time:    15:53
  */
 /** @var CMain $APPLICATION */
 /** @var string $CODE */
@@ -24,7 +24,7 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
-$iblock = CacheSelector::getIblockId('partners', 'content');
+$iblock = CacheSelector::getIblockId('cases', 'content');
 
 ?>
 <main class="main">

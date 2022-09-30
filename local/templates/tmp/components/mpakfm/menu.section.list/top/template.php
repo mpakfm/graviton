@@ -8,9 +8,8 @@
  */
 /** @var array $arResult */
 
-//\Mpakfm\Printu::obj($arResult)->title('$arResult')->response('html');
-
-$depth = 0;
+$depthMain    = 2;
+$depthCurrent = 2;
 
 ?>
 <div style="color: darkblue;">
@@ -18,9 +17,12 @@ $depth = 0;
     <?php
     $margin   = $section['DEPTH_LEVEL'] * 10;
     $marginUl = $margin + 20;
-    ?>
 
-    <div style="margin-left: <?=$margin;?>px;">[<?=$section['ID']; ?>] <?=$section['NAME']; ?> (<?=$section['SORT'];?>)</div>
+    if ($section['DEPTH_LEVEL'] == $depthMain) {?>
+        <div style="margin-left: <?=$margin;?>px;">[<?=$section['ID']; ?>] <?=$section['NAME']; ?> (<?=$section['SORT'];?> | <?=$section['DEPTH_LEVEL'];?>)</div>
+    <?php } ?>
+
+
     <?php if (array_key_exists($section['ID'], $arResult['ELEMENTS'])) { ?>
         <ul style="margin: 10px 0px 15px <?=$marginUl;?>px;">
             <?php foreach ($arResult['ELEMENTS'][$section['ID']] as $el) { ?>

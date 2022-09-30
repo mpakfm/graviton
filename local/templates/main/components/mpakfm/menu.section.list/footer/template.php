@@ -8,8 +8,6 @@
  */
 /** @var array $arResult */
 
-\Mpakfm\Printu::obj($arResult)->title('[footer] $arResult');
-
 ?>
 
 <div class="footer__nav">

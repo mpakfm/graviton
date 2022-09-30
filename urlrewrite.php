@@ -50,6 +50,13 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
+        'CONDITION' => "#^/cases(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "CODE=$1&OTHER=$2",
+        'ID'        => "",
+        'PATH'      => "/local/pages/cases.php",
+        'SORT'      => 100,
+    ),
+    array (
         'CONDITION' => "#^/partners(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
         'RULE'      => "CODE=$1&OTHER=$2",
         'ID'        => "",

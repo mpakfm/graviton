@@ -56,8 +56,6 @@ if (is_array($arCloudParams["arrFILTER"])) {
     }
 }
 
-\Mpakfm\Printu::obj($arResult)->title('$arResult');
-
 ?>
 
 <section class="news">

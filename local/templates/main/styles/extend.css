@@ -24,3 +24,7 @@
 .search__title {
     margin-bottom: 20px;
 }
+.menu__item-link.active {
+    color: #d91745 !important;
+    text-decoration: underline;
+}
