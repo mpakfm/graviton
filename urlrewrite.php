@@ -50,6 +50,13 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
+        'CONDITION' => "#^/cases(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "CODE=$1&OTHER=$2",
+        'ID'        => "",
+        'PATH'      => "/local/pages/cases.php",
+        'SORT'      => 100,
+    ),
+    array (
         'CONDITION' => "#^/partners(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
         'RULE'      => "CODE=$1&OTHER=$2",
         'ID'        => "",
@@ -75,6 +82,13 @@ $arUrlRewrite=array (
         'RULE'      => '',
         'ID'        => null,
         'PATH'      => '/local/pages/error.php',
+        'SORT'      => 200,
+    ),
+    array(
+        'CONDITION' => '#^/temp(/)?#',
+        'RULE'      => '',
+        'ID'        => null,
+        'PATH'      => '/local/pages/tmp.php',
         'SORT'      => 200,
     ),
 );

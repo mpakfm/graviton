@@ -19,7 +19,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult)->title('$arResult');
+$APPLICATION->SetTitle("Graviton - " . $arResult['NAME']);
+$APPLICATION->SetPageProperty('description', 'Graviton description');
+$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 ?>
 <main class="main">

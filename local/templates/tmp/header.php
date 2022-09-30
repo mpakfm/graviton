@@ -2,8 +2,6 @@
 /** @var CMain $APPLICATION */
 /** @var CUser $USER */
 
-\Mpakfm\Printu::obj(SITE_TEMPLATE_PATH)->title('SITE_TEMPLATE_PATH');
-
 ?>
 <!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID;?>">

@@ -97,5 +97,4 @@ if (0 < $arResult['SECTIONS_COUNT'])
 	}
 }
 
-\Mpakfm\Printu::obj($arResult)->title('$arResult');
 ?>

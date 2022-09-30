@@ -127,7 +127,7 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
             }
             $arParams['FILTER_IDS'] = $ids;
         }
-        \Mpakfm\Printu::obj($ids)->title('FILTER_IDS $ids');
+
         if (array_key_exists("FILTER_REQUIRED_FIELDS", $arParams) && !empty($arParams['FILTER_REQUIRED_FIELDS'])) {
             foreach ($arParams['FILTER_REQUIRED_FIELDS'] as $field) {
                 $arFilter['!' . $field] = false;
@@ -151,10 +151,8 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
         if (!array_key_exists("ID", $arOrder)) {
             $arOrder["ID"] = "DESC";
         }
-        \Mpakfm\Printu::obj($arFilter)->title('$arFilter');
-        \Mpakfm\Printu::obj($arSelect)->title('$arSelect');
+
         $rsItems = CIBlockElement::GetList($arOrder, $arFilter, false, ["nTopCount" => $arParams["NEWS_COUNT"]], $arSelect);
-        \Mpakfm\Printu::obj($rsItems->SelectedRowsCount())->title('SelectedRowsCount');
         $rsItems->SetUrlTemplates($arParams["DETAIL_URL"]);
         while ($arItem = $rsItems->GetNext()) {
             $arButtons = CIBlock::GetPanelButtons(

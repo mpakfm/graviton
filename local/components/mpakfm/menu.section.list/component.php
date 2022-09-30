@@ -364,7 +364,7 @@ if ($this->startResultCache(
 		$arResult["SECTIONS"][]=$arSection;
 	}
 
-        $sectionIds = [];
+        $sectionIds = [$this->arResult['SECTION']['ID']];
 	foreach ($arResult["SECTIONS"] as &$arSection)
 	{
                 $sectionIds[] = $arSection['ID'];

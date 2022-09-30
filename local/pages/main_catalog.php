@@ -8,9 +8,20 @@
  */
 /** @var CMain $APPLICATION */
 
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\CacheSelector;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+$APPLICATION->SetTitle("Graviton - каталог");
+$APPLICATION->SetPageProperty('description', 'Graviton description');
+$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
+
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/main.min.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $iblock = CacheSelector::getIblockId('product', 'catalog');
 
@@ -84,23 +95,10 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "DETAIL_ADD_TO_BASKET_ACTION" => array("BUY"),
         "DETAIL_SHOW_BASIS_PRICE" => "Y",
         "FILTER_VIEW_MODE" => "VERTICAL",
-        "USE_REVIEW" => "Y",
-        "MESSAGES_PER_PAGE" => "10",
-        "USE_CAPTCHA" => "Y",
-        "REVIEW_AJAX_POST" => "Y",
-        "PATH_TO_SMILE" => "/bitrix/images/forum/smile/",
-        "FORUM_ID" => "1",
-        "URL_TEMPLATES_READ" => "",
-        "SHOW_LINK_TO_FORUM" => "Y",
-        "POST_FIRST_MESSAGE" => "N",
+        "USE_REVIEW" => "N",
         "USE_COMPARE" => "N",
-        "PRICE_CODE" => array(
-        0 => "BASE",
-        ),
+        "PRICE_CODE" => [],
         "USE_PRICE_COUNT" => "N",
-        "SHOW_PRICE_COUNT" => "1",
-        "PRICE_VAT_INCLUDE" => "Y",
-        "PRICE_VAT_SHOW_VALUE" => "N",
         "PRODUCT_PROPERTIES" => array(
         ),
         "USE_PRODUCT_QUANTITY" => "Y",
@@ -114,7 +112,7 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "SHOW_TOP_ELEMENTS" => "N",
         "SECTION_COUNT_ELEMENTS" => "N",
         "SECTION_TOP_DEPTH" => "1",
-        "SECTIONS_VIEW_MODE" => "TEXT",
+        "SECTIONS_VIEW_MODE" => "TILE",
         "SECTIONS_SHOW_PARENT_NAME" => "Y",
         "PAGE_ELEMENT_COUNT" => "15",
         "LINE_ELEMENT_COUNT" => "3",
@@ -123,10 +121,13 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "ELEMENT_SORT_FIELD2" => "id",
         "ELEMENT_SORT_ORDER2" => "desc",
         "LIST_PROPERTY_CODE" => array(
-        0 => "NEWPRODUCT",
-        1 => "SALELEADER",
-        2 => "SPECIALOFFER",
-        3 => "",
+            0 => "NEWPRODUCT",
+            1 => "SALELEADER",
+            2 => "SPECIALOFFER",
+            3 => "CPU",
+            4 => "CHIPSET",
+            5 => "RAM_TYPE",
+            6 => "HDD",
         ),
         "INCLUDE_SUBSECTIONS" => "Y",
         "LIST_META_KEYWORDS" => "UF_KEYWORDS",
@@ -151,12 +152,9 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "DETAIL_DETAIL_PICTURE_MODE" => "IMG",
         "DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
         "DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
-        "DETAIL_PROPERTY_CODE" => array(
-        0 => "NEWPRODUCT",
-        1 => "MANUFACTURER",
-        2 => "MATERIAL",
-        3 => "",
-        ),
+        "DETAIL_PROPERTY_CODE" => [
+            "CPU", "SCREEN", "CHIPSET", "GPU", "RAM_TYPE", "HDD", "CAMERA", "AUDIO", "LAN", "WLAN", "FRONT_PORTS", "SIDE_PORTS", "BACK_PORTS",
+        ],
         "DETAIL_META_KEYWORDS" => "KEYWORDS",
         "DETAIL_META_DESCRIPTION" => "META_DESCRIPTION",
         "DETAIL_BROWSER_TITLE" => "TITLE",
