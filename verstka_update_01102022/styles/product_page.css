@@ -192,6 +192,9 @@
   font-weight: 500;
   line-height: 2.125rem;
   color: rgba(255, 255, 255, 0.2);
+  background: -webkit-linear-gradient(rgba(0, 2, 3, 0.4), rgba(255, 255, 255, 0.2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: -0.03em;
 }
 
@@ -219,14 +222,14 @@
   position: absolute;
   top: 0;
   right: -5%;
-  object-fit: contain;
   width: 28.875rem;
   height: 15.75rem;
+  object-fit: contain;
 }
 
 .s-product-about__info {
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 
 .s-product-about__item-text {
