@@ -186,6 +186,8 @@
 }
 
 .s-product-about__slogan {
+  z-index: 1;
+  position: relative;
   max-width: 19.375rem;
   margin-bottom: 2.5rem;
   font-size: 2.1875rem;
@@ -200,6 +202,9 @@
 
 .s-product-about__logo {
   display: none;
+  font-weight: 500;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.0625rem rgba(0, 0, 0, 0.1);
 }
 
 .s-product-about__title {
@@ -454,6 +459,14 @@
     gap: 6.875rem;
   }
 
+  .s-product-about__logo {
+    position: absolute;
+    top: 15%;
+    display: block;
+    font-size: 8.125rem;
+    line-height: 1.1;
+  }
+
   .s-product-about__title {
     text-align: left;
   }
@@ -682,6 +695,11 @@
     padding: 4.6875rem 0;
   }
 
+  .s-product-about__logo {
+    top: 15%;
+    font-size: 12.5rem;
+  }
+
   .s-product-tech {
     margin-bottom: 6.875rem;
   }
@@ -791,6 +809,11 @@
     max-width: 35rem;
     margin-bottom: 26.875rem;
     font-size: 1.1875rem;
+  }
+
+  .s-product-about__logo {
+    top: 25%;
+    font-size: 25rem;
   }
 
   .s-product-about__image img {
