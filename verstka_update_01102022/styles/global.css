@@ -1698,7 +1698,7 @@ button.swiper-pagination-bullet {
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto/Robotolight.woff2") format("woff2"), url("../fonts/Roboto/Robotolight.woff") format("woff");
+  src: url("../fonts/Roboto/RobotoMedium.woff2") format("woff2"), url("../fonts/Roboto/RobotoMedium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
