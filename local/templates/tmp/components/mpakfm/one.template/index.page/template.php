@@ -54,8 +54,8 @@ $sliderNews = [
     "FILTER_REQUIRED_FIELDS" => ["PROPERTY_IS_PUB", "PROPERTY_IS_SLIDER"],
 
     "IS_ACTIVE_DATE"     => false,
-    "SORT_BY1"           => "SORT",
-    "SORT_ORDER1"        => "ASC",
+    "SORT_BY1"           => "ACTIVE_START",
+    "SORT_ORDER1"        => "DESC",
     "SORT_BY2"           => "NAME",
     "SORT_ORDER2"        => "ASC",
     "TITLE"              => "Новости",
@@ -175,7 +175,50 @@ $frame = $this->createFrame()->begin();
 
         <div style="margin: 20px;">
             <p class="tmp-component-name">Слайдер секций товарного каталога</p>
-            <?$APPLICATION->IncludeComponent("mpakfm:slider.section.list", "", $slider);?>
+            <?//$APPLICATION->IncludeComponent("mpakfm:slider.section.list", "", $slider);?>
+
+            <?$APPLICATION->IncludeComponent("bitrix:catalog.sections.top","",Array(
+                    "IBLOCK_TYPE" => "books",
+                    "IBLOCK_ID" => "12",
+                    "SECTION_FIELDS" => Array(""),
+                    "SECTION_USER_FIELDS" => Array(""),
+                    "SECTION_SORT_FIELD" => "sort",
+                    "SECTION_SORT_ORDER" => "asc",
+                    "ELEMENT_SORT_FIELD" => "sort",
+                    "ELEMENT_SORT_ORDER" => "asc",
+                    "ELEMENT_SORT_FIELD" => "active_from",
+                    "ELEMENT_SORT_ORDER" => "asc",
+                    "FILTER_NAME" => "arrFilter",
+                    "SECTION_URL" => "",
+                    "DETAIL_URL" => "",
+                    //"BASKET_URL" => "/personal/basket.php",
+                    "ACTION_VARIABLE" => "action",
+                    "PRODUCT_ID_VARIABLE" => "id",
+                    "PRODUCT_QUANTITY_VARIABLE" =>  "quantity",
+                    "PRODUCT_PROPS_VARIABLE" =>  "prop",
+                    "SECTION_ID_VARIABLE" => "SECTION_ID",
+                    "DISPLAY_COMPARE" => "Y",
+                    "USE_MAIN_ELEMENT_SECTION" => "Y",
+                    "SECTION_COUNT" => "20",
+                    "ELEMENT_COUNT" => "9",
+                    "LINE_ELEMENT_COUNT" => "3",
+                    "PROPERTY_CODE" => Array("UPTITLE", "SUBTITLE", "RAM", "HDD", "CPU", "DISPLAY", "TEXT", "CORNER", "LINK", "MB1", "MB1"),
+                    //"PRICE_CODE" => Array("BASE"),
+                    "USE_PRICE_COUNT" => "N",
+                    //"SHOW_PRICE_COUNT" => "1",
+                    "PRICE_VAT_INCLUDE" => "N",
+                    //"PRODUCT_PROPERTIES" => array(),
+                    "USE_PRODUCT_QUANTITY" => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "3600",
+                    "CACHE_FILTER" => "Y",
+                    "CACHE_GROUPS" => "Y",
+                    "HIDE_NOT_AVAILABLE" => "N",
+                    "QUANTITY_FLOAT" => "N",
+                    //"CONVERT_CURRENCY" => "Y",
+                    //"CURRENCY_ID" => "RUB",
+                )
+            );?>
         </div>
 
         <div style="margin: 20px;">
