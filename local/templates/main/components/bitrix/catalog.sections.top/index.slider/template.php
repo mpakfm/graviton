@@ -21,13 +21,14 @@
 $this->setFrameMode(true);
 
 ?>
-<section class="products">
+
+<section class="s-home-products">
     <div class="l-default">
-        <div class="products__sliders-container">
-            <div class="products__sliders">
+        <div class="s-home-products__sliders-container">
+            <div class="s-home-products__sliders">
                 <?php foreach($arResult['SECTIONS'] as $section) { ?>
-                <div class="products__slider__mobile" data-category="cat<?=$section['ID'];?>"></div>
-                <div class="products__slider swiper-container" data-category="cat<?=$section['ID'];?>">
+                <div class="s-home-products__slider__mobile" data-category="cat<?=$section['ID'];?>"></div>
+                <div class="s-home-products__slider swiper-container" data-category="cat<?=$section['ID'];?>">
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
                         <?php foreach ($section['ITEMS'] as $item) { ?>
@@ -112,11 +113,11 @@ $this->setFrameMode(true);
             </div>
         </div>
     </div>
-    <div class="products__categories">
+    <div class="s-home-products__categories">
         <div class="l-default">
-            <div class="products__categories-wrapper">
+            <div class="s-home-products__categories-wrapper">
                 <?php foreach($arResult['SECTIONS'] as $section) { ?>
-                <div class="products__category" data-category="cat<?=$section['ID'];?>"><?=$section['NAME'];?></div>
+                <div class="s-home-products__category" data-category="cat<?=$section['ID'];?>"><?=$section['NAME'];?></div>
                 <?php } ?>
             </div>
         </div>

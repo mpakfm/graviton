@@ -21,6 +21,12 @@ if (!isset($arParams["CACHE_TIME"])) {
     $arParams["CACHE_TIME"] = 300;
 }
 
+$curdt        = new DateTimeImmutable();
+$currentMonth = $curdt->format('m');
+$nextMonth    = $curdt->add(DateInterval::createFromDateString('1 month'));
+\Mpakfm\Printu::obj($currentMonth)->title('[component] $currentMonth');
+\Mpakfm\Printu::obj($nextMonth)->title('[component] $nextMonth');
+
 $arParams["IBLOCK_TYPE"] = trim($arParams["IBLOCK_TYPE"]);
 if ($arParams["IBLOCK_TYPE"] == '') {
     $arParams["IBLOCK_TYPE"] = "news";
@@ -97,6 +103,8 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
         "ID",
         "IBLOCK_ID",
         "ACTIVE_FROM",
+        "PREVIEW_PICTURE",
+        "PREVIEW_TEXT",
         "DETAIL_PAGE_URL",
         "NAME",
     ]);
@@ -149,12 +157,33 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
             $arParams["SORT_BY2"] => $arParams["SORT_ORDER2"],
         ];
         if (!array_key_exists("ID", $arOrder)) {
-            $arOrder["ID"] = "DESC";
+            $arOrder["ID"] = "desc";
         }
+        $arFilter['>=DATE_ACTIVE_FROM'] = "01." . $curdt->format('m.Y') . ' 00:00:00';
+        $arFilter['<DATE_ACTIVE_FROM']  = "01." . $nextMonth->format('m.Y') . ' 23:59:59';
+
+        \Mpakfm\Printu::obj($arOrder)->title('[component] $arOrder');
+        \Mpakfm\Printu::obj($arFilter)->title('[component] $arFilter');
 
         $rsItems = CIBlockElement::GetList($arOrder, $arFilter, false, ["nTopCount" => $arParams["NEWS_COUNT"]], $arSelect);
         $rsItems->SetUrlTemplates($arParams["DETAIL_URL"]);
+        \Mpakfm\Printu::obj($rsItems->SelectedRowsCount())->title('[component] SelectedRowsCount');
         while ($arItem = $rsItems->GetNext()) {
+
+            if (strpos($arItem['ACTIVE_FROM'], ' ') !== false) {
+                $activeFrom = DateTime::createFromFormat('d.m.Y H:i:s', $arItem['ACTIVE_FROM']);
+            } else {
+                $activeFrom = DateTime::createFromFormat('d.m.Y', $arItem['ACTIVE_FROM']);
+            }
+            $arItem['DAY']   = $activeFrom->format('d');
+            $arItem['MONTH'] = FormatDate('F', Main\Type\DateTime::createFromPhp($activeFrom));
+            $arItem['IMG']   = null;
+            if ((int) $arItem['PREVIEW_PICTURE']) {
+                $file = CFile::GetByID($arItem['PREVIEW_PICTURE'])->Fetch();
+                if ($file) {
+                    $arItem['IMG'] = CFile::GetFileSRC($file);
+                }
+            }
             $arButtons = CIBlock::GetPanelButtons(
                 $arItem["IBLOCK_ID"],
                 $arItem["ID"],
@@ -169,6 +198,16 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
             } else {
                 $arItem["DISPLAY_ACTIVE_FROM"] = "";
             }
+            \Mpakfm\Printu::obj([
+                'ID' => $arItem['ID'],
+                'IBLOCK_ID' => $arItem['IBLOCK_ID'],
+                'NAME' => $arItem['NAME'],
+                'ACTIVE_FROM' => $arItem['ACTIVE_FROM'],
+                'PREVIEW_TEXT' => $arItem['PREVIEW_TEXT'],
+                'PREVIEW_PICTURE' => $arItem['PREVIEW_PICTURE'],
+                'MONTH' => $arItem['MONTH'],
+                'DAY' => $arItem['DAY'],
+            ])->title('$arItem');
 
             Iblock\InheritedProperty\ElementValues::queue($arItem["IBLOCK_ID"], $arItem["ID"]);
 
@@ -200,6 +239,8 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
         unset($originItems);
     }
     unset($arItem);
+
+    $arResult['curDate'] = $curdt;
 
     $this->setResultCacheKeys([
         "LAST_ITEM_IBLOCK_ID",

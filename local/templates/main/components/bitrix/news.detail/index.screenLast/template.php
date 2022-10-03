@@ -19,15 +19,15 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<section class="bottom">
+<section class="s-about-graviton">
     <div class="l-default">
         <h3 class="title title--h3">Гравитон</h3>
-        <div class="bottom__text">
+        <div class="s-about-graviton__text">
             <?=$arResult['DISPLAY_PROPERTIES']['TEXT']['~VALUE'][0]['TEXT'];?>
         </div>
-        <div class="bottom__items">
+        <div class="s-about-graviton__items">
             <?php for ($i = 1; $i < count($arResult['DISPLAY_PROPERTIES']['TEXT']['~VALUE']); $i++) { ?>
-            <div class="bottom__item"><?=$arResult['DISPLAY_PROPERTIES']['TEXT']['~VALUE'][$i]['TEXT'];?></div>
+                <div class="s-about-graviton__item"><?=$arResult['DISPLAY_PROPERTIES']['TEXT']['~VALUE'][$i]['TEXT'];?></div>
             <?php } ?>
         </div><div class="animation-wrapper">
             <div class="sphere-animation">

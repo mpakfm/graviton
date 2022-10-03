@@ -79,6 +79,45 @@ $menuFooter = [
         </div>
     </div>
 </footer>
-
+<div class="popup popup-form popup-registration" id="popup-registration">
+    <form class="form">
+        <h5 class="form__title">Форма регистрации</h5>
+        <div class="form__inputs">
+            <div class="form__input">
+                <label>E-mail </label>
+                <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения" name="email">
+            </div>
+            <div class="form__input">
+                <label>ФИО</label>
+                <input type="text" placeholder="Введите фамилию, имя и отчество" name="name">
+            </div>
+            <div class="form__input">
+                <label>Телефон </label>
+                <input type="text" placeholder="+7(ХХХ)ХХХХХХХ" name="phone">
+            </div>
+            <div class="form__input">
+                <label>ИНН</label>
+                <input type="number" placeholder="9999999999" name="inn">
+            </div>
+            <div class="form__input">
+                <label>Название компании </label>
+                <input type="text" placeholder="Введите название компании" name="company">
+            </div>
+        </div>
+        <div class="form__checkboxes">
+            <div class="form__checkbox">
+                <input class="form__checkbox-input" type="checkbox">
+                <div class="form__checkbox-btn"></div>
+                <div class="form__checkbox-text">Я не робот</div>
+            </div>
+            <div class="form__checkbox">
+                <input class="form__checkbox-input" type="checkbox">
+                <div class="form__checkbox-btn"></div>
+                <div class="form__checkbox-text">Я согласен с условиями обработки персональных данных.</div>
+            </div>
+        </div>
+        <button class="form__submit btn btn--black" type="submit">Отправить</button>
+    </form>
+</div>
 </body>
 </html>
