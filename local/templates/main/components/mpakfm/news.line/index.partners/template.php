@@ -19,15 +19,13 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<section class="partners">
+<section class="s-partners">
     <div class="l-default">
         <h2 class="title title--h2">Наши партнеры</h2>
-        <div class="partners__items">
-            <div class="partners__item"><img class="lazy" data-src="img/svg/logos/3logic.svg" alt=""></div>
-            <div class="partners__item"><img class="lazy" data-src="img/svg/logos/elbrus.svg" alt=""></div>
-            <div class="partners__item"><img class="lazy" data-src="img/svg/logos/basealt.svg" alt=""></div>
-            <div class="partners__item"><img class="lazy" data-src="img/svg/logos/astralinux.svg" alt=""></div>
-            <div class="partners__item"><img class="lazy" data-src="img/svg/logos/code.svg" alt=""></div>
+        <div class="s-partners__items">
+            <?php foreach ($arResult["ITEMS"] as $arItem) { ?>
+            <div class="s-partners__item"><img class="lazy" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
+            <?php } ?>
         </div>
     </div>
 </section>
