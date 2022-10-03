@@ -23,10 +23,6 @@ $APPLICATION->SetTitle("Graviton - " . $arResult['NAME']);
 $APPLICATION->SetPageProperty('description', 'Graviton description');
 $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
-$APPLICATION->SetTitle("Graviton - " . $arResult['NAME']);
-$APPLICATION->SetPageProperty('description', 'Graviton description');
-$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
-
 ?>
 <main class="main">
     <section class="news-detail">
