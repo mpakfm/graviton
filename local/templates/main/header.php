@@ -133,19 +133,17 @@ $searchParam = [
     <div class="s-contact-us">
         <div class="s-contact-us__left">
             <div class="s-contact-us__left-text">Связаться с нами</div>
+            <div class="s-contact-us__left-icon"> <img src="img/svg/chat.svg" alt=""></div>
+            <div class="s-contact-us__left-top"> <img src="img/svg/arrow-top.svg" alt=""></div>
         </div>
         <div class="s-contact-us__content">
             <div class="close"> <span></span><span></span></div>
-            <div class="s-contact-us__item">
-                <a class="s-contact-us__item-phone" href="tel:+78005008886">8-800-500-88-86</a>
-                <a class="s-contact-us__item-btn btn btn--grey" href="tel:+78005008886">Позвонить</a>
-            </div>
+        <div class="s-contact-us__item"><a class="s-contact-us__item-phone" href="tel:+78005008886">8-800-500-88-86</a><a class="s-contact-us__item-btn btn btn--grey" href="tel:+78005008886">Позвонить</a></div>
             <div class="s-contact-us__item">
                 <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:">Написать</a>
             </div>
             <div class="s-contact-us__item">
-                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div>
-                <a class="s-contact-us__item-btn btn btn--grey" href="">Написать</a>
+                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div><a class="s-contact-us__item-btn btn btn--grey" href="">Написать</a>
             </div>
         </div>
     </div>

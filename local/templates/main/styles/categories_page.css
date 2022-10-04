@@ -120,12 +120,20 @@
   margin-right: 5px;
 }
 
+.s-rulers__tab-content {
+  display: none;
+}
+
 .s-rulers .border-none {
   border: none;
 }
 
 .s-rulers .border-none .s-rulers__tab-title {
   border: none;
+}
+
+.is-actived {
+  display: block !important;
 }
 
 .s-goods {
@@ -196,7 +204,9 @@
   position: relative;
   top: 0;
   left: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -206,6 +216,7 @@
   line-height: 1.2;
   text-align: center;
   color: #ffffff;
+  cursor: pointer;
   border-radius: 0.3125rem;
   content: "Следующая линейка";
   box-sizing: border-box;
@@ -301,6 +312,10 @@
 .s-solutions__text--short {
   margin-top: 6rem;
   margin-left: 6.25rem;
+}
+
+.s-substitution {
+  padding-bottom: 3.125rem;
 }
 
 .s-substitution__title {
@@ -413,8 +428,8 @@
   line-height: 110%;
   color: transparent;
   letter-spacing: -0.03em;
-  -webkit-text-stroke: 1px #ffffff 16;
-  text-stroke: 3px #ffffff 16;
+  -webkit-text-stroke: 0.1875rem #ffffff3f;
+  text-stroke: 0.1875rem #ffffff3f;
 }
 
 @media (min-width: 540px) {
@@ -849,10 +864,13 @@
     background-size: 16.25rem 26.25rem;
   }
 
+  .s-advertising .l-default {
+    padding: 0 !important;
+  }
+
   .s-advertising__title {
     padding: 19.8125rem 0 6.8125rem;
     font-size: 2.375rem;
-    text-align: center;
   }
 
   .s-advertising::after {

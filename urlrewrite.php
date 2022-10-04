@@ -71,6 +71,13 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array(
+        'CONDITION' => '#^/contacts(/)?#',
+        'RULE'      => '',
+        'ID'        => null,
+        'PATH'      => '/local/pages/contacts.php',
+        'SORT'      => 200,
+    ),
+    array(
         'CONDITION' => '#^/only-for-admin(/)?#',
         'RULE'      => '',
         'ID'        => null,
