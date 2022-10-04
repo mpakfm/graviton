@@ -3,8 +3,8 @@
  * Created by PhpStorm
  * Project: graviton
  * User:    mpak
- * Date:    29.09.2022
- * Time:    15:53
+ * Date:    25.09.2022
+ * Time:    15:20
  */
 /** @var CMain $APPLICATION */
 /** @var string $CODE */
@@ -14,13 +14,13 @@ use Library\Tools\CacheSelector;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$APPLICATION->SetTitle("Graviton - Case");
+$APPLICATION->SetTitle("Graviton - Мероприятия");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
 $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
-$iblock = CacheSelector::getIblockId('cases', 'content');
+$iblock = CacheSelector::getIblockId('events', 'content');
 
-\Mpakfm\Printu::obj($CODE)->title('[cases] $CODE');
+\Mpakfm\Printu::obj($CODE)->title('[events] $CODE');
 
 if (!empty($CODE)) {
     $params = [
@@ -125,10 +125,9 @@ if (!empty($CODE)) {
 ?>
 <main class="main">
     <?php if (!empty($CODE)) { ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.detail","case",$params);?>
+        <?$APPLICATION->IncludeComponent("bitrix:news.detail","event",$params);?>
     <?php } else { ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.list","cases",$params);?>
+        <?$APPLICATION->IncludeComponent("bitrix:news.list","events",$params);?>
     <?php } ?>
 </main>
-
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
