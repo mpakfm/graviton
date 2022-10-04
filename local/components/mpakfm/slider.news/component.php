@@ -38,11 +38,19 @@ if ($arParams["IBLOCK_TYPE"] == "-") {
 if (!is_array($arParams["IBLOCKS"])) {
     $arParams["IBLOCKS"] = [$arParams["IBLOCKS"]];
 }
+// LIMIT
+if (!array_key_exists('LIMIT', $arParams)) {
+    foreach ($arParams["IBLOCKS"] as $code) {
+        $arParams['LIMIT'][$code] = 10;
+    }
+}
+
 foreach ($arParams["IBLOCKS"] as $k => $v) {
     if (is_string($v)) {
         $iblockId = CacheSelector::getIblockId($v, 'content');
         if ($iblockId) {
             $arParams["IBLOCKS"][$k] = $iblockId;
+            $arParams['LIMIT'][$iblockId] = $arParams['LIMIT'][$v];
             continue;
         }
     }
@@ -50,6 +58,8 @@ foreach ($arParams["IBLOCKS"] as $k => $v) {
         unset($arParams["IBLOCKS"][$k]);
     }
 }
+\Mpakfm\Printu::obj($arParams['IBLOCKS'])->title('[component] IBLOCKS');
+\Mpakfm\Printu::obj($arParams['LIMIT'])->title('[component] LIMIT');
 
 if (!is_array($arParams["FIELD_CODE"])) {
     $arParams["FIELD_CODE"] = [];
@@ -79,11 +89,6 @@ if ($arParams["SORT_BY2"] == '') {
 }
 if (!preg_match('/^(asc|desc|nulls)(,asc|,desc|,nulls){0,1}$/i', $arParams["SORT_ORDER2"])) {
     $arParams["SORT_ORDER2"] = "ASC";
-}
-
-$arParams["NEWS_COUNT"] = intval($arParams["NEWS_COUNT"]);
-if ($arParams["NEWS_COUNT"] <= 0) {
-    $arParams["NEWS_COUNT"] = 20;
 }
 
 $arParams["DETAIL_URL"] = trim($arParams["DETAIL_URL"]);
@@ -159,13 +164,15 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
         if (!array_key_exists("ID", $arOrder)) {
             $arOrder["ID"] = "desc";
         }
-        $arFilter['>=DATE_ACTIVE_FROM'] = "01." . $curdt->format('m.Y') . ' 00:00:00';
+        //$arFilter['>=DATE_ACTIVE_FROM'] = "01." . $curdt->format('m.Y') . ' 00:00:00';
         $arFilter['<DATE_ACTIVE_FROM']  = "01." . $nextMonth->format('m.Y') . ' 23:59:59';
 
+        \Mpakfm\Printu::obj($iblockCode)->title('[component] $iblockCode');
         \Mpakfm\Printu::obj($arOrder)->title('[component] $arOrder');
         \Mpakfm\Printu::obj($arFilter)->title('[component] $arFilter');
+        \Mpakfm\Printu::obj($arParams['LIMIT'][$iblockCode])->title('[component] nTopCount');
 
-        $rsItems = CIBlockElement::GetList($arOrder, $arFilter, false, ["nTopCount" => $arParams["NEWS_COUNT"]], $arSelect);
+        $rsItems = CIBlockElement::GetList($arOrder, $arFilter, false, ["nTopCount" => $arParams['LIMIT'][$iblockCode]], $arSelect);
         $rsItems->SetUrlTemplates($arParams["DETAIL_URL"]);
         \Mpakfm\Printu::obj($rsItems->SelectedRowsCount())->title('[component] SelectedRowsCount');
         while ($arItem = $rsItems->GetNext()) {

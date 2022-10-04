@@ -18,6 +18,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+\Mpakfm\Printu::obj($arResult['EVENTS'])->title('EVENTS');
+
 ?>
 <section class="timetable">
     <div class="timetable__top">
@@ -45,130 +47,184 @@ $this->setFrameMode(true);
             </div>
             <div class="timetable__item calendar-events" data-timetable="events">
                 <div class="calendar-events__items">
-                    <div class="calendar-events__column"><a class="calendar-events__item" href="">
-                            <div class="calendar-events__info">
-                                <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
-                                </div>
-                                <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
-                                </div>
-                            </div></a><a class="calendar-events__item" href="">
-                            <div class="calendar-events__photo">
-                                <picture>
-                                    <source data-srcset="img/events/1.webp" type="image/webp"/>
-                                    <source data-srcset="img/events/1.jpg" type="image/jpg"/><img class="lazy" data-src="img/events/1.jpg" alt=""/>
-                                </picture>
-                            </div>
-                            <div class="calendar-events__info">
-                                <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
-                                </div>
-                                <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
-                                </div>
-                            </div></a></div>
-                    <div class="calendar-events__column"><a class="calendar-events__item" href="">
-                            <div class="calendar-events__info">
-                                <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
-                                </div>
-                                <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
-                                </div>
-                            </div>
-                            <div class="calendar-events__photo">
-                                <picture>
-                                    <source data-srcset="img/events/1.webp" type="image/webp"/>
-                                    <source data-srcset="img/events/1.jpg" type="image/jpg"/><img class="lazy" data-src="img/events/1.jpg" alt=""/>
-                                </picture>
-                            </div></a></div>
-                    <div class="calendar-events__column"><a class="calendar-events__item" href="">
-                            <div class="calendar-events__info">
-                                <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
-                                </div>
-                                <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
-                                </div>
-                            </div>
-                            <div class="calendar-events__photo">
-                                <picture>
-                                    <source data-srcset="img/events/1.webp" type="image/webp"/>
-                                    <source data-srcset="img/events/1.jpg" type="image/jpg"/><img class="lazy" data-src="img/events/1.jpg" alt=""/>
-                                </picture>
-                            </div></a><a class="calendar-events__item" href="">
-                            <div class="calendar-events__info">
-                                <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
-                                </div>
-                                <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
-                                </div>
-                            </div></a></div>
                     <div class="calendar-events__column">
-                        <div class="calendar-events__col"><a class="calendar-events__item" href="">
-                                <div class="calendar-events__info">
-                                    <div class="calendar-events__date">
-                                        <div class="calendar-events__date-number">22 </div>
-                                        <div class="calendar-events__date-month">Августа</div>
-                                    </div>
-                                    <div class="calendar-events__place">
-                                        <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                        <div class="calendar-events__place-city">г. Махачкала</div>
-                                    </div>
-                                </div></a><a class="calendar-events__item" href="">
-                                <div class="calendar-events__info">
-                                    <div class="calendar-events__date">
-                                        <div class="calendar-events__date-number">22 </div>
-                                        <div class="calendar-events__date-month">Августа</div>
-                                    </div>
-                                    <div class="calendar-events__place">
-                                        <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                        <div class="calendar-events__place-city">г. Махачкала</div>
-                                    </div>
-                                </div></a></div>
-                        <div class="calendar-events__col"><a class="calendar-events__item" href="">
-                                <div class="calendar-events__info">
-                                    <div class="calendar-events__date">
-                                        <div class="calendar-events__date-number">22 </div>
-                                        <div class="calendar-events__date-month">Августа</div>
-                                    </div>
-                                    <div class="calendar-events__place">
-                                        <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                        <div class="calendar-events__place-city">г. Махачкала</div>
-                                    </div>
-                                </div></a><a class="calendar-events__item" href="">
-                                <div class="calendar-events__info">
-                                    <div class="calendar-events__date">
-                                        <div class="calendar-events__date-number">22 </div>
-                                        <div class="calendar-events__date-month">Августа</div>
-                                    </div>
-                                    <div class="calendar-events__place">
-                                        <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                        <div class="calendar-events__place-city">г. Махачкала</div>
-                                    </div>
-                                </div></a></div><a class="calendar-events__item" href="">
+                        <?php if (array_key_exists(0, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][0]['CODE'];?>">
                             <div class="calendar-events__info">
                                 <div class="calendar-events__date">
-                                    <div class="calendar-events__date-number">22 </div>
-                                    <div class="calendar-events__date-month">Августа</div>
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][0]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][0]['MONTH'];?></div>
                                 </div>
                                 <div class="calendar-events__place">
-                                    <div class="calendar-events__place-country">РИФ Кавказ</div>
-                                    <div class="calendar-events__place-city">г. Махачкала</div>
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][0]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][0]['PROPERTY_TOP_PLACE_VALUE'];?></div>
                                 </div>
-                            </div></a>
+                            </div>
+                        </a>
+                        <?php } ?>
+                        <?php if (array_key_exists(1, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][1]['CODE'];?>">
+                            <div class="calendar-events__photo">
+                                <picture>
+                                    <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
+                                    <?php if (array_key_exists('SRC', $arResult['EVENTS'][1]['PREVIEW_PICTURE'])) { ?>
+                                    <source data-srcset="<?=$arResult['EVENTS'][1]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
+                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][1]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <?php } ?>
+                                </picture>
+                            </div>
+                            <div class="calendar-events__info">
+                                <div class="calendar-events__date">
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][1]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][1]['MONTH'];?></div>
+                                </div>
+                                <div class="calendar-events__place">
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][1]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][1]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php } ?>
+                    </div>
+                    <div class="calendar-events__column">
+                        <?php if (array_key_exists(2, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][2]['CODE'];?>">
+                            <div class="calendar-events__info">
+                                <div class="calendar-events__date">
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][2]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][2]['MONTH'];?></div>
+                                </div>
+                                <div class="calendar-events__place">
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][2]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][2]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                </div>
+                            </div>
+                            <div class="calendar-events__photo">
+                                <picture>
+                                    <?php if (array_key_exists('SRC', $arResult['EVENTS'][2]['PREVIEW_PICTURE'])) { ?>
+                                    <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
+                                    <source data-srcset="<?=$arResult['EVENTS'][2]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
+                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][2]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <?php } ?>
+                                </picture>
+                            </div>
+                        </a>
+                        <?php } ?>
+                    </div>
+                    <div class="calendar-events__column">
+                        <?php if (array_key_exists(3, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][3]['CODE'];?>">
+                            <div class="calendar-events__info">
+                                <div class="calendar-events__date">
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][3]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][3]['MONTH'];?></div>
+                                </div>
+                                <div class="calendar-events__place">
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][3]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][3]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                </div>
+                            </div>
+                            <div class="calendar-events__photo">
+                                <picture>
+                                    <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
+                                    <?php if (array_key_exists('SRC', $arResult['EVENTS'][3]['PREVIEW_PICTURE'])) { ?>
+                                    <source data-srcset="<?=$arResult['EVENTS'][3]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
+                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][3]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <?php } ?>
+                                </picture>
+                            </div>
+                        </a>
+                        <?php } ?>
+                        <?php if (array_key_exists(4, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][4]['CODE'];?>">
+                            <div class="calendar-events__info">
+                                <div class="calendar-events__date">
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][4]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][4]['MONTH'];?></div>
+                                </div>
+                                <div class="calendar-events__place">
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][4]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][4]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php } ?>
+                    </div>
+                    <div class="calendar-events__column">
+                        <div class="calendar-events__col">
+                            <?php if (array_key_exists(5, $arResult['EVENTS'])) { ?>
+                            <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][5]['CODE'];?>">
+                                <div class="calendar-events__info">
+                                    <div class="calendar-events__date">
+                                        <div class="calendar-events__date-number"><?=$arResult['EVENTS'][5]['DAY'];?> </div>
+                                        <div class="calendar-events__date-month"><?=$arResult['EVENTS'][5]['MONTH'];?></div>
+                                    </div>
+                                    <div class="calendar-events__place">
+                                        <div class="calendar-events__place-country"><?=$arResult['EVENTS'][5]['NAME'];?></div>
+                                        <div class="calendar-events__place-city"><?=$arResult['EVENTS'][5]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <?php } ?>
+                            <?php if (array_key_exists(6, $arResult['EVENTS'])) { ?>
+                            <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][6]['CODE'];?>">
+                                <div class="calendar-events__info">
+                                    <div class="calendar-events__date">
+                                        <div class="calendar-events__date-number"><?=$arResult['EVENTS'][6]['DAY'];?> </div>
+                                        <div class="calendar-events__date-month"><?=$arResult['EVENTS'][6]['MONTH'];?></div>
+                                    </div>
+                                    <div class="calendar-events__place">
+                                        <div class="calendar-events__place-country"><?=$arResult['EVENTS'][6]['NAME'];?></div>
+                                        <div class="calendar-events__place-city"><?=$arResult['EVENTS'][6]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <?php } ?>
+                        </div>
+                        <div class="calendar-events__col">
+                            <?php if (array_key_exists(7, $arResult['EVENTS'])) { ?>
+                            <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][7]['CODE'];?>">
+                                <div class="calendar-events__info">
+                                    <div class="calendar-events__date">
+                                        <div class="calendar-events__date-number"><?=$arResult['EVENTS'][7]['DAY'];?> </div>
+                                        <div class="calendar-events__date-month"><?=$arResult['EVENTS'][7]['MONTH'];?></div>
+                                    </div>
+                                    <div class="calendar-events__place">
+                                        <div class="calendar-events__place-country"><?=$arResult['EVENTS'][7]['NAME'];?></div>
+                                        <div class="calendar-events__place-city"><?=$arResult['EVENTS'][7]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <?php } ?>
+                            <?php if (array_key_exists(8, $arResult['EVENTS'])) { ?>
+                            <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][8]['CODE'];?>">
+                                <div class="calendar-events__info">
+                                    <div class="calendar-events__date">
+                                        <div class="calendar-events__date-number"><?=$arResult['EVENTS'][8]['DAY'];?> </div>
+                                        <div class="calendar-events__date-month"><?=$arResult['EVENTS'][8]['MONTH'];?></div>
+                                    </div>
+                                    <div class="calendar-events__place">
+                                        <div class="calendar-events__place-country"><?=$arResult['EVENTS'][8]['NAME'];?></div>
+                                        <div class="calendar-events__place-city"><?=$arResult['EVENTS'][8]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                    </div>
+                                </div>
+                            </a>
+                            <?php } ?>
+                        </div>
+                        <?php if (array_key_exists(9, $arResult['EVENTS'])) { ?>
+                        <a class="calendar-events__item" href="/events/<?=$arResult['EVENTS'][9]['CODE'];?>">
+                            <div class="calendar-events__info">
+                                <div class="calendar-events__date">
+                                    <div class="calendar-events__date-number"><?=$arResult['EVENTS'][9]['DAY'];?> </div>
+                                    <div class="calendar-events__date-month"><?=$arResult['EVENTS'][9]['MONTH'];?></div>
+                                </div>
+                                <div class="calendar-events__place">
+                                    <div class="calendar-events__place-country"><?=$arResult['EVENTS'][9]['NAME'];?></div>
+                                    <div class="calendar-events__place-city"><?=$arResult['EVENTS'][9]['PROPERTY_TOP_PLACE_VALUE'];?></div>
+                                </div>
+                            </div>
+                        </a>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
