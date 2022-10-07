@@ -55,6 +55,8 @@ $menuCopy = [
     "CACHE_NOTES" => "",
     "CACHE_GROUPS" => "Y"
 ];
+$breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
+
 ?>
 <footer class="footer">
     <div class="l-default">
@@ -66,8 +68,20 @@ $menuCopy = [
                             <use xlink:href="img/sprite-mono.svg#ico-mono-icon-breadcrumb"></use>
                         </svg>
                     </div>
-                    <div class="breadcrumb-text">Главная</div>
+                    <div class="breadcrumb-text"><a href="/">Главная</a></div>
                 </div>
+                <?php if (!empty($breadcrumb)) { ?>
+                <?php foreach($breadcrumb as $part) { ?>
+                        <div class="breadcrumb">
+                            <div class="breadcrumb-icon">
+                                <svg class="ico ico-mono-icon-breadcrumb">
+                                    <use xlink:href="img/sprite-mono.svg#ico-mono-icon-breadcrumb"></use>
+                                </svg>
+                            </div>
+                            <div class="breadcrumb-text"><a href="<?=$part['link'];?>"><?=$part['name'];?></a></div>
+                        </div>
+                <?php } ?>
+                <?php } ?>
             </div>
         </div>
         <div class="footer__content">

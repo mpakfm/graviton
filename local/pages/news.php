@@ -11,9 +11,13 @@
 /** @var string $ITEM */
 /** @var string $OTHER */
 
+use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+$breadcrumb = Breadcrumb::init();
+$breadcrumb->setIblock('news', 'content')->setChain('news');
 
 $APPLICATION->SetTitle("Graviton - Новости");
 $APPLICATION->SetPageProperty('description', 'Graviton description');

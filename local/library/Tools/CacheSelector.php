@@ -16,6 +16,7 @@ use Bitrix\Iblock\SectionTable;
 use Bitrix\Main\Application;
 use Bitrix\Main\Data\Cache;
 use Bitrix\Main\Loader;
+use Mpakfm\Printu;
 use RuntimeException;
 
 class CacheSelector
@@ -55,6 +56,9 @@ class CacheSelector
             $cacheTime = (int) $cacheTime;
         }
         $cache = Cache::createInstance();
+        if (array_key_exists('clear_cache', $_REQUEST)) {
+            $cache->clean($cacheId);
+        }
         if ($cache->initCache($cacheTime, $cacheId, $cacheDir)) {
             $result = $cache->getVars();
         } elseif ($cache->startDataCache()) {
@@ -239,9 +243,32 @@ class CacheSelector
     public static function getHlDataClass($hlblock)
     {
         Loader::includeModule('highloadblock');
+        if (!(int) $hlblock) {
+            $hlRes   = static::getHlBlock($hlblock);
+            $hlblock = $hlRes['ID'];
+        }
         $hlBlock   = HighloadBlockTable::getById($hlblock)->fetch();
         $obEntity  = HighloadBlockTable::compileEntity($hlBlock);
         return $obEntity->getDataClass();
+    }
+
+    public static function getHlData(string $name, array $select = [], array $order = [], array $filter = []): ?array
+    {
+        Loader::includeModule("highloadblock");
+        $dataClass = static::getHlDataClass($name);
+
+        $selectFields = (!empty($select) ? $select : ['*']);
+        $orderFields  = (!empty($order) ? $order : ["ID" => "ASC"]);
+
+        $stmt = $dataClass::getList([
+            "select" => $selectFields,
+            "order"  => $orderFields,
+            "filter" => $filter,
+        ]);
+        if ($stmt->getSelectedRowsCount() <= 0) {
+            return [];
+        }
+        return $stmt->fetchAll();
     }
 
     public static function getUserGroup(string $stringId, $cacheTime = null)
