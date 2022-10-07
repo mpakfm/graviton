@@ -13,10 +13,8 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-//Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-//Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $searchParam = [
     "PAGE"        => "/search",
