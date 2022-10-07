@@ -1,0 +1,115 @@
+.s-partners-content {
+  padding: 4.8125rem 0 6.375rem;
+}
+
+.s-partners-content .title {
+  margin-bottom: 1.875rem;
+  text-align: center;
+}
+
+.s-partners-content__items {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  max-width: 32.5rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.125rem;
+  flex-wrap: wrap;
+}
+
+.s-partners-content__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.375rem;
+  min-height: 5.0625rem;
+  margin: 0 auto;
+  padding: 1.0625rem 0.875rem;
+  opacity: 0.3;
+  transition: all 0.4s ease;
+}
+
+.s-partners-content__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 4.5625rem;
+}
+
+.s-partners-content__item:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.s-partners-content__item:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.s-partners-content__btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #424346;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.s-partners-content .text-center {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .s-partners-content .title {
+    margin-bottom: 3.9375rem;
+  }
+
+  .s-partners-content__items {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.75rem;
+  }
+
+  .s-partners-content__item {
+    width: 12.5rem;
+    min-height: 12.5rem;
+    padding: 1.25rem 0.875rem;
+  }
+
+  .s-partners-content__item img {
+    max-height: 4.875rem;
+  }
+
+  .s-partners-content__btn {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .s-partners-content .title {
+    margin-bottom: 5.625rem;
+  }
+
+  .s-partners-content__items {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    gap: 0;
+  }
+
+  .s-partners-content__item {
+    width: 20%;
+    min-height: 10rem;
+  }
+
+  .s-partners-content__item img {
+    max-width: 9.375rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .s-partners-content .title {
+    margin-bottom: 7.5rem;
+  }
+}
+/*# sourceMappingURL=maps/partners.css.map */

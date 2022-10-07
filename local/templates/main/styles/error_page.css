@@ -1,0 +1,38 @@
+.s-error-content {
+  padding: 4.6875rem 0;
+}
+
+.s-error-content__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.s-error-content__title {
+  margin-bottom: 1.875rem;
+}
+
+.s-error-content__image {
+  margin-bottom: 1.875rem;
+}
+
+.s-error-content__image img {
+  width: 100%;
+  height: auto;
+}
+
+.s-error-content__text {
+  text-align: center;
+}
+
+.s-error-content__text a {
+  color: #d91745;
+}
+
+@media (min-width: 768px) {
+  .s-error-content__title {
+    margin-bottom: 3.75rem;
+  }
+}
+/*# sourceMappingURL=maps/error_page.css.map */
