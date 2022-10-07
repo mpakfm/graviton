@@ -36,14 +36,23 @@ while($section = $stmt->Fetch())
             <div class="news-item">
                 <?php foreach($arResult["ITEMS"] as $arItem) { ?>
                     <?
+                    if (strpos($arItem['ACTIVE_FROM'], ' ') !== false) {
+                        $dt = date_create_from_format('d.m.Y H:i:s', $arItem['ACTIVE_FROM']);
+                    } else {
+                        $dt = date_create_from_format('d.m.Y', $arItem['ACTIVE_FROM']);
+                    }
                     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                     ?>
                 <div class="news-item__content" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                     <div class="news-item__content--preview">
-                        <div class="preview__date"><span class="preview__date--day">20</span>
-                            <p class="preview__date--month">Августа</p>
+                        <div class="preview__date">
+                            <?php if ($dt) {?>
+                                <span class="preview__date--day"><?=$dt->format('d');?></span>
+                                <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
+                            <?php } ?>
                         </div>
+
                         <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
                             <div class="preview__img">
                                 <picture>

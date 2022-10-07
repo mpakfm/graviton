@@ -83,3 +83,4 @@ foreach ($arResult['MENU'] as $key => $firstLevel) {
         }
     }
 }
+\Mpakfm\Printu::obj($arResult['MENU'])->title('MENU');
