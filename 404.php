@@ -22,6 +22,20 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vend
 
 ?>
 <main class="main">
+    <section class="s-error-content">
+        <div class="l-default">
+            <div class="s-error-content__wrap">
+                <h1 class="s-error-content__title title title--h2">Cтраница не найдена</h1>
+                <div class="s-error-content__image"><img src="./img/global/404.jpeg" alt=""></div>
+                <div class="s-error-content__text">
+                    <p>Неправильно набран адрес, или такой страницы на сайте больше не существует.</p>
+                    <p>Вернитесь на <a href="#">главную страницу</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="main">
     <div class="l-content">
         <h1>Cтраница не найдена</h1>
         <div class="news__container">

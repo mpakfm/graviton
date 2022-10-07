@@ -127,7 +127,7 @@ $searchParam = [
                 <div class="header__mobile-title"></div>
                 <div class="close"><span> </span><span> </span></div>
             </div>
-            <div class="header__mobile-content"></div><a class="header__mobile-btn btn btn--bordered" href="">Связаться с нами</a>
+        <div class="header__mobile-content"></div><a class="header__mobile-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
         </div>
     </header>
     <div class="s-contact-us">
