@@ -13,14 +13,12 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-//Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-//Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.min.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $searchParam = [
     "PAGE"        => "/search",
-    "USE_SUGGEST" => "N",
+    "USE_SUGGEST" => "Y",
 ];
 
 ?>
@@ -127,7 +125,7 @@ $searchParam = [
                 <div class="header__mobile-title"></div>
                 <div class="close"><span> </span><span> </span></div>
             </div>
-            <div class="header__mobile-content"></div><a class="header__mobile-btn btn btn--bordered" href="">Связаться с нами</a>
+        <div class="header__mobile-content"></div><a class="header__mobile-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
         </div>
     </header>
     <div class="s-contact-us">

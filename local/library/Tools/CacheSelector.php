@@ -16,7 +16,6 @@ use Bitrix\Iblock\SectionTable;
 use Bitrix\Main\Application;
 use Bitrix\Main\Data\Cache;
 use Bitrix\Main\Loader;
-use Mpakfm\Printu;
 use RuntimeException;
 
 class CacheSelector

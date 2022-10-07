@@ -9,9 +9,12 @@
 /** @var CMain $APPLICATION */
 /** @var string $CODE */
 
+use Bitrix\Main\Page\Asset;
 use Library\Tools\CacheSelector;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/partners.css">', true);
 
 $APPLICATION->SetTitle("Graviton - Партнёры");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
@@ -22,7 +25,7 @@ $iblock = CacheSelector::getIblockId('partners', 'content');
 ?>
 <main class="main">
     <div class="l-content">
-        <?$APPLICATION->IncludeComponent("bitrix:news.list","",Array(
+        <?$APPLICATION->IncludeComponent("bitrix:news.list","partners",Array(
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
         "DISPLAY_PICTURE" => "Y",

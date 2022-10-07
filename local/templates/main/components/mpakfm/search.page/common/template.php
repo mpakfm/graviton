@@ -55,14 +55,20 @@ if (is_array($arCloudParams["arrFILTER"])) {
         }
     }
 }
-
 ?>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        $('#js-search-input').val('<?=$arResult["REQUEST"]["QUERY"]?>');
+    });
+</script>
 <section class="news">
     <div class="l-content">
-        <h2 class="search__title">
+        <h2 class="search__title" style="margin-bottom: 40px;">
             <?php if (isset($_GET['q']) && $_GET['q']) { ?>
-                Результаты поиска по&nbsp;запросу «<?=$arResult["REQUEST"]["QUERY"]?>»
+                <p>Результаты поиска по&nbsp;запросу «<?=$arResult["REQUEST"]["QUERY"]?>»</p>
+                <?php if (array_key_exists('ORIGINAL_QUERY', $arResult["REQUEST"])) { ?>
+                    <p style="font-size: 0.7em;">Искать по запросу <a href="/search?q=rkfdbfnehf&s=&spell=Y">«<?=$arResult["REQUEST"]["ORIGINAL_QUERY"]?>»</a></p>
+                <?php } ?>
             <?php } else { ?>
                 Поиск
             <?php } ?>
@@ -104,10 +110,13 @@ if (is_array($arCloudParams["arrFILTER"])) {
                 <?php } ?>
                 <div class="news-item">
                     <?php foreach ($arResult["SEARCH"] as $arItem) { ?>
+                        <?php
+                        $dt = date_create_from_format('d.m.Y', $arItem['DATE_CHANGE']);
+                        ?>
                     <div class="news-item__content">
                         <div class="news-item__content--preview">
-                            <div class="preview__date"> <span class="preview__date--day">20</span>
-                                <p class="preview__date--month"><?= $arItem['PROPERTIES']['DATE']; ?></p>
+                            <div class="preview__date"> <span class="preview__date--day"><?=$dt->format('d');?></span>
+                                <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
                             </div>
                             <a class="preview__more" href="<?echo $arItem["URL"]?>">
                                 <div class="preview__more--btn">Подробее</div>
@@ -134,9 +143,9 @@ if (is_array($arCloudParams["arrFILTER"])) {
                     <?php } ?>
                 </div>
 
-                <?php //if ($arParams["DISPLAY_BOTTOM_PAGER"] != "N") { ?>
-                    <? //= $arResult["NAV_STRING"];?>
-                <?php //} ?>
+                <?php if ($arParams["DISPLAY_BOTTOM_PAGER"] != "N") { ?>
+                    <?= $arResult["NAV_STRING"];?>
+                <?php } ?>
 
             <?php } else { ?>
                 <?ShowNote(GetMessage("SEARCH_NOTHING_TO_FOUND"));?>
