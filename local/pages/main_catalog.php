@@ -20,11 +20,10 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
 
 ?>
 <main class="main">
-    <div class="l-content">
 
         <?$APPLICATION->IncludeComponent(
-        "bitrix:catalog",
-        "",
+        "mpakfm:catalog",
+        "custom",
         Array(
         "TEMPLATE_THEME" => "blue",
         "IBLOCK_TYPE" => "catalog",
@@ -46,7 +45,7 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "AJAX_OPTION_JUMP" => "N",
         "AJAX_OPTION_STYLE" => "Y",
         "AJAX_OPTION_HISTORY" => "N",
-        "CACHE_TYPE" => "A",
+        "CACHE_TYPE" => "N",
         "CACHE_TIME" => "36000000",
         "CACHE_FILTER" => "N",
         "CACHE_GROUPS" => "Y",
@@ -59,7 +58,7 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "USE_SALE_BESTSELLERS" => "Y",
         "COMPARE_POSITION_FIXED" => "Y",
         "COMPARE_POSITION" => "top left",
-        "USE_FILTER" => "Y",
+        "USE_FILTER" => "N",
         "FILTER_NAME" => "",
         "FILTER_FIELD_CODE" => array(
         0 => "",
@@ -104,7 +103,7 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         ),
         "SHOW_TOP_ELEMENTS" => "N",
         "SECTION_COUNT_ELEMENTS" => "N",
-        "SECTION_TOP_DEPTH" => "1",
+        "SECTION_TOP_DEPTH" => "3",
         "SECTIONS_VIEW_MODE" => "TILE",
         "SECTIONS_SHOW_PARENT_NAME" => "Y",
         "PAGE_ELEMENT_COUNT" => "15",
@@ -121,6 +120,7 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
             4 => "CHIPSET",
             5 => "RAM_TYPE",
             6 => "HDD",
+            7 => "ADVERT",
         ),
         "INCLUDE_SUBSECTIONS" => "Y",
         "LIST_META_KEYWORDS" => "UF_KEYWORDS",
@@ -147,6 +147,8 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         "DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
         "DETAIL_PROPERTY_CODE" => [
             "CPU", "SCREEN", "CHIPSET", "GPU", "RAM_TYPE", "HDD", "CAMERA", "AUDIO", "LAN", "WLAN", "FRONT_PORTS", "SIDE_PORTS", "BACK_PORTS",
+            "RIGHT_FIELD1", "RIGHT_FIELD2", "RIGHT_VALUE1", "RIGHT_VALUE2", "VOLUME_SSD", "VOLUME_HDD", "VOLUME_SHDD", "VOLUME_RAM", "CHARACTERISTICS",
+            "BENEFIT1_TITLE", "BENEFIT1_IMG", "BENEFIT1_TEXT", "BENEFIT2_TITLE", "BENEFIT2_IMG", "BENEFIT2_TEXT", "VIDEO_TEXT", "VIDEO_LINK", "VIDEO_YEAR",
         ],
         "DETAIL_META_KEYWORDS" => "KEYWORDS",
         "DETAIL_META_DESCRIPTION" => "META_DESCRIPTION",
@@ -267,7 +269,5 @@ $iblock = CacheSelector::getIblockId('product', 'catalog');
         ),
         false
         );?>
-
-    </div>
 </main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

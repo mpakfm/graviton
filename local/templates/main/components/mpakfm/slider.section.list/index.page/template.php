@@ -19,8 +19,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult)->title('[SLIDER] $arResult');
-
 ?>
 
 <section class="products">
