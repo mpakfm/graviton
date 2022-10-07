@@ -222,7 +222,6 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 			$componentElementParams,
 			$component
 		);
-        \Mpakfm\Printu::obj($elementId)->title('$elementId');
 		?>
 	</div>
 </div>

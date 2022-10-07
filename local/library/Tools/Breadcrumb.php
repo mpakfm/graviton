@@ -11,7 +11,6 @@ namespace Library\Tools;
 
 use CIBlockElement;
 use CIBlockSection;
-use Mpakfm\Printu;
 
 class Breadcrumb
 {
@@ -93,6 +92,5 @@ class Breadcrumb
                 ];
             }
         }
-        Printu::obj(self::$chain)->title('[Breadcrumb::setChain] self::$chain');
     }
 }

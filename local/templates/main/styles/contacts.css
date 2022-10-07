@@ -241,6 +241,10 @@
   box-sizing: content-box;
 }
 
+.s-social__send .support {
+  margin-right: 2.1875rem;
+}
+
 .s-social__item-text {
   display: block;
   font-weight: 400;
@@ -398,6 +402,7 @@
   .s-social__send .phone {
     min-width: 8.25rem;
     display: block;
+    white-space: nowrap;
     order: 0;
     border-right: 1px solid #bdbec599;
     padding-right: 3.3125rem;
@@ -490,6 +495,9 @@
   .s-contacts__driving-prefix {
     font-size: 0.8125rem;
     line-height: 0.9375rem;
+    max-width: 28.75rem;
+    margin-right: auto;
+    margin-left: 5.5rem;
   }
 
   .s-contacts__driving-location {
@@ -506,12 +514,13 @@
   }
 
   .s-contacts__location-btn {
-    margin-left: 0rem;
-    margin-right: 6.875rem;
+    margin-left: 23.4375rem;
+    margin-right: auto;
   }
 
   .s-social__send {
     margin-bottom: 8.4375rem;
+    justify-content: space-between;
   }
 
   .s-social__send-item {
@@ -595,8 +604,6 @@
   }
 
   .s-contacts__driving-prefix {
-    max-width: 28.75rem;
-    margin-right: auto;
     margin-left: 5.4375rem;
   }
 
@@ -619,7 +626,6 @@
   }
 
   .s-social__send {
-    justify-content: space-between;
     margin-bottom: 9.6875rem;
   }
 
@@ -719,7 +725,8 @@
   }
 
   .s-contacts__location-btn {
-    margin-right: 9.375rem;
+    margin-right: auto;
+    margin-left: 22.5rem;
   }
 
   .s-contacts__location-size {

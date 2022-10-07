@@ -21,8 +21,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 $this->setFrameMode(true);
-?>
 
+?>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        console.log('[header search]');
+        $('a.js-search').click(function(){
+            console.log('click');
+            let link = $(this).attr('href');
+            console.log('link', link);
+            window.location = link;
+            return;
+        });
+    });
+    //js-search
+</script>
 <div class="search">
     <form class="form form--search" action="<?=$arResult["FORM_ACTION"]?>">
         <div class="form__input">
@@ -31,11 +44,17 @@ $this->setFrameMode(true);
                     <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
                 </svg>
             </div>
-            <input type="text" name="q" placeholder="Ноутбук" <?=(array_key_exists('q', $_REQUEST) && !empty($_REQUEST['q']) ? 'value="' . $_REQUEST['q'] . '"' : '');?>>
-            <div class="search__result">
-                <div class="search__result-title">Популярные запросы</div>
-                <div class="search__result-items"><a class="search__result-item" href="">Ноутбук 1</a><a class="search__result-item" href="">Ноутбук 2</a><a class="search__result-item" href="">Ноутбук 3</a><a class="search__result-item" href="">Ноутбук 4</a></div>
-            </div>
+            <input id="js-search-input" style="color: #ceced0;" type="text" name="q" placeholder="Ноутбук" <?=(array_key_exists('q', $_REQUEST) && !empty($_REQUEST['q']) ? 'value="' . $_REQUEST['q'] . '"' : '');?>>
+            <?php if($arParams["USE_SUGGEST"] === "Y") { ?>
+                <div class="search__result">
+                    <div class="search__result-title">Популярные запросы</div>
+                    <div class="search__result-items">
+                        <?php foreach ($arResult['SUGGEST'] as $phrase) { ?>
+                        <a class="search__result-item js-search" href="/search?q=<?=$phrase;?>&s=&spell=Y"><?=$phrase;?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
         <div class="form__submit">
             <button class="btn btn--search" type="submit" name="s" >
