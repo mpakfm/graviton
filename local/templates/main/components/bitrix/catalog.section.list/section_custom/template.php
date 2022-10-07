@@ -159,7 +159,6 @@ if (!empty($imagesIds)) {
 </section>
 <?php
 $chain = \Library\Tools\Breadcrumb::$chain;
-\Mpakfm\Printu::obj($chain)->title('[TPL] $chain');
 $activeLine = $activeChild['CHILDREN'][0]['CODE'];
 if (array_key_exists(3, $chain)) {
     $activeLine = $chain[3]['code'];
@@ -244,7 +243,7 @@ if (array_key_exists(3, $chain)) {
                             </div>
                             <a class="s-goods__item--more" href="<?=$product['URL'];?>">Подробнее</a><a class="s-goods__item--buy" href="#popup-categories" data-fancybox>Где купить</a>
                         </div>
-                        <?php } $upKey = $key + 1; \Mpakfm\Printu::obj($upKey)->title('$upKey'); \Mpakfm\Printu::obj($activeChild['CHILDREN'][$upKey])->title('CHILDREN $upKey'); ?>
+                        <?php } $upKey = $key + 1; ?>
                         <?php if (array_key_exists($upKey, $activeChild['CHILDREN'])) { ?>
                             <?php if (!empty($activeChild['CHILDREN'][$upKey]['PRODUCTS'])) { $product = $activeChild['CHILDREN'][$upKey]['PRODUCTS'][0]; ?>
                             <div class="s-goods__content--item last-item">

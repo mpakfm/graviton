@@ -20,7 +20,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vend
 
 $searchParam = [
     "PAGE"        => "/search",
-    "USE_SUGGEST" => "N",
+    "USE_SUGGEST" => "Y",
 ];
 
 ?>

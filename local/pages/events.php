@@ -24,8 +24,6 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 $iblock = CacheSelector::getIblockId('events', 'content');
 
-\Mpakfm\Printu::obj($CODE)->title('[events] $CODE');
-
 if (!empty($CODE)) {
     $params = [
         "DISPLAY_DATE" => "Y",

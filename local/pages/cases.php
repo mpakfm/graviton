@@ -24,8 +24,6 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 $iblock = CacheSelector::getIblockId('cases', 'content');
 
-\Mpakfm\Printu::obj($CODE)->title('[cases] $CODE');
-
 if (!empty($CODE)) {
     $params = [
         "DISPLAY_DATE" => "Y",

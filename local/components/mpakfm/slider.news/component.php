@@ -24,8 +24,6 @@ if (!isset($arParams["CACHE_TIME"])) {
 $curdt        = new DateTimeImmutable();
 $currentMonth = $curdt->format('m');
 $nextMonth    = $curdt->add(DateInterval::createFromDateString('1 month'));
-\Mpakfm\Printu::obj($currentMonth)->title('[component] $currentMonth');
-\Mpakfm\Printu::obj($nextMonth)->title('[component] $nextMonth');
 
 $arParams["IBLOCK_TYPE"] = trim($arParams["IBLOCK_TYPE"]);
 if ($arParams["IBLOCK_TYPE"] == '') {
@@ -58,8 +56,6 @@ foreach ($arParams["IBLOCKS"] as $k => $v) {
         unset($arParams["IBLOCKS"][$k]);
     }
 }
-\Mpakfm\Printu::obj($arParams['IBLOCKS'])->title('[component] IBLOCKS');
-\Mpakfm\Printu::obj($arParams['LIMIT'])->title('[component] LIMIT');
 
 if (!is_array($arParams["FIELD_CODE"])) {
     $arParams["FIELD_CODE"] = [];
@@ -167,14 +163,9 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
         //$arFilter['>=DATE_ACTIVE_FROM'] = "01." . $curdt->format('m.Y') . ' 00:00:00';
         $arFilter['<DATE_ACTIVE_FROM']  = "01." . $nextMonth->format('m.Y') . ' 23:59:59';
 
-        \Mpakfm\Printu::obj($iblockCode)->title('[component] $iblockCode');
-        \Mpakfm\Printu::obj($arOrder)->title('[component] $arOrder');
-        \Mpakfm\Printu::obj($arFilter)->title('[component] $arFilter');
-        \Mpakfm\Printu::obj($arParams['LIMIT'][$iblockCode])->title('[component] nTopCount');
-
         $rsItems = CIBlockElement::GetList($arOrder, $arFilter, false, ["nTopCount" => $arParams['LIMIT'][$iblockCode]], $arSelect);
         $rsItems->SetUrlTemplates($arParams["DETAIL_URL"]);
-        \Mpakfm\Printu::obj($rsItems->SelectedRowsCount())->title('[component] SelectedRowsCount');
+
         while ($arItem = $rsItems->GetNext()) {
 
             if (strpos($arItem['ACTIVE_FROM'], ' ') !== false) {
@@ -205,16 +196,6 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
             } else {
                 $arItem["DISPLAY_ACTIVE_FROM"] = "";
             }
-            \Mpakfm\Printu::obj([
-                'ID' => $arItem['ID'],
-                'IBLOCK_ID' => $arItem['IBLOCK_ID'],
-                'NAME' => $arItem['NAME'],
-                'ACTIVE_FROM' => $arItem['ACTIVE_FROM'],
-                'PREVIEW_TEXT' => $arItem['PREVIEW_TEXT'],
-                'PREVIEW_PICTURE' => $arItem['PREVIEW_PICTURE'],
-                'MONTH' => $arItem['MONTH'],
-                'DAY' => $arItem['DAY'],
-            ])->title('$arItem');
 
             Iblock\InheritedProperty\ElementValues::queue($arItem["IBLOCK_ID"], $arItem["ID"]);
 
