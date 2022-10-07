@@ -55,14 +55,21 @@ if (is_array($arCloudParams["arrFILTER"])) {
         }
     }
 }
-
+//\Mpakfm\Printu::obj($arResult)->title('[search:page] $arResult');
 ?>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        $('#js-search-input').val('<?=$arResult["REQUEST"]["QUERY"]?>');
+    });
+</script>
 <section class="news">
     <div class="l-content">
-        <h2 class="search__title">
+        <h2 class="search__title" style="margin-bottom: 40px;">
             <?php if (isset($_GET['q']) && $_GET['q']) { ?>
-                Результаты поиска по&nbsp;запросу «<?=$arResult["REQUEST"]["QUERY"]?>»
+                <p>Результаты поиска по&nbsp;запросу «<?=$arResult["REQUEST"]["QUERY"]?>»</p>
+                <?php if (array_key_exists('ORIGINAL_QUERY', $arResult["REQUEST"])) { ?>
+                    <p style="font-size: 0.7em;">Искать по запросу <a href="/search?q=rkfdbfnehf&s=&spell=Y">«<?=$arResult["REQUEST"]["ORIGINAL_QUERY"]?>»</a></p>
+                <?php } ?>
             <?php } else { ?>
                 Поиск
             <?php } ?>
