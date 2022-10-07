@@ -55,7 +55,6 @@ if (is_array($arCloudParams["arrFILTER"])) {
         }
     }
 }
-//\Mpakfm\Printu::obj($arResult)->title('[search:page] $arResult');
 ?>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -111,10 +110,13 @@ if (is_array($arCloudParams["arrFILTER"])) {
                 <?php } ?>
                 <div class="news-item">
                     <?php foreach ($arResult["SEARCH"] as $arItem) { ?>
+                        <?php
+                        $dt = date_create_from_format('d.m.Y', $arItem['DATE_CHANGE']);
+                        ?>
                     <div class="news-item__content">
                         <div class="news-item__content--preview">
-                            <div class="preview__date"> <span class="preview__date--day">20</span>
-                                <p class="preview__date--month"><?= $arItem['PROPERTIES']['DATE']; ?></p>
+                            <div class="preview__date"> <span class="preview__date--day"><?=$dt->format('d');?></span>
+                                <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
                             </div>
                             <a class="preview__more" href="<?echo $arItem["URL"]?>">
                                 <div class="preview__more--btn">Подробее</div>
@@ -141,9 +143,9 @@ if (is_array($arCloudParams["arrFILTER"])) {
                     <?php } ?>
                 </div>
 
-                <?php //if ($arParams["DISPLAY_BOTTOM_PAGER"] != "N") { ?>
-                    <? //= $arResult["NAV_STRING"];?>
-                <?php //} ?>
+                <?php if ($arParams["DISPLAY_BOTTOM_PAGER"] != "N") { ?>
+                    <?= $arResult["NAV_STRING"];?>
+                <?php } ?>
 
             <?php } else { ?>
                 <?ShowNote(GetMessage("SEARCH_NOTHING_TO_FOUND"));?>
