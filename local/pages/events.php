@@ -18,10 +18,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $breadcrumb = Breadcrumb::init();
 $breadcrumb->setIblock('events', 'content')->setChain('events');
 
-$APPLICATION->SetTitle("Graviton - Мероприятия");
-$APPLICATION->SetPageProperty('description', 'Graviton description');
-$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
-
 $iblock = CacheSelector::getIblockId('events', 'content');
 
 if (!empty($CODE)) {
@@ -54,9 +50,7 @@ if (!empty($CODE)) {
         "ADD_SECTIONS_CHAIN" => "Y",
         "ADD_ELEMENT_CHAIN" => "N",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "USE_PERMISSIONS" => "Y",
-        "GROUP_PERMISSIONS" => Array("1"),
-        "CACHE_TYPE" => "N",
+        "CACHE_TYPE" => "Y",
         "CACHE_TIME" => "3600",
         "CACHE_GROUPS" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
