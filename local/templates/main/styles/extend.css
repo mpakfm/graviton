@@ -1,30 +1,7 @@
-.header__logo {
-    cursor: pointer;
+.js-error {
+    border-color: red !important;
 }
-.header__logo a {
-    display: contents;
-}
-.l-content h1 {
-    margin: 30px 0px 20px 0px;
-}
-.bx-404-block {
-    float: left;
-}
-.bx-404-text-block {
-    padding: 10px 0px;
-    font-size: 1.6em;
-    line-height: 120%
-}
-.bx-404-text-block a {
-    text-decoration: underline;
-}
-.search .form--search .form__input input {
-    color: white;
-}
-.search__title {
-    margin-bottom: 20px;
-}
-.menu__item-link.active {
-    color: #d91745 !important;
-    text-decoration: underline;
+.non-active {
+    opacity: 0.4;
+    cursor: default;
 }

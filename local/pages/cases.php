@@ -50,7 +50,7 @@ if (!empty($CODE)) {
         "ADD_SECTIONS_CHAIN" => "Y",
         "ADD_ELEMENT_CHAIN" => "N",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "CACHE_TYPE" => "Y",
+        "CACHE_TYPE" => "A",
         "CACHE_TIME" => "3600",
         "CACHE_GROUPS" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
