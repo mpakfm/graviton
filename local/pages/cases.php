@@ -18,10 +18,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $breadcrumb = Breadcrumb::init();
 $breadcrumb->setIblock('cases', 'content')->setChain('cases');
 
-$APPLICATION->SetTitle("Graviton - Case");
-$APPLICATION->SetPageProperty('description', 'Graviton description');
-$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
-
 $iblock = CacheSelector::getIblockId('cases', 'content');
 
 if (!empty($CODE)) {
@@ -54,9 +50,7 @@ if (!empty($CODE)) {
         "ADD_SECTIONS_CHAIN" => "Y",
         "ADD_ELEMENT_CHAIN" => "N",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "USE_PERMISSIONS" => "Y",
-        "GROUP_PERMISSIONS" => Array("1"),
-        "CACHE_TYPE" => "N",
+        "CACHE_TYPE" => "A",
         "CACHE_TIME" => "3600",
         "CACHE_GROUPS" => "Y",
         "DISPLAY_TOP_PAGER" => "N",

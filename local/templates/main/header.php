@@ -11,10 +11,13 @@
 
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
+use Library\Tools\CookieSecret;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/extend.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $searchParam = [
     "PAGE"        => "/search",
@@ -53,6 +56,8 @@ $searchParam = [
 </head>
 <body data-scroll-container>
     <div id="panel"><?$APPLICATION->ShowPanel();?></div>
+    <?php CookieSecret::setCookieValue(); ?>
+    <?=CookieSecret::getJsFunction();?>
     <header class="header">
         <div class="l-default">
             <div class="header__wrapper">
@@ -113,7 +118,7 @@ $searchParam = [
                 "ELEMENT_FIELDS" => ["ID", "CODE", "NAME", "SORT", "PREVIEW_PICTURE"],
                 "ELEMENT_USER_FIELDS" => ["PROPERTY_LINK", "PROPERTY_LINK", "PROPERTY_BLANK", "PROPERTY_POPUP_CLASS"],
                 "ADD_SECTIONS_CHAIN" => "Y",
-                "CACHE_TYPE" => "N",
+                "CACHE_TYPE" => "A",
                 "CACHE_TIME" => "36000000",
                 "CACHE_NOTES" => "",
                 "CACHE_GROUPS" => "Y"
@@ -138,15 +143,15 @@ $searchParam = [
             <div class="close"> <span></span><span></span></div>
         <div class="s-contact-us__item"><a class="s-contact-us__item-phone" href="tel:+78005008886">8-800-500-88-86</a><a class="s-contact-us__item-btn btn btn--grey" href="tel:+78005008886">Позвонить</a></div>
             <div class="s-contact-us__item">
-                <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:">Написать</a>
+                <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
             </div>
             <div class="s-contact-us__item">
-                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div><a class="s-contact-us__item-btn btn btn--grey" href="">Написать</a>
+                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
             </div>
         </div>
     </div>
     <div class="popup popup-form popup-registration" id="popup-registration">
-        <form class="form">
+        <form id="header-registration" class="form">
             <h5 class="form__title">Форма регистрации</h5>
             <div class="form__inputs">
                 <div class="form__input">
@@ -172,12 +177,12 @@ $searchParam = [
             </div>
             <div class="form__checkboxes">
                 <div class="form__checkbox">
-                    <input class="form__checkbox-input" type="checkbox">
+                    <input name="robot" class="form__checkbox-input" type="checkbox">
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я не робот</div>
                 </div>
                 <div class="form__checkbox">
-                    <input class="form__checkbox-input" type="checkbox">
+                    <input name="terms" class="form__checkbox-input" type="checkbox" checked>
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я согласен с условиями обработки персональных данных.</div>
                 </div>

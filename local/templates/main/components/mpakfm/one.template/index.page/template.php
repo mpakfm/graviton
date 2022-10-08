@@ -104,7 +104,7 @@ $slider = [
     "SORT_ORDER1"         => "ASC",
     "SORT_BY2"            => "NAME",
     "SORT_ORDER2"         => "ASC",
-    "CACHE_TYPE"          => "N",
+    "CACHE_TYPE"          => "A",
     "CACHE_TIME"          => "3600",
     "CACHE_GROUPS"        => "Y",
 ];
@@ -161,7 +161,7 @@ $sliderNews = [
     "SORT_BY2"           => "name",
     "SORT_ORDER2"        => "asc",
     "TITLE"              => "Новости",
-    "CACHE_TYPE"         => "N",
+    "CACHE_TYPE"         => "A",
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
@@ -177,7 +177,7 @@ $cases = [
     "SORT_BY2"           => "NAME",
     "SORT_ORDER2"        => "ASC",
     "TITLE"              => "Меню",
-    "CACHE_TYPE"         => "Y",
+    "CACHE_TYPE"         => "A",
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
@@ -191,7 +191,7 @@ $partners = [
     "SORT_BY2"           => "NAME",
     "SORT_ORDER2"        => "ASC",
     "TITLE"              => "Меню",
-    "CACHE_TYPE"         => "Y",
+    "CACHE_TYPE"         => "A",
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];
@@ -210,7 +210,7 @@ $partners = [
             </div>
             <video class="main-top__notebook-video lazy" autoplay="autoplay" loop="loop" preload="auto" muted>
                 <source data-src="videos/1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-            </video><a class="main-top__more" href="">
+            </video><a class="main-top__more non-active" href="javascript:void(0);">
                 <div class="main-top__more-text">Подробнее о продукте</div>
                 <div class="main-top__more-icon">
                     <svg class="ico ico-mono-arrow-more">
