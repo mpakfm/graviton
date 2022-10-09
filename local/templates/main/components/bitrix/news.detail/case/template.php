@@ -57,13 +57,19 @@ $this->setFrameMode(true);
                             Вернуться к списку кейсов <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg></a>
-                        <div class="news-detail__more--btn"> <a class="news-detail__btn--prev">
+                        <!--
+                        <div class="news-detail__more--btn">
+                            <a class="news-detail__btn--prev">
                                 <svg class="ico ico-color-arrow-circle">
                                     <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>
-                                </svg></a><a class="news-detail__btn--next">
+                                </svg></a>
+                            <a class="news-detail__btn--next">
                                 <svg class="ico ico-color-arrow-circle">
                                     <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>
-                                </svg></a></div>
+                                </svg>
+                            </a>
+                        </div>
+                        -->
                     </div>
                 </div>
             </div>

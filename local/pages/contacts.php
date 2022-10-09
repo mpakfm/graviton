@@ -32,7 +32,8 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
                         <div class="s-contacts__item-prefix">* Въезд на территорию складского комплекса «Холмогоры» осуществляется по предварительному заказу пропуска через курирующего менеджера или через наш отдел по работе с клиентами и документами. В обоих случаях для  заказа пропуска необходимо иметь документы, подтверждающие цель приезда.</div>
                     </div>
                 </div>
-                <div class="s-contacts__box"><a class="s-contacts__box-popup" href="https://yandex.ru/maps/-/CCUZMZfxSB">посмотреть на карте</a>
+                <div class="s-contacts__box">
+                    <a class="s-contacts__box-popup" href="https://yandex.ru/maps/-/CCUZMZfxSB">посмотреть на карте</a>
                     <div class="s-contacts__box-container">
                         <div class="s-contacts__box-subtitle">Адрес: </div>
                         <div class="s-contacts__box-text">Москвская область, Старое Ярославское ш., д. 1</div>
@@ -55,18 +56,22 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
                     <div class="s-contacts__driving-prefix">Если вы планируете посетить наш офис или проехать на склад Гравитон, воспользуйтесь нашими рекомендациями. Скачайте схему проезда.</div>
                     <div class="s-contacts__driving-location">
                         <div class="s-contacts__location-item">
-                            <div class="s-contacts__location-title">Главный офис</div><a class="s-contacts__location-btn">
+                            <div class="s-contacts__location-title">Главный офис</div>
+                            <a class="s-contacts__location-btn">
                                 <svg class="ico ico-mono-download">
                                     <use xlink:href="img/sprite-mono.svg#ico-mono-download"></use>
                                 </svg>
-                                <div class="s-contacts__location-size">76 мб</div></a>
+                                <div class="s-contacts__location-size">76 мб</div>
+                            </a>
                         </div>
                         <div class="s-contacts__location-item">
-                            <div class="s-contacts__location-title">Производство / склад</div><a class="s-contacts__location-btn">
+                            <div class="s-contacts__location-title">Производство / склад</div>
+                            <a class="s-contacts__location-btn">
                                 <svg class="ico ico-mono-download">
                                     <use xlink:href="img/sprite-mono.svg#ico-mono-download"></use>
                                 </svg>
-                                <div class="s-contacts__location-size">76 мб</div></a>
+                                <div class="s-contacts__location-size">76 мб</div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -76,20 +81,22 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
     <section class="s-social">
         <div class="l-default">
             <div class="l-content">
-                <div class="s-social__phone"><a class="s-social__phone-tel" href="tel:88005008886">8-800-500-88-86</a>
+                <div class="s-social__phone">
+                    <a class="s-social__phone-tel" href="tel:88005008886">8-800-500-88-86</a>
                     <div class="s-social__phone-btn btn-social">Позвонить</div>
                 </div>
                 <div class="s-social__send">
-                    <div class="s-social__send-item phone"><a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a>
-                        <div class="s-social__phone-btn btn-social">Позвонить</div>
+                    <div class="s-social__send-item phone">
+                        <a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a>
+                        <div class="s-social__phone-btn btn-social"><a href="tel:88005008886">Позвонить</a></div>
                     </div>
                     <div class="s-social__send-item support">
                         <div class="s-social__item-text">Обратитесь в службу технической поддержки</div>
-                        <div class="s-social__item-btn btn-social">Написать</div>
+                        <div class="s-social__item-btn btn-social"><a href="mailto:sale@graviton.ru">Написать</a></div>
                     </div>
                     <div class="s-social__send-item mail">
                         <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div>
-                        <div class="s-social__item-btn btn-social">Написать</div>
+                        <div class="s-social__item-btn btn-social"><a href="mailto:sale@graviton.ru">Написать</a></div>
                     </div>
                 </div>
                 <div class="s-social__link">

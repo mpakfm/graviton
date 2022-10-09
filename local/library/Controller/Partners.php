@@ -26,7 +26,7 @@ Email: {$_POST['email']}
 Название компании: {$_POST['company']}
 
         ";
-        mail('mpakfm@gmail.com', $subj, $text);
+        mail('sale@graviton.ru', $subj, $text);
 
         $this->response['result'] = true;
         return true;

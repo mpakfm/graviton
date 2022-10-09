@@ -231,7 +231,9 @@ $isAdmin = $USER->IsAdmin();
             <?php } ?>
         </div>
         <div class="s-product-tech__buttons">
-            <button class="s-product-tech__button s-product-tech__button-more btn btn--bordered" type="button">Развернуть</button><a class="s-product-tech__button btn btn--bordered" href="#" download>Скачать</a><a class="s-product-tech__button btn btn--bordered" href="#" target="_blank">Информация о гарантии</a>
+            <button class="s-product-tech__button s-product-tech__button-more btn btn--bordered" type="button">Развернуть</button>
+            <a class="s-product-tech__button btn btn--bordered non-active" href="javascript::void(0);" download>Скачать</a>
+            <a class="s-product-tech__button btn btn--bordered non-active" href="javascript::void(0);" >Информация о гарантии</a><!-- target="_blank" -->
         </div>
     </div>
 </section>
