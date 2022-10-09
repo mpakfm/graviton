@@ -55,11 +55,21 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle"><?=$item['DISPLAY_PROPERTIES']['SUBTITLE']['DISPLAY_VALUE'];?></div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name"><?=$item['NAME'];?></div><a class="product__link" href="">
-                                            <img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name"><?=$item['NAME'];?></div>
+                                        <a class="product__link" href="<?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?>">
+                                            <img class="lazy" data-src="img/svg/arrow-half.svg" alt="">
+                                        </a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
+                                        <?php if ($item['DISPLAY_PROPERTIES']['RAM']['DISPLAY_VALUE']) { ?>
+                                            <div class="product__info-item">
+                                                <div class="product__info-caption">Ссылка</div>
+                                                <div class="product__info-text">
+                                                    <a href="<?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?>"><?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?></a>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
                                         <?php if ($item['DISPLAY_PROPERTIES']['RAM']['DISPLAY_VALUE']) { ?>
                                         <div class="product__info-item">
                                             <div class="product__info-caption">Оперативная память</div>

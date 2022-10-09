@@ -241,7 +241,8 @@ if (array_key_exists(3, $chain)) {
                                 <div class="s-goods__item--subtitle"><?=$product['PROPERTY_SUBTITLE_VALUE'];?></div>
                                 <div class="s-goods__item--specifications"><?=$product['PREVIEW_TEXT'];?></div>
                             </div>
-                            <a class="s-goods__item--more" href="<?=$product['URL'];?>">Подробнее</a><a class="s-goods__item--buy" href="#popup-categories" data-fancybox>Где купить</a>
+                            <a class="s-goods__item--more" href="<?=$product['URL'];?>">Подробнее</a>
+                            <a class="s-goods__item--buy js-item-by" data-name="<?=$product['NAME'];?>" data-img="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" href="#popup-categories" data-fancybox>Где купить</a>
                         </div>
                         <?php } $upKey = $key + 1; ?>
                         <?php if (array_key_exists($upKey, $activeChild['CHILDREN'])) { ?>

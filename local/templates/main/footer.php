@@ -97,18 +97,38 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                     <div class="footer__info-mobile--right"></div>
                   </div>
                 </div>
+                <div class="non-active">
                 <div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
                 <form class="form footer__subscribe">
                     <div class="form__inputs">
                         <div class="form__input">
-                            <input type="email" name="email" placeholder="Укажите ваш e-mail">
+                            <input type="email" name="email" placeholder="Укажите ваш e-mail" disabled>
                         </div>
                         <div class="form__submit">
-                            <button class="btn btn--bordered" type="submit">Подписаться</button>
+                            <button class="btn btn--bordered" type="submit" disabled>Подписаться</button>
                         </div>
                     </div>
                     <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
                 </form>
+                </div>
+                <?php
+                /*
+                <?$APPLICATION->IncludeComponent("bitrix:sender.subscribe","custom",Array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "USE_PERSONALIZATION" => "Y",
+                        "CONFIRMATION" => "Y",
+                        "SHOW_HIDDEN" => "Y",
+                        "AJAX_MODE" => "Y",
+                        "AJAX_OPTION_JUMP" => "Y",
+                        "AJAX_OPTION_STYLE" => "Y",
+                        "AJAX_OPTION_HISTORY" => "Y",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "3600",
+                        "SET_TITLE" => "Y"
+                    )
+                );?>
+                */
+                ?>
                 <div class="footer__address-container">
                     <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
                 </div>
@@ -165,6 +185,32 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
         </div>
         <button class="form__submit btn btn--black" type="submit">Отправить</button>
     </form>
+</div>
+
+<div class="popup popup-categories" id="popup-categories">
+    <div class="popup-categories__container">
+        <div class="popup-categories__title"></div><!--Ноутбук Н15И-К2-->
+        <div class="popup-categories__img">
+            <picture>
+                <!--
+                <source data-srcset="img/popup/categories/lap.png" type="image/png"/>
+                <img class="lazy" data-src="img/popup/categories/lap.png" alt=""/>-->
+                <img class="lazy" src="/local/templates/main/img/goods/no-image-240x130.png" />
+            </picture>
+        </div>
+        <div class="popup-categories__partners">
+            <h2 class="title title--h2 text-center">Где купить ?</h2>
+            <div class="s-partners__wrapper">
+                <div class="s-partners__items">
+                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/3logic.svg" alt=""></div>
+                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/elbrus.svg" alt=""></div>
+                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/basealt.svg" alt=""></div>
+                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/astralinux.svg" alt=""></div>
+                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/code.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

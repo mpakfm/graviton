@@ -22,7 +22,6 @@ class CookieSecret
         $rand               = rand(1, 10);
         $secretCode         = static::$secret . md5(time()) . $rand;
         $_SESSION['BX_IDX'] = $secretCode;
-        Printu::obj($_SESSION['BX_IDX'])->title('[setCookieValue] BX_IDX');
     }
 
     public static function checkString(): void
@@ -47,7 +46,6 @@ class CookieSecret
         $offset     = $_SESSION['BX_IDX'][($strlen - 1)];
         $str        = substr($_SESSION['BX_IDX'], $offset);
 
-        Printu::obj($str)->title('[getJsFunction] $str');
         $jsFunction = <<<JS
 <script>
 function getCx() {

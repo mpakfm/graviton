@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="submenu__items">
                                     <?php foreach ($item['CHILD'] as $secondLevel) { ?>
-                                    <div class="submenu__item tmp23">
+                                    <div class="submenu__item">
                                         <div class="submenu__item-top">
                                             <a class="submenu__item-link" href="<?=$secondLevel['LINK'];?>">
                                                 <div class="submenu__item-text"><?=$secondLevel['NAME'];?></div>
