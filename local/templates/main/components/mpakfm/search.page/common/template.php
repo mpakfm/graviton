@@ -61,7 +61,7 @@ if (is_array($arCloudParams["arrFILTER"])) {
         $('#js-search-input').val('<?=$arResult["REQUEST"]["QUERY"]?>');
     });
 </script>
-<section class="news">
+<section class="news" style="background-image: url('img/news/back.jpg');">
     <div class="l-content">
         <h2 class="search__title" style="margin-bottom: 40px;">
             <?php if (isset($_GET['q']) && $_GET['q']) { ?>

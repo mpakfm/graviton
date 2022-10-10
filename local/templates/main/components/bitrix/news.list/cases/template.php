@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 
 ?>
 
-<section class="news">
+<section class="news" style="background-image: url('img/news/back.jpg');">
     <div class="l-content">
         <div class="news__container">
             <div class="news-item">
