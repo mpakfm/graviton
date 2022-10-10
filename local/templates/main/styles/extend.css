@@ -5,3 +5,7 @@
     opacity: 0.4;
     cursor: default;
 }
+.admin-link {
+    color: #e4f0f7;
+    text-decoration: underline;
+}

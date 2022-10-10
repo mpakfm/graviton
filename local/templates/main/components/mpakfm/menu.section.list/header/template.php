@@ -6,6 +6,7 @@
  * Date:    29.09.2022
  * Time:    11:23
  */
+/** @var CUser $USER */
 /** @var array $arResult */
 
 ?>
@@ -90,6 +91,18 @@
                             <?php } ?>
                         </div>
                     <?php } // end foreach ?>
+                    <?php if ($USER->IsAdmin()) {?>
+                    <div class="menu__item">
+                        <a class="menu__item-link" href="/admin-docs">
+                            <div class="menu__item-text">Help</div>
+                        </a>
+                        <div class="menu__item-icon">
+                            <svg class="ico ico-mono-arrow-fat">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
             </nav>
         </div>
