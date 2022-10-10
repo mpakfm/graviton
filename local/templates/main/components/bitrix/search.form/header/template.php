@@ -25,14 +25,7 @@ $this->setFrameMode(true);
 ?>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        console.log('[header search]');
-        $('a.js-search').click(function(){
-            console.log('click');
-            let link = $(this).attr('href');
-            console.log('link', link);
-            window.location = link;
-            return;
-        });
+
     });
     //js-search
 </script>

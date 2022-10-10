@@ -8,6 +8,8 @@
  */
 /** @var CMain $APPLICATION */
 
+define("BODY_CLASS", "SEARCH");
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("Graviton - Поиск");

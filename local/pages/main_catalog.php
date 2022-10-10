@@ -10,6 +10,8 @@
 
 use Library\Tools\CacheSelector;
 
+define("BODY_CLASS", "CATALOG");
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("Graviton - каталог");

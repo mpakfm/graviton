@@ -12,6 +12,8 @@
 use Bitrix\Main\Page\Asset;
 use Library\Tools\CacheSelector;
 
+define("BODY_CLASS", "PARTNERS");
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/partners.css">', true);
