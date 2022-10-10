@@ -29,7 +29,7 @@ $this->setFrameMode(true);
             <h1 class="title title--h2">Наши партнеры</h1>
             <div class="s-partners-content__items">
                 <?php foreach ($arResult["ITEMS"] as $arItem) { ?>
-                    <div class="s-partners-content__item"><img class="lazy" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
+                    <div class="s-partners-content__item"><img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
                 <?php } ?>
             </div>
         </div>

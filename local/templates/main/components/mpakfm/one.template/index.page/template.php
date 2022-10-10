@@ -205,11 +205,11 @@ $partners = [
             <div class="main-top__notebook-img">
                 <picture>
                     <source data-srcset="img/main-top/notebook.webp" type="image/webp"/>
-                    <source data-srcset="img/main-top/notebook.png" type="image/png"/><img class="lazy" data-src="img/main-top/notebook.png" alt=""/>
+                    <source data-srcset="img/main-top/notebook.png" type="image/png"/><img src="img/main-top/notebook.png" alt=""/>
                 </picture>
             </div>
-            <video class="main-top__notebook-video lazy" autoplay="autoplay" loop="loop" preload="auto" muted>
-                <source data-src="videos/1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+            <video class="main-top__notebook-video" autoplay="autoplay" loop="loop" preload="auto" muted>
+                <source src="videos/1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
             </video><a class="main-top__more non-active" href="javascript:void(0);">
                 <div class="main-top__more-text">Подробнее о продукте</div>
                 <div class="main-top__more-icon">

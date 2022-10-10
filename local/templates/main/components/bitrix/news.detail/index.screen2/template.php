@@ -22,7 +22,7 @@ $this->setFrameMode(true);
 
 <section class="s-characteristics">
     <div class="l-default">
-        <div class="s-characteristics__img"><img class="lazy" data-src="img/svg/tube.svg" alt=""></div>
+        <div class="s-characteristics__img"><img src="img/svg/tube.svg" alt=""></div>
         <div class="s-characteristics__items">
             <div class="s-characteristics__item">
                 <div class="s-characteristics__item-content">

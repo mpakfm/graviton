@@ -279,8 +279,7 @@ $isAdmin = $USER->IsAdmin();
                 <div class="s-product-video__notebook">
                     <div class="s-product-video__notebook-img">
                         <picture>
-                            <source data-srcset="img/product-video/1.webp" type="image/webp"/>
-                            <source data-srcset="img/product-video/1.png" type="image/png"/><img class="lazy" data-src="img/product-video/1.png" alt=""/>
+                            <img src="img/product-video/1.png" alt=""/>
                         </picture>
                     </div><a class="s-product-video__notebook-monitor" href="https://www.youtube.com/watch?v=JK0_bzukdX0" data-fancybox></a>
                 </div>
@@ -420,11 +419,11 @@ $isAdmin = $USER->IsAdmin();
     <div class="l-default">
         <h2 class="title title--h2 text-center">Где купить ?</h2>
         <div class="s-partners__items s-partners__type-two">
-            <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/3logic.svg" alt=""></div>
-            <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/elbrus.svg" alt=""></div>
-            <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/basealt.svg" alt=""></div>
-            <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/astralinux.svg" alt=""></div>
-            <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/code.svg" alt=""></div>
+            <div class="s-partners__item"><img src="img/svg/logos/3logic.svg" alt=""></div>
+            <div class="s-partners__item"><img src="img/svg/logos/elbrus.svg" alt=""></div>
+            <div class="s-partners__item"><img src="img/svg/logos/basealt.svg" alt=""></div>
+            <div class="s-partners__item"><img src="img/svg/logos/astralinux.svg" alt=""></div>
+            <div class="s-partners__item"><img src="img/svg/logos/code.svg" alt=""></div>
             <div class="s-partners__item s-partners__btn-wrap"><a class="s-partners__btn" href="mailto:mail@mail.com">Стать партнером</a></div>
         </div>
     </div>

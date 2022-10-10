@@ -194,19 +194,19 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
             <picture>
                 <!--
                 <source data-srcset="img/popup/categories/lap.png" type="image/png"/>
-                <img class="lazy" data-src="img/popup/categories/lap.png" alt=""/>-->
-                <img class="lazy" src="/local/templates/main/img/goods/no-image-240x130.png" />
+                <img src="img/popup/categories/lap.png" alt=""/>-->
+                <img src="/local/templates/main/img/goods/no-image-240x130.png" />
             </picture>
         </div>
         <div class="popup-categories__partners">
             <h2 class="title title--h2 text-center">Где купить ?</h2>
             <div class="s-partners__wrapper">
                 <div class="s-partners__items">
-                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/3logic.svg" alt=""></div>
-                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/elbrus.svg" alt=""></div>
-                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/basealt.svg" alt=""></div>
-                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/astralinux.svg" alt=""></div>
-                    <div class="s-partners__item"><img class="lazy" data-src="img/svg/logos/code.svg" alt=""></div>
+                    <div class="s-partners__item"><img src="img/svg/logos/3logic.svg" alt=""></div>
+                    <div class="s-partners__item"><img src="img/svg/logos/elbrus.svg" alt=""></div>
+                    <div class="s-partners__item"><img src="img/svg/logos/basealt.svg" alt=""></div>
+                    <div class="s-partners__item"><img src="img/svg/logos/astralinux.svg" alt=""></div>
+                    <div class="s-partners__item"><img src="img/svg/logos/code.svg" alt=""></div>
                 </div>
             </div>
         </div>
