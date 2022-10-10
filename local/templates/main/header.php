@@ -15,14 +15,28 @@ use Library\Tools\CookieSecret;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css">', true);
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css">', true);
+//Asset::getInstance()->addString('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/index_main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/extend.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $searchParam = [
     "PAGE"        => "/search",
     "USE_SUGGEST" => "Y",
 ];
+
+$bodyStr = 'data-scroll-container';
+
+if (defined("BODY_CLASS")) {
+    switch (BODY_CLASS) {
+        case"CATALOG":
+            $bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
+            break;
+        case"NEWS":
+            $bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
+            break;
+    }
+}
 
 ?>
 <!DOCTYPE html>

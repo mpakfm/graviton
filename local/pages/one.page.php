@@ -10,6 +10,8 @@
 
 use Library\Tools\CacheSelector;
 
+define("BODY_CLASS", "PAGE");
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $iblock = CacheSelector::getIblockId('pages', 'content');

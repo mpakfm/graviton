@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function handlers() {
+    $('a.js-search').click(function(){
+        console.log('click');
+        let link = $(this).attr('href');
+        console.log('link', link);
+        window.location = link;
+        return;
+    });
     $('.js-item-by').click(function(){
         let name = $(this).data('name');
         let image = $(this).data('img');

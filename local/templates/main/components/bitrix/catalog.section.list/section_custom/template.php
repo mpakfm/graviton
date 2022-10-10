@@ -141,7 +141,7 @@ if (!empty($imagesIds)) {
                         );
                     }
                     ?>
-                    <div class="swiper-slide s-top-categories__slide <?=($arSection['CODE'] == $arParams['SECTION_ACTIVE_CODE'] ? 'swiper-slide-active' : '');?>">
+                    <div class="swiper-slide s-top-categories__slide <?=($arSection['CODE'] == $arParams['SECTION_ACTIVE_CODE'] ? 'active-categories' : '');?>">
                         <a class="s-top-categories__item" href="/catalog/<?=$arResult['SECTION']['CODE']; ?>/<?=$arSection['CODE']; ?>">
                             <div class="s-top-categories__item-img">
                                 <picture>
@@ -178,7 +178,7 @@ if (array_key_exists(3, $chain)) {
 <?php foreach ($activeChild['CHILDREN'] as $key => $line) { ?>
 <div class="s-rulers__tab-content <?=($activeLine == $line['CODE'] ? 'is-active' : '');?> <?=$key;?>" id="<?=$line['CODE'];?>">
     <div class="s-rulers__content">
-        <section class="s-advertising">
+        <section class="s-advertising" style="background-image: url(img/back/back.jpg);">
             <div class="l-default">
                 <h2 class="title s-advertising__title" data-rules="rules_0">
                     <?php if (!$arResult['SECTION']['UF_ADVERT']) {?>
@@ -270,7 +270,7 @@ if (array_key_exists(3, $chain)) {
                 </div>
             </div>
         </section>
-        <section class="s-solutions">
+        <section class="s-solutions" style="background-image: url(img/solutions/back_tablet.png);">
             <div class="l-default">
                 <div class="content-active" data-rules="rules_0">
                     <h2 class="title title--h2 s-solutions__title"><?=$arResult['SECTION']['NAME'];?></h2>

@@ -13,6 +13,8 @@
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
+define("BODY_CLASS", "EVENTS");
+
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $breadcrumb = Breadcrumb::init();
