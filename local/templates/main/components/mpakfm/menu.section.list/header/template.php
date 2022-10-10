@@ -42,10 +42,10 @@
                                     <div class="submenu__back-text">Назад </div>
                                 </div>
                                 <div class="submenu__items">
-                                    <?php foreach ($item['CHILD'] as $secondLevel) { ?>
+                                    <?php foreach ($item['CHILD'] as $secondLevel) { \Mpakfm\Printu::obj($secondLevel)->title('$secondLevel');?>
                                     <div class="submenu__item">
                                         <div class="submenu__item-top">
-                                            <a class="submenu__item-link" href="<?=$secondLevel['LINK'];?>">
+                                            <a class="submenu__item-link" <?=($secondLevel['BLANK'] ? 'target="_blank"' : '');?> href="<?=$secondLevel['LINK'];?>">
                                                 <div class="submenu__item-text"><?=$secondLevel['NAME'];?></div>
                                             </a>
                                             <div class="submenu__item-icon">

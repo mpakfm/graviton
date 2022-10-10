@@ -58,14 +58,6 @@ $this->setFrameMode(true);
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
                                         <?php if ($item['DISPLAY_PROPERTIES']['RAM']['DISPLAY_VALUE']) { ?>
-                                            <div class="product__info-item">
-                                                <div class="product__info-caption">Ссылка</div>
-                                                <div class="product__info-text">
-                                                    <a href="<?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?>"><?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?></a>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                        <?php if ($item['DISPLAY_PROPERTIES']['RAM']['DISPLAY_VALUE']) { ?>
                                         <div class="product__info-item">
                                             <div class="product__info-caption">Оперативная память</div>
                                             <div class="product__info-text"><?=$item['DISPLAY_PROPERTIES']['RAM']['DISPLAY_VALUE'];?></div>
@@ -127,7 +119,13 @@ $this->setFrameMode(true);
             <div class="s-home-products__categories-wrapper">
                 <?php foreach($arResult['SECTIONS'] as $section) { ?>
                 <div class="s-home-products__category" data-category="cat<?=$section['ID'];?>">
-                    <div class="s-home-products__category-text"><?=$section['NAME'];?></div>
+                    <div class="s-home-products__category-text">
+                        <?php if ($section['UF_LINK'] != '') {?>
+                        <a href="<?=$section['UF_LINK'];?>" target="_blank"><?=$section['NAME'];?></a>
+                        <?php } else { ?>
+                        <?=$section['NAME'];?>
+                        <?php } ?>
+                    </div>
                     <div class="s-home-products__category-slider"></div>
                 </div>
                 <?php } ?>

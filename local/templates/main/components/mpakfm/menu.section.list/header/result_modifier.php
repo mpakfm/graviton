@@ -41,6 +41,7 @@ if (!empty($arResult['ELEMENTS'][$arResult['SECTION']['ID']])) {
         $item = [
             'NAME'  => $element['NAME'],
             'LINK'  => $element['PROPERTY_LINK_VALUE'],
+            'BLANK' => $element['PROPERTY_BLANK_VALUE'],
             'CHILD' => null,
         ];
         $arResult['MENU'][$i] = $item;
@@ -51,10 +52,11 @@ foreach ($arResult['MENU'] as $key => $firstLevel) {
     if (array_key_exists($firstLevel['ID'], $arResult['ELEMENTS'])) {
         foreach ($arResult['ELEMENTS'][$firstLevel['ID']] as $element) {
             $item = [
-                'NAME'  => $element['NAME'],
-                'LINK'  => $element['PROPERTY_LINK_VALUE'],
-                'IMG'   => null,
-                'CHILD' => null,
+                'NAME'   => $element['NAME'],
+                'LINK'   => $element['PROPERTY_LINK_VALUE'],
+                'BLANK'  => $element['PROPERTY_BLANK_VALUE'],
+                'IMG'    => null,
+                'CHILD'  => null,
             ];
             if ($element['PREVIEW_PICTURE']) {
                 $img         = CFile::GetByID($element['PREVIEW_PICTURE'])->Fetch();
@@ -68,10 +70,11 @@ foreach ($arResult['MENU'] as $key => $firstLevel) {
             if (array_key_exists($secondLevel['ID'], $arResult['ELEMENTS'])) {
                 foreach ($arResult['ELEMENTS'][$secondLevel['ID']] as $element) {
                     $item = [
-                        'NAME'  => $element['NAME'],
-                        'LINK'  => $element['PROPERTY_LINK_VALUE'],
-                        'IMG'   => null,
-                        'CHILD' => null,
+                        'NAME'   => $element['NAME'],
+                        'LINK'   => $element['PROPERTY_LINK_VALUE'],
+                        'BLANK'  => $element['PROPERTY_BLANK_VALUE'],
+                        'IMG'    => null,
+                        'CHILD'  => null,
                     ];
                     if ($element['PREVIEW_PICTURE']) {
                         $img         = CFile::GetByID($element['PREVIEW_PICTURE'])->Fetch();
