@@ -32,7 +32,7 @@ $this->setFrameMode(true);
                 </div>
                 <div class="timetable__top-content" data-timetable="events"><a class="timetable__link" href="/events">
                         <div class="timetable__link-text">Смотреть весь месяц
-                            <div class="timetable__link-icon"><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></div>
+                            <div class="timetable__link-icon"><img src="img/svg/arrow-half.svg" alt=""></div>
                         </div>
                         <div class="timetable__title">Список мероприятий компании Гравитон</div></a></div>
                 <div class="timetable__month"><?=$arResult['curDate']->format('m');?></div>
@@ -68,7 +68,7 @@ $this->setFrameMode(true);
                                     <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
                                     <?php if (array_key_exists('SRC', $arResult['EVENTS'][1]['PREVIEW_PICTURE'])) { ?>
                                     <source data-srcset="<?=$arResult['EVENTS'][1]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
-                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][1]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <img src="<?=$arResult['EVENTS'][1]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
                                     <?php } ?>
                                 </picture>
                             </div>
@@ -103,7 +103,7 @@ $this->setFrameMode(true);
                                     <?php if (array_key_exists('SRC', $arResult['EVENTS'][2]['PREVIEW_PICTURE'])) { ?>
                                     <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
                                     <source data-srcset="<?=$arResult['EVENTS'][2]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
-                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][2]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <img src="<?=$arResult['EVENTS'][2]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
                                     <?php } ?>
                                 </picture>
                             </div>
@@ -128,7 +128,7 @@ $this->setFrameMode(true);
                                     <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
                                     <?php if (array_key_exists('SRC', $arResult['EVENTS'][3]['PREVIEW_PICTURE'])) { ?>
                                     <source data-srcset="<?=$arResult['EVENTS'][3]['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
-                                    <img class="lazy" data-src="<?=$arResult['EVENTS'][3]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                    <img src="<?=$arResult['EVENTS'][3]['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
                                     <?php } ?>
                                 </picture>
                             </div>
@@ -245,7 +245,7 @@ $this->setFrameMode(true);
                                         <picture>
                                             <!--<source data-srcset="img/events/1.webp" type="image/webp"/>-->
                                             <source data-srcset="<?=$arItem['IMG'];?>" type="image/jpg"/>
-                                            <img class="lazy" data-src="<?=$arItem['IMG'];?>" alt=""/>
+                                            <img src="<?=$arItem['IMG'];?>" alt=""/>
                                         </picture>
                                     </div>
                                     <?php } ?>
@@ -269,7 +269,7 @@ $this->setFrameMode(true);
                                 <div class="calendar-news__img">
                                     <picture>
                                         <source data-srcset="img/events/1.webp" type="image/webp"/>
-                                        <source data-srcset="img/events/1.jpg" type="image/jpg"/><img class="lazy" data-src="img/events/1.jpg" alt=""/>
+                                        <source data-srcset="img/events/1.jpg" type="image/jpg"/><img src="img/events/1.jpg" alt=""/>
                                     </picture>
                                 </div>
                             </div>

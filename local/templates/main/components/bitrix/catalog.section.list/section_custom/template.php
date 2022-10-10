@@ -145,7 +145,7 @@ if (!empty($imagesIds)) {
                         <a class="s-top-categories__item" href="/catalog/<?=$arResult['SECTION']['CODE']; ?>/<?=$arSection['CODE']; ?>">
                             <div class="s-top-categories__item-img">
                                 <picture>
-                                    <source data-srcset="<?=$arSection['PICTURE']['SRC']; ?>" type="image/jpg"/><img class="lazy" data-src="<?=$arSection['PICTURE']['SRC']; ?>" alt=""/>
+                                    <img src="<?=$arSection['PICTURE']['SRC']; ?>" alt=""/>
                                 </picture>
                             </div>
                             <div class="s-top-categories__item-title"><?=$arSection['NAME']; ?></div>
@@ -229,10 +229,9 @@ if (array_key_exists(3, $chain)) {
                                 <picture>
                                     <!--<source data-srcset="img/goods/laptoop.webp" type="image/webp"/>-->
                                     <?php if ($product['PREVIEW_PICTURE'] && $images[$product['PREVIEW_PICTURE']]) { ?>
-                                        <source data-srcset="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" type="image/png"/><img class="lazy" data-src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
+                                        <img src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
                                     <?php } else { ?>
-                                        <source data-srcset="/local/templates/main/img/goods/no-image-240x130.png" type="image/png"/>
-                                        <img class="lazy" data-src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
+                                        <img src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
                                     <?php } ?>
                                 </picture>
                             </div>
@@ -251,10 +250,9 @@ if (array_key_exists(3, $chain)) {
                                 <div class="s-goods__item--img">
                                     <picture>
                                         <?php if ($product['PREVIEW_PICTURE'] && $images[$product['PREVIEW_PICTURE']]) { ?>
-                                            <source data-srcset="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" type="image/png"/><img class="lazy" data-src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
+                                            <img src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
                                         <?php } else { ?>
-                                            <source data-srcset="/local/templates/main/img/goods/no-image-240x130.png" type="image/png"/>
-                                            <img class="lazy" data-src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
+                                            <img src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
                                         <?php } ?>
                                     </picture>
                                 </div>

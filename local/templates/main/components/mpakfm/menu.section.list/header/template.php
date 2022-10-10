@@ -13,7 +13,7 @@
 <div class="header__menu">
     <div class="l-default">
         <div class="header__menu-wrapper"> <!--<a class="location" href="">
-            <div class="location-icon"><img class="lazy" data-src="img/svg/location.svg" alt=""></div>
+            <div class="location-icon"><img src="img/svg/location.svg" alt=""></div>
                 <div class="location-text">Москва</div></a>-->
             <nav class="menu">
                 <div class="menu__items">

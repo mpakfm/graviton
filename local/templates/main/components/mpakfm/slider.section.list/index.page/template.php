@@ -37,7 +37,8 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/1.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/1.png" type="image/png"/><img class="lazy" data-src="img/product/1.png" alt=""/>
+                                        <source data-srcset="img/product/1.png" type="image/png"/>
+                                        <img src="img/product/1.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -45,7 +46,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Высокая производительность в эргономичном исполнении</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -83,7 +84,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/2.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/2.png" type="image/png"/><img class="lazy" data-src="img/product/2.png" alt=""/>
+                                        <source data-srcset="img/product/2.png" type="image/png"/><img src="img/product/2.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -91,7 +92,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Ваге молодец</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -129,7 +130,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/1.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/1.png" type="image/png"/><img class="lazy" data-src="img/product/1.png" alt=""/>
+                                        <source data-srcset="img/product/1.png" type="image/png"/><img src="img/product/1.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -137,7 +138,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Высокая производительность в эргономичном исполнении</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -175,7 +176,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/2.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/2.png" type="image/png"/><img class="lazy" data-src="img/product/2.png" alt=""/>
+                                        <source data-srcset="img/product/2.png" type="image/png"/><img src="img/product/2.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -183,7 +184,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Ваге молодец</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -227,7 +228,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/1.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/1.png" type="image/png"/><img class="lazy" data-src="img/product/1.png" alt=""/>
+                                        <source data-srcset="img/product/1.png" type="image/png"/><img src="img/product/1.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -235,7 +236,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Высокая производительность в эргономичном исполнении</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -273,7 +274,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/2.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/2.png" type="image/png"/><img class="lazy" data-src="img/product/2.png" alt=""/>
+                                        <source data-srcset="img/product/2.png" type="image/png"/><img src="img/product/2.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -281,7 +282,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Ваге молодец</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -319,7 +320,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/1.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/1.png" type="image/png"/><img class="lazy" data-src="img/product/1.png" alt=""/>
+                                        <source data-srcset="img/product/1.png" type="image/png"/><img src="img/product/1.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -327,7 +328,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Высокая производительность в эргономичном исполнении</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Моноблоки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>
@@ -365,7 +366,7 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <source data-srcset="img/product/2.webp" type="image/webp"/>
-                                        <source data-srcset="img/product/2.png" type="image/png"/><img class="lazy" data-src="img/product/2.png" alt=""/>
+                                        <source data-srcset="img/product/2.png" type="image/png"/><img src="img/product/2.png" alt=""/>
                                     </picture>
                                 </div>
                             </div>
@@ -373,7 +374,7 @@ $this->setFrameMode(true);
                                 <div class="product__subtitle">Ваге молодец</div>
                                 <div class="product__info-columns">
                                     <div class="product__info-column">
-                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></a>
+                                        <div class="product__name">Ноутбуки</div><a class="product__link" href=""><img src="img/svg/arrow-half.svg" alt=""></a>
                                     </div>
                                     <div class="product__info-column">
                                         <div class="product__info-title">Описание</div>

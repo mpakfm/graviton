@@ -28,7 +28,7 @@ $this->setFrameMode(true);
                         <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
                             <div class="preview__img">
                                 <picture>
-                                    <source data-srcset="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" type="image/jpg"/><img class="lazy" data-src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/>
+                                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/>
                                 </picture>
                             </div>
                         <?endif?>

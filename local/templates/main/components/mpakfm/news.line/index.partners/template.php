@@ -24,7 +24,7 @@ $this->setFrameMode(true);
         <h2 class="title title--h2">Наши партнеры</h2>
         <div class="s-partners__items">
             <?php foreach ($arResult["ITEMS"] as $arItem) { ?>
-            <div class="s-partners__item"><img class="lazy" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
+            <div class="s-partners__item"><img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
             <?php } ?>
         </div>
     </div>

@@ -49,6 +49,10 @@
   box-shadow: 0 0 2.1875rem rgba(168, 168, 174, 0.5);
 }
 
+.s-top-categories__slide .active-categories {
+  box-shadow: 0 0 2.1875rem rgba(168, 168, 174, 0.5);
+}
+
 .s-top-categories__slider {
   max-width: 65rem;
   margin: 0 auto;
@@ -282,10 +286,10 @@
 
 .s-solutions {
   padding: 9.375rem 0 9.6875rem;
-  background-image: url(/img/solutions/back.png);
-  background-position: right;
+  background-position-x: 110%;
+  background-position-y: bottom;
   background-repeat: no-repeat;
-  background-size: revert;
+  background-size: 32.5rem;
 }
 
 .s-solutions .l-default {
@@ -838,10 +842,6 @@
 }
 
 @media (max-width: 1600px) {
-  .s-solutions {
-    background-image: url(/img/solutions/back_tablet.png);
-  }
-
   .s-solutions__text {
     max-width: 75%;
   }
@@ -870,8 +870,8 @@
 
 @media (max-width: 991px) {
   .s-solutions {
-    background-image: url(/img/solutions/back.png);
     background-position: right bottom;
+    background-size: 70%;
     padding: 3.4375rem 0 5rem;
   }
 }

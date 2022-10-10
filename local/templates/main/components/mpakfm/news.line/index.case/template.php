@@ -27,9 +27,7 @@ $this->setFrameMode(true);
                 <?php if (!empty($arItem['PREVIEW_PICTURE'])) { ?>
                     <div class="s-home-articles__item-img">
                         <picture>
-                            <!--<source data-srcset="img/posts/1.webp" type="image/webp"/>-->
-                            <source data-srcset="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" type="image/jpg"/>
-                            <img class="lazy" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                            <img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
                         </picture>
                     </div>
                 <?php } ?>

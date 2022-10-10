@@ -27,7 +27,6 @@ $this->setFrameMode(true);
         <div class="s-home-products__sliders-container">
             <div class="s-home-products__sliders">
                 <?php foreach($arResult['SECTIONS'] as $section) { ?>
-                <div class="s-home-products__slider__mobile" data-category="cat<?=$section['ID'];?>"></div>
                 <div class="s-home-products__slider swiper-container" data-category="cat<?=$section['ID'];?>">
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
@@ -40,13 +39,9 @@ $this->setFrameMode(true);
                                 <div class="product__img">
                                     <picture>
                                         <?php if ($item['PREVIEW_PICTURE']) { ?>
-                                            <!--<source data-srcset="img/product/1.webp" type="image/webp"/>-->
-                                            <source data-srcset="<?=$item['PREVIEW_PICTURE']['SRC'];?>" type="image/png"/>
-                                            <img class="lazy" data-src="<?=$item['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
+                                            <img src="<?=$item['PREVIEW_PICTURE']['SRC'];?>" alt=""/>
                                         <?php } else { ?>
-                                            <source data-srcset="img/product/1.webp" type="image/webp"/>
-                                            <source data-srcset="img/product/1.png" type="image/png"/>
-                                            <img class="lazy" data-src="img/product/1.png" alt=""/>
+                                            <img src="img/product/1.png" alt=""/>
                                         <?php } ?>
                                     </picture>
                                 </div>
@@ -57,7 +52,7 @@ $this->setFrameMode(true);
                                     <div class="product__info-column">
                                         <div class="product__name"><?=$item['NAME'];?></div>
                                         <a class="product__link" href="<?=$item['DISPLAY_PROPERTIES']['LINK']['DISPLAY_VALUE'];?>">
-                                            <img class="lazy" data-src="img/svg/arrow-half.svg" alt="">
+                                            <img src="img/svg/arrow-half.svg" alt="">
                                         </a>
                                     </div>
                                     <div class="product__info-column">
@@ -118,6 +113,10 @@ $this->setFrameMode(true);
                         </div>
                         <?php } ?>
                     </div>
+                    <div class="s-home-products__slider-navigation slider-arrows">
+                        <div class="slider-arrow-prev"><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></div>
+                        <div class="slider-arrow-next"><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></div>
+                    </div>
                 </div>
                 <?php } ?>
             </div>
@@ -127,7 +126,10 @@ $this->setFrameMode(true);
         <div class="l-default">
             <div class="s-home-products__categories-wrapper">
                 <?php foreach($arResult['SECTIONS'] as $section) { ?>
-                <div class="s-home-products__category" data-category="cat<?=$section['ID'];?>"><?=$section['NAME'];?></div>
+                <div class="s-home-products__category" data-category="cat<?=$section['ID'];?>">
+                    <div class="s-home-products__category-text"><?=$section['NAME'];?></div>
+                    <div class="s-home-products__category-slider"></div>
+                </div>
                 <?php } ?>
             </div>
         </div>

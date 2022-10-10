@@ -90,7 +90,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                         <a class="s-top-categories__item" href="<?=$arSection['SECTION_PAGE_URL']; ?>">
                             <div class="s-top-categories__item-img">
                                 <picture>
-                                    <source data-srcset="<?=$arSection['PICTURE']['SRC']; ?>" type="image/jpg"/><img class="lazy" data-src="<?=$arSection['PICTURE']['SRC']; ?>" alt=""/>
+                                    <img src="<?=$arSection['PICTURE']['SRC']; ?>" alt=""/>
                                 </picture>
                             </div>
                             <div class="s-top-categories__item-title"><?=$arSection['NAME']; ?></div>
