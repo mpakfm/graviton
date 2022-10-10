@@ -18,7 +18,6 @@ define("BODY_CLASS", "EVENTS");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $breadcrumb = Breadcrumb::init();
-$breadcrumb->setIblock('events', 'content')->setChain('events');
 
 $iblock = CacheSelector::getIblockId('events', 'content');
 

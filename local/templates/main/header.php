@@ -27,16 +27,25 @@ $searchParam = [
 
 $bodyStr = 'data-scroll-container';
 
+$breadcrumb = \Library\Tools\Breadcrumb::init();
+
 if (defined("BODY_CLASS")) {
     switch (BODY_CLASS) {
         case"CATALOG":
-            $bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
+            if ($breadcrumb->uriItem) {
+                $bodyStr = 'class="product-page" data-scroll-container style="background-image: url(img/bg/product_page.png)"';
+            } else {
+                $bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
+            }
             break;
         case"NEWS":
-            $bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
+            if ($breadcrumb->uriItem) {
+                $bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
+            }
             break;
     }
 }
+\Mpakfm\Printu::obj($bodyStr)->title('[header] $bodyStr');
 
 ?>
 <!DOCTYPE html>
@@ -68,7 +77,7 @@ if (defined("BODY_CLASS")) {
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <?$APPLICATION->ShowHead();?>
 </head>
-<body data-scroll-container>
+<body <?=$bodyStr;?>>
     <div id="panel"><?$APPLICATION->ShowPanel();?></div>
     <?php CookieSecret::setCookieValue(); ?>
     <?=CookieSecret::getJsFunction();?>
