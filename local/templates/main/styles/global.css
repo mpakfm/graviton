@@ -3199,15 +3199,15 @@ textarea {
 }
 
 .main-top__notebook-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  width: 100%;
-  min-height: 100vh;
-  opacity: 1;
-  object-fit: cover;
-  transform: translate(0);
+  position: absolute;
+  z-index: 1;
+  top: 7%;
+  left: 48%;
+  width: 33.3333%;
+  min-width: 0;
+  min-height: 0;
+  transform: translateY(-7%) translateX(-48%);
+  opacity: 0.8;
 }
 
 .main-top__notebook:before {
@@ -5270,6 +5270,7 @@ input[type="number"] {
 
 .s-goods__content .last-item .s-goods__item--img,
 .s-goods__content .last-item .s-goods__item--name,
+.s-goods__content .last-item .s-goods__item--text,
 .s-goods__content .last-item .s-goods__item--subtitle,
 .s-goods__content .last-item .s-goods__item--specifications,
 .s-goods__content .last-item .s-goods__item--more,
@@ -5774,6 +5775,7 @@ input[type="number"] {
 
   .s-goods__content .last-item .s-goods__item--img,
   .s-goods__content .last-item .s-goods__item--name,
+  .s-goods__content .last-item .s-goods__item--text,
   .s-goods__content .last-item .s-goods__item--subtitle,
   .s-goods__content .last-item .s-goods__item--specifications,
   .s-goods__content .last-item .s-goods__item--more,

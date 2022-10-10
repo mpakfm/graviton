@@ -218,6 +218,7 @@
 
 .s-goods__content .last-item .s-goods__item--img,
 .s-goods__content .last-item .s-goods__item--name,
+.s-goods__content .last-item .s-goods__item--text,
 .s-goods__content .last-item .s-goods__item--subtitle,
 .s-goods__content .last-item .s-goods__item--specifications,
 .s-goods__content .last-item .s-goods__item--more,
@@ -510,6 +511,7 @@
 
   .s-goods__content .last-item .s-goods__item--img,
   .s-goods__content .last-item .s-goods__item--name,
+  .s-goods__content .last-item .s-goods__item--text,
   .s-goods__content .last-item .s-goods__item--subtitle,
   .s-goods__content .last-item .s-goods__item--specifications,
   .s-goods__content .last-item .s-goods__item--more,
