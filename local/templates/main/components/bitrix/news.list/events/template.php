@@ -15,7 +15,8 @@ $this->setFrameMode(true);
 ?>
 
 <section class="news">
-    <div class="l-content">
+    <div class="l-default">
+        <div class="l-content">
         <div class="news__container">
             <div class="news-item">
                 <?php foreach($arResult["ITEMS"] as $arItem) { ?>
@@ -67,5 +68,6 @@ $this->setFrameMode(true);
         <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
             <br /><?=$arResult["NAV_STRING"]?>
         <?endif;?>
+    </div>
     </div>
 </section>
