@@ -19,7 +19,6 @@ define("BODY_CLASS", "NEWS");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $breadcrumb = Breadcrumb::init();
-$breadcrumb->setIblock('news', 'content')->setChain('news');
 
 if (!empty($breadcrumb->uriItem)) {
     $ITEM = $breadcrumb->uriItem[0];

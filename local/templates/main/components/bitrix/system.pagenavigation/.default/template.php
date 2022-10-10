@@ -21,7 +21,6 @@ if(!$arResult["NavShowAlways"])
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
 
-\Mpakfm\Printu::obj('==========')->title('[page::.default]');
 ?>
 
 <font class="text"><?=$arResult["NavTitle"]?>

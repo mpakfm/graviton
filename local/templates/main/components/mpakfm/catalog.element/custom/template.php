@@ -29,7 +29,13 @@ $isAdmin = $USER->IsAdmin();
                 <div class="s-product-about__slogan"><?=$arResult['PARENT']['UF_ADVERT'];?></div>
                 <div class="s-product-about__logo"><?=($arResult['PARENT']['UF_LOGO'] ? $arResult['PARENT']['UF_LOGO'] : 'эталон');?></div>
             </div>
-            <div class="s-product-about__image"><img src="./img/product-about/cover.png" alt=""></div>
+            <div class="s-product-about__image">
+                <?php if (empty($arResult['DETAIL_PICTURE'])) { ?>
+                    <img src="./img/product-about/cover.png" alt="">
+                <?php } else { ?>
+                    <img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>" alt="">
+                <?php } ?>
+            </div>
             <div class="s-product-about__info">
                 <h1 class="s-product-about__title"><?=$arResult['NAME'];?></h1>
                 <div class="s-product-about__list">
@@ -49,7 +55,11 @@ $isAdmin = $USER->IsAdmin();
 </section>
 <section class="s-product-characteristics" id="product-characteristics">
     <div class="l-default">
-        <div class="s-product-characteristics__bg" style="background-image: url(./img/product-characteristics/notebook.png)"></div>
+        <?php if (empty($arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE'])) { ?>
+            <div class="s-product-characteristics__bg" style="background-image: url(./img/product-characteristics/notebook.png)"></div>
+        <?php } else { ?>
+            <div class="s-product-characteristics__bg" style="background-image: url(<?=$arResult['FILES'][$arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE']]['SRC'];?>)"></div>
+        <?php } ?>
         <div class="s-product-characteristics__content">
             <div class="s-product-characteristics__items">
                 <div class="s-product-characteristics__row">
@@ -132,7 +142,12 @@ $isAdmin = $USER->IsAdmin();
                 <?php } ?>
             <?php } ?>
         </div>
-        <div class="s-product-content__image"><img src="./img/product-content/cover.png" alt=""></div>
+        <?php if (empty($arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE'])) { ?>
+            <div class="s-product-content__image"><img src="./img/product-content/cover.png" alt=""></div>
+        <?php } else { ?>
+            <div class="s-product-content__image"><img src="<?=$arResult['FILES'][$arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE']]['SRC'];?>" alt=""></div>
+        <?php } ?>
+
     </div>
 </section>
 <?php if (!empty($arResult['PROPERTIES']['BENEFIT1_TITLE']['~VALUE']['TEXT'])) { ?>

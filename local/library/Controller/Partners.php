@@ -9,8 +9,6 @@
 
 namespace Library\Controller;
 
-use Mpakfm\Printu;
-
 class Partners extends AbstractController
 {
     public function mailerAction()

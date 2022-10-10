@@ -18,7 +18,6 @@ define("BODY_CLASS", "CASES");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $breadcrumb = Breadcrumb::init();
-$breadcrumb->setIblock('cases', 'content')->setChain('cases');
 
 $iblock = CacheSelector::getIblockId('cases', 'content');
 

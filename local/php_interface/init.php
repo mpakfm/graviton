@@ -33,3 +33,14 @@ EventManager::getInstance()->unRegisterEventHandler(
     "\\Bitrix\\Seo\\AdvTabEngine",
     "eventHandler"
 );
+
+$breadcrumb = \Library\Tools\Breadcrumb::init();
+if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
+    $breadcrumb->setIblock('product', 'catalog')->setChain(str_replace('/', '', 'catalog'));
+} elseif (strpos($_SERVER['REQUEST_URI'], '/events') === 0) {
+    $breadcrumb->setIblock('events', 'content')->setChain('events');
+} elseif (strpos($_SERVER['REQUEST_URI'], '/news') === 0) {
+    $breadcrumb->setIblock('news', 'content')->setChain('news');
+} elseif (strpos($_SERVER['REQUEST_URI'], '/cases') === 0) {
+    $breadcrumb->setIblock('cases', 'content')->setChain('cases');
+}
