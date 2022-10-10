@@ -154,7 +154,7 @@ $isAdmin = $USER->IsAdmin();
 <section class="s-product-benefits" id="products-benefits">
     <div class="l-default">
         <div class="s-product-benefits__items">
-            <div class="s-product-benefits__item">
+            <div class="s-product-benefits__item"  style="background-image: url('img/product-benefit/bg.png');">
                 <div class="s-product-benefits__item-image">
                     <?php if (!empty($arResult['PROPERTIES']['BENEFIT1_IMG']['FILE_VALUE'])) { ?>
                         <img src="<?=$arResult['PROPERTIES']['BENEFIT1_IMG']['FILE_VALUE']['SRC'];?>" alt="">

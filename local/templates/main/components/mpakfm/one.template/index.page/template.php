@@ -199,7 +199,7 @@ $partners = [
 ?>
 
 <main class="main">
-    <section class="main-top">
+    <section class="main-top" style="background-image: url('img/main-top/bg.jpg');">
         <h1 class="title title--h1 title--fade fancy">СДЕЛАНО В РОССИИ </h1>
         <div class="main-top__notebook">
             <div class="main-top__notebook-img">
