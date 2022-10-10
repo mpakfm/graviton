@@ -20,7 +20,6 @@ if ($arResult['META_TAGS']['TITLE']) {
     $APPLICATION->SetTitle($arResult['META_TAGS']['TITLE']);
 }
 $isAdmin = $USER->IsAdmin();
-
 ?>
 <section class="s-product-about">
     <div class="l-default">

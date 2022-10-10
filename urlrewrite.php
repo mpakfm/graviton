@@ -92,6 +92,13 @@ $arUrlRewrite=array (
         'SORT'      => 200,
     ),
     array(
+        'CONDITION' => '#^/admin-docs(/)?#',
+        'RULE'      => '',
+        'ID'        => null,
+        'PATH'      => '/local/pages/admin_docs.php',
+        'SORT'      => 200,
+    ),
+    array(
         'CONDITION' => '#^/error(/)?#',
         'RULE'      => '',
         'ID'        => null,

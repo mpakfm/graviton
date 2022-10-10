@@ -38,6 +38,12 @@ foreach ($ports as $port) {
     $arResult['PORTS'][$port['UF_XML_ID']] = $port;
 }
 $filesIds = [];
+if ((int) $arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE']) {
+    $filesIds[] = (int) $arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE'];
+}
+if ((int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE']) {
+    $filesIds[] = (int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE'];
+}
 foreach ($arResult['PROPERTIES']['M_DOCS']['VALUE'] as $item) {
     $filesIds[] = $item;
 }
