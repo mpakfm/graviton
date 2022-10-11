@@ -24,7 +24,7 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 //Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
 ?>
 
-<?$APPLICATION->IncludeComponent("mpakfm:one.template", "index.page", ["CACHE" => "Y"]);?>
+<?$APPLICATION->IncludeComponent("mpakfm:one.template", "index.page", ["CACHE" => "N"]);?>
 
 <?php
 
