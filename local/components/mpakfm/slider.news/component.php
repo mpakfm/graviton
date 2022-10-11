@@ -121,6 +121,9 @@ if ($this->startResultCache(false, ($arParams["CACHE_GROUPS"] === "N" ? false : 
             "ACTIVE"            => "Y",
             "CHECK_PERMISSIONS" => "Y",
         ];
+        if (!$USER->IsAdmin()) {
+            $arFilter["!PROPERTY_IS_PUB"] = false;
+        }
         if ($arParams['IS_ACTIVE_DATE']) {
             $arFilter['ACTIVE_DATE'] = 'Y';
         }

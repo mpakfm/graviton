@@ -7,6 +7,7 @@
  * Time:    15:20
  */
 /** @var CMain $APPLICATION */
+/** @var CUser $USER */
 /** @var string $SECTION */
 /** @var string $ITEM */
 /** @var string $OTHER */
@@ -30,6 +31,11 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 $iblock = CacheSelector::getIblockId('news', 'content');
 
+$filter = [];
+if (!$USER->IsAdmin()) {
+    $filter["!PROPERTY_IS_PUB"] = false;
+}
+
 if (!empty($ITEM)) {
     $params = [
         "DISPLAY_DATE" => "Y",
@@ -47,6 +53,7 @@ if (!empty($ITEM)) {
         "IBLOCK_ID" => $iblock,
         "ELEMENT_CODE" => $ITEM,
         "CHECK_DATES" => "Y",
+        "FILTER_NAME" => "filter",
         "FIELD_CODE" => Array("ID"),
         "PROPERTY_CODE" => Array("DESCRIPTION"),
         "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
@@ -97,7 +104,7 @@ if (!empty($ITEM)) {
         "SORT_ORDER1" => "DESC",
         "SORT_BY2" => "SORT",
         "SORT_ORDER2" => "ASC",
-        "FILTER_NAME" => "",
+        "FILTER_NAME" => "filter",
         "FIELD_CODE" => Array("ID", "PREVIEW_TEXT", "IBLOCK_SECTION_ID"),
         "PROPERTY_CODE" => Array("DESCRIPTION"),
         "CHECK_DATES" => "Y",

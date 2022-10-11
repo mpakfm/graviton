@@ -20,6 +20,7 @@ if (!$USER->IsAdmin()) {
     die();
 }
 $catalogIblock = \Library\Tools\CacheSelector::getIblockId('product', 'catalog');
+$newsIblock = \Library\Tools\CacheSelector::getIblockId('news', 'content');
 ?>
     <main class="main">
         <section class="news-detail">
@@ -47,7 +48,7 @@ $catalogIblock = \Library\Tools\CacheSelector::getIblockId('product', 'catalog')
                             <li><a class="admin-link" href="/admin-docs#section">Разделы</a></li>
                         </ul>
                     </li>
-<!--                    <li><a class="admin-link" href="/admin-docs#news">Новости</a></li>-->
+                    <li><a class="admin-link" href="/admin-docs#news">Новости</a></li>
 <!--                    <li><a class="admin-link" href="/admin-docs#events">События</a></li>-->
                 </ul>
 
@@ -110,15 +111,23 @@ $catalogIblock = \Library\Tools\CacheSelector::getIblockId('product', 'catalog')
                     <p><a class="admin-link" href="/admin-docs#top">вверх</a></p>
                 </div>
 
-<!--                <h2><a name="news">*</a> Новости</h2>-->
-<!--                <div>-->
-<!--                    <p><a href="/admin-docs#top">вверх</a></p>-->
-<!--                </div>-->
-<!---->
+                <h2><a name="news">*</a> Новости</h2>
+                <div>
+                    <p><a class="admin-link" href="/admin-docs#top">вверх</a></p>
+                    <p><a class="admin-link" target="_blank" href="/bitrix/admin/iblock_list_admin.php?IBLOCK_ID=<?=$newsIblock;?>&type=content&lang=ru&find_section_section=0&SECTION_ID=0&admin=Y">Новости</a> могут быть разложены по разделам и разделы выводятся в списке новостей сверху справа</p>
+                    <p>Важные поля влияющие на логику показа новостей: "Опубликовано" и "Показывать в слайдере"</p>
+                    <p>Что бы новость показывалась в слайдере, в списке новостей, необходимо её опубликовать, то есть установить флаг: "Опубликовано".</p>
+                    <p>Однако, Администраторы все равно могут видеть на фронте новости даже без публикации, что бы проверить отображение текста.</p>
+                    <p>Что бы новость попала в слайдер необходимо устанавливать этот чекбокс: "Показывать в слайдере"</p>
+                    <p>Сортировка новостей в списках осуществляется по полю Начало активности, от текущей даты в прошлое.</p>
+                    <p><img src="/local/templates/main/img/admin/news-list.png"></p>
+                </div>
+
 <!--                <h2><a name="events">*</a> События</h2>-->
 <!--                <div>-->
 <!--                    <p><a href="/admin-docs#top">вверх</a></p>-->
 <!--                </div>-->
+                <p><a class="admin-link" href="/admin-docs#top">вверх</a></p>
             </div>
         </section>
     </main>
