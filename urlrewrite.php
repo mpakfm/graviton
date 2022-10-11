@@ -85,13 +85,6 @@ $arUrlRewrite=array (
         'SORT'      => 200,
     ),
     array(
-        'CONDITION' => '#^/only-for-admin(/)?#',
-        'RULE'      => '',
-        'ID'        => null,
-        'PATH'      => '/local/pages/only-for-admin.php',
-        'SORT'      => 200,
-    ),
-    array(
         'CONDITION' => '#^/admin-docs(/)?#',
         'RULE'      => '',
         'ID'        => null,
