@@ -1740,10 +1740,11 @@ textarea {
 
 html,
 body {
+  position: relative;
+  width: 100%;
   min-width: 320px;
   color: #ffffff;
   background: #000203;
-  overflow-x: clip !important;
 }
 
 html.open,
@@ -1768,6 +1769,10 @@ body.preloaded:after {
   display: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
   display: flex;
@@ -1783,6 +1788,7 @@ body {
   font-style: normal;
   letter-spacing: normal;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .catalog-page {
@@ -1791,31 +1797,32 @@ body {
   background-size: contain;
 }
 
-.main {
-  z-index: 5;
-  flex: 1 auto;
-  margin-top: 135px;
-  /* Works on Chrome, Edge, and Safari */
-}
-
-.main * {
+* {
   scrollbar-width: thin;
   scrollbar-color: #3a3b44;
 }
 
-.main *::-webkit-scrollbar {
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
   cursor: pointer;
   width: 4px;
   height: 4px;
 }
 
-.main *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: #000203;
 }
 
-.main *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background-color: #3a3b44;
+}
+
+.main {
+  z-index: 5;
+  flex: 1 auto;
+  margin-top: 135px;
 }
 
 .lazy,
@@ -2095,7 +2102,17 @@ textarea {
 
 .show-hide {
   opacity: 1;
-  animation: show 1.5s ease;
+  animation: showNote 1.5s ease;
+}
+
+@keyframes showNote {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes show {
@@ -3164,6 +3181,10 @@ textarea {
   padding-bottom: 0.9375rem;
 }
 
+.header__mobile.open {
+  display: flex;
+}
+
 .header__mobile .menu {
   margin: 0;
 }
@@ -3237,15 +3258,15 @@ textarea {
 }
 
 .main-top__notebook-video {
-  position: absolute;
-  z-index: 1;
-  top: 7%;
-  left: 48%;
-  width: 33.3333%;
-  min-width: 0;
-  min-height: 0;
-  transform: translateY(-7%) translateX(-48%);
-  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 1;
+  object-fit: cover;
+  transform: translate(0);
 }
 
 .main-top__notebook:before {
@@ -6506,7 +6527,7 @@ input[type="number"] {
 }
 
 @media (min-width: 1600px) {
-  .main *::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
@@ -7334,7 +7355,7 @@ input[type="number"] {
 
   .header__mobile {
     display: flex;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
     opacity: 0;
   }
 
@@ -7565,10 +7586,10 @@ input[type="number"] {
     padding: 20px;
   }
 
-  .main-top__notebook {
+  .loaded .main-top__notebook {
     min-width: 600px;
     margin-left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
   }
 
   .s-home-products {
