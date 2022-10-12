@@ -1592,14 +1592,6 @@
   }
 }
 
-@media (max-width: 574px) {
-  .s-product-about__registry {
-    position: absolute;
-    top: 8.625rem;
-    right: 0.9375rem;
-  }
-}
-
 @media (max-width: 475px) {
   .s-product-video__notebook-img {
     max-width: 23.125rem;
