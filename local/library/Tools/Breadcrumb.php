@@ -61,6 +61,7 @@ class Breadcrumb
         if ($sefFolder) {
             $url .= $sefFolder . '/';
             self::$chain[] = [
+                'type' => 'section',
                 'link' => "{$url}",
                 'name' => $this->iblock['NAME'],
             ];
@@ -75,6 +76,7 @@ class Breadcrumb
                 $this->uriSections[] = $part;
                 $url .= $part . '/';
                 self::$chain[] = [
+                    'type' => 'section',
                     'link' => $url,
                     'code' => $section['CODE'],
                     'name' => $section['NAME'],
@@ -86,6 +88,7 @@ class Breadcrumb
                 $url .= $part . '/';
                 $this->uriItem[] = $part;
                 self::$chain[] = [
+                    'type' => 'item',
                     'link' => $url,
                     'code' => $item['CODE'],
                     'name' => $item['NAME'],
