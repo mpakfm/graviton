@@ -25,7 +25,7 @@ $isAdmin = $USER->IsAdmin();
     <div class="l-default">
         <div class="s-product-about__wrap">
             <div class="s-product-about__top">
-                <div class="s-product-about__slogan"><?=$arResult['PARENT']['UF_ADVERT'];?></div>
+                <div class="s-product-about__slogan"><?=htmlspecialchars_decode($arResult['PARENT']['UF_ADVERT']);?></div>
                 <div class="s-product-about__logo"><?=($arResult['PARENT']['UF_LOGO'] ? $arResult['PARENT']['UF_LOGO'] : 'эталон');?></div>
             </div>
             <div class="s-product-about__image">

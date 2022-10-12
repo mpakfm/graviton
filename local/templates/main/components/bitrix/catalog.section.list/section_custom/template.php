@@ -188,7 +188,7 @@ if (array_key_exists(3, $chain)) {
                             Не заполнено поле "Строка в фоне раздела" для раздела: <?=$arResult['SECTION']['CODE'];?>
                             <?php } ?>
                     <? } else { ?>
-                    <?=$arResult['SECTION']['UF_ADVERT'];?>
+                    <?=htmlspecialchars_decode($arResult['SECTION']['UF_ADVERT']);?>
                     <?php } ?>
                 </h2>
             </div>

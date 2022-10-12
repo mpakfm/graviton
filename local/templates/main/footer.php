@@ -56,32 +56,42 @@ $menuCopy = [
     "CACHE_GROUPS" => "Y"
 ];
 $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
-
+\Mpakfm\Printu::obj($breadcrumb)->title('$breadcrumb');
 ?>
 <footer class="footer">
     <div class="l-default">
         <div class="footer__top">
             <div class="breadcrumbs">
-                <div class="breadcrumb">
-                    <div class="breadcrumb-icon">
-                        <svg class="ico ico-mono-icon-breadcrumb">
-                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-breadcrumb"></use>
-                        </svg>
-                    </div>
-                    <div class="breadcrumb-text"><a href="/">Главная</a></div>
-                </div>
-                <?php if (!empty($breadcrumb)) { ?>
-                <?php foreach($breadcrumb as $part) { ?>
-                        <div class="breadcrumb">
-                            <div class="breadcrumb-icon">
+                <ul class="breadcrumbs__list" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                        <a class="breadcrumbs__link" href="/" itemprop="item" title="Главная">
+                            <span class="breadcrumbs__icon">
                                 <svg class="ico ico-mono-icon-breadcrumb">
                                     <use xlink:href="img/sprite-mono.svg#ico-mono-icon-breadcrumb"></use>
                                 </svg>
-                            </div>
-                            <div class="breadcrumb-text"><a href="<?=$part['link'];?>"><?=$part['name'];?></a></div>
-                        </div>
-                <?php } ?>
-                <?php } ?>
+                            </span>
+                            <meta itemprop="position" content="0" /><span itemprop="name">Главная</span>
+                        </a>
+                    </li>
+                    <?php if (!empty($breadcrumb)) { ?>
+                        <?php foreach($breadcrumb as $key => $part) { ?>
+                                <?php if ($part['type'] == 'section') { ?>
+                                    <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                        <a class="breadcrumbs__link" href="<?=$part['link'];?>" itemprop="item" title="<?=$part['name'];?>">
+                                            <meta itemprop="position" content="<?=($key + 1);?>" />
+                                            <span itemprop="name"><?=$part['name'];?></span></a>
+                                    </li>
+                                <?php } elseif ($part['type'] == 'item') { ?>
+                                    <li class="breadcrumbs__item">
+                                        <span class="breadcrumbs__link-current" itemprop="name"><?=$part['name'];?></span>
+                                        <meta itemprop="item" content="#" />
+                                        <meta itemprop="position" content="<?=($key + 1);?>" />
+                                    </li>
+                                <?php } ?>
+
+                        <?php } ?>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
         <div class="footer__content">
@@ -92,10 +102,10 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                             <use xlink:href="img/sprite-color.svg#ico-color-logo"></use>
                         </svg>
                     </div>
-                  <div class="footer__info-mobile">
-                    <div class="footer__info-mobile--left"></div>
-                    <div class="footer__info-mobile--right"></div>
-                  </div>
+                    <div class="footer__info-mobile">
+                        <div class="footer__info-mobile--left"></div>
+                        <div class="footer__info-mobile--right"></div>
+                    </div>
                 </div>
                 <div class="non-active">
                 <div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
