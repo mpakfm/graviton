@@ -29,6 +29,10 @@ $bodyStr = 'data-scroll-container';
 
 $breadcrumb = \Library\Tools\Breadcrumb::init();
 
+if ($breadcrumb->isIndex() && !$USER->IsAdmin()) {
+    $bodyStr = 'data-scroll-container class="isIndexVideoShowed"';
+}
+
 if (defined("BODY_CLASS")) {
     switch (BODY_CLASS) {
         case"CATALOG":
