@@ -103,6 +103,10 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
     </div>
 </section>
 
+<?php if (array_key_exists('set_filter', $_REQUEST) && $_REQUEST['set_filter'] == 'y') { ?>
+<?$APPLICATION->IncludeComponent("mpakfm:filter", "novelties");?>
+<?php } ?>
+
 <section class="s-substitution">
     <div class="l-default">
         <h2 class="title title-h2 s-substitution__title">Импортозамещение</h2>

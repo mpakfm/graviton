@@ -222,48 +222,51 @@ if (array_key_exists(3, $chain)) {
                         <p class="s-goods__text--prefix">По USB-C очень даже можно, там ограничение 4096х2364 точек с частотой обновления 60 Гц. И, кстати, с внешним монитором</p>
                         -->
                     </div>
-                    <div class="s-goods__content">
+                    <div class="s-goods__items">
                         <?php foreach($line['PRODUCTS'] as $product) { ?>
-                        <div class="s-goods__content--item <?//=(count($line['PRODUCTS']) == ($key + 1) ? 'last-item' : '');?>">
-                            <div class="s-goods__item--img">
-                                <picture>
-                                    <!--<source data-srcset="img/goods/laptoop.webp" type="image/webp"/>-->
+                        <div class="s-goods__item">
+                            <div class="s-goods__item-info">
+                                <div class="s-goods__item-img">
                                     <?php if ($product['PREVIEW_PICTURE'] && $images[$product['PREVIEW_PICTURE']]) { ?>
                                         <img src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
                                     <?php } else { ?>
                                         <img src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
                                     <?php } ?>
-                                </picture>
+                                </div>
+                                <div class="s-goods__item-text">
+                                    <div class="s-goods__item-name"><?=$product['NAME'];?></div>
+                                    <div class="s-goods__item-subtitle"><?=$product['PROPERTY_SUBTITLE_VALUE'];?></div>
+                                    <div class="s-goods__item-specifications"><?=$product['PREVIEW_TEXT'];?></div>
+                                </div>
                             </div>
-                            <div class="s-goods__item--text">
-                                <div class="s-goods__item--name"><?=$product['NAME'];?></div>
-                                <div class="s-goods__item--subtitle"><?=$product['PROPERTY_SUBTITLE_VALUE'];?></div>
-                                <div class="s-goods__item--specifications"><?=$product['PREVIEW_TEXT'];?></div>
+                            <div class="s-goods__item-buttons">
+                                <a class="s-goods__item-more" href="<?=$product['URL'];?>">Подробнее</a>
+                                <a class="s-goods__item-buy js-item-by" data-name="<?=$product['NAME'];?>" data-img="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" href="#popup-categories" data-fancybox>Где купить</a>
                             </div>
-                            <a class="s-goods__item--more" href="<?=$product['URL'];?>">Подробнее</a>
-                            <a class="s-goods__item--buy js-item-by" data-name="<?=$product['NAME'];?>" data-img="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" href="#popup-categories" data-fancybox>Где купить</a>
                         </div>
                         <?php } $upKey = $key + 1; ?>
                         <?php if (array_key_exists($upKey, $activeChild['CHILDREN'])) { ?>
                             <?php if (!empty($activeChild['CHILDREN'][$upKey]['PRODUCTS'])) { $product = $activeChild['CHILDREN'][$upKey]['PRODUCTS'][0]; ?>
-                            <div class="s-goods__content--item last-item">
-                                <div class="s-goods__item--img">
-                                    <picture>
-                                        <?php if ($product['PREVIEW_PICTURE'] && $images[$product['PREVIEW_PICTURE']]) { ?>
-                                            <img src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
-                                        <?php } else { ?>
-                                            <img src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
-                                        <?php } ?>
-                                    </picture>
+                                <div class="s-goods__item last-item">
+                                    <div class="s-goods__item-info">
+                                        <div class="s-goods__item-img">
+                                            <?php if ($product['PREVIEW_PICTURE'] && $images[$product['PREVIEW_PICTURE']]) { ?>
+                                                <img src="<?=$images[$product['PREVIEW_PICTURE']]['SRC'];?>" alt=""/>
+                                            <?php } else { ?>
+                                                <img src="/local/templates/main/img/goods/no-image-240x130.png" alt=""/>
+                                            <?php } ?>
+                                        </div>
+                                        <div class="s-goods__item-text">
+                                            <div class="s-goods__item-name"><?=$product['NAME'];?></div>
+                                            <div class="s-goods__item-subtitle"><?=$product['PROPERTY_SUBTITLE_VALUE'];?></div>
+                                            <div class="s-goods__item-specifications"><?=$product['PREVIEW_TEXT'];?></div>
+                                        </div>
+                                    </div>
+                                    <div class="s-goods__item-buttons">
+                                        <a class="s-goods__item-more" href="<?=$product['URL'];?>">Подробнее</a>
+                                        <a class="s-goods__item-buy"  href="#popup-categories" data-fancybox>Где купить</a>
+                                    </div>
                                 </div>
-                                <div class="s-goods__item--text">
-                                    <div class="s-goods__item--name"><?=$product['NAME'];?></div>
-                                    <div class="s-goods__item--subtitle"><?=$product['PROPERTY_SUBTITLE_VALUE'];?></div>
-                                    <div class="s-goods__item--specifications"><?=$product['PREVIEW_TEXT'];?></div>
-                                </div>
-                                <a class="s-goods__item--more" href="<?=$product['URL'];?>">Подробнее</a>
-                                <a class="s-goods__item--buy" href="#popup-categories" data-fancybox>Где купить</a>
-                            </div>
                             <?php } ?>
                         <?php } ?>
                     </div>
