@@ -9,3 +9,6 @@
     color: #e4f0f7;
     text-decoration: underline;
 }
+.s-partners__item img {
+    max-height: none !important;
+}
