@@ -11,6 +11,7 @@ namespace Library\Tools;
 
 use CIBlockElement;
 use CIBlockSection;
+use Mpakfm\Printu;
 
 class Breadcrumb
 {
@@ -38,8 +39,16 @@ class Breadcrumb
 
     private function __construct()
     {
-        $uri         = ($_SERVER['QUERY_STRING'] != '' ? str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI']);
-        $this->parts = explode('/', $uri);
+        $uri   = ($_SERVER['QUERY_STRING'] != '' ? str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI']);
+        $parts = explode('/', $uri);
+
+        $this->parts = array_diff($parts, ['']);
+    }
+
+    public function isIndex()
+    {
+        Printu::obj($this->parts)->title('[isIndex] parts');
+        return (empty($this->parts));
     }
 
     public function setIblock(string $code, string $type): Breadcrumb

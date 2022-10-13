@@ -1742,9 +1742,13 @@ html,
 body {
   position: relative;
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
   min-width: 320px;
   color: #ffffff;
   background: #000203;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 html.open,
@@ -1769,10 +1773,6 @@ body.preloaded:after {
   display: none;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   position: relative;
   display: flex;
@@ -1788,7 +1788,6 @@ body {
   font-style: normal;
   letter-spacing: normal;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .catalog-page {
@@ -3231,6 +3230,7 @@ textarea {
 }
 
 .main-top {
+  position: relative;
   padding-top: 3.1875rem;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -7538,6 +7538,15 @@ input[type="number"] {
 }
 
 @media (max-width: 767px) {
+  .main-top__more {
+    max-width: fit-content;
+    border-radius: 7px;
+    border: 1px solid #333333;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px 20px;
+  }
+
   .s-solutions {
     background-size: 24.375rem 38.4375rem;
   }
@@ -7807,15 +7816,6 @@ input[type="number"] {
 
   .main-top {
     padding-top: 60px;
-  }
-
-  .main-top__more {
-    max-width: fit-content;
-    border-radius: 7px;
-    border: 1px solid #333333;
-    margin: 0 auto;
-    margin-top: 40px;
-    padding: 10px 20px;
   }
 
   .main-top__bottom {
