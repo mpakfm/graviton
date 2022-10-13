@@ -1793,7 +1793,8 @@ body {
 .catalog-page {
   background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
+  background-attachment: local;
 }
 
 * {
@@ -3763,7 +3764,6 @@ textarea {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 4.5625rem;
 }
 
 .s-partners__item:hover img {
@@ -3840,8 +3840,11 @@ textarea {
   transition: 0.2s;
 }
 
-.s-characteristics__item:hover .s-characteristics__item-text {
+.s-characteristics__item:hover .s-characteristics__item-text,
+.s-characteristics__item:hover .s-characteristics__item-number,
+.s-characteristics__item:hover .s-characteristics__item-title {
   color: #f4f4f2;
+  border-color: #f4f4f2;
 }
 
 .s-characteristics__item-top {
@@ -3875,6 +3878,7 @@ textarea {
   line-height: 1;
   color: #424346;
   white-space: nowrap;
+  transition: 0.2s;
 }
 
 .s-characteristics__item-title {
@@ -3882,6 +3886,7 @@ textarea {
   font-weight: 500;
   line-height: 1;
   color: #424346;
+  transition: 0.2s;
 }
 
 .s-characteristics__item:first-child .s-characteristics__item-top:before {
@@ -5681,10 +5686,6 @@ input[type="number"] {
     width: 12.5rem;
     min-height: 12.5rem;
     padding: 1.25rem 0.875rem;
-  }
-
-  .s-partners__item img {
-    max-height: 4.875rem;
   }
 
   .s-partners__btn {
