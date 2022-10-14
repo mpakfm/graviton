@@ -35,7 +35,7 @@ $second = false;
                     <div class="footer__nav-title">
                         <?=$section['NAME'];?>
                     </div>
-                    <div class="footer__nav-arrow" <?php if ($section['UF_LINK'] != '') { ?>style="display: none;" <?php } ?>>
+                    <div class="footer__nav-arrow" <?php if ($section['UF_LINK'] == '') { ?>style="display: none;" <?php } ?>>
                         <svg class="ico ico-mono-arrow-fat">
                             <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
                         </svg>
