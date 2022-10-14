@@ -35,7 +35,7 @@ $second = false;
                     <div class="footer__nav-title">
                         <?=$section['NAME'];?>
                     </div>
-                    <div class="footer__nav-arrow" <?php if ($section['UF_LINK'] == '') { ?>style="display: none;" <?php } ?>>
+                    <div class="footer__nav-arrow">
                         <svg class="ico ico-mono-arrow-fat">
                             <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
                         </svg>
@@ -47,7 +47,9 @@ $second = false;
                 <?php } ?>
                 <div class="footer__nav-list">
                     <?php foreach($arResult['ELEMENTS'][$section['ID']] as $item) { ?>
-                        <a class="footer__nav-item" href="<?=$item['PROPERTY_LINK_VALUE'];?>" <?=($item['PROPERTY_BLANK_VALUE'] != '' ? 'target="_blank"' : '');?>><?=$item['NAME'];?></a>
+                        <a class="footer__nav-item" href="<?=$item['PROPERTY_LINK_VALUE'];?>" <?=($item['PROPERTY_BLANK_VALUE'] != '' ? 'target="_blank"' : '');?>>
+                            <?=$item['NAME'];?>
+                        </a>
                     <?php } ?>
                 </div>
             </div>
@@ -58,8 +60,8 @@ $second = false;
             }
             ?>
             <a class="footer__nav-top footer__nav-title--item" href="<?=$section['UF_LINK'];?>">
-                <div class="footer__nav-title"><?=$section['NAME'];?></div>
-                <div class="footer__nav-arrow">
+                <div class="footer__nav-title"><?=$section['NAME'];?> </div>
+                <div class="footer__nav-arrow" style="display: none;">
                     <svg class="ico ico-mono-arrow-fat">
                         <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
                     </svg>
