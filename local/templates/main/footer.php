@@ -123,7 +123,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                     </div>
                     <div class="footer__nav">
                         <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="">
+                            <a class="footer__nav-top" href="/catalog/">
                                 <div class="footer__nav-title">Продукты</div>
                                 <div class="footer__nav-arrow">
                                     <svg class="ico ico-mono-arrow-fat">
@@ -132,11 +132,11 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </a>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="">Системы на Российских ЦПУ</a>
-                                <a class="footer__nav-item" href="">Серверные решения</a>
-                                <a class="footer__nav-item" href="">Клиентские решения</a>
-                                <a class="footer__nav-item" href="">Материнские платы</a>
-                                <a class="footer__nav-item" href="">Гиперконвергентные решения</a>
+                                <a class="footer__nav-item" href="/catalog/systems_on_russian_cpus/">Системы на Российских ЦПУ</a>
+                                <a class="footer__nav-item" href="/catalog/server_solutions/">Серверные решения</a>
+                                <a class="footer__nav-item" href="/catalog/client_solutions/">Клиентские решения</a>
+                                <a class="footer__nav-item" href="/catalog/motherboards/">Материнские платы</a>
+                                <a class="footer__nav-item" href="https://гелиус.рф/" target="_blank">Гиперконвергентные решения</a>
                             </div>
                         </div>
                         <div class="footer__nav-column">
@@ -149,10 +149,10 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="">Техническая поддержка</a>
-                                <a class="footer__nav-item" href="">СерГарантийные условия</a>
-                                <a class="footer__nav-item" href="">Сервесные центры</a>
-                                <a class="footer__nav-item" href="">Уровни поддержки</a>
+                                <a class="footer__nav-item" href="/page/tekhnicheskaya-podderzhka">Техническая поддержка</a>
+                                <a class="footer__nav-item" href="/page/garantiynye-usloviya">Гарантийные условия</a>
+                                <a class="footer__nav-item" href="/page/servesnye-tsentry">Сервесные центры</a>
+                                <a class="footer__nav-item" href="/page/urovni-podderzhki">Уровни поддержки</a>
                             </div>
                         </div>
                         <div class="footer__nav-column">
@@ -165,10 +165,10 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="">Кто мы</a>
-                                <a class="footer__nav-item" href="">Новости</a>
-                                <a class="footer__nav-item" href="">Мероприятия</a>
-                                <a class="footer__nav-item" href="">Преимущества</a>
+                                <a class="footer__nav-item" href="/page/kto-my">Кто мы</a>
+                                <a class="footer__nav-item" href="/news/">Новости</a>
+                                <a class="footer__nav-item" href="/events/">Мероприятия</a>
+                                <a class="footer__nav-item" href="/page/preimushchestva">Преимущества</a>
                             </div>
                         </div>
                         <div class="footer__nav-column">
@@ -181,8 +181,8 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="">Контрактная разработка</a>
-                                <a class="footer__nav-item" href="">ОЕМ</a>
+                                <a class="footer__nav-item" href="/page/kontraktnaya-razrabotka">Контрактная разработка</a>
+                                <a class="footer__nav-item" href="/page/oem">ОЕМ</a>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                     </div>
                     <div class="footer__nav">
                         <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="">
+                            <a class="footer__nav-top" href="/cases/">
                                 <div class="footer__nav-title">Кейсы</div>
                                 <div class="footer__nav-arrow">
                                     <svg class="ico ico-mono-arrow-fat">
@@ -210,7 +210,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                             </a>
                         </div>
                         <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="">
+                            <a class="footer__nav-top" href="/partners">
                                 <div class="footer__nav-title">Партнеры</div>
                                 <div class="footer__nav-arrow">
                                     <svg class="ico ico-mono-arrow-fat">
@@ -220,7 +220,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                             </a>
                         </div>
                         <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="">
+                            <a class="footer__nav-top" href="/page/docs">
                                 <div class="footer__nav-title">Документация</div>
                                 <div class="footer__nav-arrow">
                                     <svg class="ico ico-mono-arrow-fat">
@@ -230,7 +230,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                             </a>
                         </div>
                         <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="">
+                            <a class="footer__nav-top" href="/contacts">
                                 <div class="footer__nav-title">Контакты</div>
                                 <div class="footer__nav-arrow">
                                     <svg class="ico ico-mono-arrow-fat">
