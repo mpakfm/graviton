@@ -75,87 +75,179 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                     </li>
                     <?php if (!empty($breadcrumb)) { ?>
                         <?php foreach($breadcrumb as $key => $part) { ?>
-                                <?php if ($part['type'] == 'section') { ?>
-                                    <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-                                        <a class="breadcrumbs__link" href="<?=$part['link'];?>" itemprop="item" title="<?=$part['name'];?>">
-                                            <meta itemprop="position" content="<?=($key + 1);?>" />
-                                            <span itemprop="name"><?=$part['name'];?></span></a>
-                                    </li>
-                                <?php } elseif ($part['type'] == 'item') { ?>
-                                    <li class="breadcrumbs__item">
-                                        <span class="breadcrumbs__link-current" itemprop="name"><?=$part['name'];?></span>
-                                        <meta itemprop="item" content="#" />
+                            <?php if ($part['type'] == 'section') { ?>
+                                <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+                                    <a class="breadcrumbs__link" href="<?=$part['link'];?>" itemprop="item" title="<?=$part['name'];?>">
                                         <meta itemprop="position" content="<?=($key + 1);?>" />
-                                    </li>
-                                <?php } ?>
-
+                                        <span itemprop="name"><?=$part['name'];?></span></a>
+                                </li>
+                            <?php } elseif ($part['type'] == 'item') { ?>
+                                <li class="breadcrumbs__item">
+                                    <span class="breadcrumbs__link-current" itemprop="name"><?=$part['name'];?></span>
+                                    <meta itemprop="item" content="#" />
+                                    <meta itemprop="position" content="<?=($key + 1);?>" />
+                                </li>
+                            <?php } ?>
                         <?php } ?>
                     <?php } ?>
                 </ul>
             </div>
         </div>
         <div class="footer__content">
-            <div class="footer__info">
-                <div class="footer__info-top">
-                    <div class="footer__logo">
-                        <svg class="ico ico-color-logo">
-                            <use xlink:href="img/sprite-color.svg#ico-color-logo"></use>
-                        </svg>
-                    </div>
-                    <div class="footer__info-mobile">
-                        <div class="footer__info-mobile--left"></div>
-                        <div class="footer__info-mobile--right"></div>
-                    </div>
-                </div>
-                <div class="non-active">
-                <div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
-                <form class="form footer__subscribe">
-                    <div class="form__inputs">
-                        <div class="form__input">
-                            <input type="email" name="email" placeholder="Укажите ваш e-mail" disabled>
+            <div class="footer__content-top">
+                <div class="footer__row">
+                    <div class="footer__info">
+                        <div class="footer__info-top">
+                            <div class="footer__logo">
+                                <svg class="ico ico-color-logo">
+                                    <use xlink:href="img/sprite-color.svg#ico-color-logo"></use>
+                                </svg>
+                            </div>
+                            <div class="footer__info-mobile">
+                                <div class="footer__info-mobile--left"></div>
+                                <div class="footer__info-mobile--right"></div>
+                            </div>
                         </div>
-                        <div class="form__submit">
-                            <button class="btn btn--bordered" type="submit" disabled>Подписаться</button>
+                        <div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
+                        <form class="form footer__subscribe">
+                            <div class="form__inputs">
+                                <div class="form__input">
+                                    <input type="email" name="email" placeholder="Укажите ваш e-mail" />
+                                </div>
+                                <div class="form__submit">
+                                    <button class="btn btn--bordered" type="submit" disabled>Подписаться</button>
+                                </div>
+                            </div>
+                            <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
+                        </form>
+                    </div>
+                    <div class="footer__nav">
+                        <div class="footer__nav-column">
+                            <a class="footer__nav-top" href="">
+                                <div class="footer__nav-title">Продукты</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                            <div class="footer__nav-list">
+                                <a class="footer__nav-item" href="">Системы на Российских ЦПУ</a>
+                                <a class="footer__nav-item" href="">Серверные решения</a>
+                                <a class="footer__nav-item" href="">Клиентские решения</a>
+                                <a class="footer__nav-item" href="">Материнские платы</a>
+                                <a class="footer__nav-item" href="">Гиперконвергентные решения</a>
+                            </div>
+                        </div>
+                        <div class="footer__nav-column">
+                            <div class="footer__nav-top">
+                                <div class="footer__nav-title">Поддержка</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="footer__nav-list">
+                                <a class="footer__nav-item" href="">Техническая поддержка</a>
+                                <a class="footer__nav-item" href="">СерГарантийные условия</a>
+                                <a class="footer__nav-item" href="">Сервесные центры</a>
+                                <a class="footer__nav-item" href="">Уровни поддержки</a>
+                            </div>
+                        </div>
+                        <div class="footer__nav-column">
+                            <div class="footer__nav-top">
+                                <div class="footer__nav-title">О компании</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="footer__nav-list">
+                                <a class="footer__nav-item" href="">Кто мы</a>
+                                <a class="footer__nav-item" href="">Новости</a>
+                                <a class="footer__nav-item" href="">Мероприятия</a>
+                                <a class="footer__nav-item" href="">Преимущества</a>
+                            </div>
+                        </div>
+                        <div class="footer__nav-column">
+                            <div class="footer__nav-top">
+                                <div class="footer__nav-title">Услуги</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="footer__nav-list">
+                                <a class="footer__nav-item" href="">Контрактная разработка</a>
+                                <a class="footer__nav-item" href="">ОЕМ</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
-                </form>
-                </div>
-                <?php
-                /*
-                <?$APPLICATION->IncludeComponent("bitrix:sender.subscribe","custom",Array(
-                        "COMPONENT_TEMPLATE" => ".default",
-                        "USE_PERSONALIZATION" => "Y",
-                        "CONFIRMATION" => "Y",
-                        "SHOW_HIDDEN" => "Y",
-                        "AJAX_MODE" => "Y",
-                        "AJAX_OPTION_JUMP" => "Y",
-                        "AJAX_OPTION_STYLE" => "Y",
-                        "AJAX_OPTION_HISTORY" => "Y",
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => "3600",
-                        "SET_TITLE" => "Y"
-                    )
-                );?>
-                */
-                ?>
-                <div class="footer__address-container">
-                    <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
-                </div>
-                <div class="footer__contact">
-                    <a class="footer__email" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
-                    <a class="footer__contact-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
                 </div>
             </div>
-            <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","footer", $menuFooter);?>
+            <div class="footer__content-bottom">
+                <div class="footer__row">
+                    <div class="footer__info">
+                        <div class="footer__address-container">
+                            <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
+                        </div>
+                        <div class="footer__contact">
+                            <a class="footer__email" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
+                            <a class="footer__contact-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a></div>
+                    </div>
+                    <div class="footer__nav">
+                        <div class="footer__nav-column">
+                            <a class="footer__nav-top" href="">
+                                <div class="footer__nav-title">Кейсы</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__nav-column">
+                            <a class="footer__nav-top" href="">
+                                <div class="footer__nav-title">Партнеры</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__nav-column">
+                            <a class="footer__nav-top" href="">
+                                <div class="footer__nav-title">Документация</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="footer__nav-column">
+                            <a class="footer__nav-top" href="">
+                                <div class="footer__nav-title">Контакты</div>
+                                <div class="footer__nav-arrow">
+                                    <svg class="ico ico-mono-arrow-fat">
+                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
         <div class="footer__mobile"></div>
-
         <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","copyrights", $menuCopy);?>
-
     </div>
 </footer>
+
 <div class="popup popup-form popup-registration" id="popup-registration">
     <form class="form">
         <h5 class="form__title">Форма регистрации</h5>
