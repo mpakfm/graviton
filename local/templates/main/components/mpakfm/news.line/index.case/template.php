@@ -35,15 +35,21 @@ $this->setFrameMode(true);
                 <div class="s-home-articles__item-title"><?=$arItem["NAME"]?></div>
                 <div class="s-home-articles__item-subtitle"><?=$arItem["PROPERTY_SUB_TITLE_VALUE"]?></div>
                 <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                    <?=$arItem['PREVIEW_TEXT'];?>
+                    <div class="s-home-articles__text">
+                        <?=$arItem['PREVIEW_TEXT'];?>
+                    </div>
                 <?php } ?>
 
-                <div class="s-home-articles__item-bottom"><a class="s-home-articles__link" href="/cases/<?=$arItem["CODE"]?>">
+                <div class="s-home-articles__item-bottom">
+                    <a class="s-home-articles__link" href="/cases/<?=$arItem["CODE"]?>">
                         <div class="s-home-articles__link-text">Посмотреть кейс</div>
-                        <div class="s-home-articles__link-icon"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="s-home-articles__link-icon">
+                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </div></a></div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <?php } ?>
         </div>

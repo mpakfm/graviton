@@ -106,8 +106,12 @@ $this->setFrameMode(true);
                         <?php } ?>
                     </div>
                     <div class="s-home-products__slider-navigation slider-arrows">
-                        <div class="slider-arrow-prev"><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></div>
-                        <div class="slider-arrow-next"><img class="lazy" data-src="img/svg/arrow-half.svg" alt=""></div>
+                        <div class="slider-arrow-prev">
+                            <img class="lazy" data-src="img/svg/arrow-half-reverse.svg" alt="">
+                        </div>
+                        <div class="slider-arrow-next">
+                            <img class="lazy" data-src="img/svg/arrow-half.svg" alt="">
+                        </div>
                     </div>
                 </div>
                 <?php } ?>

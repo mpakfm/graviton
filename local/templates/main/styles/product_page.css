@@ -1,5 +1,10 @@
 .s-product-content {
   position: relative;
+  overflow-x: visible;
+}
+
+.s-product-content::-webkit-scrollbar {
+  display: none;
 }
 
 .s-product-content__text {
@@ -650,10 +655,10 @@
 }
 
 .product-page {
-  height: 100%;
   background: #000203;
   background: no-repeat center center fixed;
   background-size: cover;
+  overflow-x: visible;
 }
 
 @media (min-width: 410px) {
@@ -1498,8 +1503,6 @@
   .s-product-content__image {
     bottom: 0;
     min-width: 400px;
-    margin-left: 50%;
-    transform: translateX(-50%);
   }
 
   .s-product-docs__wrapper {
