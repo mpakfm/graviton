@@ -20,7 +20,7 @@
 $this->setFrameMode(true);
 
 ?>
-<section class="news-detail">
+<section class="news-detail" style="background-image: url(img/news/back.jpg)">
     <div class="l-default">
         <div class="l-content">
             <div class="news-detail__container">
@@ -53,10 +53,13 @@ $this->setFrameMode(true);
                             <?echo $arResult["DETAIL_TEXT"];?>
                         <?endif?>
                     </div>
-                    <div class="news-detail__more"> <a class="news-detail__more--all" href="/cases">
-                            Вернуться к списку кейсов <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="news-detail__more">
+                        <a class="news-detail__more--all" href="/cases">
+                            Вернуться к списку кейсов
+                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg></a>
+                            </svg>
+                        </a>
                         <!--
                         <div class="news-detail__more--btn">
                             <a class="news-detail__btn--prev">
