@@ -19,12 +19,12 @@ $this->setFrameMode(true);
         <div class="l-content">
             <div class="news__container">
                 <div class="news-items">
-                    <div class="news-item">
-                        <?php foreach($arResult["ITEMS"] as $arItem) { ?>
-                            <?php
-                                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-                                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                            ?>
+                    <?php foreach($arResult["ITEMS"] as $arItem) { ?>
+                        <?php
+                            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                        ?>
+                        <div class="news-item">
                             <div class="news-item__content" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                                 <div class="news-item__content--preview">
                                     <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
@@ -56,8 +56,8 @@ $this->setFrameMode(true);
                                     </a>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>

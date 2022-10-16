@@ -19,19 +19,19 @@ $this->setFrameMode(true);
         <div class="l-content">
             <div class="news__container">
                 <div class="news-items">
-                    <div class="news-item">
-                        <?php foreach($arResult["ITEMS"] as $arItem) { ?>
-                            <?php
-                                if (strpos($arItem["ACTIVE_FROM"], ' ') !== false) {
-                                    $dt = date_create_from_format('d.m.Y H:i:s', $arItem["ACTIVE_FROM"]);
-                                } else {
-                                    $dt = date_create_from_format('d.m.Y', $arItem["ACTIVE_FROM"]);
-                                }
-                                $arItem['ACTIVE_FROM_DAY'] = FormatDate("d", $dt->format('U'));
-                                $arItem['ACTIVE_FROM_MONTH'] = FormatDate("F", $dt->format('U'));
-                                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-                                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                            ?>
+                    <?php foreach($arResult["ITEMS"] as $arItem) { ?>
+                        <?php
+                            if (strpos($arItem["ACTIVE_FROM"], ' ') !== false) {
+                                $dt = date_create_from_format('d.m.Y H:i:s', $arItem["ACTIVE_FROM"]);
+                            } else {
+                                $dt = date_create_from_format('d.m.Y', $arItem["ACTIVE_FROM"]);
+                            }
+                            $arItem['ACTIVE_FROM_DAY'] = FormatDate("d", $dt->format('U'));
+                            $arItem['ACTIVE_FROM_MONTH'] = FormatDate("F", $dt->format('U'));
+                            $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                            $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                        ?>
+                        <div class="news-item">
                             <div class="news-item__content" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                                 <div class="news-item__content--preview">
                                     <div class="preview__date"><span class="preview__date--day"><?=$arItem['ACTIVE_FROM_DAY'];?></span>
@@ -65,8 +65,8 @@ $this->setFrameMode(true);
                                     </a>
                                 </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>

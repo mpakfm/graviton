@@ -35,9 +35,8 @@ while($section = $stmt->Fetch())
         <div class="l-content">
             <div class="news__container">
                 <div class="news-items">
-                    <div class="news-item">
-                        <?php foreach($arResult["ITEMS"] as $arItem) { ?>
-                            <?
+                    <?php foreach($arResult["ITEMS"] as $arItem) { ?>
+                        <?
                             if (strpos($arItem['ACTIVE_FROM'], ' ') !== false) {
                                 $dt = date_create_from_format('d.m.Y H:i:s', $arItem['ACTIVE_FROM']);
                             } else {
@@ -45,45 +44,46 @@ while($section = $stmt->Fetch())
                             }
                             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                            ?>
-                        <div class="news-item__content" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-                            <div class="news-item__content--preview">
-                                <div class="preview__date">
-                                    <?php if ($dt) {?>
-                                        <span class="preview__date--day"><?=$dt->format('d');?></span>
-                                        <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
-                                    <?php } ?>
-                                </div>
+                        ?>
+                        <div class="news-item">
+                            <div class="news-item__content" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+                                <div class="news-item__content--preview">
+                                    <div class="preview__date">
+                                        <?php if ($dt) {?>
+                                            <span class="preview__date--day"><?=$dt->format('d');?></span>
+                                            <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
+                                        <?php } ?>
+                                    </div>
 
-                                <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
-                                    <div class="preview__img">
-                                        <picture>
-                                            <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/>
-                                        </picture>
-                                    </div>
-                                <?endif?>
-                                <a class="preview__more" href="">
-                                    <div class="preview__more--btn">Подробнее</div>
-                                    <div class="preview__more--arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div></a>
-                            </div>
-                            <div class="news-item__content--text">
-                                <div class="text__title"><?echo $arItem["NAME"]?></div>
-                                <div class="text__prefix"><?echo $arItem["PREVIEW_TEXT"]?></div>
-                                <a class="text__more" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
-                                    <div class="text__more--btn">Подробнее</div>
-                                    <div class="text__more--arrow">
-                                        <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </a>
+                                    <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
+                                        <div class="preview__img">
+                                            <picture>
+                                                <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt=""/>
+                                            </picture>
+                                        </div>
+                                    <?endif?>
+                                    <a class="preview__more" href="">
+                                        <div class="preview__more--btn">Подробнее</div>
+                                        <div class="preview__more--arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div></a>
+                                </div>
+                                <div class="news-item__content--text">
+                                    <div class="text__title"><?echo $arItem["NAME"]?></div>
+                                    <div class="text__prefix"><?echo $arItem["PREVIEW_TEXT"]?></div>
+                                    <a class="text__more" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
+                                        <div class="text__more--btn">Подробнее</div>
+                                        <div class="text__more--arrow">
+                                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <?php } ?>
-                    </div>
+                    <?php } ?>
                 </div>
                 <!-- TODO: Нужно настроить подгрузку новостей -->
                 <div class="news__btn">
