@@ -168,25 +168,28 @@ if (array_key_exists(3, $chain)) {
     <div class="l-default">
         <div class="s-rulers__tabs">
             <?php foreach ($activeChild['CHILDREN'] as $key => $line) { ?>
-            <div class="s-rulers__tab  <?=($activeLine == $line['CODE'] ? 'is-active' : '');?>"><a class="s-rulers__tab-link" data-rules-index="<?=$line['CODE'];?>">
-                    <div class="s-rulers__tab-title"><?=$line['NAME'];?></div></a></div>
+            <div class="s-rulers__tab  <?=($activeLine == $line['CODE'] ? 'is-active' : '');?>">
+                <a class="s-rulers__tab-link" data-rules-index="<?=$line['CODE'];?>">
+                    <div class="s-rulers__tab-title"><?=$line['NAME'];?></div>
+                </a>
+            </div>
             <?php } ?>
         </div>
     </div>
 </section>
 
 <?php foreach ($activeChild['CHILDREN'] as $key => $line) { ?>
-<div class="s-rulers__tab-content <?=($activeLine == $line['CODE'] ? 'is-active' : '');?> <?=$key;?>" id="<?=$line['CODE'];?>">
+<div class="s-rulers__tab-content <?=($activeLine == $line['CODE'] ? 'is-actived' : '');?> <?=$key;?>" id="<?=$line['CODE'];?>">
     <div class="s-rulers__content">
         <section class="s-advertising" style="background-image: url(img/back/back.jpg);">
             <div class="l-default">
                 <h2 class="title s-advertising__title" data-rules="rules_0">
                     <?php if (!$arResult['SECTION']['UF_ADVERT']) {?>
-                            <?php if ($isAdmin) { ?>
-                            Не заполнено поле "Строка в фоне раздела" для раздела: <a style="text-decoration: underline;" href="/bitrix/admin/iblock_section_edit.php?IBLOCK_ID=<?=$arResult['SECTION']['IBLOCK_ID'];?>&type=catalog&lang=ru&ID=<?=$arResult['SECTION']['ID'];?>"><?=$arResult['SECTION']['CODE'];?></a>
-                            <?php } else { ?>
-                            Не заполнено поле "Строка в фоне раздела" для раздела: <?=$arResult['SECTION']['CODE'];?>
-                            <?php } ?>
+                        <?php if ($isAdmin) { ?>
+                        Не заполнено поле "Строка в фоне раздела" для раздела: <a style="text-decoration: underline;" href="/bitrix/admin/iblock_section_edit.php?IBLOCK_ID=<?=$arResult['SECTION']['IBLOCK_ID'];?>&type=catalog&lang=ru&ID=<?=$arResult['SECTION']['ID'];?>"><?=$arResult['SECTION']['CODE'];?></a>
+                        <?php } else { ?>
+                        Не заполнено поле "Строка в фоне раздела" для раздела: <?=$arResult['SECTION']['CODE'];?>
+                        <?php } ?>
                     <? } else { ?>
                     <?=htmlspecialchars_decode($arResult['SECTION']['UF_ADVERT']);?>
                     <?php } ?>

@@ -28,7 +28,7 @@ while($section = $stmt->Fetch())
 }
 
 ?>
-<section class="news-detail">
+<section class="news-detail" style="background-image: url(img/news/back.jpg)">
     <div class="tabs">
         <div class="l-default">
             <div class="tabs__content">

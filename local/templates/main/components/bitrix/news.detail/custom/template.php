@@ -25,7 +25,7 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 ?>
 <main class="main">
-    <section class="news-detail">
+    <section class="news-detail" style="background-image: url(img/news/back.jpg)">
         <div class="l-default">
             <div class="l-content">
                 <div class="news-detail__container">
