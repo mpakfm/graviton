@@ -257,8 +257,8 @@ $this->setFrameMode(true);
                             </div>
                         </div>
                     <?php } ?>
-<!--
-                    <div class="calendar-news__item">
+
+                    <!--<div class="calendar-news__item">
                         <div class="calendar-news__item-top">
                             <div class="calendar-news__date">
                                 <div class="calendar-news__date-number">30</div>
@@ -278,10 +278,11 @@ $this->setFrameMode(true);
                             <div class="calendar-news__title">Российский разработчик “Альт” подтвердил совместимость с серверами Гравитон</div>
                             <div class="calendar-news__text">Компания «Базальт СПО» подтвердила совместимость ОС Альт Сервер 10 и ОС Альт Рабочая станция с серверами Гравитон.</div>
                         </div>
-                    </div>
--->
+                    </div>-->
+
                 </div>
             </div>
+            <div class="timetable__mobile"></div>
         </div>
     </div>
 </section>
