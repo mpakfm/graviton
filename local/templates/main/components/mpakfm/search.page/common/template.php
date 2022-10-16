@@ -114,32 +114,30 @@ if (is_array($arCloudParams["arrFILTER"])) {
                             $dt = date_create_from_format('d.m.Y', $arItem['DATE_CHANGE']);
                         ?>
                         <div class="news-item">
-                            <div class="news-item__content">
-                                <div class="news-item__content--preview">
-                                    <div class="preview__date"> <span class="preview__date--day"><?=$dt->format('d');?></span>
-                                        <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
+                            <div class="news-item__content--preview">
+                                <div class="preview__date"> <span class="preview__date--day"><?=$dt->format('d');?></span>
+                                    <p class="preview__date--month"><?=FormatDate('F', $dt->format('U'));?></p>
+                                </div>
+                                <a class="preview__more" href="<?echo $arItem["URL"]?>">
+                                    <div class="preview__more--btn">Подробнее</div>
+                                    <div class="preview__more--arrow">
+                                        <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
                                     </div>
-                                    <a class="preview__more" href="<?echo $arItem["URL"]?>">
-                                        <div class="preview__more--btn">Подробее</div>
-                                        <div class="preview__more--arrow">
-                                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item__content--text">
-                                    <div class="text__title"><?= $arItem["TITLE_FORMATED"]?></div>
-                                    <div class="text__prefix"><?= $arItem["BODY_FORMATED"]?></div>
-                                    <a class="text__more" href="<?echo $arItem["URL"]?>">
-                                        <div class="text__more--btn">Подробее</div>
-                                        <div class="text__more--arrow">
-                                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                </div>
+                                </a>
+                            </div>
+                            <div class="news-item__content--text">
+                                <div class="text__title"><?= $arItem["TITLE_FORMATED"]?></div>
+                                <div class="text__prefix"><?= $arItem["BODY_FORMATED"]?></div>
+                                <a class="text__more" href="<?echo $arItem["URL"]?>">
+                                    <div class="text__more--btn">Подробнее</div>
+                                    <div class="text__more--arrow">
+                                        <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     <?php } ?>
