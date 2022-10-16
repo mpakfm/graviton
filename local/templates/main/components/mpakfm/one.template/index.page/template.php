@@ -200,26 +200,30 @@ $partners = [
 
 <main class="main">
     <section class="main-top" style="background-image: url('img/main-top/bg.jpg');">
-        <h1 class="title title--h1 title--fade fancy">СДЕЛАНО В РОССИИ </h1>
+        <h1 class="title title--h1 title--fade fancy">СДЕЛАНО В РОССИИ</h1>
         <div class="main-top__notebook">
             <div class="main-top__notebook-img">
                 <picture>
-                    <source data-srcset="img/main-top/notebook.webp" type="image/webp"/>
-                    <source data-srcset="img/main-top/notebook.png" type="image/png"/><img src="img/main-top/notebook.png" alt=""/>
+                    <source srcset="img/main-top/notebook.webp" type="image/webp" />
+                    <source srcset="img/main-top/notebook.png" type="image/png" />
+                    <img src="img/main-top/notebook.png" alt="" />
                 </picture>
             </div>
-            <video class="main-top__notebook-video" autoplay="autoplay" loop="loop" preload="auto" muted>
-                <source src="videos/1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-            </video><a class="main-top__more non-active" href="javascript:void(0);">
+            <video class="main-top__notebook-video" autoplay="autoplay" loop="loop" playsinline webkit-playinginline muted>
+                <source src="videos/1.mp4" type="video/mp4" />
+            </video>
+            <a class="main-top__more" href="javascript:void(0);">
                 <div class="main-top__more-text">Подробнее о продукте</div>
                 <div class="main-top__more-icon">
                     <svg class="ico ico-mono-arrow-more">
                         <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-more"></use>
                     </svg>
-                </div></a>
+                </div>
+            </a>
         </div>
         <div class="main-top__bottom">
-            <div class="main-top__bottom-text">В центре притяжения Российских технологий </div>
+            <div class="main-top__bottom-text">В центре притяжения Российских технологий</div>
+            <div class="main-top__bottom-mobile"></div>
         </div>
     </section>
 

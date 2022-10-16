@@ -337,15 +337,19 @@ if (array_key_exists(3, $chain)) {
 <?$APPLICATION->IncludeComponent("mpakfm:news.line", "catalog.partners", $partners);?>
 
 <section class="s-feedback">
-    <div class="l-default">
-        <div class="s-feedback__content">
-            <div class="s-feedback__content-top">
+    <div class="s-feedback__content">
+        <div class="s-feedback__content-top">
+            <div class="l-default">
                 <div class="s-feedback__item">
                     <div class="s-feedback__item-text">Остались вопросы? Свяжитесь с нами</div>
                 </div>
-                <div class="s-feedback__item"><a class="s-feedback__item-btn" href="mailto:sale@graviton.ru"> Связаться с нами</a></div>
+                <div class="s-feedback__item">
+                    <a class="s-feedback__item-btn" href="mailto:sale@graviton.ru"> Связаться с нами</a>
+                </div>
             </div>
-            <div class="s-feedback__content-bottom">
+        </div>
+        <div class="s-feedback__content-bottom">
+            <div class="l-default">
                 <div class="s-feedback__item">
                     <div class="s-feedback__item-note">*Вышеприведенные характеристики являются теоретическими величинами и зависят от дизайна продукта. Для предоставления точной информации об устройствах и для обеспечения ее соответствия с харакетристиками и функциями фактических продуктов компания Гравитон может вносить изменения в режиме реального времени. Сведения о продукции могут быть изменены без предварительного уведомления.</div>
                 </div>
