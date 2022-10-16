@@ -35,17 +35,20 @@ $this->setFrameMode(true);
                             <?endif?>
                             <a class="preview__more" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
                                 <div class="preview__more--btn">Подробнее</div>
-                                <div class="preview__more--arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div class="preview__more--arrow">
+                                    <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                </div></a>
+                                </div>
+                            </a>
                         </div>
                         <div class="news-item__content--text">
                             <div class="text__title"><?echo $arItem["NAME"]?></div>
                             <div class="text__prefix"><?echo $arItem["PREVIEW_TEXT"]?></div>
                             <a class="text__more" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
                                 <div class="text__more--btn">Подробнее</div>
-                                <div class="text__more--arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div class="text__more--arrow">
+                                    <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>

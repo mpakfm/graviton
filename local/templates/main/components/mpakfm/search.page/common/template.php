@@ -111,7 +111,7 @@ if (is_array($arCloudParams["arrFILTER"])) {
                 <div class="news-item">
                     <?php foreach ($arResult["SEARCH"] as $arItem) { ?>
                         <?php
-                        $dt = date_create_from_format('d.m.Y', $arItem['DATE_CHANGE']);
+                            $dt = date_create_from_format('d.m.Y', $arItem['DATE_CHANGE']);
                         ?>
                     <div class="news-item__content">
                         <div class="news-item__content--preview">
