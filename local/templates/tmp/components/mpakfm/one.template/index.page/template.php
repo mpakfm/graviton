@@ -15,7 +15,7 @@ $menuHeader = [
     "SORT_BY2"           => "NAME",
     "SORT_ORDER2"        => "ASC",
     "TITLE"              => "Меню",
-    "CACHE_TYPE"         => "A",
+    "CACHE_TYPE"         => "N",
     "CACHE_TIME"         => "3600",
     "CACHE_GROUPS"       => "Y",
 ];

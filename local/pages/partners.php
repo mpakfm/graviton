@@ -16,7 +16,7 @@ define("BODY_CLASS", "PARTNERS");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/partners.css">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/partners.css?t=' . time() . '">', true);
 
 $APPLICATION->SetTitle("Graviton - Партнёры");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
@@ -58,7 +58,7 @@ $iblock = CacheSelector::getIblockId('partners', 'content');
         "PARENT_SECTION" => "",
         "PARENT_SECTION_CODE" => "",
         "INCLUDE_SUBSECTIONS" => "Y",
-        "CACHE_TYPE" => "A",
+        "CACHE_TYPE" => "N",
         "CACHE_TIME" => "3600",
         "CACHE_FILTER" => "Y",
         "CACHE_GROUPS" => "Y",

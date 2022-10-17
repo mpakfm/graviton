@@ -19,8 +19,8 @@ $APPLICATION->SetTitle("Graviton - Контакты");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
 $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/contacts.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/contacts_page.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/contacts.css?t=' . time() . '">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/contacts_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 ?>
     <section class="s-contacts" style="background-image: url(img/back/contacts.png);">

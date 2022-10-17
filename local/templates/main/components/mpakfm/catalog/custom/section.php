@@ -16,8 +16,8 @@ use Bitrix\Main\ModuleManager;
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/categories_page.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/categories_page.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/categories_page.css?t=' . time() . '">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/categories_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $this->setFrameMode(true);
 
