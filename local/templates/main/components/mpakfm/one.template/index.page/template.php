@@ -212,8 +212,8 @@ $partners = [
             <video class="main-top__notebook-video" autoplay="autoplay" loop="loop" playsinline webkit-playinginline muted>
                 <source src="videos/1.mp4" type="video/mp4" />
             </video>
-            <a class="main-top__more" href="javascript:void(0);">
-                <div class="main-top__more-text">Подробнее о продукте</div>
+            <a class="main-top__more hidden" href="javascript:void(0);">
+                <div class="main-top__more-text ">Подробнее о продукте</div>
                 <div class="main-top__more-icon">
                     <svg class="ico ico-mono-arrow-more">
                         <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-more"></use>
