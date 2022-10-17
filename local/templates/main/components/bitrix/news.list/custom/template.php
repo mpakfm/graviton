@@ -85,9 +85,9 @@ while($section = $stmt->Fetch())
                     <?php } ?>
                 </div>
                 <!-- TODO: Нужно настроить подгрузку новостей -->
-                <div class="news__btn">
-                    <button class="news__btn-more" type="button">Больше новостей</button>
-                </div>
+<!--                <div class="news__btn">-->
+<!--                    <button class="news__btn-more" type="button">Больше новостей</button>-->
+<!--                </div>-->
             </div>
             <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
                 <br /><?=$arResult["NAV_STRING"]?>

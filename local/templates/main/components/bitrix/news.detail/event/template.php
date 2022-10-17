@@ -60,18 +60,18 @@ $this->setFrameMode(true);
                                 <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <div class="news-detail__more--btn">
-                            <a class="news-detail__btn--prev">
-                                <svg class="ico ico-color-arrow-circle">
-                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>
-                                </svg>
-                            </a>
-                            <a class="news-detail__btn--next">
-                                <svg class="ico ico-color-arrow-circle">
-                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>
-                                </svg>
-                            </a>
-                        </div>
+<!--                        <div class="news-detail__more--btn">-->
+<!--                            <a class="news-detail__btn--prev">-->
+<!--                                <svg class="ico ico-color-arrow-circle">-->
+<!--                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>-->
+<!--                                </svg>-->
+<!--                            </a>-->
+<!--                            <a class="news-detail__btn--next">-->
+<!--                                <svg class="ico ico-color-arrow-circle">-->
+<!--                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>-->
+<!--                                </svg>-->
+<!--                            </a>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
