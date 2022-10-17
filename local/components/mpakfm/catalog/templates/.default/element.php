@@ -239,7 +239,7 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 					array(
 						'ELEMENT_ID' => $elementId,
 						'STORE_PATH' => $arParams['STORE_PATH'],
-						'CACHE_TYPE' => 'A',
+						'CACHE_TYPE' => 'N',
 						'CACHE_TIME' => '36000',
 						'MAIN_TITLE' => $arParams['MAIN_TITLE'],
 						'USE_MIN_AMOUNT' =>  $arParams['USE_MIN_AMOUNT'],

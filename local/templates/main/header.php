@@ -13,12 +13,12 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\CookieSecret;
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css">', true);
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css">', true);
-//Asset::getInstance()->addString('<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>', false, AssetLocation::BODY_END);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js" defer="defer"></script>', false, AssetLocation::BODY_END);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/extend.js" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css?t=' . time() . '">', true);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css?t=' . time() . '">', true);
+
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/vendor.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/main.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/extend.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $searchParam = [
     "PAGE"        => "/search",
@@ -149,7 +149,7 @@ if (defined("BODY_CLASS")) {
                 "ELEMENT_FIELDS" => ["ID", "CODE", "NAME", "SORT", "PREVIEW_PICTURE"],
                 "ELEMENT_USER_FIELDS" => ["PROPERTY_LINK", "PROPERTY_LINK", "PROPERTY_BLANK", "PROPERTY_POPUP_CLASS"],
                 "ADD_SECTIONS_CHAIN" => "Y",
-                "CACHE_TYPE" => "A",
+                "CACHE_TYPE" => "N",
                 "CACHE_TIME" => "36000000",
                 "CACHE_NOTES" => "",
                 "CACHE_GROUPS" => "Y"
