@@ -14,12 +14,12 @@
 <div class="header__menu">
     <div class="l-default">
         <div class="header__menu-wrapper">
-            <!--<div class="header__col">
-                <a class="location" href="">
+            <div class="header__col">
+                <!--<a class="location" href="">
                     <div class="location-icon"><img src="img/svg/location.svg" alt=""></div>
                     <div class="location-text">Москва</div>
-                </a>
-            </div>-->
+                </a>-->
+            </div>
             <nav class="menu">
                 <div class="menu__items">
                     <?php $depthMain     = 2; ?>
