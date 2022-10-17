@@ -179,7 +179,7 @@ if (array_key_exists(3, $chain)) {
 </section>
 
 <?php foreach ($activeChild['CHILDREN'] as $key => $line) { ?>
-<div class="s-rulers__tab-content <?=($activeLine == $line['CODE'] ? 'is-actived' : '');?> <?=$key;?>" id="<?=$line['CODE'];?>">
+<div class="s-rulers__tab-content <?=($activeLine == $line['CODE'] ? 'is-active' : '');?> <?=$key;?>" id="<?=$line['CODE'];?>">
     <div class="s-rulers__content">
         <section class="s-advertising" style="background-image: url(img/back/back.jpg);">
             <div class="l-default">
