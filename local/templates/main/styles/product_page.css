@@ -227,10 +227,7 @@
 }
 
 .s-product-about__slogan span {
-  color: rgba(255, 255, 255, 0.2);
-  background: -webkit-linear-gradient(rgba(0, 2, 3, 0.4), rgba(255, 255, 255, 0.2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #232528;
 }
 
 .s-product-about__logo {
@@ -751,7 +748,7 @@
 
   .s-product-about__image {
     position: absolute;
-    top: 0;
+    top: -30px;
     right: 0;
   }
 
