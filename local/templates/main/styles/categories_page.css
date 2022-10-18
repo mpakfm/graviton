@@ -235,8 +235,8 @@
   width: 100%;
   max-width: fit-content;
   margin: 2.1875rem auto 0;
-  border-radius: 0.3125rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.3125rem;
 }
 
 .s-goods__items .last-item .s-goods__item-info,
@@ -269,12 +269,12 @@
 
 .s-goods__item {
   display: flex;
-  flex-direction: column;
   width: calc(50% - 20px);
   margin: 0.625rem;
   padding: 1.4375rem;
   border: 0.0625rem solid transparent;
   border-radius: 0.3125rem;
+  flex-direction: column;
   border-image: linear-gradient(#848484, #c3c3c3, #252525);
   border-image-slice: 1;
   flex-direction: column;
@@ -342,9 +342,12 @@
 }
 
 .s-goods__item-buttons {
-  align-self: flex-end;
+  display: flex;
   width: 100%;
   margin-top: auto;
+  flex-direction: column;
+  gap: 0.375rem;
+  align-self: flex-end;
 }
 
 .s-solutions {
@@ -539,9 +542,9 @@
   }
 
   .s-goods__title {
+    margin-bottom: 1.25rem;
     font-size: 1.5625rem;
     line-height: 1.8125rem;
-    margin-bottom: 1.25rem;
   }
 
   .s-goods__text {
@@ -566,9 +569,13 @@
     margin: 0.9375rem;
   }
 
-  .s-goods__items .last-item .s-goods__item-info,
-  .s-goods__items .last-item .s-goods__item-buttons {
+  .s-goods__items .last-item .s-goods__item-info {
     display: block;
+    opacity: 0.5;
+  }
+
+  .s-goods__items .last-item .s-goods__item-buttons {
+    display: flex;
     opacity: 0.5;
   }
 
@@ -609,6 +616,10 @@
     padding: 0.5rem 0;
     font-size: 0.75rem;
     line-height: 0.875rem;
+  }
+
+  .s-goods__item-buttons {
+    gap: 0.625rem;
   }
 
   .s-solutions__text {
@@ -684,9 +695,9 @@
   }
 
   .s-goods__title {
+    margin-bottom: 2.8125rem;
     font-size: 2.1875rem;
     line-height: 2.5625rem;
-    margin-bottom: 2.8125rem;
   }
 
   .s-goods__text {
@@ -740,6 +751,10 @@
   .s-goods__item-more,
   .s-goods__item-buy {
     padding: 0.75rem 0;
+  }
+
+  .s-goods__item-buttons {
+    gap: 0.75rem;
   }
 
   .s-solutions__text {
@@ -846,14 +861,14 @@
   }
 
   .s-goods__title {
+    margin-bottom: 3.75rem;
     font-size: 2.375rem;
     line-height: 2.8125rem;
-    margin-bottom: 3.75rem;
   }
 
   .s-goods__text {
-    margin-bottom: 8.125rem;
     max-width: 63.125rem;
+    margin-bottom: 8.125rem;
   }
 
   .s-goods__text--prefix {
@@ -890,6 +905,10 @@
 
   .s-goods__item-name {
     font-size: 1.3125rem;
+  }
+
+  .s-goods__item-buttons {
+    gap: 1.125rem;
   }
 
   .s-solutions__text {

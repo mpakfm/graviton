@@ -18,14 +18,50 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
 
 ?>
 <main class="main">
-    <section class="s-error-content">
+    <section class="s-error" style="background-image: url(img/bg/404.png);">
         <div class="l-default">
-            <div class="s-error-content__wrap">
-                <h1 class="s-error-content__title title title--h2">Cтраница не найдена</h1>
-                <div class="s-error-content__image"><img src="img/global/404.jpeg" alt=""></div>
-                <div class="s-error-content__text">
-                    <p>Неправильно набран адрес, или такой страницы на сайте больше не существует.</p>
-                    <p>Вернитесь на <a href="/">главную страницу</a></p>
+            <div class="s-error__wrap">
+                <div class="s-error_content">
+                    <div class="s-error__note">
+                        99,5% всех посетителей никогда не&nbsp;видят эту страницу<br />
+                        <span>0,5%</span> посетителей обнаруживают её&nbsp;<span>случайно</span>
+                    </div>
+                    <div class="s-error__title">404</div>
+                    <div class="s-error__subtitle">Поздравляем!</div>
+                    <div class="s-error__text">
+                        Вы&nbsp;один из&nbsp;немногих счастливчиков, кому удалось найти нашу страницу.<br />
+                        Не&nbsp;волнуйтесь&nbsp;&mdash; это не&nbsp;тупик!
+                    </div>
+                </div>
+                <div class="s-error__buttons">
+                    <div class="s-error__item">
+                        <div class="s-error__item-text">
+                            Посмотрите видео<br />
+                            о компании Гравитон
+                        </div>
+                        <a class="s-error__item-button btn btn--bordered" href="">Смотреть</a>
+                    </div>
+                    <div class="s-error__item">
+                        <div class="s-error__item-text">
+                            Выйти на связь с<br />
+                            командой Гравитон
+                        </div>
+                        <a class="s-error__item-button btn btn--bordered" href="">Связаться с нами</a>
+                    </div>
+                    <div class="s-error__item">
+                        <div class="s-error__item-text">
+                            Скачать каталог<br />
+                            продукции Гравитон
+                        </div>
+                        <a class="s-error__item-button btn btn--bordered" download href="">Скачать</a>
+                    </div>
+                    <div class="s-error__item">
+                        <div class="s-error__item-text">
+                            Новости из<br />
+                            жизни компании
+                        </div>
+                        <a class="s-error__item-button btn btn--bordered" href="">Перейти</a>
+                    </div>
                 </div>
             </div>
         </div>
