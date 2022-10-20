@@ -12,28 +12,34 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult["NAV_STRING"])->title('[TPL] NAV_STRING');
-
-// @todo: времянка, передать определение секций либо в компонент либо в result_modifier
 $stmt = CIBlockSection::GetList(['sort' => 'asc'], ['IBLOCK_ID' => $arParams['IBLOCK_ID']], false, ['ID', 'CODE', 'NAME', 'IBLOCK_SECTION_ID']);
 $sections = [];
-while($section = $stmt->Fetch())
-{
+while($section = $stmt->Fetch()) {
     $sections[] = $section;
 }
+
 if ($arParams['AJAX_MODE'] != 'Y') {
 ?>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         $('.news__btn-more').click(function(){
-            console.log('news__btn-more click');
-            console.log('url', $(this).data('url'));
             $.ajax({
                 url: $(this).data('url'),
                 type: 'GET',
                 success: function (data) {
-                    console.log('news__btn-more success data', data);
-                    $('.news-items').append(data);
+                    let url = null;
+                    let item = $(data).children()[0];
+                    if (item) {
+                        url = $(item).data('pageurl');
+                        if (url) {
+                            $('.news__btn-more').attr('data-url', url);
+                            $('.news__btn-more').data('url', url);
+                        }
+                    }
+                    if (!url) {
+                        $('.news__btn-more').hide();
+                    }
+                    $('.news-items').append($(data).children());
                 }
             });
         });
@@ -54,7 +60,7 @@ if ($arParams['AJAX_MODE'] != 'Y') {
             <div class="news__container">
                 <div class="news-items">
                     <?php } ?>
-                    <?php foreach($arResult["ITEMS"] as $arItem) { ?>
+                    <?php foreach($arResult["ITEMS"] as $key => $arItem) { ?>
                         <?
                             if (strpos($arItem['ACTIVE_FROM'], ' ') !== false) {
                                 $dt = date_create_from_format('d.m.Y H:i:s', $arItem['ACTIVE_FROM']);
@@ -64,7 +70,7 @@ if ($arParams['AJAX_MODE'] != 'Y') {
                             $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                             $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                         ?>
-                        <div class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+                        <div class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>" <?php if ($arParams['AJAX_MODE'] == 'Y' && $key == 0) { ?>data-pageurl="<?=$arResult["NAV_STRING"]?>"<?php } ?>>
                             <div class="news-item__content--preview">
                                 <div class="preview__date">
                                     <?php if ($dt) {?>
