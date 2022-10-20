@@ -40,7 +40,8 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                         <div class="s-contacts__stock">* Въезд на территорию складского комплекса «Холмогоры» осуществляется по предварительному заказу пропуска через курирующего менеджера или через наш отдел по работе с клиентами и документами. В обоих случаях для  заказа пропуска необходимо иметь документы, подтверждающие цель приезда.</div>
                     </div>
                     <div class="s-contacts__contents">
-                        <div class="s-contacts__box is-active" id="tab_office"><a class="s-contacts__box-popup" href="https://yandex.ru/maps/-/CCUZMZfxSB">посмотреть на карте</a>
+                        <div class="s-contacts__box is-active" id="tab_office">
+                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZMZfxSB" data-fancybox data-type=”iframe”>посмотреть на карте</a>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Адрес:</div>
                                 <div class="s-contacts__box-text">Москва, Киевская улица, 7к1</div>
@@ -52,7 +53,8 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                                 <div class="s-contacts__box-subtitle">E-mail:</div><a class="s-contacts__box-text" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
                             </div>
                         </div>
-                        <div class="s-contacts__box" id="tab_stock"><a class="s-contacts__box-popup" href="https://yandex.ru/maps/-/CCUZeMQz~D">посмотреть на карте</a>
+                        <div class="s-contacts__box" id="tab_stock">
+                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZeMQz~D" data-fancybox data-type=”iframe”>посмотреть на карте</a>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Адрес:</div>
                                 <div class="s-contacts__box-text">Москвская область, Старое Ярославское ш., д. 1</div>
