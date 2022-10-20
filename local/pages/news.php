@@ -99,7 +99,7 @@ if (!empty($ITEM)) {
         "AJAX_MODE" => "N",
         "IBLOCK_TYPE" => "content",
         "IBLOCK_ID" => $iblock,
-        "NEWS_COUNT" => "4",
+        "NEWS_COUNT" => "10",
         "SORT_BY1" => "ACTIVE_FROM",
         "SORT_ORDER1" => "DESC",
         "SORT_BY2" => "SORT",
@@ -152,7 +152,7 @@ if (!empty($ITEM)) {
     <?php if (!empty($ITEM)) { ?>
         <?$APPLICATION->IncludeComponent("bitrix:news.detail","news",$params);?>
     <?php } else { ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.list","custom",$params);?>
+        <?$APPLICATION->IncludeComponent("mpakfm:news.list","custom",$params);?>
     <?php } ?>
 </main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
