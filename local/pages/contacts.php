@@ -24,6 +24,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
 
 ?>
     <main class="main">
+    <div class="back-img"> <img src="img/back/contacts.png"></div>
     <section class="s-contacts" style="background-image: url(img/back/contacts.png);">
         <div class="l-default">
             <div class="l-content">
@@ -100,28 +101,24 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
     <section class="s-social">
         <div class="l-default">
             <div class="l-content">
-                <div class="s-social__phone"><a class="s-social__phone-tel" href="tel:88005008886">8-800-500-88-86</a>
-                    <div class="s-social__phone-btn btn-social">Позвонить</div>
-                </div>
-                <div class="s-social__send">
-                    <div class="s-social__send-item phone"><a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a><a class="s-social__phone-btn btn-social">Позвонить</a></div>
-                    <div class="s-social__send-item support">
-                        <div class="s-social__item-text">Обратитесь в службу технической поддержки</div><a class="s-social__item-btn btn-social">Написать</a>
+                <div class="s-social__inner">
+                    <div class="s-social__phone"><a class="s-social__phone-tel" href="tel:88005008886">8-800-500-88-86</a>
+                        <div class="s-social__phone-btn btn-social">Позвонить</div>
                     </div>
-                    <div class="s-social__send-item mail">
-                        <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div><a class="s-social__item-btn btn-social">Написать</a>
+                    <div class="s-social__send">
+                        <div class="s-social__send-item phone"><a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a><a class="s-social__phone-btn btn-social">Позвонить</a></div>
+                        <div class="s-social__send-item support">
+                            <div class="s-social__item-text">Обратитесь в службу технической поддержки</div><a class="s-social__item-btn btn-social">Написать</a>
+                        </div>
+                        <div class="s-social__send-item mail">
+                            <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div><a class="s-social__item-btn btn-social">Написать</a>
+                        </div>
                     </div>
+                    <div class="s-social__link">
+                        <a class="s-social__link-item" href="javascript:void(0);"><img src="img/svg/tg.svg" alt="telegram"></a>
+                        <a class="s-social__link-item" href="javascript:void(0);">  <img src="img/svg/vk.svg" alt="vk"></a>
+                        <a class="s-social__link-item" href="javascript:void(0);"><img src="img/svg/youtube.svg" alt="youtube"></a></div>
                 </div>
-                <div class="s-social__link"><a class="s-social__link-item" href="">
-                        <svg class="ico ico-color-tg">
-                            <use xlink:href="img/sprite-color.svg#ico-color-tg"></use>
-                        </svg></a><a class="s-social__link-item" href="">
-                        <svg class="ico ico-color-vk">
-                            <use xlink:href="img/sprite-color.svg#ico-color-vk"></use>
-                        </svg></a><a class="s-social__link-item" href="">
-                        <svg class="ico ico-color-youtube">
-                            <use xlink:href="img/sprite-color.svg#ico-color-youtube"></use>
-                        </svg></a></div>
             </div>
         </div>
     </section>
