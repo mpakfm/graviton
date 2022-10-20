@@ -71,7 +71,7 @@ $params = [
     "SET_STATUS_404" => "Y",
     "SHOW_404" => "Y",
     "MESSAGE_404" => "",
-    "PAGER_BASE_LINK" => "/local/templates/main/components/mpakfm/news.list/custom/ajax.php/?" . ($SECTION != '' ? 'section=' . $SECTION : ''),
+    "PAGER_BASE_LINK" => "/local/templates/main/components/mpakfm/news.list/custom/ajax.php?" . ($SECTION != '' ? 'section=' . $SECTION : ''),
     "PAGER_PARAMS_NAME" => "arrPager",
     "AJAX_OPTION_JUMP" => "Y",
     "AJAX_OPTION_STYLE" => "Y",
