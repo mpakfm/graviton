@@ -1800,10 +1800,16 @@ section {
   background-attachment: local;
 }
 
-.contacts-page {
-  background-repeat: no-repeat;
-  background-size: 200%;
-  background-position-x: -6.25rem;
+.back-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.back-img img {
+  width: 100%;
 }
 
 * {
@@ -6577,11 +6583,6 @@ input[type="number"] {
 }
 
 @media (min-width: 768px) {
-  .contacts-page {
-    background-size: auto;
-    background-position: -3.125rem -8.75rem;
-  }
-
   .title--h2 {
     font-size: 32px;
     font-weight: 900;
@@ -7006,11 +7007,13 @@ input[type="number"] {
   }
 }
 
-@media (min-width: 1024px) {
-  .contacts-page {
-    background-position: center 0;
+@media screen and (min-width: 1024px) {
+  .l-default {
+    padding: 0 70px;
   }
+}
 
+@media (min-width: 1024px) {
   .news .l-content {
     padding: 0;
     max-width: 73.75rem;
@@ -7151,12 +7154,6 @@ input[type="number"] {
 
   .s-feedback__item-note {
     max-width: 45.625rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .l-default {
-    padding: 0 70px;
   }
 }
 
@@ -7589,10 +7586,6 @@ input[type="number"] {
 }
 
 @media (min-width: 1600px) {
-  .contacts-page {
-    background-size: auto;
-  }
-
   *::-webkit-scrollbar {
     width: 8px;
     height: 8px;
