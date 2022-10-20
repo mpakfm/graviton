@@ -8,7 +8,7 @@
 }
 
 .s-product-content__text {
-  max-width: 33.75rem;
+  max-width: 70%;
   margin: 0 auto;
   padding: 37.5rem 0 0;
   font-size: 1.5625rem;
@@ -22,6 +22,8 @@
   width: 100%;
   z-index: 1;
   bottom: -900px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .s-product-content__image img {
@@ -125,8 +127,10 @@
 
 .s-product-characteristics {
   position: relative;
-  margin-top: 2.1875rem;
-  margin-bottom: 4.375rem;
+  padding-top: 2.1875rem;
+  padding-bottom: 4.375rem;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #ceced0;
 }
 
@@ -135,7 +139,7 @@
   bottom: 0;
   left: 0;
   width: 26.25rem;
-  height: 30rem;
+  height: 23.5625rem;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -201,6 +205,13 @@
   margin-bottom: 1.0625rem;
 }
 
+.s-product-characteristics__text--back {
+  display: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.1);
+}
+
 .s-product-about {
   position: relative;
   padding: 1.75rem 0;
@@ -233,7 +244,7 @@
   display: none;
   font-weight: 500;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.0625rem rgba(0, 0, 0, 0.1);
+  -webkit-text-stroke: 0.25rem rgba(0, 0, 0, 0.1);
 }
 
 .s-product-about__title {
@@ -415,7 +426,7 @@
   width: calc(100% - (238px * 2));
   min-height: 810px;
   background: linear-gradient(357.79deg, #202020 1.85%, rgba(40, 46, 66, 0) 69.85%);
-  padding: 0 50px;
+  padding: 0 130px;
   padding-top: 130px;
   margin: 0 auto;
 }
@@ -541,6 +552,10 @@
 
 .s-product-docs__item-download:hover svg {
   fill: #d91745;
+}
+
+.s-product-docs__item-size {
+  color: #333333;
 }
 
 .s-product-video {
@@ -727,6 +742,16 @@
     max-width: 23rem;
   }
 
+  .s-product-characteristics__text--back {
+    position: absolute;
+    top: 30%;
+    left: 100px;
+    display: block;
+    white-space: nowrap;
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+
   .s-product-about__wrap {
     display: flex;
     justify-content: space-between;
@@ -834,7 +859,7 @@
 
 @media (min-width: 992px) {
   .s-product-characteristics {
-    margin-bottom: 5.625rem;
+    padding-bottom: 5.625rem;
   }
 
   .s-product-characteristics__bg {
@@ -984,6 +1009,12 @@
     line-height: 1.7;
   }
 
+  .s-product-characteristics__text--back {
+    top: 60%;
+    left: 130px;
+    font-size: 8.125rem;
+  }
+
   .s-product-about {
     padding: 4.6875rem 0;
   }
@@ -1053,7 +1084,7 @@
 
 @media (min-width: 1440px) {
   .s-product-content__text {
-    max-width: 60.25rem;
+    max-width: 71.875rem;
     font-size: 4.375rem;
   }
 
@@ -1147,10 +1178,6 @@
 @media (min-width: 1600px) {
   .s-product-benefits__item:nth-child(2) .s-product-benefits__item-info {
     padding-left: 13.75rem;
-  }
-
-  .s-product-about__wrap {
-    gap: 18.75rem;
   }
 
   .s-product-about__slogan {
@@ -1280,10 +1307,6 @@
     margin-bottom: 23.4375rem;
   }
 
-  .s-product-about__wrap {
-    gap: 16.875rem;
-  }
-
   .s-product-about__slogan {
     max-width: 78.125rem;
     padding-top: 5rem;
@@ -1396,6 +1419,14 @@
   }
 }
 
+@media (max-width: 1299px) {
+  .s-product-docs__wrapper {
+    width: calc(100% - (220px * 2));
+    padding: 0 75px;
+    padding-top: 105px;
+  }
+}
+
 @media (max-width: 1200px) {
   .s-product-video__notebook-img {
     max-width: 56.25rem;
@@ -1405,7 +1436,9 @@
 @media (max-width: 1199px) {
   .s-product-docs__wrapper {
     width: calc(100% - (116px * 2));
-    padding-top: 105px;
+    min-height: 579px;
+    padding: 0 30px;
+    padding-top: 70px;
   }
 
   .s-product-docs__back {
@@ -1414,11 +1447,6 @@
 }
 
 @media (max-width: 1024px) {
-  .s-product-content__text {
-    max-width: 71.875rem;
-    padding-top: 100px;
-  }
-
   .s-product-content__image {
     bottom: -400px;
   }
@@ -1430,12 +1458,6 @@
 }
 
 @media (max-width: 991px) {
-  .s-product-docs__wrapper {
-    min-height: 579px;
-    padding: 0 30px;
-    padding-top: 70px;
-  }
-
   .s-product-video {
     padding-bottom: 1.875rem;
   }
@@ -1506,7 +1528,7 @@
 
 @media (max-width: 767px) {
   .s-product-content__text {
-    padding-top: 50px;
+    padding-top: 70px;
   }
 
   .s-product-content__image {
