@@ -12,10 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-$stmt = CIBlockSection::GetList(['sort' => 'asc'], ['IBLOCK_ID' => $arParams['IBLOCK_ID']], false, ['ID', 'CODE', 'NAME', 'IBLOCK_SECTION_ID']);
+$stmt     = CIBlockSection::GetList(['sort' => 'asc'], ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'CNT_ACTIVE' => 'Y'], true, ['ID', 'CODE', 'NAME', 'IBLOCK_SECTION_ID']);
 $sections = [];
 while($section = $stmt->Fetch()) {
-    $sections[] = $section;
+    if ($section['ELEMENT_CNT']) {
+        $sections[] = $section;
+    }
 }
 
 if ($arParams['AJAX_MODE'] != 'Y') {
