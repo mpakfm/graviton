@@ -6,9 +6,8 @@
  * Date:    18.10.2022
  * Time:    23:19
  */
+/** @var array $arParams */
 /** @var array $arResult */
-
-\Mpakfm\Printu::obj($arResult)->title('[PAGINATOR:TPL] $arResult');
 
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&" : "");
 
@@ -18,11 +17,8 @@ if ($arResult["NavPageNomer"] > 1) {
 } elseif ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) {
     $nextUrl = $arResult["sUrlPath"] . '?' . $strNavQueryString . 'PAGEN_' . $arResult["NavNum"] . '=' . ($arResult["NavPageNomer"]+1);
 }
-\Mpakfm\Printu::obj($nextUrl)->title('[PAGINATOR:TPL] $nextUrl');
 
 ?>
-
-<!-- TODO: Нужно настроить подгрузку новостей -->
 <div class="news__btn">
-    <button class="news__btn-more" type="button" data-url="<?=$nextUrl;?>">Больше новостей</button>
+    <button class="news__btn-more" type="button" data-url="<?=$nextUrl;?>" <?php if (!$nextUrl) { ?>style="display: none;" <?php } ?>>Больше новостей</button>
 </div>

@@ -110,14 +110,13 @@ $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"] = intval($arParams["PAGER_DESC_NUMB
 $arParams["PAGER_SHOW_ALL"] = $arParams["PAGER_SHOW_ALL"]=="Y";
 $arParams["CHECK_PERMISSIONS"] = ($arParams["CHECK_PERMISSIONS"] ?? '') != "N";
 
-\Mpakfm\Printu::obj($_REQUEST)->title('[news.list] $_REQUEST');
 if($arParams["DISPLAY_TOP_PAGER"] || $arParams["DISPLAY_BOTTOM_PAGER"])
 {
 	$arNavParams = array(
 		"nPageSize" => $arParams["NEWS_COUNT"],
 		//"bDescPageNumbering" => $arParams["PAGER_DESC_NUMBERING"],
 		//"bShowAll" => $arParams["PAGER_SHOW_ALL"],
-		"iNumPage" => isset($_REQUEST["PAGEN_1"]) && $_REQUEST["PAGEN_1"] > 1 ? ($_REQUEST["PAGEN_1"] - 1) : '1',
+		"iNumPage" => isset($_REQUEST["PAGEN_1"]) && $_REQUEST["PAGEN_1"] > 1 ? ($_REQUEST["PAGEN_1"]) : '1',
 	);
 	$arNavigation = CDBResult::GetNavParams($arNavParams);
 	if($arNavigation["PAGEN"]==0 && $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"]>0)
@@ -301,13 +300,11 @@ if($this->startResultCache(false, array(($arParams["CACHE_GROUPS"]==="N"? false:
 		}
 	}
 
-	$listPageUrl = '';
-	$arResult["ITEMS"] = array();
-	$arResult["ELEMENTS"] = array();
-        \Mpakfm\Printu::obj(array_merge($arFilter , $arrFilter))->title('[news.list] array_merge($arFilter , $arrFilter)');
-        \Mpakfm\Printu::obj($arNavParams)->title('[news.list] $arNavParams');
-	$rsElement = CIBlockElement::GetList($arSort, array_merge($arFilter , $arrFilter), false, $arNavParams, $shortSelect);
-        \Mpakfm\Printu::obj($rsElement->SelectedRowsCount())->title('[news.list] SelectedRowsCount');
+	$listPageUrl          = '';
+	$arResult["ITEMS"]    = [];
+	$arResult["ELEMENTS"] = [];
+
+	$rsElement  = CIBlockElement::GetList($arSort, array_merge($arFilter , $arrFilter), false, $arNavParams, $shortSelect);
 	while ($row = $rsElement->Fetch())
 	{
 		$id = (int)$row['ID'];
@@ -457,6 +454,10 @@ if($this->startResultCache(false, array(($arParams["CACHE_GROUPS"]==="N"? false:
 
 		$navComponentParameters["BASE_LINK"] = CHTTP::urlAddParams($pagerBaseLink, $pagerParameters, array("encode"=>true));
 	}
+
+        if ($arParams['AJAX_MODE'] == 'Y') {
+            $arParams["PAGER_TEMPLATE"] = 'ajax.' . $arParams["PAGER_TEMPLATE"];
+        }
 
 	$arResult["NAV_STRING"] = $rsElement->GetPageNavStringEx(
 		$navComponentObject,
