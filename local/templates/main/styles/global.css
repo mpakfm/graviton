@@ -5157,7 +5157,7 @@ textarea {
 .timetable .calendar-news__item {
   position: relative;
   padding: 0.3125rem 0 2rem;
-  padding-right: 70px;
+  padding-right: 0.9375rem;
 }
 
 .timetable .calendar-news__item:after {
@@ -5737,7 +5737,6 @@ input[type="number"] {
 .footer {
   position: relative;
   background: #000203;
-  padding-bottom: 9.375rem;
 }
 
 .footer .form {
@@ -5811,6 +5810,7 @@ input[type="number"] {
 
 .footer__wrapper {
   position: relative;
+  padding-bottom: 9.375rem;
 }
 
 .footer__wrapper:after {
@@ -6748,7 +6748,6 @@ input[type="number"] {
   .s-about-graviton__item {
     font-size: 1.25rem;
     line-height: 1.8;
-    font-weight: 500;
   }
 
   .s-about-graviton__item:first-child {
