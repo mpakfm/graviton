@@ -41,7 +41,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                     </div>
                     <div class="s-contacts__contents">
                         <div class="s-contacts__box is-active" id="tab_office">
-                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZMZfxSB" data-fancybox data-type=”iframe”>посмотреть на карте</a>
+                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZMZfxSB" data-fancybox data-type="iframe">посмотреть на карте</a>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Адрес:</div>
                                 <div class="s-contacts__box-text">Москва, Киевская улица, 7к1</div>
@@ -54,7 +54,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                             </div>
                         </div>
                         <div class="s-contacts__box" id="tab_stock">
-                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZeMQz~D" data-fancybox data-type=”iframe”>посмотреть на карте</a>
+                            <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZeMQz~D" data-fancybox data-type="iframe">посмотреть на карте</a>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Адрес:</div>
                                 <div class="s-contacts__box-text">Москвская область, Старое Ярославское ш., д. 1</div>

@@ -30,11 +30,14 @@ $this->setFrameMode(true);
                         <div class="timetable__tab" data-timetable="news">Новости</div>
                     </div>
                 </div>
-                <div class="timetable__top-content" data-timetable="events"><a class="timetable__link" href="/events">
+                <div class="timetable__top-content" data-timetable="events">
+                    <a class="timetable__link" href="/events">
                         <div class="timetable__link-text">Смотреть весь месяц
                             <div class="timetable__link-icon"><img src="img/svg/arrow-half.svg" alt=""></div>
                         </div>
-                        <div class="timetable__title">Список мероприятий компании Гравитон</div></a></div>
+                    </a>
+                    <div class="timetable__title">Список мероприятий компании Гравитон</div>
+                </div>
                 <div class="timetable__month"><?=$arResult['curDate']->format('m');?></div>
             </div>
         </div>
