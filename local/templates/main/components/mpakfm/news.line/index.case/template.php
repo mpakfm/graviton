@@ -35,7 +35,7 @@ $this->setFrameMode(true);
                 <div class="s-home-articles__item-title"><?=$arItem["NAME"]?></div>
                 <div class="s-home-articles__item-subtitle"><?=$arItem["PROPERTY_SUB_TITLE_VALUE"]?></div>
                 <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                    <div class="s-home-articles__text">
+                    <div class="s-home-articles__item-text">
                         <?=$arItem['PREVIEW_TEXT'];?>
                     </div>
                 <?php } ?>

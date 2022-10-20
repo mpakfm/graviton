@@ -43,4 +43,10 @@ if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
     $breadcrumb->setIblock('news', 'content')->setChain('news');
 } elseif (strpos($_SERVER['REQUEST_URI'], '/cases') === 0) {
     $breadcrumb->setIblock('cases', 'content')->setChain('cases');
+} elseif (strpos($_SERVER['REQUEST_URI'], '/contacts') === 0) {
+    \Library\Tools\Breadcrumb::$chain[] = [
+        'type' => 'section',
+        'link' => '/contacts',
+        'name' => "Контакты",
+    ];
 }

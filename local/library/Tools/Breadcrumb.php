@@ -80,28 +80,30 @@ class Breadcrumb
             if (empty($part) || ($sefFolder && $part == '/' . $sefFolder . '/')) {
                 continue;
             }
-            $section = CIBlockSection::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
-            if ($section) {
-                $this->uriSections[] = $part;
-                $url .= $part . '/';
-                self::$chain[] = [
-                    'type' => 'section',
-                    'link' => $url,
-                    'code' => $section['CODE'],
-                    'name' => $section['NAME'],
-                ];
-                continue;
-            }
-            $item = CIBlockElement::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
-            if ($item) {
-                $url .= $part . '/';
-                $this->uriItem[] = $part;
-                self::$chain[] = [
-                    'type' => 'item',
-                    'link' => $url,
-                    'code' => $item['CODE'],
-                    'name' => $item['NAME'],
-                ];
+            if ($this->iblock['ID']) {
+                $section = CIBlockSection::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
+                if ($section) {
+                    $this->uriSections[] = $part;
+                    $url .= $part . '/';
+                    self::$chain[] = [
+                        'type' => 'section',
+                        'link' => $url,
+                        'code' => $section['CODE'],
+                        'name' => $section['NAME'],
+                    ];
+                    continue;
+                }
+                $item = CIBlockElement::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
+                if ($item) {
+                    $url .= $part . '/';
+                    $this->uriItem[] = $part;
+                    self::$chain[] = [
+                        'type' => 'item',
+                        'link' => $url,
+                        'code' => $item['CODE'],
+                        'name' => $item['NAME'],
+                    ];
+                }
             }
         }
     }

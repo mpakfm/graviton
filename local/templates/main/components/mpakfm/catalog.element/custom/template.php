@@ -21,7 +21,7 @@ if ($arResult['META_TAGS']['TITLE']) {
 }
 $isAdmin = $USER->IsAdmin();
 ?>
-<section class="s-product-about">
+<section class="s-product-about" style="background-image: url(img/bg/product_page.jpg);">
     <div class="l-default">
         <div class="s-product-about__wrap">
             <div class="s-product-about__top">
@@ -52,7 +52,7 @@ $isAdmin = $USER->IsAdmin();
         </div>
     </div>
 </section>
-<section class="s-product-characteristics" id="product-characteristics">
+<section class="s-product-characteristics" id="product-characteristics" style="background-image: url(img/product-characteristics/bg.jpg);">
     <div class="l-default">
         <?php if (empty($arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE'])) { ?>
             <div class="s-product-characteristics__bg" style="background-image: url(./img/product-characteristics/notebook.png)"></div>
@@ -108,6 +108,7 @@ $isAdmin = $USER->IsAdmin();
                     </div>
                 </div>
             </div>
+            <div class="s-product-characteristics__text--back">Всё под рукой</div>
             <?php if (!empty($arResult['PROPERTIES']['CHARACTERISTICS']['~VALUE']['TEXT'])) { ?>
             <div class="s-product-characteristics__bottom">
                 <div class="s-product-characteristics__text">

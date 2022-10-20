@@ -56,7 +56,7 @@ $menuCopy = [
     "CACHE_GROUPS" => "Y"
 ];
 $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
-\Mpakfm\Printu::obj($breadcrumb)->title('$breadcrumb');
+
 ?>
 <footer class="footer">
     <div class="l-default">

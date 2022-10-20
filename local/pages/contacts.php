@@ -23,14 +23,15 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/contacts_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 ?>
+    <main class="main">
     <section class="s-contacts" style="background-image: url(img/back/contacts.png);">
         <div class="l-default">
             <div class="l-content">
                 <div class="s-contacts__inner">
                     <div class="s-contacts__tabs">
-                        <button class="s-contacts__item --office" type="button" data-tab-target="tab_office">
+                        <button class="s-contacts__item --office is-active" type="button" data-tab-target="tab_office">
                             <div class="s-contacts__item-title">Офис</div>
-                            <div class="s-contacts__item-prefix"><span></span></div>
+                            <div class="s-contacts__item-prefix"><span>Сюда надо написать какой-то текст а то пусто!!!</span></div>
                         </button>
                         <button class="s-contacts__item --stock" type="button" data-tab-target="tab_stock">
                             <div class="s-contacts__item-title">Склад</div>
@@ -143,6 +144,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
             </div>
         </div>
     </section>
+    </main>
 <?php
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
