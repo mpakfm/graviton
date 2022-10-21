@@ -6,6 +6,8 @@
  * Date:    11.09.2022
  * Time:    22:16
  * @var CMain $APPLICATION
+ * @var string $SECTION
+ * @var string $CODE
  */
 
 use Library\Tools\CacheSelector;
@@ -15,6 +17,11 @@ define("BODY_CLASS", "PAGE");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $iblock = CacheSelector::getIblockId('pages', 'content');
+
+if ($SECTION && !$CODE) {
+    $CODE = $SECTION;
+    unset($SECTION);
+}
 
 $params = [
     "DISPLAY_DATE"              => "Y",
@@ -26,7 +33,7 @@ $params = [
     "IBLOCK_TYPE"               => "content",
     "IBLOCK_ID"                 => $iblock,
     "ELEMENT_ID"                => (array_key_exists('ELEMENT_ID', $_REQUEST) && $_REQUEST["ELEMENT_ID"]) ? $_REQUEST["ELEMENT_ID"] : null,
-    "ELEMENT_CODE"              => (array_key_exists('CODE', $_REQUEST) && $_REQUEST["CODE"]) ? $_REQUEST["CODE"] : null,
+    "ELEMENT_CODE"              => $CODE,
     "CHECK_DATES"               => "N",
     "FIELD_CODE"                => ['TAGS', 'DETAIL_TEXT'],
     "PROPERTY_CODE"             => [],
