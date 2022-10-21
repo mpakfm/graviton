@@ -11,7 +11,6 @@ namespace Library\Tools;
 
 use CIBlockElement;
 use CIBlockSection;
-use Mpakfm\Printu;
 
 class Breadcrumb
 {
@@ -47,7 +46,6 @@ class Breadcrumb
 
     public function isIndex()
     {
-        Printu::obj($this->parts)->title('[isIndex] parts');
         return (empty($this->parts));
     }
 
@@ -87,7 +85,7 @@ class Breadcrumb
                     $url .= $part . '/';
                     self::$chain[] = [
                         'type' => 'section',
-                        'link' => $url,
+                        'link' => ($this->parts[1] == 'page' ? '/page' . $url : $url ),
                         'code' => $section['CODE'],
                         'name' => $section['NAME'],
                     ];

@@ -49,4 +49,6 @@ if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
         'link' => '/contacts',
         'name' => "Контакты",
     ];
+} elseif (strpos($_SERVER['REQUEST_URI'], '/page/') === 0) {
+    $breadcrumb->setIblock('pages', 'content')->setChain();
 }

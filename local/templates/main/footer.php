@@ -149,10 +149,10 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/tekhnicheskaya-podderzhka">Техническая поддержка</a>
-                                <a class="footer__nav-item" href="/page/garantiynye-usloviya">Гарантийные условия</a>
-                                <a class="footer__nav-item" href="/page/servesnye-tsentry">Сервесные центры</a>
-                                <a class="footer__nav-item" href="/page/urovni-podderzhki">Уровни поддержки</a>
+                                <a class="footer__nav-item" href="/page/support/tekhnicheskaya-podderzhka">Техническая поддержка</a>
+                                <a class="footer__nav-item" href="/page/support/garantiynye-usloviya">Гарантийные условия</a>
+                                <a class="footer__nav-item" href="/page/support/servesnye-tsentry">Сервесные центры</a>
+                                <a class="footer__nav-item" href="/page/support/urovni-podderzhki">Уровни поддержки</a>
                             </div>
                         </div>
                         <div class="footer__nav-column">
@@ -181,8 +181,8 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/kontraktnaya-razrabotka">Контрактная разработка</a>
-                                <a class="footer__nav-item" href="/page/oem">ОЕМ</a>
+                                <a class="footer__nav-item" href="/page/services/kontraktnaya-razrabotka">Контрактная разработка</a>
+                                <a class="footer__nav-item" href="/page/services/oem">ОЕМ</a>
                             </div>
                         </div>
                     </div>

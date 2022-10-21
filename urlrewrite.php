@@ -71,8 +71,8 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page(/([a-zA-Z0-9_\-]+)(/)?(.*))?#",
-        'RULE'      => "CODE=\$2&PARAMS=\$4",
+        'CONDITION' => "#^/page(/([a-zA-Z0-9_\-]+)?)?(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "SECTION=\$2&CODE=\$4&PARAMS=\$5",//SECTION=$2&ITEM=$4&OTHER=$5
         'ID'        => "bitrix:news.detail",
         'PATH'      => "/local/pages/one.page.php",
         'SORT'      => 100,

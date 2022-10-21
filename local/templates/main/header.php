@@ -49,7 +49,6 @@ if (defined("BODY_CLASS")) {
             break;
     }
 }
-\Mpakfm\Printu::obj($bodyStr)->title('[header] $bodyStr');
 
 ?>
 <!DOCTYPE html>
