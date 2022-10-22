@@ -3791,6 +3791,7 @@ textarea {
 }
 
 .s-partners__item {
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3798,7 +3799,6 @@ textarea {
   min-height: 5.0625rem;
   margin: 0 auto;
   padding: 1.0625rem 0.875rem;
-  transition: all 0.4s ease;
 }
 
 .s-partners__item img {
@@ -5821,7 +5821,7 @@ input[type="number"] {
 
 .footer__wrapper {
   position: relative;
-  padding-bottom: 9.375rem;
+  padding-bottom: 5.875rem;
 }
 
 .footer__wrapper:after {
