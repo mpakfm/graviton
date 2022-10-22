@@ -214,6 +214,7 @@
 
 .s-product-about {
   position: relative;
+  min-height: 800px;
   padding: 1.75rem 0;
   background-size: cover;
   background-position: center right;
@@ -1180,6 +1181,10 @@
     padding-left: 13.75rem;
   }
 
+  .s-product-about__wrap {
+    gap: 18.75rem;
+  }
+
   .s-product-about__slogan {
     max-width: 55.625rem;
     padding-top: 2.6875rem;
@@ -1341,6 +1346,12 @@
   .s-product-docs__tab {
     font-size: 2.5rem;
     line-height: 2.9375rem;
+  }
+}
+
+@media (max-width: 1600px) {
+  .s-product-about {
+    min-height: 0;
   }
 }
 
