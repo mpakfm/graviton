@@ -120,6 +120,20 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                             </div>
                             <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
                         </form>
+                        <?$APPLICATION->IncludeComponent("bitrix:sender.subscribe","",Array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "USE_PERSONALIZATION" => "Y",
+                                "CONFIRMATION" => "Y",
+                                "SHOW_HIDDEN" => "Y",
+                                "AJAX_MODE" => "Y",
+                                "AJAX_OPTION_JUMP" => "Y",
+                                "AJAX_OPTION_STYLE" => "Y",
+                                "AJAX_OPTION_HISTORY" => "Y",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600",
+                                "SET_TITLE" => "Y"
+                            )
+                        );?>
                     </div>
                     <div class="footer__nav">
                         <div class="footer__nav-column">
