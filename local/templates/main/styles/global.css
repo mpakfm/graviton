@@ -5855,6 +5855,10 @@ input[type="number"] {
   margin-bottom: 45px;
 }
 
+.footer__mobile-menu {
+  order: 0;
+}
+
 .footer__info {
   width: 100%;
   max-width: 34.625rem;
@@ -5993,6 +5997,7 @@ input[type="number"] {
 }
 
 .footer__nav-top {
+  order: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8836,12 +8841,22 @@ input[type="number"] {
     padding-top: 0;
   }
 
+  .footer__content .l-default {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__content-top {
+    order: 9;
+  }
+
   .footer__content-top .footer__row {
     flex-direction: column-reverse;
   }
 
   .footer__content-bottom .footer__info {
-    display: none;
+    order: 1;
+    margin-top: 0 !important;
   }
 
   .footer__info {
