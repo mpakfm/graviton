@@ -219,6 +219,7 @@ $isAdmin = $USER->IsAdmin();
         </div>
     </section>
 <?php } ?>
+<?php if ($arResult['IS_T']) { ?>
 <section class="s-product-tech" id="products-tech">
     <div class="l-default">
         <h2 class="title title--h2">Технические характеристики</h2>
@@ -246,12 +247,15 @@ $isAdmin = $USER->IsAdmin();
             <?php } ?>
         </div>
         <div class="s-product-tech__buttons">
+            <?php if (count($arResult['T_PROPERTIES']) > 5) { ?>
             <button class="s-product-tech__button s-product-tech__button-more btn btn--bordered" type="button">Развернуть</button>
+            <?php } ?>
             <a class="s-product-tech__button btn btn--bordered non-active" href="javascript::void(0);" download>Скачать</a>
             <a class="s-product-tech__button btn btn--bordered non-active" href="javascript::void(0);" >Информация о гарантии</a><!-- target="_blank" -->
         </div>
     </div>
 </section>
+<?php } ?>
 <section class="s-substitution">
     <div class="l-default">
         <h2 class="title title-h2 s-substitution__title">Импортозамещение</h2>
@@ -326,6 +330,7 @@ $isAdmin = $USER->IsAdmin();
     </div>
 </div>
 <?php } ?>
+<?php if ($arResult['IS_FILES']) { ?>
 <div class="s-product-docs" id="product-docs">
     <div class="s-product-docs__back s-product-docs__back-left">
         <picture>
@@ -359,7 +364,13 @@ $isAdmin = $USER->IsAdmin();
                                 <?php foreach($arResult['PROPERTIES']['M_DOCS']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                                 <div class="s-product-docs__item">
                                     <div class="s-product-docs__item-col">
-                                        <div class="s-product-docs__item-title"><?=$arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key];?></div>
+                                        <div class="s-product-docs__item-title">
+                                            <?php if (!empty($arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key])) { ?>
+                                            <?=$arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key];?>
+                                            <?php } else { ?>
+                                            <?=$file['ORIGINAL_NAME'];?>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                     <div class="s-product-docs__item-col">
                                         <div class="s-product-docs__item-info"><a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
@@ -430,6 +441,7 @@ $isAdmin = $USER->IsAdmin();
         </picture>
     </div>
 </div>
+<?php } ?>
 <section class="s-partners">
     <div class="l-default">
         <h2 class="title title--h2 text-center">Где купить ?</h2>

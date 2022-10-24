@@ -212,7 +212,7 @@ $partners = [
             <video class="main-top__notebook-video" autoplay="autoplay" loop="loop" playsinline webkit-playinginline muted>
                 <source src="videos/1.mp4" type="video/mp4" />
             </video>
-            <a class="main-top__more hidden" href="javascript:void(0);">
+            <a class="main-top__more" href="/catalog/client_solutions/laptops/laptop-line1/n15i-k2">
                 <div class="main-top__more-text ">Подробнее о продукте</div>
                 <div class="main-top__more-icon">
                     <svg class="ico ico-mono-arrow-more">
