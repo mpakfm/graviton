@@ -20,6 +20,8 @@
 
 use Library\Tools\CacheSelector;
 
+$arResult['IS_T'] = false;
+
 $arResult['FILES']        = [];
 $arResult['T_PROPERTIES'] = [];
 
@@ -29,6 +31,9 @@ foreach ($arResult['PROPERTIES'] as $property) {
     if (strpos($property['CODE'], 'T_') === 0 && !empty($property['VALUE'])) {
         $property['NAME'] = str_replace(['X.', 'Х.'], '', $property['~NAME']);
         $arResult['T_PROPERTIES'][] = $property;
+        if (!$arResult['IS_T']) {
+            $arResult['IS_T'] = true;
+        }
     }
 }
 
@@ -43,6 +48,11 @@ if ((int) $arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE']) {
 }
 if ((int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE']) {
     $filesIds[] = (int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE'];
+}
+
+$arResult['IS_FILES'] = false;
+if (!empty($arResult['PROPERTIES']['M_DOCS']['VALUE']) || !empty($arResult['PROPERTIES']['M_SERT']['VALUE']) || !empty($arResult['PROPERTIES']['M_DRIVERS']['VALUE'])) {
+    $arResult['IS_FILES'] = true;
 }
 foreach ($arResult['PROPERTIES']['M_DOCS']['VALUE'] as $item) {
     $filesIds[] = $item;

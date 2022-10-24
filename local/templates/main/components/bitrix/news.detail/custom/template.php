@@ -63,7 +63,9 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
                         <?endif;?>
 
                         <?if($arResult["DETAIL_TEXT"] <> ''):?>
+                        <div class="news-detail__content--text">
                             <?echo $arResult["DETAIL_TEXT"];?>
+                        </div>
                         <?endif?>
 
                     </div>
