@@ -15,33 +15,26 @@ $buttonId = $this->randString();
 
 \Bitrix\Main\UI\Extension::load('ui.fonts.opensans');
 ?>
-<div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
-<form class="form footer__subscribe">
-    <div class="form__inputs">
-        <div class="form__input">
-            <input type="email" name="email" placeholder="Укажите ваш e-mail" />
-        </div>
-        <div class="form__submit">
-            <button class="btn btn--bordered" type="submit" disabled>Подписаться</button>
-        </div>
-    </div>
-    <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
-</form>
-<?php
-/*
-?>
 <div class="bx-subscribe"  id="sender-subscribe">
-<?
+<?php
 $frame = $this->createFrame("sender-subscribe", false)->begin();
 ?>
-	<?if(isset($arResult['MESSAGE'])): CJSCore::Init(array("popup"));?>
+	<?if(isset($arResult['MESSAGE'])): CJSCore::Init(['popup']); ?>
 		<div id="sender-subscribe-response-cont" style="display: none;">
 			<div class="bx_subscribe_response_container">
 				<table>
 					<tr>
-						<td style="padding-right: 40px; padding-bottom: 0px;"><img src="<?=($this->GetFolder().'/images/'.($arResult['MESSAGE']['TYPE']=='ERROR' ? 'icon-alert.png' : 'icon-ok.png'))?>" alt=""></td>
+						<td style="padding-right: 40px; padding-bottom: 0px;">
+                            <img src="<?=($this->GetFolder().'/images/'.($arResult['MESSAGE']['TYPE']=='ERROR' ? 'icon-alert.png' : 'icon-ok.png'))?>" alt="">
+                        </td>
 						<td>
-							<div style="font-size: 22px;"><?=GetMessage('subscr_form_response_'.$arResult['MESSAGE']['TYPE'])?></div>
+							<div style="font-size: 22px;">
+                                <?php if ($arResult['MESSAGE']['CODE'] == 'message_err_email_exist') {?>
+                                Этот email уже есть в списке подписчиков.
+                                <?php } else { ?>
+                                <?=GetMessage('subscr_form_response_'.$arResult['MESSAGE']['TYPE'])?>
+                                <?php } ?>
+                            </div>
 							<div style="font-size: 16px;"><?=htmlspecialcharsbx($arResult['MESSAGE']['TEXT'])?></div>
 						</td>
 					</tr>
@@ -63,6 +56,9 @@ $frame = $this->createFrame("sender-subscribe", false)->begin();
 				});
 				oPopup.setContent(BX('sender-subscribe-response-cont'));
 				oPopup.show();
+                <?php if ($arResult['MESSAGE']['TYPE'] != 'ERROR') { ?>
+                $('input[name="SENDER_SUBSCRIBE_EMAIL"]').val('');
+                <?php } ?>
 			});
 		</script>
 	<?endif;?>
@@ -84,6 +80,8 @@ $frame = $this->createFrame("sender-subscribe", false)->begin();
 					{
 						return;
 					}
+
+                    console.log('[mailSender 1]');
 
 					var btn_span = btn.querySelector("span");
 					var btn_subscribe_width = btn_span.style.width;
@@ -115,55 +113,67 @@ $frame = $this->createFrame("sender-subscribe", false)->begin();
 		})();
 	</script>
 
-	<form id="bx_subscribe_subform_<?=$buttonId?>" role="form" method="post" action="<?=$arResult["FORM_ACTION"]?>">
+    <div class="footer__text d1">Будьте в курсе новостей, мероприятий и акций</div>
+	<form class="form footer__subscribe" id="bx_subscribe_subform_<?=$buttonId?>" role="form" method="post" action="<?=$arResult["FORM_ACTION"]?>">
 		<?=bitrix_sessid_post()?>
 		<input type="hidden" name="sender_subscription" value="add">
+        <div class="form__inputs">
+            <div class="bx-input-group form__input">
+                <input class="bx-form-control" type="email" name="SENDER_SUBSCRIBE_EMAIL" value="<?=$arResult["EMAIL"]?>" title="<?=GetMessage("subscr_form_email_title")?>" placeholder="<?=htmlspecialcharsbx(GetMessage('subscr_form_email_title'))?>">
+            </div>
 
-		<div class="bx-input-group">
-			<input class="bx-form-control" type="email" name="SENDER_SUBSCRIBE_EMAIL" value="<?=$arResult["EMAIL"]?>" title="<?=GetMessage("subscr_form_email_title")?>" placeholder="<?=htmlspecialcharsbx(GetMessage('subscr_form_email_title'))?>">
-		</div>
+            <div class="bx_subscribe_submit_container form__submit">
+                <button class="sender-btn btn-subscribe btn btn--bordered" id="bx_subscribe_btn_<?=$buttonId?>"><span><?=GetMessage("subscr_form_button")?></span></button>
+            </div>
+        </div>
+        <div class="footer__checkbox">
+            Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности
+        </div>
 
-		<div style="<?=(($arParams['HIDE_MAILINGS'] ?? '') <> 'Y' ? '' : 'display: none;')?>">
-			<?if(count($arResult["RUBRICS"])>0):?>
-				<div class="bx-subscribe-desc"><?=GetMessage("subscr_form_title_desc")?></div>
-			<?endif;?>
-			<?foreach($arResult["RUBRICS"] as $itemID => $itemValue):?>
-			<div class="bx_subscribe_checkbox_container">
-				<input type="checkbox" name="SENDER_SUBSCRIBE_RUB_ID[]" id="SENDER_SUBSCRIBE_RUB_ID_<?=$itemValue["ID"]?>" value="<?=$itemValue["ID"]?>"<?if($itemValue["CHECKED"]) echo " checked"?>>
-				<label for="SENDER_SUBSCRIBE_RUB_ID_<?=$itemValue["ID"]?>"><?=htmlspecialcharsbx($itemValue["NAME"])?></label>
-			</div>
-			<?endforeach;?>
-		</div>
+        <div style="<?=(($arParams['HIDE_MAILINGS'] ?? '') <> 'Y' ? '' : 'display: none;')?>">
+            <?if(count($arResult["RUBRICS"])>0):?>
+                <div class="bx-subscribe-desc"><?=GetMessage("subscr_form_title_desc")?></div>
+            <?endif;?>
+            <?foreach($arResult["RUBRICS"] as $itemID => $itemValue):?>
+                <div class="bx_subscribe_checkbox_container">
+                    <input type="checkbox" name="SENDER_SUBSCRIBE_RUB_ID[]" id="SENDER_SUBSCRIBE_RUB_ID_<?=$itemValue["ID"]?>" value="<?=$itemValue["ID"]?>"<?if($itemValue["CHECKED"]) echo " checked"?>>
+                    <label for="SENDER_SUBSCRIBE_RUB_ID_<?=$itemValue["ID"]?>"><?=htmlspecialcharsbx($itemValue["NAME"])?></label>
+                </div>
+            <?endforeach;?>
+        </div>
 
-		<?if (($arParams['USER_CONSENT'] ?? '') == 'Y'  && $arParams['AJAX_MODE'] <> 'Y'):?>
-		<div class="bx_subscribe_checkbox_container bx-sender-subscribe-agreement">
-			<?$APPLICATION->IncludeComponent(
-				"bitrix:main.userconsent.request",
-				"",
-				array(
-					"ID" => $arParams["USER_CONSENT_ID"],
-					"IS_CHECKED" => $arParams["USER_CONSENT_IS_CHECKED"],
-					"AUTO_SAVE" => "Y",
-					"IS_LOADED" => $arParams["USER_CONSENT_IS_LOADED"],
-					"ORIGIN_ID" => "sender/sub",
-					"ORIGINATOR_ID" => "",
-					"REPLACE" => array(
-						"button_caption" => GetMessage("subscr_form_button"),
-						"fields" => array(GetMessage("subscr_form_email_title"))
-					),
-				)
-			);?>
-		</div>
-		<?endif;?>
-
-		<div class="bx_subscribe_submit_container">
-			<button class="sender-btn btn-subscribe" id="bx_subscribe_btn_<?=$buttonId?>"><span><?=GetMessage("subscr_form_button")?></span></button>
-		</div>
+        <?if (($arParams['USER_CONSENT'] ?? '') == 'Y'  && $arParams['AJAX_MODE'] <> 'Y'):?>
+            <div class="bx_subscribe_checkbox_container bx-sender-subscribe-agreement">
+                <?$APPLICATION->IncludeComponent(
+                "bitrix:main.userconsent.request",
+                "",
+                array(
+                "ID" => $arParams["USER_CONSENT_ID"],
+                "IS_CHECKED" => $arParams["USER_CONSENT_IS_CHECKED"],
+                "AUTO_SAVE" => "Y",
+                "IS_LOADED" => $arParams["USER_CONSENT_IS_LOADED"],
+                "ORIGIN_ID" => "sender/sub",
+                "ORIGINATOR_ID" => "",
+                "REPLACE" => array(
+                "button_caption" => GetMessage("subscr_form_button"),
+                "fields" => array(GetMessage("subscr_form_email_title"))
+                ),
+                )
+                );?>
+            </div>
+        <?endif;?>
 	</form>
 <?
-$frame->beginStub();
+//$frame->beginStub();
+/*
 ?>
-	<?if(isset($arResult['MESSAGE'])): CJSCore::Init(array("popup"));?>
+	<?if(isset($arResult['MESSAGE'])): ?>
+        <?php
+        CUtil::InitJSCore();
+        CJSCore::Init(["fx"]);
+        CJSCore::Init(['ajax']);
+        CJSCore::Init(['popup']);
+        ?>
 		<div id="sender-subscribe-response-cont" style="display: none;">
 			<div class="bx_subscribe_response_container">
 				<table>
@@ -214,6 +224,8 @@ $frame->beginStub();
 						return;
 					}
 
+                    console.log('[mailSender 2]');
+
 					var btn_span = btn.querySelector("span");
 					var btn_subscribe_width = btn_span.style.width;
 					BX.addClass(btn, "send");
@@ -244,12 +256,13 @@ $frame->beginStub();
 		})();
 	</script>
 
+    <div class="footer__text d2">Будьте в курсе новостей, мероприятий и акций 2</div>
 	<form id="bx_subscribe_subform_<?=$buttonId?>" role="form" method="post" action="<?=$arResult["FORM_ACTION"]?>">
 		<?=bitrix_sessid_post()?>
 		<input type="hidden" name="sender_subscription" value="add">
 
 		<div class="bx-input-group">
-			<input class="bx-form-control" type="email" name="SENDER_SUBSCRIBE_EMAIL" value="" title="<?=GetMessage("subscr_form_email_title")?>" placeholder="<?=htmlspecialcharsbx(GetMessage('subscr_form_email_title'))?>">
+			<input class="bx-form-control" type="email" name="SENDER_SUBSCRIBE_EMAIL" value="" title="2 <?=GetMessage("subscr_form_email_title")?>" placeholder="2 <?=htmlspecialcharsbx(GetMessage('subscr_form_email_title'))?>">
 		</div>
 
 		<div style="<?=(($arParams['HIDE_MAILINGS'] ?? '') <> 'Y' ? '' : 'display: none;')?>">
@@ -286,11 +299,11 @@ $frame->beginStub();
 		<?endif;?>
 
 		<div class="bx_subscribe_submit_container">
-			<button class="sender-btn btn-subscribe" id="bx_subscribe_btn_<?=$buttonId?>"><span><?=GetMessage("subscr_form_button")?></span></button>
+			<button class="sender-btn btn-subscribe" id="bx_subscribe_btn_<?=$buttonId?>"><span>2 <?=GetMessage("subscr_form_button")?></span></button>
 		</div>
 	</form>
 <?
+*/
 $frame->end();
 ?>
 </div>
-*/

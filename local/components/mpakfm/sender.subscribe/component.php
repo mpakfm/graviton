@@ -2,6 +2,7 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 use Bitrix\Main\Loader;
+use Bitrix\Sender\ContactTable;
 use Bitrix\Sender\Recipient;
 
 /** @global CMain $APPLICATION */
@@ -79,8 +80,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && check_bitrix_sessid() && isset($_POST['sender_subscription']) && $_POST['sender_subscription']=='add')
 {
-    \Mpakfm\Printu::info($arParams)->title('[mpakfm:sender.subscribe] $arParams');
-    \Mpakfm\Printu::info($_POST)->title('[mpakfm:sender.subscribe] $_POST');
 	if(check_email($_POST["SENDER_SUBSCRIBE_EMAIL"], true))
 	{
 		if(!Loader::includeModule("sender"))
@@ -97,7 +96,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && check_bitrix_sessid() && isset($_POST
 		}
 
 		$arFilter = array("SITE_ID" => SITE_ID);
-		if (!$arParams["SHOW_HIDDEN"]) $arFilter["IS_PUBLIC"] = "Y";
+		if (!$arParams["SHOW_HIDDEN"]) {
+			$arFilter["IS_PUBLIC"] = "Y";
+		}
 		$arFilter["ID"] = $mailingListFromPost;
 		$mailingList = \Bitrix\Sender\Subscription::getMailingList($arFilter);
 		$mailingIdList = array();
@@ -156,12 +157,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && check_bitrix_sessid() && isset($_POST
 		}
 		else
 		{
-                    \Mpakfm\Printu::info($mailingIdList)->title('[mpakfm:sender.subscribe] $mailingIdList');
-			\Bitrix\Sender\Subscription::add($_POST["SENDER_SUBSCRIBE_EMAIL"], $mailingIdList);
-			$APPLICATION->set_cookie("SENDER_SUBSCR_EMAIL", $_POST["SENDER_SUBSCRIBE_EMAIL"], $cookieLifeTime);
-			$arResult['MESSAGE'] = array('TYPE' => 'NOTE', 'CODE' => 'message_success');
-			$subscr_EMAIL = $_POST["SENDER_SUBSCRIBE_EMAIL"];
-			unset($_SESSION['SENDER_SUBSCRIBE_LIST']);
+			$typeId  = Recipient\Type::detect($_POST["SENDER_SUBSCRIBE_EMAIL"]);
+			$contact = ContactTable::getRow([
+				'select' => ['ID'],
+				'filter' => [
+					'=CODE'    => $_POST["SENDER_SUBSCRIBE_EMAIL"],
+					'=TYPE_ID' => $typeId,
+				]
+			]);
+			if ($contact) {
+				$arResult['MESSAGE'] = array('TYPE' => 'ERROR', 'CODE' => 'message_err_email_exist');
+			} else {
+				\Bitrix\Sender\Subscription::add($_POST["SENDER_SUBSCRIBE_EMAIL"], $mailingIdList);
+				$APPLICATION->set_cookie(
+					"SENDER_SUBSCR_EMAIL",
+					$_POST["SENDER_SUBSCRIBE_EMAIL"],
+					$cookieLifeTime
+				);
+				$arResult['MESSAGE'] = array('TYPE' => 'NOTE', 'CODE' => 'message_success');
+				$subscr_EMAIL = $_POST["SENDER_SUBSCRIBE_EMAIL"];
+				unset($_SESSION['SENDER_SUBSCRIBE_LIST']);
+			}
 		}
 	}
 	else
@@ -279,6 +295,7 @@ else
 
 if(!is_array($mailingList)) $mailingList = array();
 $arResult["RUBRICS"] = array();
+
 foreach($mailingList as $mailing)
 {
 	$bChecked = (

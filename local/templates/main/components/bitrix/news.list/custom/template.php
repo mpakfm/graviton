@@ -12,8 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult["NAV_STRING"])->title('[TPL] NAV_STRING');
-
 // @todo: времянка, передать определение секций либо в компонент либо в result_modifier
 $stmt = CIBlockSection::GetList(['sort' => 'asc'], ['IBLOCK_ID' => $arParams['IBLOCK_ID']], false, ['ID', 'CODE', 'NAME', 'IBLOCK_SECTION_ID']);
 $sections = [];

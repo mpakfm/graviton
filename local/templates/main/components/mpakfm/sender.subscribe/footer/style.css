@@ -1,0 +1,12 @@
+.bx_subscribe_response_container {
+    padding: 40px;
+    color: #35414E;
+}
+
+.bx_subscribe_checkbox_container {
+    line-height: 16px;
+    font-size: 13px;
+    margin-bottom: 3px;
+    vertical-align: middle;
+    color: #aaa;
+}
