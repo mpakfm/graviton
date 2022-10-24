@@ -108,18 +108,22 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 <div class="footer__info-mobile--right"></div>
                             </div>
                         </div>
-                        <div class="footer__text">Будьте в курсе новостей, мероприятий и акций</div>
-                        <form class="form footer__subscribe">
-                            <div class="form__inputs">
-                                <div class="form__input">
-                                    <input type="email" name="email" placeholder="Укажите ваш e-mail" />
-                                </div>
-                                <div class="form__submit">
-                                    <button class="btn btn--bordered" type="submit" disabled>Подписаться</button>
-                                </div>
-                            </div>
-                            <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
-                        </form>
+                        <?$APPLICATION->IncludeComponent("mpakfm:sender.subscribe","footer",Array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "USE_PERSONALIZATION" => "N",
+                                "CONFIRMATION" => "N",
+                                "HIDE_MAILINGS" => "Y",
+                                "SHOW_HIDDEN" => "N",
+                                "USER_CONSENT" => "N",
+                                "AJAX_MODE" => "Y",
+                                "AJAX_OPTION_JUMP" => "Y",
+                                "AJAX_OPTION_STYLE" => "Y",
+                                "AJAX_OPTION_HISTORY" => "Y",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600",
+                                "SET_TITLE" => "N"
+                            )
+                        );?>
                     </div>
                     <div class="footer__nav">
                         <div class="footer__nav-column">

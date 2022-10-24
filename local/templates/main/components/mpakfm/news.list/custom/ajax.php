@@ -22,8 +22,6 @@ if (!$USER->IsAdmin()) {
 
 $SECTION = array_key_exists('section', $_REQUEST) ? $_REQUEST['section'] : '';
 
-\Mpakfm\Printu::obj($SECTION)->title('[ajax.php] $SECTION');
-
 $params = [
     "DISPLAY_DATE" => "Y",
     "DISPLAY_NAME" => "Y",
@@ -78,6 +76,5 @@ $params = [
     "AJAX_OPTION_HISTORY" => "N",
     "AJAX_OPTION_ADDITIONAL" => "",
 ];
-\Mpakfm\Printu::obj($params)->title('[AJAX] $params');
 ?>
 <?$APPLICATION->IncludeComponent("mpakfm:news.list","custom",$params);?>

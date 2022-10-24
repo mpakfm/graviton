@@ -11,6 +11,7 @@
 
 #bitrix
 /bitrix/*
+/delete_modules/*
 /upload
 
 # Tmp

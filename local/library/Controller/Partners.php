@@ -9,6 +9,9 @@
 
 namespace Library\Controller;
 
+use Bitrix\Main\Config\Option;
+use Library\Tools\LogWriter;
+
 class Partners extends AbstractController
 {
     public function mailerAction()
@@ -24,7 +27,10 @@ Email: {$_POST['email']}
 Название компании: {$_POST['company']}
 
         ";
-        mail('sale@graviton.ru', $subj, $text);
+
+        $option = Option::get('main', 'email_from');
+        mail($option, $subj, $text);
+        LogWriter::info($text)->title('to ' . $option . '$text')->file('mailer');
 
         $this->response['result'] = true;
         return true;
