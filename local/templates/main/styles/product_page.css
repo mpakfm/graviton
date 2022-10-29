@@ -1573,7 +1573,7 @@
     transform: translateY(0);
     display: block;
     opacity: 0;
-    margin-right: 15px;
+    margin-right: 0.9375rem;
   }
 
   .s-product-docs__tab.is-active::before {
