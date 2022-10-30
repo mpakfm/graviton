@@ -132,8 +132,8 @@
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.2;
-  white-space: nowrap;
   color: #4e5056;
+  white-space: nowrap;
   border-bottom: 1px solid #d91745;
   box-sizing: border-box;
 }
@@ -207,6 +207,7 @@
 .s-goods__title {
   margin-bottom: 0.9375rem;
   font-size: 1.1875rem;
+  font-weight: 400;
   line-height: 1.375rem;
 }
 
@@ -353,7 +354,7 @@
 
 .s-solutions {
   padding: 9.375rem 0 9.6875rem;
-  background-position-x: 110%;
+  background-position-x: 100%;
   background-position-y: 55%;
   background-repeat: no-repeat;
   background-size: 32.5rem;
@@ -377,8 +378,8 @@
 }
 
 .s-solutions__text--last {
-  margin-bottom: 0;
   max-width: 70%;
+  margin-bottom: 0;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 170%;
@@ -391,8 +392,8 @@
 }
 
 .s-solutions__text--short .s-solutions__text {
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
 }
 
 .s-substitution {
@@ -473,10 +474,10 @@
 }
 
 .s-advertising {
+  overflow: visible;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
 }
 
 .s-advertising .l-default {
@@ -484,6 +485,7 @@
 }
 
 .s-advertising__title {
+  padding: 19.8125rem 0 6.8125rem;
   font-family: "Roboto";
   font-size: 2.375rem;
   font-weight: 600;
@@ -494,11 +496,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  padding: 19.8125rem 0 6.8125rem;
 }
 
 .s-advertising::after {
-  content: "эталон";
   position: absolute;
   right: -15%;
   bottom: -12%;
@@ -506,8 +506,9 @@
   font-weight: 500;
   line-height: 110%;
   color: transparent;
-  letter-spacing: -0.03em;
   opacity: .2;
+  content: "эталон";
+  letter-spacing: -0.03em;
   -webkit-text-stroke: 0.1875rem #ffffff22;
   text-stroke: 0.1875rem #ffffff22;
 }
@@ -528,6 +529,7 @@
   .s-rulers__tab {
     min-width: 12.0625rem;
     font-size: 0.9375rem;
+    line-height: 1.125rem;
   }
 
   .s-rulers__tab-title span {
@@ -624,8 +626,8 @@
   }
 
   .s-solutions__text {
-    font-size: 0.9375rem;
     margin-bottom: 0.9375rem;
+    font-size: 0.9375rem;
   }
 
   .s-solutions__text--last {
@@ -633,8 +635,8 @@
   }
 
   .s-solutions__text--short .s-solutions__text {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
   }
 
   .s-substitution__title {
@@ -658,8 +660,8 @@
   }
 
   .s-advertising__title {
-    font-size: 3.125rem;
     padding: 3.125rem 0 5.9375rem;
+    font-size: 3.125rem;
   }
 
   .s-advertising::after {
@@ -689,6 +691,7 @@
   .s-rulers__tab {
     min-width: 14.25rem;
     font-size: 1.1875rem;
+    line-height: 1.375rem;
   }
 
   .s-rulers__tab-content {
@@ -759,13 +762,13 @@
   }
 
   .s-solutions__text {
-    font-size: 1.0625rem;
     max-width: 75%;
+    font-size: 1.0625rem;
   }
 
   .s-solutions__text--last {
-    font-size: 1.0625rem;
     max-width: 75%;
+    font-size: 1.0625rem;
   }
 
   .s-substitution__title {
@@ -812,8 +815,8 @@
   }
 
   .s-advertising__title {
-    font-size: 4.375rem;
     padding: 5.1875rem 0 6.25rem;
+    font-size: 4.375rem;
   }
 
   .s-advertising::after {
@@ -826,7 +829,7 @@
 @media (min-width: 1040px) {
   .s-solutions__text--short .s-solutions__text {
     font-size: 21px;
-    line-height: 25px;
+    line-height: 1.5625rem;
   }
 }
 
@@ -858,7 +861,8 @@
 
   .s-rulers__tab {
     min-width: 16.5625rem;
-    font-size: 1.5625rem;
+    font-size: 1.3125rem;
+    line-height: 1.5625rem;
   }
 
   .s-goods__title {
@@ -962,8 +966,8 @@
   }
 
   .s-advertising__title {
-    font-size: 6.875rem;
     padding: 11rem 0 6.875rem;
+    font-size: 6.875rem;
   }
 
   .s-advertising::after {
@@ -978,10 +982,6 @@
 
   .s-rulers {
     padding-top: 4.5625rem;
-  }
-
-  .s-rulers__tab {
-    font-size: 1.3125rem;
   }
 
   .s-goods__title {
@@ -1028,8 +1028,8 @@
   }
 
   .s-advertising__title {
-    font-size: 7.5rem;
     padding: 11rem 0 5.625rem;
+    font-size: 7.5rem;
   }
 
   .s-advertising::after {
@@ -1066,9 +1066,9 @@
 
 @media (max-width: 991px) {
   .s-solutions {
+    padding: 3.4375rem 0 5rem;
     background-position: right bottom;
     background-size: 55%;
-    padding: 3.4375rem 0 5rem;
   }
 }
 
@@ -1100,8 +1100,8 @@
   }
 
   .s-solutions__title {
+    margin-bottom: 1.5625rem;
     text-align: center;
-    margin-bottom: 25px;
   }
 
   .s-substitution {
@@ -1109,20 +1109,20 @@
   }
 
   .s-advertising:before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(23.83deg, rgba(0, 0, 0, 0.8) 42.56%, rgba(0, 0, 0, 0) 91.77%);
+    content: '';
   }
 }
 
 @media (max-width: 500px) {
   .s-solutions {
-    background-size: 16.25rem 26.25rem;
     padding: 3.4375rem 0 1.5625rem;
+    background-size: 16.25rem 26.25rem;
   }
 }
 /*# sourceMappingURL=maps/categories_page.css.map */
