@@ -49,6 +49,12 @@ if ((int) $arResult['PROPERTIES']['DETAIL_IMG_CENTER']['VALUE']) {
 if ((int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE']) {
     $filesIds[] = (int) $arResult['PROPERTIES']['DETAIL_IMG_BOTTOM']['VALUE'];
 }
+if ((int) $arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE']) {
+    $filesIds[] = (int) $arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE'];
+}
+if ((int) $arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE']) {
+    $filesIds[] = (int) $arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE'];
+}
 
 $arResult['IS_FILES'] = false;
 if (!empty($arResult['PROPERTIES']['M_DOCS']['VALUE']) || !empty($arResult['PROPERTIES']['M_SERT']['VALUE']) || !empty($arResult['PROPERTIES']['M_DRIVERS']['VALUE'])) {
