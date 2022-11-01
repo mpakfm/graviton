@@ -156,8 +156,8 @@ $isAdmin = $USER->IsAdmin();
         <div class="s-product-benefits__items">
             <div class="s-product-benefits__item"  style="background-image: url('img/product-benefit/bg.png');">
                 <div class="s-product-benefits__item-image">
-                    <?php if (!empty($arResult['PROPERTIES']['BENEFIT1_IMG']['FILE_VALUE'])) { ?>
-                        <img src="<?=$arResult['PROPERTIES']['BENEFIT1_IMG']['FILE_VALUE']['SRC'];?>" alt="">
+                    <?php if (!empty($arResult['FILES'][$arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE']])) { ?>
+                        <img src="<?=$arResult['FILES'][$arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE']]['SRC'];?>" alt="">
                     <?php } else { ?>
                         <img src="./img/product-benefit/1.png" alt="">
                     <?php } ?>
@@ -169,8 +169,8 @@ $isAdmin = $USER->IsAdmin();
             </div>
             <div class="s-product-benefits__item">
                 <div class="s-product-benefits__item-image">
-                    <?php if (!empty($arResult['PROPERTIES']['BENEFIT2_IMG']['FILE_VALUE'])) { ?>
-                        <img src="<?=$arResult['PROPERTIES']['BENEFIT2_IMG']['FILE_VALUE']['SRC'];?>" alt="">
+                    <?php if (!empty($arResult['FILES'][$arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE']])) { ?>
+                        <img src="<?=$arResult['FILES'][$arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE']]['SRC'];?>" alt="">
                     <?php } else { ?>
                         <img src="./img/product-benefit/2.png" alt="">
                     <?php } ?>
@@ -366,9 +366,9 @@ $isAdmin = $USER->IsAdmin();
                                     <div class="s-product-docs__item-col">
                                         <div class="s-product-docs__item-title">
                                             <?php if (!empty($arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key])) { ?>
-                                            <?=$arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key];?>
+                                                <?=$arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key];?>
                                             <?php } else { ?>
-                                            <?=$file['ORIGINAL_NAME'];?>
+                                                <?=$file['ORIGINAL_NAME'];?>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -392,10 +392,17 @@ $isAdmin = $USER->IsAdmin();
                             <?php foreach($arResult['PROPERTIES']['M_SERT']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                             <div class="s-product-docs__item">
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-title"><?=$arResult['PROPERTIES']['M_SERT']['DESCRIPTION'][$key];?></div>
+                                    <div class="s-product-docs__item-title">
+                                        <?php if (!empty($arResult['PROPERTIES']['M_SERT']['DESCRIPTION'][$key])) { ?>
+                                            <?=$arResult['PROPERTIES']['M_SERT']['DESCRIPTION'][$key];?>
+                                        <?php } else { ?>
+                                            <?=$file['ORIGINAL_NAME'];?>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-info"><a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
+                                    <div class="s-product-docs__item-info">
+                                        <a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
                                             <svg class="ico ico-mono-icon-download">
                                                 <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
                                             </svg></a>
@@ -414,7 +421,13 @@ $isAdmin = $USER->IsAdmin();
                             <?php foreach($arResult['PROPERTIES']['M_DRIVERS']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                             <div class="s-product-docs__item">
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-title"><?=$arResult['PROPERTIES']['M_DRIVERS']['DESCRIPTION'][$key];?></div>
+                                    <div class="s-product-docs__item-title">
+                                        <?php if (!empty($arResult['PROPERTIES']['M_DRIVERS']['DESCRIPTION'][$key])) { ?>
+                                            <?=$arResult['PROPERTIES']['M_DRIVERS']['DESCRIPTION'][$key];?>
+                                        <?php } else { ?>
+                                            <?=$file['ORIGINAL_NAME'];?>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                                 <div class="s-product-docs__item-col">
                                     <div class="s-product-docs__item-info"><a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
