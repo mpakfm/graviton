@@ -37,3 +37,4 @@ tests/cookie/*
 /*.png
 /*.jpg
 /*.sql
+.DS_Store
