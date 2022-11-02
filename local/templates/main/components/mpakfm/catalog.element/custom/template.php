@@ -455,7 +455,7 @@ $isAdmin = $USER->IsAdmin();
     </div>
 </div>
 <?php } ?>
-<section class="s-partners">
+<section class="s-partners" id="s-partners">
     <div class="l-default">
         <h2 class="title title--h2 text-center">Где купить ?</h2>
         <div class="s-partners__items s-partners__type-two">
