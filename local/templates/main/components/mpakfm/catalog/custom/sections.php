@@ -42,6 +42,9 @@ if ($sectionListParams["COUNT_ELEMENTS"] === "Y")
 		$sectionListParams["COUNT_ELEMENTS_FILTER"] = "CNT_AVAILABLE";
 	}
 }
+?>
+<main class="main">
+<?php
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"custom",
@@ -167,3 +170,5 @@ if ($arParams["SHOW_TOP_ELEMENTS"] !== "N")
 	);
 	unset($basketAction);
 }
+?>
+</main>
