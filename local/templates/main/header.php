@@ -37,7 +37,7 @@ if (defined("BODY_CLASS")) {
     switch (BODY_CLASS) {
         case"CATALOG":
             if ($breadcrumb->uriItem) {
-                $bodyStr = 'class="product-page" data-scroll-container style="background-image: url(img/bg/product_page.png)"';
+                $bodyStr = 'class="product-page" data-scroll-container style="background-image: url(img/bg/product_page.jpg)"';
             } else {
                 $bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
             }
@@ -154,32 +154,35 @@ if (defined("BODY_CLASS")) {
                 "CACHE_GROUPS" => "Y"
             )
         );?>
-        <div class="header__mobile">
-            <div class="header__mobile-top">
-                <div class="header__mobile-search"></div>
-                <div class="header__mobile-title"></div>
-                <div class="close"><span> </span><span> </span></div>
-            </div>
-        <div class="header__mobile-content"></div><a class="header__mobile-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
-        </div>
     </header>
+    <div class="header__mobile">
+        <div class="header__mobile-top">
+            <div class="header__mobile-search"></div>
+            <div class="header__mobile-title"></div>
+            <div class="close"><span> </span><span> </span></div>
+        </div>
+        <div class="header__mobile-content"></div>
+        <a class="header__mobile-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
+    </div>
     <div class="s-contact-us">
         <div class="s-contact-us__left">
             <div class="s-contact-us__left-text">Связаться с нами</div>
-            <div class="s-contact-us__left-icon"> <img src="img/svg/chat.svg" alt=""></div>
-            <div class="s-contact-us__left-top"> <img src="img/svg/arrow-top.svg" alt=""></div>
+            <div class="s-contact-us__left-icon"><img src="img/svg/chat.svg" alt="" /></div>
+            <div class="s-contact-us__left-top"><img src="img/svg/arrow-top.svg" alt="" /></div>
         </div>
         <div class="s-contact-us__content">
-            <div class="close"> <span></span><span></span></div>
+            <div class="close"><span></span><span></span></div>
             <div class="s-contact-us__item">
                 <a class="s-contact-us__item-phone" href="tel:+78005008886">8-800-500-88-86</a>
                 <a class="s-contact-us__item-btn btn btn--grey" href="tel:+78005008886">Позвонить</a>
             </div>
             <div class="s-contact-us__item">
-                <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
+                <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div>
+                <a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
             </div>
             <div class="s-contact-us__item">
-                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div><a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
+                <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div>
+                <a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
             </div>
             <div class="btn btn--cancel btn--grey">Отмена</div>
         </div>
@@ -190,33 +193,33 @@ if (defined("BODY_CLASS")) {
             <div class="form__inputs">
                 <div class="form__input">
                     <label>E-mail </label>
-                    <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения" name="email">
+                    <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения" name="email" />
                 </div>
                 <div class="form__input">
                     <label>ФИО</label>
-                    <input type="text" placeholder="Введите фамилию, имя и отчество" name="name">
+                    <input type="text" placeholder="Введите фамилию, имя и отчество" name="name" />
                 </div>
                 <div class="form__input">
                     <label>Телефон </label>
-                    <input type="text" placeholder="+7(ХХХ)ХХХХХХХ" name="phone">
+                    <input type="text" placeholder="+7(ХХХ)ХХХХХХХ" name="phone" />
                 </div>
                 <div class="form__input">
                     <label>ИНН</label>
-                    <input type="number" placeholder="9999999999" name="inn">
+                    <input type="number" placeholder="9999999999" name="inn" />
                 </div>
                 <div class="form__input">
                     <label>Название компании </label>
-                    <input type="text" placeholder="Введите название компании" name="company">
+                    <input type="text" placeholder="Введите название компании" name="company" />
                 </div>
             </div>
             <div class="form__checkboxes">
                 <div class="form__checkbox">
-                    <input name="robot" class="form__checkbox-input" type="checkbox">
+                    <input name="robot" class="form__checkbox-input" type="checkbox" />
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я не робот</div>
                 </div>
                 <div class="form__checkbox">
-                    <input name="terms" class="form__checkbox-input" type="checkbox" checked>
+                    <input name="terms" class="form__checkbox-input" type="checkbox" checked />
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я согласен с условиями обработки персональных данных.</div>
                 </div>

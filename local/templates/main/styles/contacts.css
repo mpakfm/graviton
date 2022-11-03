@@ -63,7 +63,7 @@
   font-weight: 300;
   line-height: 1.2;
   color: #ceced0;
-  transition: 0.3s;
+  transition: .3s;
   border-bottom: 0.125rem solid #fff;
 }
 
@@ -97,7 +97,7 @@
   height: 1.25rem;
   background: #03030300;
   transform: translateY(-50%);
-  transition: 0.3s;
+  transition: .3s;
   content: "";
 }
 
@@ -164,6 +164,7 @@
 
 .s-contacts__information-item {
   display: inline-flex;
+  margin-right: 1.0625rem;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1.2;
@@ -176,8 +177,8 @@
   font-weight: 400;
 }
 
-.s-contacts__information-item:not(:last-child) {
-  margin-right: 1.0625rem;
+.s-contacts__information-item:last-child {
+  margin-right: 0;
 }
 
 .s-contacts__driving-title {
@@ -336,16 +337,16 @@
     display: none;
   }
 
+  .s-contacts__item:hover .s-contacts__item-prefix span {
+    opacity: 0.7;
+  }
+
   .s-contacts__item.--office {
     width: 15.375rem;
   }
 
   .s-contacts__item.--stock {
     width: 24.375rem;
-  }
-
-  .s-contacts__item:hover .s-contacts__item-prefix span {
-    opacity: 0.7;
   }
 
   .s-contacts__item-title {
@@ -365,8 +366,8 @@
   }
 
   .s-contacts__item-prefix span {
+    transition: .3s;
     opacity: 0;
-    transition: 0.3s;
   }
 
   .s-contacts__box {
@@ -556,7 +557,6 @@
 
   .s-contacts__information-item {
     font-size: 0.75rem;
-    line-height: 0.875rem;
   }
 
   .s-contacts__driving-title {
@@ -680,7 +680,6 @@
 
   .s-contacts__information-item {
     font-size: 0.8125rem;
-    line-height: 0.9375rem;
   }
 
   .s-contacts__driving-title {
@@ -801,11 +800,6 @@
 
   .s-contacts__information {
     justify-content: space-between;
-  }
-
-  .s-contacts__information-item {
-    font-size: 1.0625rem;
-    line-height: 1.25rem;
   }
 
   .s-contacts__driving {

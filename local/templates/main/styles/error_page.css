@@ -133,10 +133,6 @@
   .s-error__item {
     gap: 0.9375rem 0;
   }
-
-  .s-error__item-text {
-    font-size: 1.0625rem;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -158,7 +154,7 @@
   }
 
   .s-error__buttons {
-    margin-bottom: 6.25rem;
+    margin-bottom: 7.5rem;
     gap: 2.5rem;
     grid-template-columns: repeat(4, 1fr);
   }
@@ -181,11 +177,7 @@
   }
 
   .s-error__buttons {
-    gap: 6.25rem;
-  }
-
-  .s-error__item-text {
-    font-size: 1.1875rem;
+    gap: 7.5rem;
   }
 }
 /*# sourceMappingURL=maps/error_page.css.map */
