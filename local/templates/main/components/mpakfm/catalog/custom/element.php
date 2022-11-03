@@ -16,14 +16,72 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
+use Library\Tools\Breadcrumb;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/product_page.css?t=' . time() . '">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/product_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $this->setFrameMode(true);
 
-$isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEBAR_PATH']));
+$isSidebar      = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEBAR_PATH']));
+$breadcrumb     = Breadcrumb::init()::$chain;
+$sectionLinkNum = count($breadcrumb) - 2;
+$productLinkNum = count($breadcrumb) - 1;
 ?>
+<div class="product-header product-header-show">
+    <div class="l-default">
+        <div class="product-header__wrapper">
+            <a class="product-header__logo" href="/">
+                <div class="product-header__logo-emblem">
+                    <svg viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="M11.8731 0L2.13816 5.56262C0.815061 6.31864 1.45257e-07 7.71584 0 9.22789L7.41963e-07 20.3155L3.35996 18.3956L3.35996 9.22789C3.35996 8.90387 3.53462 8.60447 3.81814 8.44247L11.8731 3.8398L11.8731 0Z"
+                                fill="#D91745"
+                        ></path>
+                        <path
+                                d="M13.5368 32.433L3.80148 26.8701L7.16144 24.9502L15.2168 29.5531C15.5003 29.7151 15.8497 29.7151 16.1332 29.5531L24.1553 24.9693L27.5152 26.8892L17.8132 32.433C16.4901 33.189 14.8599 33.189 13.5368 32.433Z"
+                                fill="#D91745"
+                        ></path>
+                        <path d="M31.35 20.3535L31.35 9.22789C31.35 7.71584 30.5349 6.31864 29.2118 5.56262L19.5094 0.0185866V3.85839L27.5319 8.44247C27.8154 8.60448 27.99 8.90388 27.99 9.22789V18.4336L31.35 20.3535Z" fill="#D91745"></path>
+                        <path d="M22.4441 22.1825L23.1014 21.0636L15.6646 16.8442L8.17547 21.0933L8.81539 22.1825H22.4441Z" fill="#D91745"></path>
+                        <path d="M7.39721 19.7031L14.8864 15.4541V6.76485H13.799L6.79739 18.6822L7.39721 19.7031Z" fill="#D91745"></path>
+                        <path d="M16.4375 6.76485L16.4375 15.4541L23.8743 19.6734L24.5136 18.5855L17.5688 6.76485H16.4375Z" fill="#D91745"></path>
+                    </svg>
+                </div>
+            </a>
+            <a class="product-header__back" href="<?=$breadcrumb[$sectionLinkNum]['link'];?>">
+                <div class="product-header__back-icon">
+                    <svg viewBox="0 0 27 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26 1H13.5H1L8.43243 7.94444" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </a>
+            <div class="product-header__name"><?=$breadcrumb[$productLinkNum]['name'];?></div>
+            <div class="product-header__menu">
+                <nav class="menu-product">
+                    <div class="menu__items">
+                        <a class="menu__item scroll" href="<?=$breadcrumb[$productLinkNum]['link'];?>#products-content">Описание</a>
+                        <a class="menu__item scroll" href="<?=$breadcrumb[$productLinkNum]['link'];?>#products-tech">Технические характеристики</a>
+                        <div class="menu__item menu__item-btn"></div>
+                        <a class="menu__item scroll" data-doctab href="<?=$breadcrumb[$productLinkNum]['link'];?>#product-docs">Документация</a>
+                        <a class="menu__item scroll" data-doctab href="<?=$breadcrumb[$productLinkNum]['link'];?>#product-docs">Загрузка драйверов</a>
+                        <a class="menu__item scroll" href="<?=$breadcrumb[$productLinkNum]['link'];?>#s-partners">Купить</a>
+                    </div>
+                </nav>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+                    if (!$('#product-docs').length) {
+                        $('.product-header__menu a[data-doctab]').hide();
+                    }
+                });
+            </script>
+            <a class="product-header__btn btn btn--bordered" href="#popup-registration" data-fancybox=""> <div class="product-header__btn-text">Стать партнером</div></a>
+            <div class="product-header__burger"><span></span><span></span></div>
+        </div>
+    </div>
+</div>
+<main class="main">
 <div class='row'>
 	<div class='<?=($isSidebar ? 'col-md-9 col-sm-8' : 'col-xs-12')?>'>
 		<?
@@ -223,3 +281,4 @@ $isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEB
 		?>
 	</div>
 </div>
+</main>

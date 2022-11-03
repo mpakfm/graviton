@@ -114,6 +114,7 @@ if (!empty($imagesIds)) {
 }
 
 ?>
+<main class="main">
 <section class="s-top-categories">
     <div class="l-default">
         <div class="s-top-categories__wrapper">
@@ -360,3 +361,4 @@ if (array_key_exists(3, $chain)) {
         </div>
     </div>
 </section>
+</main>
