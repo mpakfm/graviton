@@ -20,6 +20,7 @@ use Library\Tools\Breadcrumb;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/product_page.css?t=' . time() . '">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/product_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/catalog_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $this->setFrameMode(true);
 
@@ -28,7 +29,7 @@ $breadcrumb     = Breadcrumb::init()::$chain;
 $sectionLinkNum = count($breadcrumb) - 2;
 $productLinkNum = count($breadcrumb) - 1;
 ?>
-<div class="product-header product-header-show">
+<div class="product-header">
     <div class="l-default">
         <div class="product-header__wrapper">
             <a class="product-header__logo" href="/">

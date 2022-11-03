@@ -93,7 +93,8 @@ class Breadcrumb
                 }
                 $item = CIBlockElement::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
                 if ($item) {
-                    $url .= $part . '/';
+                    //$url .= $part . '/';
+                    $url .= $part;
                     $this->uriItem[] = $part;
                     self::$chain[] = [
                         'type' => 'item',
