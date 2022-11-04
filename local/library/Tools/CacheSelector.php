@@ -298,4 +298,32 @@ class CacheSelector
         }
         return $id;
     }
+
+    public static function getFormId(string $formSid, $cacheTime = null): ?int
+    {
+        $cacheId  = 'getFormId' . $formSid;
+        $cacheDir = 'CacheSelector';
+        $id       = null;
+        if (is_null($cacheTime)) {
+            $cacheTime = static::CACHE_TIME;
+        } else {
+            $cacheTime = (int) $cacheTime;
+        }
+        $cache = Cache::createInstance();
+
+        if ($cache->initCache($cacheTime, $cacheId, $cacheDir)) {
+            $id = $cache->getVars();
+        } elseif ($cache->startDataCache()) {
+            $sql     = "SELECT ID FROM `b_form` WHERE SID = '" . $formSid . "'";
+            $connect = Application::getConnection();
+            $rs      = $connect->query($sql);
+            $result  = $rs->fetch();
+            $id      = $result['ID'];
+            if (!$id) {
+                $cache->abortDataCache();
+            }
+            $cache->endDataCache($id);
+        }
+        return $id;
+    }
 }
