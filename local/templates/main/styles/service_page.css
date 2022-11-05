@@ -1,2 +1,75 @@
+.s-services-cards {
+  padding: 2.5rem 0;
+}
 
+.s-services-cards__items {
+  display: grid;
+  gap: 3.75rem 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.s-banner {
+  overflow: hidden;
+}
+
+.s-banner__title {
+  max-width: 65.625rem;
+  margin-bottom: 5.5625rem;
+  color: #9a9ea9;
+  -webkit-text-fill-color: #9a9ea9;
+}
+
+@media (min-width: 768px) {
+  .s-services-cards {
+    padding: 3.125rem 0;
+  }
+
+  .s-services-cards__items {
+    gap: 3.75rem 1.875rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .s-banner__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .s-services-cards {
+    padding: 3.75rem 0;
+  }
+
+  .s-services-cards__items {
+    gap: 6.0625rem 1.875rem;
+  }
+
+  .s-banner__title {
+    margin-bottom: 3.125rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .s-services-cards {
+    padding: 4.6875rem 0;
+  }
+
+  .s-services-cards__items {
+    gap: 3.125rem 1.875rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .s-banner__title {
+    margin-bottom: 6.25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .s-services-cards__items {
+    gap: 5rem 1.875rem;
+  }
+
+  .s-banner__title {
+    margin-bottom: 5.625rem;
+  }
+}
 /*# sourceMappingURL=maps/service_page.css.map */
