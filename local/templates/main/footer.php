@@ -153,10 +153,10 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                 </div>
                             </div>
                             <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/support/tekhnicheskaya-podderzhka">Техническая поддержка</a>
-                                <a class="footer__nav-item" href="/page/support/garantiynye-usloviya">Гарантийные условия</a>
                                 <a class="footer__nav-item" href="/page/support/servesnye-tsentry">Сервесные центры</a>
-                                <a class="footer__nav-item" href="/page/support/urovni-podderzhki">Уровни поддержки</a>
+                                <a class="footer__nav-item" href="/page/support/garantiynye-usloviya">Гарантийные условия</a>
+                                <a class="footer__nav-item" href="/page/support/yuridicheskaya-podderzhka">Юридическая  поддержка</a>
+                                <a class="footer__nav-item" href="/page/support/zagruzka-drayverov">Загрузка драйверов</a>
                             </div>
                         </div>
                         <div class="footer__nav-column">

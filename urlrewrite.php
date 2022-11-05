@@ -71,10 +71,17 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/servesnye-tsentry?(\?.*)?#",
+        'CONDITION' => "#^/page/support/servisnye-tsentry?(\?.*)?#",
         'RULE'      => "SECTION=\$2&CODE=\$4&PARAMS=\$5",//SECTION=$2&ITEM=$4&OTHER=$5
-        'ID'        => "bitrix:news.detail",
+        'ID'        => "",
         'PATH'      => "/local/pages/service.center.php",
+        'SORT'      => 100,
+    ),
+    array (
+        'CONDITION' => "#^/page/support/yuridicheskaya-podderzhka?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.legal.php",
         'SORT'      => 100,
     ),
     array (
