@@ -12,108 +12,159 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?endif;?>
-<?=$arResult["FORM_NOTE"]?>
-<?if ($arResult["isFormNote"] != "Y")
-{
 ?>
-<?=$arResult["FORM_HEADER"]?>
-<table>
-<?
-if ($arResult["isFormDescription"] == "Y" || $arResult["isFormTitle"] == "Y" || $arResult["isFormImage"] == "Y")
-{
-?>
-	<tr>
-		<td><?
-if ($arResult["isFormTitle"])
-{
-?>
-	<h3><?=$arResult["FORM_TITLE"]?></h3>
-<?
-} //endif ;
+<?=$arResult['FORM_HEADER'];?>
 
-	if ($arResult["isFormImage"] == "Y")
-	{
-	?>
-	<a href="<?=$arResult["FORM_IMAGE"]["URL"]?>" target="_blank" alt="<?=GetMessage("FORM_ENLARGE")?>"><img src="<?=$arResult["FORM_IMAGE"]["URL"]?>" <?if($arResult["FORM_IMAGE"]["WIDTH"] > 300):?>width="300"<?elseif($arResult["FORM_IMAGE"]["HEIGHT"] > 200):?>height="200"<?else:?><?=$arResult["FORM_IMAGE"]["ATTR"]?><?endif;?> hspace="3" vscape="3" border="0" /></a>
-	<?//=$arResult["FORM_IMAGE"]["HTML_CODE"]?>
-	<?
-	} //endif
-	?>
-
-			<p><?=$arResult["FORM_DESCRIPTION"]?></p>
-		</td>
-	</tr>
-	<?
-} // endif
-	?>
-</table>
-<br />
-<table class="form-table data-table">
-	<thead>
-		<tr>
-			<th colspan="2">&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-	<?
-	foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion)
-	{
-		if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden')
-		{
-			echo $arQuestion["HTML_CODE"];
-		}
-		else
-		{
-	?>
-		<tr>
-			<td>
-				<?if (is_array($arResult["FORM_ERRORS"]) && array_key_exists($FIELD_SID, $arResult['FORM_ERRORS'])):?>
-				<span class="error-fld" title="<?=htmlspecialcharsbx($arResult["FORM_ERRORS"][$FIELD_SID])?>"></span>
-				<?endif;?>
-				<?=$arQuestion["CAPTION"]?><?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?>
-				<?=$arQuestion["IS_INPUT_CAPTION_IMAGE"] == "Y" ? "<br />".$arQuestion["IMAGE"]["HTML_CODE"] : ""?>
-			</td>
-			<td><?=$arQuestion["HTML_CODE"]?></td>
-		</tr>
-	<?
-		}
-	} //endwhile
-	?>
-<?
-if($arResult["isUseCaptcha"] == "Y")
-{
-?>
-		<tr>
-			<th colspan="2"><b><?=GetMessage("FORM_CAPTCHA_TABLE_TITLE")?></b></th>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td><input type="hidden" name="captcha_sid" value="<?=htmlspecialcharsbx($arResult["CAPTCHACode"]);?>" /><img src="/bitrix/tools/captcha.php?captcha_sid=<?=htmlspecialcharsbx($arResult["CAPTCHACode"]);?>" width="180" height="40" /></td>
-		</tr>
-		<tr>
-			<td><?=GetMessage("FORM_CAPTCHA_FIELD_TITLE")?><?=$arResult["REQUIRED_SIGN"];?></td>
-			<td><input type="text" name="captcha_word" size="30" maxlength="50" value="" class="inputtext" /></td>
-		</tr>
-<?
-} // isUseCaptcha
-?>
-	</tbody>
-	<tfoot>
-		<tr>
-			<th colspan="2">
-				<input <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
-				<?if ($arResult["F_RIGHT"] >= 15):?>
-				&nbsp;<input type="hidden" name="web_form_apply" value="Y" /><input type="submit" name="web_form_apply" value="<?=GetMessage("FORM_APPLY")?>" />
-				<?endif;?>
-				&nbsp;<input type="reset" value="<?=GetMessage("FORM_RESET");?>" />
-			</th>
-		</tr>
-	</tfoot>
-</table>
-<p>
-<?=$arResult["REQUIRED_SIGN"];?> - <?=GetMessage("FORM_REQUIRED_FIELDS")?>
-</p>
-<?=$arResult["FORM_FOOTER"]?>
-<?
-} //endif (isFormNote)
+    <div class="form__radios">
+        <?php foreach($arResult['ITEMS'] as $item) { ?>
+            <?php
+            switch($item['COMMENTS']) {
+                case"tabs":
+                    foreach ($item['ANSWERS'] as $ans) {
+                        ?>
+                        <div class="form__radio">
+                            <input class="form__radio-input" type="radio" name="form_radio_<?=$item['SID'];?>" value="<?=$ans['ID']?>" <?=($ans['FIELD_PARAM'] == 'checked' ? 'checked' : '');?>>
+                            <div class="form__radio-text"><?=$ans['MESSAGE'];?></div>
+                        </div>
+                        <?php
+                    }
+                break;
+            }
+            ?>
+        <?php } ?>
+    </div>
+    <div class="s-support-form__columns">
+        <div class="s-support-form__inputs">
+            <div class="s-support-form__column">
+                <div class="form__title">Контакты</div>
+                <div class="form__inputs">
+                    <?php foreach($arResult['ITEMS'] as $item) { ?>
+                    <?php
+                        switch($item['COMMENTS']) {
+                            case"email":
+                                ?>
+                                <div class="form__input">
+                                    <label for="form_email_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <input id="form_email_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
+                                           name="form_email_<?=$item['ID'];?>" type="text" <?=(!empty($_POST['form_email_' . $item['ID']]) ? 'value="' . $_POST['form_email_' . $item['ID']] . '"' : '');?>
+                                           placeholder="Введите реальный E-mail на него придет письмо  подтверждения">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php
+                                break;
+                            case"fio":
+                                ?>
+                                <div class="form__input">
+                                    <label for="form_text_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <input id="form_text_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
+                                           name="form_text_<?=$item['ID'];?>" type="text" <?=(!empty($_POST['form_text_' . $item['ID']]) ? 'value="' . $_POST['form_text_' . $item['ID']] . '"' : '');?>
+                                           placeholder="Введите фамилию имя и отвечтво">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php
+                                break;
+                            case"phone":
+                                ?>
+                                <div class="form__input">
+                                    <label for="form_text_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <input id="form_text_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
+                                           name="form_text_<?=$item['ID'];?>" type="text" <?=(!empty($_POST['form_text_' . $item['ID']]) ? 'value="' . $_POST['form_text_' . $item['ID']] . '"' : '');?>
+                                           placeholder="+7(ХХХ)ХХХХХХХ">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php
+                                break;
+                        }
+                    ?>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="s-support-form__column">
+                <div class="form__title">Оборудование</div>
+                <div class="form__inputs">
+                    <?php foreach($arResult['ITEMS'] as $item) { ?>
+                        <?php
+                        switch($item['COMMENTS']) {
+                            case"serial":
+                                ?>
+                                <div class="form__input">
+                                    <label for="form_text_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <input name="form_text_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
+                                           type="text" <?=(!empty($_POST['form_text_' . $item['ID']]) ? 'value="' . $_POST['form_text_' . $item['ID']] . '"' : '');?>
+                                           placeholder="0000000000000-0000">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php
+                                break;
+                            case"question":
+                                ?>
+                                <div class="form__textarea">
+                                    <label for="form_textarea_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <textarea name="form_textarea_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
+                                              type="text" <?=(!empty($_POST['form_textarea_' . $item['ID']]) ? 'value="' . $_POST['form_textarea_' . $item['ID']] . '"' : '');?>
+                                              placeholder="Введите ваш вопрос"></textarea>
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php
+                                break;
+                        }
+                        ?>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <div class="s-support-form__mobile"></div>
+        <div class="s-support-form__column s-support-form__info">
+            <div class="form__title"></div>
+            <div class="s-support-form__contacts">
+                <div class="s-support-form__contacts-left">
+                    <div class="s-support-form__contacts-title">Другие способы получить помощь</div>
+                    <div class="s-support-form__contacts-mobile"></div>
+                </div>
+                <div class="s-support-form__contacts-links"><a class="s-support-form__contacts-phone" href="tel:88005517575">
+                        <label>Позвоните нам</label><span> 8 800 551-75-75</span></a><a class="s-support-form__contacts-email" href="mailto:sc@3l.ru">
+                        <label>Напишите нам</label><span>sc@3l.ru</span></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="s-support-form__bottom">
+        <div class="s-support-form__bottom-left">
+            <div class="s-support-form__bottom-item">
+                <?php foreach($arResult['ITEMS'] as $item) { ?>
+                    <?php
+                    switch($item['COMMENTS']) {
+                        case"agree":
+                            $keys = array_keys($item['ANSWERS']);
+                            ?>
+                            <div class="form__checkbox">
+                                <input class="form__checkbox-input" type="checkbox" name="form_checkbox_<?=$item['SID'];?>[]" value="<?=$keys[0];?>">
+                                <div class="form__checkbox-btn <?=($item['IS_ERROR'] ? 'js-error' : '');?>"></div>
+                                <div class="form__checkbox-text"><?=$item['TITLE'];?></div>
+                            </div>
+                            <?php if ($item['IS_ERROR']) {?>
+                                <p><?=$item['ERROR_MESSAGE'];?></p>
+                            <?php } ?>
+                            <?php
+                            break;
+                    }
+                    ?>
+                <?php } ?>
+            </div>
+            <div class="s-support-form__bottom-item">
+                <input type="hidden" name="web_form_apply" value="Y" />
+                <button class="form__submit btn" type="submit" name="web_form_apply" value="<?=GetMessage("FORM_APPLY")?>">Отправить</button>
+            </div>
+        </div>
+        <div class="s-support-form__contacts-message s-support-form__bottom-item">Круглосуточно по всей России</div>
+    </div>
+<?=$arResult["FORM_FOOTER"];?>

@@ -11,6 +11,7 @@ namespace Library\Tools;
 
 use CIBlockElement;
 use CIBlockSection;
+use Mpakfm\Printu;
 
 class Breadcrumb
 {
@@ -24,6 +25,8 @@ class Breadcrumb
     public $uriItem;
 
     public static $chain;
+    public static $uri;
+    public static $code;
 
     /** @var Breadcrumb */
     public static $obj;
@@ -38,8 +41,9 @@ class Breadcrumb
 
     private function __construct()
     {
-        $uri   = ($_SERVER['QUERY_STRING'] != '' ? str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI']);
-        $parts = explode('/', $uri);
+        $uri    = ($_SERVER['QUERY_STRING'] != '' ? str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI']);
+        $uriTmp = explode('?', $uri);
+        $parts  = explode('/', $uriTmp[0]);
 
         $this->parts = array_diff($parts, ['']);
     }
@@ -98,12 +102,18 @@ class Breadcrumb
                     $this->uriItem[] = $part;
                     self::$chain[] = [
                         'type' => 'item',
-                        'link' => $url,
+                        'link' => ($this->parts[1] == 'page' ? '/page' . $url : $url ),
                         'code' => $item['CODE'],
                         'name' => $item['NAME'],
                     ];
                 }
             }
         }
+        if (!empty(self::$chain)) {
+            $last = count(self::$chain) - 1;
+            self::$uri  = self::$chain[$last]['link'];
+            self::$code = self::$chain[$last]['code'];
+        }
+        Printu::info(self::$chain)->title('self::$chain');
     }
 }

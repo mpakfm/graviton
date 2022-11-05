@@ -207,6 +207,37 @@ class CacheSelector
         return $result ?? null;
     }
 
+    public static function getIblockElement(int $iblockId, string $code, int $cacheTime = 0)
+    {
+        if (!$iblockId) {
+            throw new RuntimeException('IBlock ID can not be empty');
+        }
+        if (!$code) {
+            throw new RuntimeException('Element CODE can not be empty');
+        }
+        if (!$cacheTime) {
+            $cacheTime = static::CACHE_TIME;
+        }
+        $cacheId  = 'getIblockElement-' . $iblockId . '-' . $code;
+        $cacheDir = 'CacheSelector';
+        $cache = Cache::createInstance();
+        if ($cache->initCache($cacheTime, $cacheId, $cacheDir)) {
+            $result = $cache->getVars();
+        } elseif ($cache->startDataCache()) {
+            $filter = [
+                'CODE'      => $code,
+                'IBLOCK_ID' => $iblockId,
+            ];
+            $result = \CIBlockElement::GetList([], $filter, false, false, ['*'])->Fetch();
+            if (!$result) {
+                $cache->abortDataCache();
+            }
+            $cache->endDataCache($result);
+        }
+
+        return $result;
+    }
+
     public static function getHlBlock(string $name, $cacheTime = null): ?array
     {
         Loader::includeModule('highloadblock');
