@@ -78,10 +78,31 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
+        'CONDITION' => "#^/page/support/garantiynye-usloviya?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.usloviya.php",
+        'SORT'      => 100,
+    ),
+    array (
         'CONDITION' => "#^/page/support/yuridicheskaya-podderzhka?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
         'PATH'      => "/local/pages/service.legal.php",
+        'SORT'      => 100,
+    ),
+    array (
+        'CONDITION' => "#^/page/support/zagruzka-drayverov?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.drivers.php",
+        'SORT'      => 100,
+    ),
+    array (
+        'CONDITION' => "#^/page/about?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/about.php",
         'SORT'      => 100,
     ),
     array (

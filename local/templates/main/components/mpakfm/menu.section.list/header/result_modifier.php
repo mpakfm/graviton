@@ -21,6 +21,7 @@ foreach ($arResult['SECTIONS'] as $section) {
 
     $item = [
         'ID'    => $section['ID'],
+        'CODE'  => $section['CODE'],
         'NAME'  => $section['NAME'],
         'LINK'  => $section['UF_LINK'],
         'CHILD' => []
@@ -40,6 +41,7 @@ if (!empty($arResult['ELEMENTS'][$arResult['SECTION']['ID']])) {
         $i++;
         $item = [
             'NAME'  => $element['NAME'],
+            'CODE'  => $element['CODE'],
             'LINK'  => $element['PROPERTY_LINK_VALUE'],
             'BLANK' => $element['PROPERTY_BLANK_VALUE'],
             'CHILD' => null,

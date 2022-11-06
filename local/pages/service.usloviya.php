@@ -3,12 +3,10 @@
  * Created by PhpStorm
  * Project: graviton
  * User:    mpak
- * Date:    11.09.2022
- * Time:    22:16
- * @var CMain $APPLICATION
- * @var string $SECTION
- * @var string $CODE
+ * Date:    06.11.2022
+ * Time:    16:29
  */
+/** @var CMain $APPLICATION */
 
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
@@ -38,7 +36,9 @@ $menuParams = [
     "CACHE_GROUPS" => "Y",
 ];
 
-$pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
+$pageItem = CacheSelector::getIblockElement($iblock, 'garantiynye-usloviya');
+
+\Mpakfm\Printu::info($pageItem)->title('$pageItem');
 
 ?>
     <main class="main">
@@ -64,57 +64,12 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
                 </div>
                 <div class="s-support-contact__descriptions">
                     <div class="s-support-contact__subtitle">Если вы хотите сообщить о возможной контрафактной или поддельной продукции либо о других видах предполагаемого нарушения прав на интеллектуальную собственность Гравитон, сообщите о контрафактных продуктах или подделках.</div>
-                    <div class="s-support-contact__description">Если вы хотите сообщить о возможной контрафактной или поддельной продукции либо о других видах предполагаемого нарушения прав на интеллектуальную собственность Гравитон, сообщите о контрафактне.</div>
-                </div>
-                <div class="s-support-contact__content">
-                    <?$APPLICATION->IncludeComponent("bitrix:form.result.new","service",Array(
-                    "SEF_MODE" => "Y",
-                    "WEB_FORM_ID" => $formServiceId,
-                    "LIST_URL" => "/page/" . Breadcrumb::$uri,
-                    "EDIT_URL" => Breadcrumb::$uri,
-                    "SUCCESS_URL" => Breadcrumb::$uri,
-                    "CHAIN_ITEM_TEXT" => "",
-                    "CHAIN_ITEM_LINK" => "",
-                    "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                    "USE_EXTENDED_ERRORS" => "Y",
-                    "CACHE_TYPE" => "A",
-                    "CACHE_TIME" => "3600",
-                    "SEF_FOLDER" => "/",
-                    "VARIABLE_ALIASES" => Array(
-                    )
-                    )
-                    );?>
-                </div>
-            </div>
-        </section>
-        <section class="s-support-contact s-support-contact-legal">
-            <div class="l-default">
-                <div class="s-support-contact__content">
-                    <div class="news-detail__content">
-                        <div class="news-detail__content--title">Сервисные центры</div>
-                        <div class="news-detail__content--text">
-                            <p>Сеть сервисных центров осуществляет гарантийное и постгарантийное обслуживание вычислительной техники Гравитон на всей территории России.</p>
-                            <p>Инженерная помощь осуществляется как в сервисных центрах, так и на месте эксплуатации - силами выездных специалистов</p>
-                        </div>
-
-                        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","responce",Array(
-                                "SEF_MODE" => "Y",
-                                "WEB_FORM_ID" => $formResponceId,
-                                "LIST_URL" => "/page/" . Breadcrumb::$uri,
-                                "EDIT_URL" => Breadcrumb::$uri,
-                                "SUCCESS_URL" => Breadcrumb::$uri,
-                                "CHAIN_ITEM_TEXT" => "",
-                                "CHAIN_ITEM_LINK" => "",
-                                "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                                "USE_EXTENDED_ERRORS" => "Y",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "3600",
-                                "SEF_FOLDER" => "/",
-                                "VARIABLE_ALIASES" => Array(
-                                )
-                            )
-                        );?>
+                    <div class="s-support-contact__description">
+                        <?=$pageItem['DETAIL_TEXT'];?>
                     </div>
+                </div>
+                <div class="s-support-contact__content">
+
                 </div>
             </div>
         </section>
