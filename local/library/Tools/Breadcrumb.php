@@ -23,6 +23,9 @@ class Breadcrumb
     public $uriSections;
     /** @var array */
     public $uriItem;
+    /** @var string */
+    public $bodyStr = 'data-scroll-container';
+
     /** @var array */
     public static $chain;
     /** @var string */
@@ -135,6 +138,38 @@ class Breadcrumb
             $last = count(self::$chain) - 1;
             self::$uri  = self::$chain[$last]['link'];
             self::$code = self::$chain[$last]['code'];
+        }
+    }
+
+    public function setBodyClass()
+    {
+        global $USER;
+
+        if ($this->isIndex() && !$USER->IsAdmin()) {
+            $this->bodyStr = 'data-scroll-container class="isIndexVideoShowed"';
+        }
+
+        if (defined("BODY_CLASS")) {
+            switch (BODY_CLASS) {
+                case"CATALOG":
+                    if ($this->uriItem) {
+                        $this->bodyStr = 'class="product-page" data-scroll-container style="background-image: url(img/bg/product_page.jpg)"';
+                    } else {
+                        $this->bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
+                    }
+                    break;
+                case"NEWS":
+                    if ($this->uriItem) {
+                        $this->bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
+                    }
+                    break;
+                case"SERVICE-LEGAL":
+                    $this->bodyStr = 'class="legal_support-page" data-scroll-container';
+                    break;
+                case"SERVICE-DRIVERS":
+                    $this->bodyStr = 'class="drivers-page" data-scroll-container';
+                    break;
+            }
         }
     }
 }

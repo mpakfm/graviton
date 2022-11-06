@@ -15,7 +15,7 @@ use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
-define("BODY_CLASS", "PAGE");
+define("BODY_CLASS", "SERVICE-LEGAL");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 

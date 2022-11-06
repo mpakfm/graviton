@@ -11,6 +11,7 @@
 
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
+use Library\Tools\Breadcrumb;
 use Library\Tools\CookieSecret;
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css?t=' . time() . '">', true);
@@ -27,28 +28,8 @@ $searchParam = [
 
 $bodyStr = 'data-scroll-container';
 
-$breadcrumb = \Library\Tools\Breadcrumb::init();
-
-if ($breadcrumb->isIndex() && !$USER->IsAdmin()) {
-    $bodyStr = 'data-scroll-container class="isIndexVideoShowed"';
-}
-
-if (defined("BODY_CLASS")) {
-    switch (BODY_CLASS) {
-        case"CATALOG":
-            if ($breadcrumb->uriItem) {
-                $bodyStr = 'class="product-page" data-scroll-container style="background-image: url(img/bg/product_page.jpg)"';
-            } else {
-                $bodyStr = 'class="catalog-page" data-scroll-container style="background-image: url(img/catalog-page/back.png)"';
-            }
-            break;
-        case"NEWS":
-            if ($breadcrumb->uriItem) {
-                $bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
-            }
-            break;
-    }
-}
+$breadcrumb = Breadcrumb::init();
+$breadcrumb->setBodyClass();
 
 ?>
 <!DOCTYPE html>
@@ -80,7 +61,7 @@ if (defined("BODY_CLASS")) {
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <?$APPLICATION->ShowHead();?>
 </head>
-<body <?=$bodyStr;?>>
+<body <?=$breadcrumb->bodyStr;?> >
     <?php CookieSecret::setCookieValue(); ?>
     <?=CookieSecret::getJsFunction();?>
     <header class="header">
