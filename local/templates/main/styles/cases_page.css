@@ -1,0 +1,29 @@
+.s-banner {
+  overflow: hidden;
+}
+
+.s-banner__title {
+  max-width: 42.8125rem;
+  margin-bottom: 0.9375rem;
+  color: #9a9ea9;
+  -webkit-text-fill-color: #9a9ea9;
+}
+
+@media (min-width: 768px) {
+  .s-banner__title {
+    margin-bottom: 1.8125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .s-banner__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .s-banner__title {
+    margin-bottom: 4.375rem;
+  }
+}
+/*# sourceMappingURL=maps/cases_page.css.map */

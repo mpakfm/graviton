@@ -31,9 +31,16 @@ $this->setFrameMode(true);
         <div class="s-top-menu__slider swiper-container">
             <div class="swiper-wrapper">
                 <?php foreach ($arResult['ITEMS'] as $item) { ?>
-                <div class="swiper-slide s-top-menu__slide <?=($item['CODE'] == Breadcrumb::$code ? 'is-active' : '');?>"><a class="s-top-menu__item" href="<?=$item['DETAIL_PAGE_URL'];?>">
-                        <div class="s-top-menu__item-img"><img src="<?=$item['PREVIEW_PICTURE']['SRC'];?>" alt="<?=$item['NAME'];?>"></div>
-                        <div class="s-top-menu__item-title"><?=$item['NAME'];?></div></a></div>
+                <div class="swiper-slide s-top-menu__slide <?=($item['CODE'] == Breadcrumb::$code ? 'is-active' : '');?>">
+                    <a class="s-top-menu__item" href="<?=$item['DETAIL_PAGE_URL'];?>">
+                        <div class="s-top-menu__item-img">
+                            <img src="<?=$item['PREVIEW_PICTURE']['SRC'];?>" alt="<?=$item['NAME'];?>">
+                        </div>
+                        <div class="s-top-menu__item-info">
+                            <div class="s-top-menu__item-title"><?=$item['NAME'];?></div>
+                        </div>
+                    </a>
+                </div>
                 <?php } ?>
             </div>
         </div>

@@ -2207,6 +2207,116 @@ textarea {
   color: #d91745 !important;
 }
 
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 48px;
+  cursor: pointer;
+}
+
+.select.active {
+  z-index: 10;
+}
+
+.select.active .select-styled {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: none !important;
+}
+
+.select.active .select-styled:after {
+  transform: rotate(180deg);
+}
+
+.select-styled {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 44;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid #D0D0D0;
+  padding: 0 23px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 5px;
+}
+
+.select-styled:after {
+  transition: all 0.4s ease;
+  content: url(".././img/svg/arrow-select.svg");
+  position: absolute;
+  z-index: 44;
+  right: 0;
+  padding: 0 16px;
+}
+
+.select-styled:after img {
+  width: 100%;
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  z-index: 33;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #fff;
+  border-top: none;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background: #0e0f10;
+  box-shadow: 0 0 13px rgba(69, 69, 69, 0.15);
+}
+
+.select-options li {
+  position: relative;
+  min-height: 40px;
+  margin: 0;
+  padding: 12px 23px;
+}
+
+.select-options li:before {
+  display: none;
+}
+
+.select-options li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: calc(100% - 20px);
+  height: 1px;
+  background: #424346;
+}
+
+.select-options li[rel="hide"] {
+  display: none;
+}
+
+.select-options li:hover {
+  transition: all .5s ease;
+  background: #4e5056;
+}
+
 @keyframes showNote {
   from {
     opacity: 0;
@@ -3179,6 +3289,8 @@ textarea {
 
 .service-card {
   position: relative;
+  display: flex;
+  align-items: flex-end;
   min-height: 9.3125rem;
   padding: 1rem 0.8125rem;
   border: 0.125rem solid;
@@ -3189,7 +3301,7 @@ textarea {
 
 .service-card__number {
   position: absolute;
-  top: -75%;
+  top: -65%;
   right: 0;
   font-size: 8.125rem;
   line-height: 170%;
@@ -6975,6 +7087,12 @@ input[type="number"] {
   }
 }
 
+@media (min-width: 600px) {
+  .service-card__number {
+    top: -75%;
+  }
+}
+
 @media (min-width: 768px) {
   .title--h2 {
     font-size: 32px;
@@ -7002,7 +7120,7 @@ input[type="number"] {
 
   .service-card {
     min-height: 12.125rem;
-    padding: 2.1875rem 1.25rem;
+    padding: 1.25rem;
   }
 
   .service-card__number {
@@ -7445,10 +7563,11 @@ input[type="number"] {
 
   .service-card {
     min-height: 15rem;
-    padding: 5.9375rem 1.5rem 1.5rem;
+    padding: 0 1.5rem 1.5rem;
   }
 
   .service-card__number {
+    right: -10%;
     font-size: 13.125rem;
   }
 
@@ -8064,6 +8183,7 @@ input[type="number"] {
 
   .service-card__number {
     top: -65%;
+    right: -15%;
     font-size: 18.75rem;
   }
 
@@ -8251,7 +8371,7 @@ input[type="number"] {
 
   .service-card {
     min-height: 24.1875rem;
-    padding: 9.375rem 3rem 3rem;
+    padding: 0 3rem 3rem;
   }
 
   .service-card__number {
@@ -9428,6 +9548,13 @@ input[type="number"] {
     background-position: right bottom;
     background-size: 55%;
     padding: 3.4375rem 0 5rem;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .select-styled {
+    font-size: 12px;
+    padding: 0 8px;
   }
 }
 

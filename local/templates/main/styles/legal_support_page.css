@@ -360,15 +360,27 @@
   object-fit: cover;
 }
 
-.s-top-menu__item-title {
+.s-top-menu__item-info {
   z-index: 2;
   position: absolute;
   bottom: 0.625rem;
   left: 0.375rem;
+  color: #ceced0;
+}
+
+.s-top-menu__item-title {
+  z-index: 1;
+  position: relative;
   font-size: 0.8125rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #ceced0;
+}
+
+.s-top-menu__item-text {
+  z-index: 1;
+  position: relative;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
 }
 
 .s-top-menu__slide {
@@ -476,9 +488,12 @@
     height: 8.5rem;
   }
 
-  .s-top-menu__item-title {
+  .s-top-menu__item-info {
     bottom: 0.875rem;
     left: 0.5rem;
+  }
+
+  .s-top-menu__item-title {
     font-size: 0.9375rem;
   }
 
@@ -524,9 +539,12 @@
     height: 10.0625rem;
   }
 
-  .s-top-menu__item-title {
+  .s-top-menu__item-info {
     bottom: 1.0625rem;
     left: 0.625rem;
+  }
+
+  .s-top-menu__item-title {
     font-size: 1.1875rem;
   }
 
@@ -583,7 +601,7 @@
     height: 11.6875rem;
   }
 
-  .s-top-menu__item-title {
+  .s-top-menu__item-info {
     bottom: 1.4375rem;
     left: 0.625rem;
   }
