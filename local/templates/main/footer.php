@@ -8,32 +8,11 @@
  */
 /** @var CMain $APPLICATION */
 
+use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
-$footerMenuIblock  = CacheSelector::getIblockId('menu', 'content');
-$footerMenuSection = CacheSelector::getSectionByCode($footerMenuIblock, 'footer');
-$copyMenuSection   = CacheSelector::getSectionByCode($footerMenuIblock, 'copyright');
-
-$menuFooter = [
-    "VIEW_MODE" => "TEXT",
-    "SHOW_PARENT_NAME" => "Y",
-    "IBLOCK_TYPE" => "content",
-    "IBLOCK_ID" => $footerMenuIblock,
-    "SECTION_ID" => $footerMenuSection['ID'],
-    "SECTION_CODE" => "",
-    "SECTION_URL" => "",
-    "COUNT_ELEMENTS" => "Y",
-    "TOP_DEPTH" => "2",
-    "SECTION_FIELDS" => ["ID", "CODE", "NAME"],
-    "SECTION_USER_FIELDS" => ["UF_LINK", "UF_BLANK"],
-    "ELEMENT_FIELDS" => ["ID", "CODE", "NAME"],
-    "ELEMENT_USER_FIELDS" => ["PROPERTY_LINK", "PROPERTY_LINK", "PROPERTY_BLANK", "PROPERTY_POPUP_CLASS"],
-    "ADD_SECTIONS_CHAIN" => "Y",
-    "CACHE_TYPE" => "N",
-    "CACHE_TIME" => "36000000",
-    "CACHE_NOTES" => "",
-    "CACHE_GROUPS" => "Y"
-];
+$footerMenuIblock = CacheSelector::getIblockId('menu', 'content');
+$copyMenuSection  = CacheSelector::getSectionByCode($footerMenuIblock, 'copyright');
 
 $menuCopy = [
     "VIEW_MODE" => "TEXT",
@@ -55,7 +34,21 @@ $menuCopy = [
     "CACHE_NOTES" => "",
     "CACHE_GROUPS" => "Y"
 ];
-$breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
+
+$iblockPages = CacheSelector::getIblockId('pages', 'content');
+$menuSupportParams = [
+    "IBLOCK_TYPE" => "content",
+    "IBLOCK_ID" => $iblockPages,
+    "SORT_BY1" => "SORT",
+    "SORT_ORDER1" => "ASC",
+    "PARENT_SECTION_CODE" => "support",
+    "CACHE_TYPE" => "Y",
+    "CACHE_TIME" => "3600",
+    "CACHE_FILTER" => "Y",
+    "CACHE_GROUPS" => "Y",
+];
+
+$breadcrumb = Breadcrumb::init()::$chain;
 
 ?>
 <footer class="footer">
@@ -152,12 +145,7 @@ $breadcrumb = \Library\Tools\Breadcrumb::init()::$chain;
                                     </svg>
                                 </div>
                             </div>
-                            <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/support/servesnye-tsentry">Сервесные центры</a>
-                                <a class="footer__nav-item" href="/page/support/garantiynye-usloviya">Гарантийные условия</a>
-                                <a class="footer__nav-item" href="/page/support/yuridicheskaya-podderzhka">Юридическая  поддержка</a>
-                                <a class="footer__nav-item" href="/page/support/zagruzka-drayverov">Загрузка драйверов</a>
-                            </div>
+                            <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.footer.support", $menuSupportParams);?>
                         </div>
                         <div class="footer__nav-column">
                             <div class="footer__nav-top">

@@ -23,10 +23,14 @@ class Breadcrumb
     public $uriSections;
     /** @var array */
     public $uriItem;
-
+    /** @var array */
     public static $chain;
+    /** @var string */
     public static $uri;
+    /** @var string */
     public static $code;
+    /** @var array */
+    public static $menuActivCodes;
 
     /** @var Breadcrumb */
     public static $obj;
@@ -59,15 +63,30 @@ class Breadcrumb
         return $this;
     }
 
-    public function setChain(string $exclude = '')
+    public function setChain(string $exclude = '', array $chain = [])
     {
         if (self::$chain) {
             return;
         }
+
         $url = '/';
         $sefFolder = false;
         if ($exclude != '') {
             $sefFolder = $exclude;
+        }
+        if (!$this->iblock && !empty($chain)) {
+            self::$chain[] = [
+                'type' => $chain['section'],
+                'link' => $chain['link'],
+                'name' => $chain['name'],
+            ];
+            self::$menuActivCodes[] = str_replace('/', '', $chain['link']);
+
+            $last = count(self::$chain) - 1;
+            self::$uri  = self::$chain[$last]['link'];
+            self::$code = self::$chain[$last]['code'];
+
+            return;
         }
         if ($sefFolder) {
             $url .= $sefFolder . '/';
@@ -76,6 +95,7 @@ class Breadcrumb
                 'link' => "{$url}",
                 'name' => $this->iblock['NAME'],
             ];
+            self::$menuActivCodes[] = str_replace('/', '', $url);
         }
 
         foreach ($this->parts as $part) {
@@ -93,6 +113,7 @@ class Breadcrumb
                         'code' => $section['CODE'],
                         'name' => $section['NAME'],
                     ];
+                    self::$menuActivCodes[] = $section['CODE'];
                     continue;
                 }
                 $item = CIBlockElement::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
@@ -106,6 +127,7 @@ class Breadcrumb
                         'code' => $item['CODE'],
                         'name' => $item['NAME'],
                     ];
+                    self::$menuActivCodes[] = $item['CODE'];
                 }
             }
         }
@@ -114,6 +136,5 @@ class Breadcrumb
             self::$uri  = self::$chain[$last]['link'];
             self::$code = self::$chain[$last]['code'];
         }
-        Printu::info(self::$chain)->title('self::$chain');
     }
 }

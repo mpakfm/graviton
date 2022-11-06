@@ -8,6 +8,7 @@
 
 use Bitrix\Main\EventManager;
 use Library\Tools\AutoLoader;
+use Library\Tools\Breadcrumb;
 use Library\Tools\LogWriter;
 
 require_once($_SERVER["DOCUMENT_ROOT"] . '/vendor/autoload.php');
@@ -34,7 +35,7 @@ EventManager::getInstance()->unRegisterEventHandler(
     "eventHandler"
 );
 
-$breadcrumb = \Library\Tools\Breadcrumb::init();
+$breadcrumb = Breadcrumb::init();
 if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
     $breadcrumb->setIblock('product', 'catalog')->setChain(str_replace('/', '', 'catalog'));
 } elseif (strpos($_SERVER['REQUEST_URI'], '/events') === 0) {
@@ -43,12 +44,14 @@ if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
     $breadcrumb->setIblock('news', 'content')->setChain('news');
 } elseif (strpos($_SERVER['REQUEST_URI'], '/cases') === 0) {
     $breadcrumb->setIblock('cases', 'content')->setChain('cases');
+} elseif (strpos($_SERVER['REQUEST_URI'], '/partners') === 0) {
+    $breadcrumb->setIblock('partners', 'content')->setChain('partners');
 } elseif (strpos($_SERVER['REQUEST_URI'], '/contacts') === 0) {
-    \Library\Tools\Breadcrumb::$chain[] = [
+    $breadcrumb->setChain('', [
         'type' => 'section',
         'link' => '/contacts',
         'name' => "Контакты",
-    ];
+    ]);
 } elseif (strpos($_SERVER['REQUEST_URI'], '/page/') === 0) {
     $breadcrumb->setIblock('pages', 'content')->setChain();
 }

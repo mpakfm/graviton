@@ -9,6 +9,8 @@
 /** @var CUser $USER */
 /** @var array $arResult */
 
+use Library\Tools\Breadcrumb;
+
 ?>
 
 <div class="header__menu">
@@ -25,9 +27,10 @@
                     <?php $depthMain     = 2; ?>
                     <?php $depthLeft     = 3; ?>
                     <?php $isLeftSubMenu = false; ?>
-                    <?php foreach($arResult['MENU'] as $key => $item) { ?>
+                    <?php foreach($arResult['MENU'] as $key => $item) {
+                        ?>
                         <div class="menu__item">
-                            <a class="menu__item-link <?=($_SERVER['REQUEST_URI'] == $item['LINK'] ? 'active' : '');?>" href="<?=$item['LINK']; ?>">
+                            <a class="menu__item-link <?=($item['CODE'] && in_array($item['CODE'], Breadcrumb::$menuActivCodes) ? 'active' : '');?>" href="<?=$item['LINK']; ?>">
                                 <div class="menu__item-text"><?=$item['NAME']; ?></div>
                             </a>
                             <div class="menu__item-icon">
