@@ -1980,6 +1980,17 @@ img {
   background-clip: text;
 }
 
+.title--small {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 100%;
+  background: linear-gradient(46.06deg, #18191f 14.09%, #262b38 78.25%);
+  letter-spacing: -0.03em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .l-default {
   z-index: 5;
   position: relative;
@@ -3164,6 +3175,32 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: top right;
+}
+
+.service-card {
+  position: relative;
+  min-height: 9.3125rem;
+  padding: 1rem 0.8125rem;
+  border: 0.125rem solid;
+  border-image-source: linear-gradient(124.81deg, #000000 -36.41%, #656669 117.15%);
+  border-image-slice: 1;
+  border-width: 0.125rem;
+}
+
+.service-card__number {
+  position: absolute;
+  top: -75%;
+  right: 0;
+  font-size: 8.125rem;
+  line-height: 170%;
+  color: rgba(235, 235, 235, 0.1);
+  opacity: 0.3;
+}
+
+.service-card__text {
+  font-size: 0.625rem;
+  line-height: 0.8125rem;
+  color: #656669;
 }
 
 .loader {
@@ -6945,6 +6982,10 @@ input[type="number"] {
     line-height: 1.2;
   }
 
+  .title--small {
+    font-size: 28px;
+  }
+
   .s-contact-us {
     bottom: 2.5rem;
   }
@@ -6957,6 +6998,20 @@ input[type="number"] {
 
   .breadcrumbs {
     padding: 2.5rem var(--layout-h-padding) 0;
+  }
+
+  .service-card {
+    min-height: 12.125rem;
+    padding: 2.1875rem 1.25rem;
+  }
+
+  .service-card__number {
+    font-size: 10.625rem;
+  }
+
+  .service-card__text {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .main-top__more {
@@ -7382,6 +7437,24 @@ input[type="number"] {
 @media (min-width: 1024px) {
   .title--medium {
     font-size: 55px;
+  }
+
+  .title--small {
+    font-size: 40px;
+  }
+
+  .service-card {
+    min-height: 15rem;
+    padding: 5.9375rem 1.5rem 1.5rem;
+  }
+
+  .service-card__number {
+    font-size: 13.125rem;
+  }
+
+  .service-card__text {
+    font-size: 0.8125rem;
+    line-height: 1.0625rem;
   }
 
   .news .l-content {
@@ -7977,8 +8050,26 @@ input[type="number"] {
     font-size: 70px;
   }
 
+  .title--small {
+    font-size: 60px;
+  }
+
   .sphere-animation {
     top: 11.5625rem;
+  }
+
+  .service-card {
+    min-height: 20.125rem;
+  }
+
+  .service-card__number {
+    top: -65%;
+    font-size: 18.75rem;
+  }
+
+  .service-card__text {
+    font-size: 1.0625rem;
+    line-height: 1.4375rem;
   }
 
   .s-home-articles .l-default {
@@ -8156,6 +8247,21 @@ input[type="number"] {
 @media (min-width: 1920px) {
   .title--medium {
     font-size: 80px;
+  }
+
+  .service-card {
+    min-height: 24.1875rem;
+    padding: 9.375rem 3rem 3rem;
+  }
+
+  .service-card__number {
+    top: -60%;
+    font-size: 21.875rem;
+  }
+
+  .service-card__text {
+    font-size: 1.1875rem;
+    line-height: 1.625rem;
   }
 
   .s-partners .title {
