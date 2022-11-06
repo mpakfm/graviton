@@ -357,4 +357,37 @@ class CacheSelector
         }
         return $id;
     }
+
+    public static function getFile(int $iblockId, int $elementId, string $fieldName = 'FILE', $cacheTime = null)
+    {
+        $cacheId  = 'getFile-' . $iblockId . '-' . $elementId;
+        $cacheDir = 'CacheSelector';
+
+        $file = null;
+        if (is_null($cacheTime)) {
+            $cacheTime = static::CACHE_TIME;
+        } else {
+            $cacheTime = (int) $cacheTime;
+        }
+        $cache = Cache::createInstance();
+
+        if ($cache->initCache($cacheTime, $cacheId, $cacheDir)) {
+            $file = $cache->getVars();
+        } elseif ($cache->startDataCache()) {
+            $prop = static::getIblockProperty($iblockId, $fieldName);
+            $sql  = "SELECT f.ID, f.CONTENT_TYPE, f.DESCRIPTION, f.FILE_NAME, f.FILE_SIZE, f.HANDLER_ID, f.ORIGINAL_NAME, f.SUBDIR 
+    FROM b_iblock_element el 
+    INNER JOIN b_iblock_element_property p ON p.IBLOCK_ELEMENT_ID = el.ID
+    INNER JOIN b_file f ON p.VALUE = f.ID 
+    WHERE el.ID = '" . $elementId . "' AND p.IBLOCK_PROPERTY_ID = " . $prop['ID'];
+            $connect = Application::getConnection();
+            $rs      = $connect->query($sql);
+            $file    = $rs->fetch();
+            if (!$file) {
+                $cache->abortDataCache();
+            }
+            $cache->endDataCache($file);
+        }
+        return $file;
+    }
 }

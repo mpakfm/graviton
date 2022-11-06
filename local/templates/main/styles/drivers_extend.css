@@ -1,0 +1,9 @@
+.s-drivers__search-btn.btn {
+    cursor: pointer;
+}
+.s-drivers__search-input .fancybox-button {
+    position: absolute;
+    top: -2px;
+    right: 10px;
+    display: none;
+}
