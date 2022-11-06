@@ -92,6 +92,13 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
+        'CONDITION' => "#^/page/support/zagruzka-drayverov(/([a-zA-Z0-9_\-]+)?)?(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "SECTION=\$2&ID=\$4&PARAMS=\$5",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.drivers.php",
+        'SORT'      => 100,
+    ),
+    array (
         'CONDITION' => "#^/page/support/zagruzka-drayverov?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
