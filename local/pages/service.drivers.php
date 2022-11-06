@@ -17,8 +17,8 @@ define("BODY_CLASS", "PAGE");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/legal_support_page.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/about_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/drivers_page.css">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/drivers_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $formServiceId  = CacheSelector::getFormId('SIMPLE_FORM_1');
 $formResponceId = CacheSelector::getFormId('SIMPLE_FORM_2');
@@ -46,34 +46,476 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'zagruzka-drayverov');
         <section class="s-banner">
             <div class="l-default">
                 <div class="s-banner__title">
-                    <h1 class="title title--h1-banner s-banner__title title--medium"><?=$pageItem['NAME'];?></h1>
+                    <h1 class="title title--h1-banner s-banner__title title--medium">Драйвера</h1>
                 </div>
             </div>
             <div class="s-banner__img">
                 <picture>
-                    <source srcset="img/legal/banner.jpg" type="image/jpg" media="(min-width: 768px)"/>
-                    <source srcset="img/legal/banner-small.jpg" type="image/jpg" media="(max-width: 768px)"/><img src="img/legal/banner.jpg" alt=""/>
+                    <source srcset="img/drivers/banner.jpg" type="image/jpg" media="(min-width: 768px)"/>
+                    <source srcset="img/drivers/banner-small.jpg" type="image/jpg" media="(max-width: 768px)"/><img src="img/drivers/banner.jpg" alt=""/>
                 </picture>
             </div>
         </section>
-        <section class="s-support-contact s-support-contact-legal">
+        <section class="s-drivers">
             <div class="l-default">
-                <div class="s-support-contact__top">
-                    <div class="s-support-contact__caption">Поддержка</div>
-                    <div class="s-support-contact__title">Требуется обслуживание или техническая поддержка? Заполните заявку онлайн, и мы вам поможем.</div>
-                </div>
-                <div class="s-support-contact__descriptions">
-                    <div class="s-support-contact__subtitle">Если вы хотите сообщить о возможной контрафактной или поддельной продукции либо о других видах предполагаемого нарушения прав на интеллектуальную собственность Гравитон, сообщите о контрафактных продуктах или подделках.</div>
-                    <div class="s-support-contact__description">
-                        <?=$pageItem['DETAIL_TEXT'];?>
+                <div class="s-drivers__text">Требуется обслуживание или техническая поддержка? Заполните заявку онлайн, и мы вам поможем.</div>
+                <div class="s-drivers__caption">Обновление</div>
+                <div class="s-drivers__content">
+                    <div class="s-drivers__search">
+                        <div class="s-drivers__search-input">
+                            <input type="text" placeholder="Ноутбук">
+                            <div class="s-drivers__search-icon">
+                                <svg class="ico ico-mono-search">
+                                    <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="s-drivers__search-btn btn">Поиск</div>
                     </div>
-                </div>
-                <div class="s-support-contact__content">
-
+                    <div class="s-drivers__tabs">
+                        <div class="s-drivers__tab active" id="table-1">
+                            <div class="s-drivers__tab-text">Клиентские решения</div>
+                        </div>
+                        <div class="s-drivers__tab" id="table-2">
+                            <div class="s-drivers__tab-text">Серверные решения</div>
+                        </div>
+                    </div>
+                    <div class="s-drivers__tables">
+                        <div class="s-drivers__table active" id="table-1">
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                        </div>
+                        <div class="s-drivers__table" id="table-2">
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                            <div class="s-drivers__table-item">
+                                <div class="s-drivers__table-text">Руководство пользователя</div><a class="s-drivers__table-right" href="" download>
+                                    <div class="s-drivers__table-icon">
+                                        <svg class="ico ico-mono-icon-download">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="s-drivers__table-weight">76 МБ</div></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
+        <div class="l-default">
+            <form class="s-support-form s-support-form-drivers form">
+                <div class="s-support-form__title">Запросить дополнительный драйвер</div>
+                <div class="s-support-form__columns">
+                    <div class="s-support-form__inputs">
+                        <div class="s-support-form__column">
+                            <div class="form__title">Контакты</div>
+                            <div class="form__inputs">
+                                <div class="form__input">
+                                    <label>E-mail</label>
+                                    <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения">
+                                </div>
+                                <div class="form__input">
+                                    <label>ФИО</label>
+                                    <input type="text" placeholder="Введите фамилию имя и отвечтво">
+                                </div>
+                                <div class="form__input">
+                                    <label>Телефон</label>
+                                    <input type="email" placeholder="+7(ХХХ)ХХХХХХХ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-support-form__column">
+                            <div class="form__title">Оборудование</div>
+                            <div class="form__inputs">
+                                <div class="form__input">
+                                    <label>Серийный номер</label>
+                                    <input type="text" placeholder="0000000000000-0000">
+                                </div>
+                                <div class="form__textarea">
+                                    <label>Вопрос</label>
+                                    <textarea type="text" placeholder="Введите ваш вопрос"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-support-form__mobile"></div>
+                    <div class="s-support-form__column s-support-form__info">
+                        <div class="form__title"></div>
+                        <div class="s-support-form__contacts">
+                            <div class="s-support-form__contacts-left">
+                                <div class="s-support-form__contacts-title">Другие способы получить помощь</div>
+                                <div class="s-support-form__contacts-mobile"></div>
+                            </div>
+                            <div class="s-support-form__contacts-links"><a class="s-support-form__contacts-phone" href="tel:88005517575">
+                                    <label>Позвоните нам</label><span> 8 800 551-75-75</span></a><a class="s-support-form__contacts-email" href="mailto:sc@3l.ru">
+                                    <label>Напишите нам</label><span>sc@3l.ru</span></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s-support-form__bottom">
+                    <div class="s-support-form__bottom-left">
+                        <div class="s-support-form__bottom-item">
+                            <div class="form__checkbox">
+                                <input class="form__checkbox-input" type="checkbox">
+                                <div class="form__checkbox-btn"></div>
+                                <div class="form__checkbox-text">Я согласен на обработку персональных данных</div>
+                            </div>
+                        </div>
+                        <div class="s-support-form__bottom-item">
+                            <button class="form__submit btn" type="submit">Отправить</button>
+                        </div>
+                    </div>
+                    <div class="s-support-form__contacts-message s-support-form__bottom-item">Круглосуточно по всей России</div>
+                </div>
+            </form>
+        </div>
         <div class="s-feedback">
             <div class="s-feedback__content">
                 <div class="s-feedback__content-top">

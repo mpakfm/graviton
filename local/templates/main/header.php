@@ -81,7 +81,6 @@ if (defined("BODY_CLASS")) {
     <?$APPLICATION->ShowHead();?>
 </head>
 <body <?=$bodyStr;?>>
-    <div id="panel"><?$APPLICATION->ShowPanel();?></div>
     <?php CookieSecret::setCookieValue(); ?>
     <?=CookieSecret::getJsFunction();?>
     <header class="header">
