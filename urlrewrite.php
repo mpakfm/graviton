@@ -71,21 +71,21 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/servisnye-tsentry?(\?.*)?#",
+        'CONDITION' => "#^/page/support/servisnye-tsentry/?(\?.*)?#",
         'RULE'      => "SECTION=\$2&CODE=\$4&PARAMS=\$5",//SECTION=$2&ITEM=$4&OTHER=$5
         'ID'        => "",
         'PATH'      => "/local/pages/service.center.php",
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/garantiynye-usloviya?(\?.*)?#",
+        'CONDITION' => "#^/page/support/garantiynye-usloviya/?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
         'PATH'      => "/local/pages/service.usloviya.php",
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/yuridicheskaya-podderzhka?(\?.*)?#",
+        'CONDITION' => "#^/page/support/yuridicheskaya-podderzhka/?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
         'PATH'      => "/local/pages/service.legal.php",
@@ -99,10 +99,32 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/zagruzka-drayverov?(\?.*)?#",
+        'CONDITION' => "#^/page/support/zagruzka-drayverov/?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
         'PATH'      => "/local/pages/service.drivers.php",
+        'SORT'      => 100,
+    ),
+    // /page/services/kontraktnaya-razrabotka
+    array (
+        'CONDITION' => "#^/page/services/kontraktnaya-razrabotka/?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.odm.php",
+        'SORT'      => 100,
+    ),
+    array (
+        'CONDITION' => "#^/page/services/oem/?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.oem.php",
+        'SORT'      => 100,
+    ),
+    array (
+        'CONDITION' => "#^/page/services/?(\?.*)?#",
+        'RULE'      => "PARAMS=\$1",
+        'ID'        => "",
+        'PATH'      => "/local/pages/service.odm.php",
         'SORT'      => 100,
     ),
     array (

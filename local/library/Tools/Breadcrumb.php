@@ -169,6 +169,12 @@ class Breadcrumb
                 case"SERVICE-DRIVERS":
                     $this->bodyStr = 'class="drivers-page" data-scroll-container';
                     break;
+                case"SERVICE-ODM":
+                    $this->bodyStr = 'class="service-page service-page-1" data-scroll-container';
+                    break;
+                case"SERVICE-OEM":
+                    $this->bodyStr = 'class="service-page service-page-2" data-scroll-container';
+                    break;
             }
         }
     }
