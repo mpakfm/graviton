@@ -72,6 +72,76 @@
   padding: 10px 30px;
 }
 
+.s-service {
+  position: relative;
+  padding-top: 112px;
+  padding-bottom: 101px;
+  overflow: visible;
+}
+
+.s-service__title {
+  font-size: 40px;
+  margin-bottom: 21px;
+}
+
+.s-service__subtitle {
+  font-size: 21px;
+}
+
+.s-service__caption {
+  position: absolute;
+  top: -290px;
+  right: -130px;
+  font-size: 350px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.25rem rgba(255, 255, 255, 0.05);
+  letter-spacing: -0.03em;
+}
+
+.s-service__description {
+  font-size: 15px;
+  line-height: 120%;
+  color: #4E5056;
+  margin-top: 14px;
+}
+
+.s-service-work {
+  padding-bottom: 173px;
+}
+
+.s-service-work__wrapper {
+  display: flex;
+}
+
+.s-service-work__title {
+  font-size: 19px;
+  line-height: 120%;
+  margin-right: 81px;
+  white-space: nowrap;
+  padding: 47px 0;
+}
+
+.s-service-work__items {
+  max-width: 855px;
+}
+
+.s-service-work__item {
+  font-size: 21px;
+  line-height: 120%;
+  border: 0.125rem solid;
+  border-image-source: linear-gradient(124.81deg, #000000 -36.41%, #656669 117.15%);
+  border-image-slice: 1;
+  border-width: 0.125rem;
+  padding: 47px 74px;
+  margin-bottom: 26px;
+}
+
+.s-service-work__item:last-child {
+  margin-bottom: 0;
+}
+
 .s-top-menu {
   z-index: 1;
   position: relative;
@@ -303,6 +373,33 @@
   .s-services-cards__texts-btn {
     margin-top: 42px;
   }
+
+  .s-service {
+    padding-top: 142px;
+    padding-bottom: 85px;
+  }
+
+  .s-service__title {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  .s-service__caption {
+    right: -450px;
+  }
+
+  .s-service-work {
+    padding-bottom: 165px;
+  }
+
+  .s-service-work__title {
+    margin-right: 70px;
+  }
+
+  .s-service-work__item {
+    padding-right: 54px;
+    margin-bottom: 25px;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -353,6 +450,45 @@
     padding: 15px 40px;
   }
 
+  .s-service {
+    padding-top: 115px;
+    padding-bottom: 40px;
+  }
+
+  .s-service__title {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+
+  .s-service__subtitle {
+    font-size: 19px;
+  }
+
+  .s-service__caption {
+    top: -250px;
+    right: -340px;
+    font-size: 230px;
+  }
+
+  .s-service__description {
+    margin-top: 25px;
+  }
+
+  .s-service-work {
+    padding-bottom: 76px;
+  }
+
+  .s-service-work__title {
+    font-size: 17px;
+    margin-right: 32px;
+    padding: 32px 0;
+  }
+
+  .s-service-work__item {
+    font-size: 17px;
+    padding: 32px 44px;
+  }
+
   .service-page-1 .service-card:last-child {
     margin-left: auto;
     margin-right: 15px;
@@ -388,6 +524,43 @@
 
   .s-services-cards__texts-btn {
     margin-top: 23px;
+  }
+
+  .s-service {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  .s-service__title {
+    font-size: 25px;
+  }
+
+  .s-service__subtitle {
+    font-size: 17px;
+  }
+
+  .s-service__caption {
+    top: -120px;
+    right: -60px;
+    font-size: 120px;
+  }
+
+  .s-service__description {
+    margin-top: 35px;
+  }
+
+  .s-service-work {
+    padding-bottom: 75px;
+  }
+
+  .s-service-work__title {
+    font-size: 15px;
+    margin-right: 30px;
+  }
+
+  .s-service-work__item {
+    font-size: 15px;
+    padding: 26px 56px;
   }
 }
 
@@ -431,6 +604,51 @@
     width: 100%;
     max-width: 100%;
     padding: 15px 0;
+  }
+
+  .s-service {
+    padding-top: 66px;
+    padding-bottom: 25px;
+  }
+
+  .s-service__title {
+    font-size: 21px;
+    margin-bottom: 11px;
+  }
+
+  .s-service__subtitle {
+    font-size: 14px;
+  }
+
+  .s-service__caption {
+    top: -150px;
+    right: -70px;
+  }
+
+  .s-service__description {
+    margin-top: 15px;
+  }
+
+  .s-service-work {
+    padding-bottom: 50px;
+  }
+
+  .s-service-work__wrapper {
+    max-width: 277px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .s-service-work__title {
+    font-size: 14px;
+    margin-bottom: 9px;
+    padding: 0;
+  }
+
+  .s-service-work__item {
+    font-size: 12px;
+    margin-bottom: 15px;
+    padding: 22px 34px;
   }
 
   .service-page-2 .service-card:last-child .service-card__number {

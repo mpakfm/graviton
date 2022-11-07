@@ -1,8 +1,13 @@
 .s-error {
+  position: relative;
   padding: 1.5625rem 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.s-error .l-default {
+  position: static;
 }
 
 .s-error__note {
@@ -21,12 +26,33 @@
   color: #ffffff;
 }
 
+.s-error__title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 550px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #000203;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
 .s-error__subtitle {
   margin-bottom: 1.125rem;
   font-size: 3.125rem;
   font-weight: 600;
   line-height: 1;
   color: #4e5056;
+}
+
+.s-error__subtitle svg {
+  width: 0.9375rem;
+  margin-left: 4px;
+  margin-bottom: -4px;
 }
 
 .s-error__text {
@@ -162,7 +188,7 @@
 
 @media (min-width: 1920px) {
   .s-error__note {
-    margin-bottom: 7.5rem;
+    margin-bottom: 7.5625rem;
     font-size: 1.875rem;
   }
 
@@ -178,6 +204,38 @@
 
   .s-error__buttons {
     gap: 7.5rem;
+  }
+}
+
+@media (max-width: 1699px) {
+  .s-error__title {
+    font-size: 490px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .s-error__title {
+    font-size: 450px;
+  }
+}
+
+@media (max-width: 991px) {
+  .s-error__title {
+    top: 60px;
+    font-size: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .s-error__title {
+    top: 124px;
+    font-size: 250px;
+  }
+}
+
+@media (max-width: 374px) {
+  .s-error__title {
+    font-size: 200px;
   }
 }
 /*# sourceMappingURL=maps/error_page.css.map */
