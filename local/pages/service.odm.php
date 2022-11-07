@@ -5,6 +5,7 @@
  * User:    mpak
  * Date:    08.11.2022
  * Time:    1:14
+ * @var CMain $APPLICATION
  */
 
 use Bitrix\Main\Page\Asset;
@@ -19,28 +20,24 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/service_page.css">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/service_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
+$iblock     = CacheSelector::getIblockId('pages', 'content');
+$menuParams = [
+    "IBLOCK_TYPE" => "content",
+    "IBLOCK_ID" => $iblock,
+    "SORT_BY1" => "SORT",
+    "SORT_ORDER1" => "ASC",
+    "PARENT_SECTION_CODE" => "services",
+    "CACHE_TYPE" => "Y",
+    "CACHE_TIME" => "3600",
+    "CACHE_FILTER" => "Y",
+    "CACHE_GROUPS" => "Y",
+];
+
+$pageItem = CacheSelector::getIblockElement($iblock, 'kontraktnaya-razrabotka');
+
 ?>
     <main class="main">
-        <section class="s-top-menu">
-            <div class="l-default">
-                <div class="s-top-menu__slider swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide s-top-menu__slide is-active"><a class="s-top-menu__item" href="#">
-                                <div class="s-top-menu__item-img"><img src="img/services/1.jpg" alt=""></div>
-                                <div class="s-top-menu__item-info">
-                                    <div class="s-top-menu__item-title">ODM</div>
-                                    <div class="s-top-menu__item-text">Контрактная разработка</div>
-                                </div></a></div>
-                        <div class="swiper-slide s-top-menu__slide"><a class="s-top-menu__item" href="#">
-                                <div class="s-top-menu__item-img"><img src="img/services/2.jpg" alt=""></div>
-                                <div class="s-top-menu__item-info">
-                                    <div class="s-top-menu__item-title">OEM</div>
-                                    <div class="s-top-menu__item-text">Контрактная разработка</div>
-                                </div></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.service", $menuParams);?>
         <section class="s-banner">
             <div class="l-default">
                 <div class="s-banner__title">
@@ -79,7 +76,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/serv
             <div class="l-default">
                 <h2 class="title title--h2 s-services-cards__title">ГРАВИТОН берет на себя весь цикл контрактной разработки, который включает в себя следующие этапы:</h2>
                 <div class="s-services-cards__items">
-                    <div class="s-services-cards__btn"><a class="btn btn--bordered" href="">Стать пертнероом</a></div>
+                    <div class="s-services-cards__btn"><a class="btn btn--bordered" href="#popup-registration" data-fancybox>Стать партнером</a></div>
                     <div class="service-card">
                         <div class="service-card__number">1</div>
                         <div class="service-card__text">Подготовка материала для грамотного написания технического задания нашими специалистами. Доработка технического задания.</div>
