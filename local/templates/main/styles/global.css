@@ -4133,19 +4133,21 @@ textarea {
   color: #656669;
 }
 
-.s-home-articles__item-text,
 .s-home-articles__item-list {
-  font-weight: 500;
+  font-weight: 300;
   color: #c6c7d0;
 }
 
 .s-home-articles__item-text {
   margin-left: 1.5625rem;
-  font-size: 0.8125rem;
-  line-height: 160%;
+  font-weight: 300;
 }
 
 .s-home-articles__item-text p {
+  font-size: 0.8125rem;
+  line-height: 160%;
+  font-weight: 300;
+  color: #c6c7d0;
   margin-top: 0;
   margin-bottom: 1.25rem;
 }

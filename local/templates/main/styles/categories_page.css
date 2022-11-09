@@ -108,6 +108,7 @@
   position: absolute;
   right: calc(-100% + 70px);
   bottom: 0;
+  z-index: 1;
   width: 100%;
   height: 1px;
   background: #d91745;
@@ -1056,11 +1057,11 @@
 
 @media screen and (max-width: 1023px) {
   .s-rulers .l-default:after {
-    left: calc(-100% + 25px);
+    left: calc(-100% + 30px);
   }
 
   .s-rulers .l-default:before {
-    right: calc(-100% + 25px);
+    right: calc(-100% + 30px);
   }
 }
 
@@ -1074,11 +1075,11 @@
 
 @media screen and (max-width: 767px) {
   .s-rulers .l-default:after {
-    left: calc(-100% + 15px);
+    left: calc(-100% + 12px);
   }
 
   .s-rulers .l-default:before {
-    right: calc(-100% + 15px);
+    right: calc(-100% + 12px);
   }
 }
 
