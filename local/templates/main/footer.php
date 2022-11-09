@@ -52,8 +52,8 @@ $breadcrumb = Breadcrumb::init()::$chain;
 
 ?>
 <footer class="footer">
-    <div class="l-default">
-        <div class="footer__top">
+    <div class="footer__top">
+        <div class="l-default">
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__list" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
@@ -86,22 +86,26 @@ $breadcrumb = Breadcrumb::init()::$chain;
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="footer__wrapper">
         <div class="footer__content">
-            <div class="footer__content-top">
-                <div class="footer__row">
-                    <div class="footer__info">
-                        <div class="footer__info-top">
-                            <div class="footer__logo">
-                                <svg class="ico ico-color-logo">
-                                    <use xlink:href="img/sprite-color.svg#ico-color-logo"></use>
-                                </svg>
+            <div class="l-default">
+                <div class="footer__mobile-menu"></div>
+                <div class="footer__content-top">
+                    <div class="footer__row">
+                        <div class="footer__info">
+                            <div class="footer__info-top">
+                                <div class="footer__logo">
+                                    <svg class="ico ico-color-logo">
+                                        <use xlink:href="img/sprite-color.svg#ico-color-logo"></use>
+                                    </svg>
+                                </div>
+                                <div class="footer__info-mobile">
+                                    <div class="footer__info-mobile--left"></div>
+                                    <div class="footer__info-mobile--right"></div>
+                                </div>
                             </div>
-                            <div class="footer__info-mobile">
-                                <div class="footer__info-mobile--left"></div>
-                                <div class="footer__info-mobile--right"></div>
-                            </div>
-                        </div>
-                        <?$APPLICATION->IncludeComponent("mpakfm:sender.subscribe","footer",Array(
+                            <?$APPLICATION->IncludeComponent("mpakfm:sender.subscribe","footer",Array(
                                 "COMPONENT_TEMPLATE" => ".default",
                                 "USE_PERSONALIZATION" => "N",
                                 "CONFIRMATION" => "N",
@@ -115,128 +119,132 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                 "CACHE_TYPE" => "A",
                                 "CACHE_TIME" => "3600",
                                 "SET_TITLE" => "N"
-                            )
-                        );?>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="/catalog/">
-                                <div class="footer__nav-title">Продукты</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                            <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/catalog/systems_on_russian_cpus/">Системы на Российских ЦПУ</a>
-                                <a class="footer__nav-item" href="/catalog/server_solutions/">Серверные решения</a>
-                                <a class="footer__nav-item" href="/catalog/client_solutions/">Клиентские решения</a>
-                                <a class="footer__nav-item" href="/catalog/motherboards/">Материнские платы</a>
-                                <a class="footer__nav-item" href="https://гелиус.рф/" target="_blank">Гиперконвергентные решения</a>
-                            </div>
+                                )
+                            );?>
                         </div>
-                        <div class="footer__nav-column">
-                            <div class="footer__nav-top">
-                                <div class="footer__nav-title">Поддержка</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
+                        <div class="footer__nav">
+                            <div class="footer__nav-column">
+                                <a class="footer__nav-top" href="/catalog/">
+                                    <div class="footer__nav-title">Продукты</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div class="footer__nav-list">
+                                    <a class="footer__nav-item" href="/catalog/systems_on_russian_cpus/">Системы на Российских ЦПУ</a>
+                                    <a class="footer__nav-item" href="/catalog/server_solutions/">Серверные решения</a>
+                                    <a class="footer__nav-item" href="/catalog/client_solutions/">Клиентские решения</a>
+                                    <a class="footer__nav-item" href="/catalog/motherboards/">Материнские платы</a>
+                                    <a class="footer__nav-item" href="https://гелиус.рф/" target="_blank">Гиперконвергентные решения</a>
                                 </div>
                             </div>
-                            <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.footer.support", $menuSupportParams);?>
-                        </div>
-                        <div class="footer__nav-column">
-                            <div class="footer__nav-top">
-                                <div class="footer__nav-title">О компании</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
+                            <div class="footer__nav-column">
+                                <div class="footer__nav-top">
+                                    <div class="footer__nav-title">Поддержка</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.footer.support", $menuSupportParams);?>
+                            </div>
+                            <div class="footer__nav-column">
+                                <div class="footer__nav-top">
+                                    <div class="footer__nav-title">О компании</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="footer__nav-list">
+                                    <a class="footer__nav-item" href="/page/kto-my">Кто мы</a>
+                                    <a class="footer__nav-item" href="/news/">Новости</a>
+                                    <a class="footer__nav-item" href="/events/">Мероприятия</a>
+                                    <a class="footer__nav-item" href="/page/preimushchestva">Преимущества</a>
                                 </div>
                             </div>
-                            <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/kto-my">Кто мы</a>
-                                <a class="footer__nav-item" href="/news/">Новости</a>
-                                <a class="footer__nav-item" href="/events/">Мероприятия</a>
-                                <a class="footer__nav-item" href="/page/preimushchestva">Преимущества</a>
-                            </div>
-                        </div>
-                        <div class="footer__nav-column">
-                            <div class="footer__nav-top">
-                                <div class="footer__nav-title">Услуги</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
+                            <div class="footer__nav-column">
+                                <div class="footer__nav-top">
+                                    <div class="footer__nav-title">Услуги</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="footer__nav-list">
-                                <a class="footer__nav-item" href="/page/services/kontraktnaya-razrabotka">Контрактная разработка</a>
-                                <a class="footer__nav-item" href="/page/services/oem">ОЕМ</a>
+                                <div class="footer__nav-list">
+                                    <a class="footer__nav-item" href="/page/services/kontraktnaya-razrabotka">Контрактная разработка</a>
+                                    <a class="footer__nav-item" href="/page/services/oem">ОЕМ</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer__content-bottom">
-                <div class="footer__row">
-                    <div class="footer__info">
-                        <div class="footer__address-container">
-                            <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
+                <div class="footer__content-bottom">
+                    <div class="footer__row">
+                        <div class="footer__info">
+                            <div class="footer__address-container">
+                                <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
+                            </div>
+                            <div class="footer__contact">
+                                <a class="footer__email" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
+                                <a class="footer__contact-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
+                            </div>
                         </div>
-                        <div class="footer__contact">
-                            <a class="footer__email" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
-                            <a class="footer__contact-btn btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a></div>
-                    </div>
-                    <div class="footer__nav">
-                        <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="/cases/">
-                                <div class="footer__nav-title">Кейсы</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="/partners">
-                                <div class="footer__nav-title">Партнеры</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="/page/docs">
-                                <div class="footer__nav-title">Документация</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer__nav-column">
-                            <a class="footer__nav-top" href="/contacts">
-                                <div class="footer__nav-title">Контакты</div>
-                                <div class="footer__nav-arrow">
-                                    <svg class="ico ico-mono-arrow-fat">
-                                        <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
-                                    </svg>
-                                </div>
-                            </a>
+                        <div class="footer__nav">
+                            <div class="footer__nav-column">
+                                <a class="footer__nav-top" href="/cases/">
+                                    <div class="footer__nav-title">Кейсы</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="footer__nav-column">
+                                <a class="footer__nav-top" href="/partners">
+                                    <div class="footer__nav-title">Партнеры</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="footer__nav-column">
+                                <a class="footer__nav-top" href="/page/docs">
+                                    <div class="footer__nav-title">Документация</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="footer__nav-column">
+                                <a class="footer__nav-top" href="/contacts">
+                                    <div class="footer__nav-title">Контакты</div>
+                                    <div class="footer__nav-arrow">
+                                        <svg class="ico ico-mono-arrow-fat">
+                                            <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer__mobile"></div>
-        <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","copyrights", $menuCopy);?>
+        <div class="l-default">
+            <div class="footer__mobile"></div>
+            <?$APPLICATION->IncludeComponent("mpakfm:menu.section.list","copyrights", $menuCopy);?>
+        </div>
     </div>
 </footer>
 
