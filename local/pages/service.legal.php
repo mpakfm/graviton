@@ -40,8 +40,6 @@ $menuParams = [
 
 $pageItem = CacheSelector::getIblockElement($iblock, 'yuridicheskaya-podderzhka');
 
-$formServiceId  = CacheSelector::getFormId('SIMPLE_FORM_1');
-
 ?>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>

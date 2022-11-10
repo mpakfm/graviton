@@ -128,6 +128,13 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
+        'CONDITION' => "#^/page/about(/([a-zA-Z0-9_\-]+)?)?(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "SECTION=\$2&ID=\$4&PARAMS=\$5",
+        'ID'        => "",
+        'PATH'      => "/local/pages/about.php",
+        'SORT'      => 100,
+    ),
+    array (
         'CONDITION' => "#^/page/about?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",

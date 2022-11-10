@@ -8,6 +8,8 @@
  */
 
 /** @var CMain $APPLICATION */
+/** @var int $SECTION */
+/** @var int $ID */
 
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
@@ -18,11 +20,53 @@ define("BODY_CLASS", "ABOUT");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
+if ($SECTION && !$ID) {
+    $ID      = $SECTION;
+    $SECTION = null;
+}
+
+$iblockFiles = CacheSelector::getIblockId('about', 'files');
+
+if ((int) $ID) {
+    $file = CacheSelector::getFile($iblockFiles, $ID, 'FILE', 3600);
+    \Mpakfm\Printu::obj($file)->title('$file');
+    if (!$file) {
+        require($_SERVER["DOCUMENT_ROOT"]."/404.php");
+        die();
+    }
+    while (ob_get_level()) {
+        ob_end_clean();
+    }
+    $filePath = $_SERVER["DOCUMENT_ROOT"] . '/upload/' . $file['SUBDIR'] . '/' . $file['FILE_NAME'];
+    header('Content-Description: File Transfer');
+    header('Content-Type: ' . $file['CONTENT_TYPE']);
+    header('Content-Disposition: attachment; filename=' . basename($file['ORIGINAL_NAME']));
+    header('Content-Transfer-Encoding: binary');
+    header('Content-Length: ' . $file['FILE_SIZE']);
+    readfile($filePath);
+    exit();
+
+}
+
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/about_page.css">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/about_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
+$formPressId  = CacheSelector::getFormId('SIMPLE_FORM_3');
+
 $iblock   = CacheSelector::getIblockId('pages', 'content');
 $pageItem = CacheSelector::getIblockElement($iblock, 'about');
+
+$filesParams = [
+    "IBLOCK_TYPE" => "files",
+    "IBLOCK_ID" => $iblockFiles,
+    "SORT_BY1" => "SORT",
+    "SORT_ORDER1" => "ASC",
+    "PROPERTY_CODE" => ["FILE"],
+    "CACHE_TYPE" => "Y",
+    "CACHE_TIME" => "3600",
+    "CACHE_FILTER" => "Y",
+    "CACHE_GROUPS" => "Y",
+];
 
 ?>
     <main class="main">
@@ -128,6 +172,10 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'about');
                 </div>
             </div>
         </section>
+
+        <?$APPLICATION->IncludeComponent("mpakfm:news.list","about.files", $filesParams);?>
+
+        <!--
         <section class="s-company-materials">
             <div class="l-default">
                 <h2 class="s-company-materials__title">Материалы о компании</h2>
@@ -183,51 +231,26 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'about');
                 </div>
             </div>
         </section>
-        <section class="s-about-contacts">
-            <div class="s-about-contacts__top">
-                <div class="l-default">
-                    <div class="s-about-contacts__title">Контакты для прессы</div>
-                    <div class="s-about-contacts__subtitle">Пригасить спикера для учатстия в мероприятии или запросить дополнительную информацию</div>
-                </div>
-                <div class="s-about-contacts__text">нам о нас</div>
-            </div>
-            <div class="l-default">
-                <form class="s-about-contacts__form form">
-                    <div class="form__columns">
-                        <div class="form__column">
-                            <div class="form__textarea">
-                                <label>Ваше предложение и наименование компании </label>
-                                <textarea placeholder="Введите ваш предложение "></textarea>
-                            </div>
-                        </div>
-                        <div class="form__column">
-                            <div class="form__inputs">
-                                <div class="form__input">
-                                    <label>E-mail*</label>
-                                    <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения" required>
-                                </div>
-                                <div class="form__input">
-                                    <label>Телефон</label>
-                                    <input type="tel" placeholder="+7(ХХХ)ХХХХХХХ">
-                                </div>
-                                <div class="form__input">
-                                    <label>ФИО</label>
-                                    <input type="text" placeholder="Введите фамилию имя и отчество">
-                                </div>
-                                <div class="form__submit">
-                                    <div class="form__checkbox">
-                                        <input class="form__checkbox-input" type="checkbox">
-                                        <div class="form__checkbox-btn"></div>
-                                        <div class="form__checkbox-text">Я согласен на обработку персональных данных</div>
-                                    </div>
-                                    <button class="btn" type="submit">Отправить</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
+        -->
+
+        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","about",Array(
+                "SEF_MODE" => "Y",
+                "WEB_FORM_ID" => $formPressId,
+                "LIST_URL" => "/page/" . Breadcrumb::$uri,
+                "EDIT_URL" => Breadcrumb::$uri,
+                "SUCCESS_URL" => Breadcrumb::$uri,
+                "CHAIN_ITEM_TEXT" => "",
+                "CHAIN_ITEM_LINK" => "",
+                "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                "USE_EXTENDED_ERRORS" => "Y",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "3600",
+                "SEF_FOLDER" => "/",
+                "VARIABLE_ALIASES" => Array(
+                )
+            )
+        );?>
+
         <div class="s-feedback">
             <div class="s-feedback__content">
                 <div class="s-feedback__content-top">
