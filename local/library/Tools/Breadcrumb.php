@@ -163,6 +163,9 @@ class Breadcrumb
                         $this->bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
                     }
                     break;
+                case"ABOUT":
+                    $this->bodyStr = 'class="about-page" data-scroll-container';
+                    break;
                 case"SERVICE-LEGAL":
                     $this->bodyStr = 'class="legal_support-page" data-scroll-container';
                     break;

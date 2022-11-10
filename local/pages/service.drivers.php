@@ -7,6 +7,7 @@
  * Time:    16:29
  */
 /** @var CMain $APPLICATION */
+/** @var int $SECTION */
 /** @var int $ID */
 
 use Bitrix\Main\Page\Asset;
@@ -17,6 +18,11 @@ use Library\Tools\CacheSelector;
 define("BODY_CLASS", "SERVICE-DRIVERS");
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+
+if ($SECTION && !$ID) {
+    $ID      = $SECTION;
+    $SECTION = null;
+}
 
 $iblockDrivers = CacheSelector::getIblockId('drivers', 'files');
 
@@ -63,7 +69,7 @@ $menuParams = [
 $pageItem = CacheSelector::getIblockElement($iblock, 'zagruzka-drayverov');
 
 $clientParams = [
-    "IBLOCK_TYPE" => "content",
+    "IBLOCK_TYPE" => "files",
     "IBLOCK_ID" => $iblockDrivers,
     "SORT_BY1" => "SORT",
     "SORT_ORDER1" => "ASC",
@@ -75,7 +81,7 @@ $clientParams = [
     "CACHE_GROUPS" => "Y",
 ];
 $serverParams = [
-    "IBLOCK_TYPE" => "content",
+    "IBLOCK_TYPE" => "files",
     "IBLOCK_ID" => $iblockDrivers,
     "SORT_BY1" => "SORT",
     "SORT_ORDER1" => "ASC",
