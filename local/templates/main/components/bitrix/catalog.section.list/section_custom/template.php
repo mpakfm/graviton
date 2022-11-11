@@ -277,22 +277,25 @@ if (array_key_exists(3, $chain)) {
                 </div>
             </div>
         </section>
-        <section class="s-solutions" style="background-image: url(img/solutions/back_tablet.png);">
+        <section class="s-solutions">
             <div class="l-default">
                 <div class="content-active" data-rules="rules_0">
                     <h2 class="title title--h2 s-solutions__title"><?=$arResult['SECTION']['NAME'];?></h2>
                     <?php if (!$arResult['SECTION']['DESCRIPTION']) {?>
-                        <p class="s-solutions__text">
+                        <div class="s-solutions__text">
                         <?php if ($isAdmin) { ?>
                             Не заполнено поле "Описание" для раздела: <a style="text-decoration: underline;" href="/bitrix/admin/iblock_section_edit.php?IBLOCK_ID=<?=$arResult['SECTION']['IBLOCK_ID'];?>&type=catalog&lang=ru&ID=<?=$arResult['SECTION']['ID'];?>"><?=$arResult['SECTION']['CODE'];?></a>
                         <?php } else { ?>
                             Не заполнено поле "Описание" для раздела: <?=$arResult['SECTION']['CODE'];?>
                         <?php } ?>
-                        </p>
+                        </div>
                     <? } else { ?>
                         <?=$arResult['SECTION']['DESCRIPTION'];?>
                     <?php } ?>
                 </div>
+            </div>
+            <div class="s-solutions__img">
+                <img src="img/solutions/back_tablet.png" alt="">
             </div>
         </section>
     </div>

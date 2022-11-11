@@ -291,16 +291,20 @@ $isAdmin = $USER->IsAdmin();
     <div class="l-default">
         <div class="s-product-video__wrapper">
             <div class="s-product-video__year"><?=$arResult['PROPERTIES']['VIDEO_YEAR']['VALUE'];?></div>
-            <div class="s-product-video__left"><a class="s-product-video__link" href="<?=$arResult['PROPERTIES']['VIDEO_LINK']['VALUE'];?>" data-fancybox>
+            <div class="s-product-video__left">
+                <a class="s-product-video__link" href="<?=$arResult['PROPERTIES']['VIDEO_LINK']['VALUE'];?>" data-fancybox>
                     <div class="s-product-video__link-text">Посмотрите обзор </div>
-                    <div class="s-product-video__link-icon"><img src="img/svg/play.svg" alt=""></div></a></div>
+                    <div class="s-product-video__link-icon"><img src="img/svg/play.svg" alt=""></div>
+                </a>
+            </div>
             <div class="s-product-video__right">
                 <div class="s-product-video__notebook">
                     <div class="s-product-video__notebook-img">
                         <picture>
                             <img src="img/product-video/1.png" alt=""/>
                         </picture>
-                    </div><a class="s-product-video__notebook-monitor" href="https://www.youtube.com/watch?v=JK0_bzukdX0" data-fancybox></a>
+                    </div>
+                    <a class="s-product-video__notebook-monitor" href="<?=$arResult['PROPERTIES']['VIDEO_LINK']['VALUE'];?>" data-fancybox></a>
                 </div>
             </div>
         </div>
@@ -325,7 +329,8 @@ $isAdmin = $USER->IsAdmin();
     <div class="s-product-video__noise">
         <picture>
             <source srcset="img/product-video/noise.webp" type="image/webp"/>
-            <source srcset="img/product-video/noise.png" type="image/png"/><img src="img/product-video/noise.png" alt=""/>
+            <source srcset="img/product-video/noise.png" type="image/png"/>
+            <img src="img/product-video/noise.png" alt=""/>
         </picture>
     </div>
 </div>
