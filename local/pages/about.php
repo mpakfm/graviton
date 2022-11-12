@@ -29,7 +29,6 @@ $iblockFiles = CacheSelector::getIblockId('about', 'files');
 
 if ((int) $ID) {
     $file = CacheSelector::getFile($iblockFiles, $ID, 'FILE', 3600);
-    \Mpakfm\Printu::obj($file)->title('$file');
     if (!$file) {
         require($_SERVER["DOCUMENT_ROOT"]."/404.php");
         die();

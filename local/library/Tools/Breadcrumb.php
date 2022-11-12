@@ -11,7 +11,6 @@ namespace Library\Tools;
 
 use CIBlockElement;
 use CIBlockSection;
-use Mpakfm\Printu;
 
 class Breadcrumb
 {
@@ -177,6 +176,9 @@ class Breadcrumb
                     break;
                 case"SERVICE-OEM":
                     $this->bodyStr = 'class="service-page service-page-2" data-scroll-container';
+                    break;
+                case"SEARCH":
+                    $this->bodyStr = 'class="searching_results-page" data-scroll-container';
                     break;
             }
         }

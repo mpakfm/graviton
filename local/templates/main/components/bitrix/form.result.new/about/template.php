@@ -12,8 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult)->title('$arResult');
-
 ?>
 <section class="s-about-contacts">
     <div class="s-about-contacts__top">

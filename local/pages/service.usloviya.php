@@ -38,8 +38,6 @@ $menuParams = [
 
 $pageItem = CacheSelector::getIblockElement($iblock, 'garantiynye-usloviya');
 
-\Mpakfm\Printu::info($pageItem)->title('$pageItem');
-
 ?>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>

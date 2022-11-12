@@ -27,7 +27,8 @@
     "ext-json": "*",
     "mpakfm/printu": "^2.0",
     "phpunit/phpunit": "8.5",
-    "guzzlehttp/guzzle": "^7.4"
+    "guzzlehttp/guzzle": "^7.4",
+    "ext-mbstring": "*"
   },
   "config": {
     "allow-plugins": {

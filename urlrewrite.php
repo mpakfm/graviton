@@ -29,8 +29,8 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/search(.*)?#",
-        'RULE'      => "",
+        'CONDITION' => "#^/search(/([a-zA-Z0-9_\-]+)?)?(/([a-zA-Z0-9_\-]+)?)?(\?.*)?#",
+        'RULE'      => "TYPE=$2&CODE=$4&OTHER=$5",
         'ID'        => "",
         'PATH'      => "/local/pages/search.php",
         'SORT'      => 100,

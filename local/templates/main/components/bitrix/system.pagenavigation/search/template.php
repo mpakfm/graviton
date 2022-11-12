@@ -28,7 +28,34 @@ $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryStr
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
 
 ?>
-
+<div class="s-searching-results__navigation">
+    <ul class="s-searching-results__paginations">
+        <?php while($arResult["nStartPage"] <= $arResult["nEndPage"]) { ?>
+            <?if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):?>
+                <li class="s-searching-results__pagination-item is-current"><?=$arResult["nStartPage"]?></li>
+            <?elseif($arResult["nStartPage"] == 1 && $arResult["bSavePage"] == false):?>
+                <li class="s-searching-results__pagination-item"><a class="s-searching-results__pagination-link" href="<?=$arResult["sUrlPath"]?><?=$strNavQueryStringFull?>"><?=$arResult["nStartPage"]?></a></li>
+            <?else:?>
+                <li class="s-searching-results__pagination-item"><a class="s-searching-results__pagination-link" href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?>"><?=$arResult["nStartPage"]?></a></li>
+            <?endif?>
+            <?$arResult["nStartPage"]++?>
+        <?php } ?>
+        <!--
+        <li class="s-searching-results__pagination-item is-current"><a class="s-searching-results__pagination-link" href="">1</a></li>
+        <li class="s-searching-results__pagination-item"><a class="s-searching-results__pagination-link" href="">2</a></li>
+        <li class="s-searching-results__pagination-item"><a class="s-searching-results__pagination-link" href="">3</a></li>
+        <li class="s-searching-results__pagination-item"><a class="s-searching-results__pagination-link" href="">4</a></li>
+        -->
+    </ul>
+    <a class="s-searching-results__back-link" href=""><span>Вернуться на главную</span>
+        <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 1H1L6.35135 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+<?php
+/*
+?>
 <div class="news-detail__more" style="margin-top: 50px;">
     Поиск, результаты:
     <?=$arResult["NavFirstRecordShow"]?> <?=GetMessage("nav_to")?> <?=$arResult["NavLastRecordShow"]?> <?=GetMessage("nav_of")?> <?=$arResult["NavRecordCount"]?><br /></font>
@@ -59,3 +86,4 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 
     </div>
 </div>
+*/ ?>

@@ -20,6 +20,4 @@
 
 $this->setFrameMode(true);
 
-\Mpakfm\Printu::obj($arResult)->title('$arResult')->response('html');
-
 ?>
