@@ -12,3 +12,6 @@
 .s-partners__item img {
     max-height: none !important;
 }
+.search__result {
+    top: 26px;
+}

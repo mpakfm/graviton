@@ -7,10 +7,25 @@
  * Time:    20:56
  */
 /** @var CMain $APPLICATION */
+/** @var string $TYPE */
+/** @var string $CODE */
+
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetLocation;
 
 define("BODY_CLASS", "SEARCH");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+
+$arrFilter = ["no"];
+
+if ($TYPE != '') {
+    $iblockId = \Library\Tools\CacheSelector::getIblockId($CODE, $TYPE);
+    $arrFilter = ["iblock_" . $TYPE];
+}
+
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/searching_results.css">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/searching_results.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $APPLICATION->SetTitle("Graviton - Поиск");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
@@ -41,7 +56,7 @@ $searchParams = [
     "USE_TITLE_RANK"         => "Y",
     "DEFAULT_SORT"           => "rank",
     "FILTER_NAME"            => "",
-    "arrFILTER"              => ["no"],
+    "arrFILTER"              => $arrFilter,
     "SHOW_WHERE"             => "N",
     "arrWHERE"               => [],
     "SHOW_WHEN"              => "N",
@@ -59,10 +74,18 @@ $searchParams = [
     "AJAX_OPTION_HISTORY"    => "N",
     "AJAX_OPTION_ADDITIONAL" => "",
 ];
+$searchParams['TYPE'] = null;
+$searchParams['CODE'] = null;
+
+if ($TYPE != '') {
+    $searchParams['arrFILTER_iblock_' . $TYPE] = $iblockId;
+    $searchParams['TYPE'] = $TYPE;
+    $searchParams['CODE'] = $CODE;
+}
 ?>
 
 <main class="main">
-    <?$APPLICATION->IncludeComponent("mpakfm:search.page", "common", $searchParams);?>
+    <?$APPLICATION->IncludeComponent("mpakfm:search.page", "filters", $searchParams);?>
 </main>
 
 <?php

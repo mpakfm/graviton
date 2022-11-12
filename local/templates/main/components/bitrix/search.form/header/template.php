@@ -37,7 +37,7 @@ $this->setFrameMode(true);
                     <use xlink:href="img/sprite-mono.svg#ico-mono-search"></use>
                 </svg>
             </div>
-            <input id="js-search-input" style="color: #ceced0;" type="text" name="q" placeholder="Ноутбук" <?=(array_key_exists('q', $_REQUEST) && !empty($_REQUEST['q']) ? 'value="' . $_REQUEST['q'] . '"' : '');?>>
+            <input id="js-search-input" style="color: #ceced0;" type="text" name="q" placeholder="Ноутбук" <?=(array_key_exists('q', $_REQUEST) && !empty($_REQUEST['q']) ? 'value="' . $_REQUEST['q'] . '"' : '');?> autocomplete="off">
             <?php if($arParams["USE_SUGGEST"] === "Y") { ?>
                 <div class="search__result">
                     <div class="search__result-title">Популярные запросы</div>

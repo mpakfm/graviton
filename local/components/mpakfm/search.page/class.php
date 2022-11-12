@@ -64,11 +64,8 @@ class SearchPage extends \CBitrixComponent
                 $this->customFilter = [];
             }
         }
-
-        $this->exFilter = CSearchParameters::ConvertParamsToFilter($params, "arrFILTER");
-
+        $this->exFilter        = CSearchParameters::ConvertParamsToFilter($params, "arrFILTER");
         $params["CHECK_DATES"] = $params["CHECK_DATES"] == "Y";
-
         return $params;
     }
 
