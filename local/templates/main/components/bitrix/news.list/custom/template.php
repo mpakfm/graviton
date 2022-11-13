@@ -12,25 +12,15 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-// @todo: времянка, передать определение секций либо в компонент либо в result_modifier
-$stmt = CIBlockSection::GetList(['sort' => 'asc'], ['IBLOCK_ID' => $arParams['IBLOCK_ID']], false, ['ID', 'CODE', 'NAME', 'IBLOCK_SECTION_ID']);
-$sections = [];
-while($section = $stmt->Fetch())
-{
-    $sections[] = $section;
-}
 if ($arParams['AJAX_MODE'] != 'Y') {
 ?>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         $('.news__btn-more').click(function(){
-            console.log('news__btn-more click');
-            console.log('url', $(this).data('url'));
             $.ajax({
                 url: $(this).data('url'),
                 type: 'GET',
                 success: function (data) {
-                    console.log('news__btn-more success data', data);
                     $('.news-items').append(data);
                 }
             });
@@ -41,7 +31,7 @@ if ($arParams['AJAX_MODE'] != 'Y') {
     <div class="tabs">
         <div class="l-default">
             <div class="tabs__content">
-                <?php foreach($sections as $section) { ?>
+                <?php foreach($arResult['SECTIONS'] as $section) { ?>
                     <a class="tabs__content-item" href="/news/<?=$section['CODE'];?>"><?=$section['NAME'];?></a>
                 <?php } ?>
             </div>

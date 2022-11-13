@@ -7,9 +7,12 @@
  * Time:    15:53
  */
 /** @var CMain $APPLICATION */
-/** @var string $CODE */
+/** @var string $SECTION */
+/** @var string $ITEM */
 /** @var string $OTHER */
 
+use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
@@ -19,9 +22,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $breadcrumb = Breadcrumb::init();
 
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/cases_page.css?t=' . time() . '">', true);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cases_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+
 $iblock = CacheSelector::getIblockId('cases', 'content');
 
-if (!empty($CODE)) {
+\Mpakfm\Printu::obj($SECTION)->title('$SECTION');
+\Mpakfm\Printu::obj($ITEM)->title('$ITEM');
+
+if (!empty($ITEM)) {
     $params = [
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
@@ -29,10 +38,10 @@ if (!empty($CODE)) {
         "DISPLAY_PREVIEW_TEXT" => "Y",
         "USE_SHARE" => "N",
         "SHARE_HIDE" => "N",
-        "AJAX_MODE" => "N",
+        "AJAX_MODE" => "Y",
         "IBLOCK_TYPE" => "content",
         "IBLOCK_ID" => $iblock,
-        "ELEMENT_CODE" => $CODE,
+        "ELEMENT_CODE" => $ITEM,
         "CHECK_DATES" => "Y",
         "FIELD_CODE" => Array("ID"),
         "PROPERTY_CODE" => Array("DESCRIPTION"),
@@ -71,17 +80,17 @@ if (!empty($CODE)) {
         "DISPLAY_NAME" => "Y",
         "DISPLAY_PICTURE" => "Y",
         "DISPLAY_PREVIEW_TEXT" => "Y",
-        "AJAX_MODE" => "Y",
+        "AJAX_MODE" => "N",
         "IBLOCK_TYPE" => "content",
         "IBLOCK_ID" => $iblock,
-        "NEWS_COUNT" => "10",
-        "SORT_BY1" => "ACTIVE_FROM",
+        "NEWS_COUNT" => "2",
+        "SORT_BY1" => "SORT",
         "SORT_ORDER1" => "DESC",
-        "SORT_BY2" => "SORT",
+        "SORT_BY2" => "NAME",
         "SORT_ORDER2" => "ASC",
         "FILTER_NAME" => "",
-        "FIELD_CODE" => Array("ID", "PREVIEW_TEXT", "IBLOCK_SECTION_ID"),
-        "PROPERTY_CODE" => Array("DESCRIPTION"),
+        "FIELD_CODE" => ["ID", "PREVIEW_TEXT", "IBLOCK_SECTION_ID"],
+        "PROPERTY_CODE" => ["SUB_TITLE", "COMPANY", "LOGO"],
         "CHECK_DATES" => "Y",
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
@@ -95,17 +104,17 @@ if (!empty($CODE)) {
         "ADD_SECTIONS_CHAIN" => "Y",
         "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
         "PARENT_SECTION" => "",
-        "PARENT_SECTION_CODE" => '',
+        "PARENT_SECTION_CODE" => ($SECTION ? $SECTION : ''),
         "INCLUDE_SUBSECTIONS" => "Y",
         "CACHE_TYPE" => "N",
         "CACHE_TIME" => "3600",
         "CACHE_FILTER" => "Y",
         "CACHE_GROUPS" => "Y",
         "DISPLAY_TOP_PAGER" => "N",
-        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
         "PAGER_TITLE" => "Мероприятия",
         "PAGER_SHOW_ALWAYS" => "N",
-        "PAGER_TEMPLATE" => "",
+        "PAGER_TEMPLATE" => "cases",
         "PAGER_DESC_NUMBERING" => "Y",
         "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
         "PAGER_SHOW_ALL" => "N",
@@ -113,19 +122,21 @@ if (!empty($CODE)) {
         "SET_STATUS_404" => "Y",
         "SHOW_404" => "Y",
         "MESSAGE_404" => "",
-        "PAGER_BASE_LINK" => "",
+        "PAGER_BASE_LINK" => "/local/templates/main/components/mpakfm/news.list/cases/ajax.php?" . ($SECTION != ''? 'section=' . $SECTION : ''),
         "PAGER_PARAMS_NAME" => "arrPager",
-        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_JUMP" => "Y",
+        "AJAX_OPTION_STYLE" => "Y",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
     ];
 }
 
 ?>
-<main class="main">
-    <?php if (!empty($CODE)) { ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.detail","case",$params);?>
-    <?php } else { ?>
-        <?$APPLICATION->IncludeComponent("bitrix:news.list","cases",$params);?>
-    <?php } ?>
-</main>
+
+<?php if (!empty($ITEM)) { ?>
+    <?$APPLICATION->IncludeComponent("bitrix:news.detail","case", $params);?>
+<?php } else { ?>
+    <?$APPLICATION->IncludeComponent("mpakfm:news.list","cases", $params);?>
+<?php } ?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
