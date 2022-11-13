@@ -56,6 +56,18 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
                 </picture>
             </div>
         </section>
+        <section>
+            <?php
+
+            $letters = \Library\Tools\ServiceLetters::getLetters();
+            $cities = \Library\Tools\ServiceLetters::getCities();
+            $full = \Library\Tools\ServiceLetters::getFull();
+
+            \Mpakfm\Printu::obj($letters)->title('$letters')->response('html');
+            \Mpakfm\Printu::obj($cities)->title('$cities')->response('html');
+            \Mpakfm\Printu::obj($full)->title('$full')->response('html');
+            ?>
+        </section>
         <section class="s-support-contact s-support-contact-legal">
             <div class="l-default">
                 <div class="s-support-contact__top">
