@@ -1,2 +1,246 @@
+.s-events-cities {
+  padding: 1.25rem 0;
+}
 
+.s-events-cities__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9375rem;
+  flex-wrap: wrap;
+}
+
+.s-events-cities__item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 0.3125rem;
+  transition: all 0.4s ease;
+}
+
+.s-events-cities__item:hover {
+  border: 0.0625rem solid #d91745;
+}
+
+.s-events-last {
+  overflow: visible;
+  margin-top: 1.875rem;
+}
+
+.s-events-last__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.s-events-last__info {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.s-events-last__info::before {
+  position: absolute;
+  top: -0.0625rem;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  background: #333333;
+  content: "";
+}
+
+.s-events-last__info::after {
+  position: absolute;
+  top: -0.0625rem;
+  left: 0;
+  width: 19%;
+  height: 0.125rem;
+  background: #f4f4f2;
+  transition: all 0.4s ease;
+  content: "";
+}
+
+.s-events-last__info:hover::after {
+  width: 50%;
+  background: #d91745;
+}
+
+.s-events-last__date {
+  margin-bottom: 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.s-events-last__text {
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  color: #656669;
+}
+
+.s-events-last__title {
+  margin-bottom: 1.25rem;
+  font-size: 2.1875rem;
+  font-weight: 500;
+  line-height: 2.1875rem;
+  color: #ceced0;
+  letter-spacing: -0.03em;
+}
+
+.events-page {
+  position: relative;
+}
+
+.events-page .main {
+  position: relative;
+}
+
+.events-page .main:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url(".././img/about/bg-page.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .s-events-cities {
+    padding: 2.1875rem 0;
+  }
+
+  .s-events-last {
+    margin-top: 3.125rem;
+  }
+
+  .s-events-last__wrap {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+
+  .s-events-last__info {
+    width: 40%;
+  }
+
+  .s-events-last__image {
+    width: 60%;
+  }
+
+  .s-events-last__text {
+    max-width: 16.25rem;
+  }
+
+  .s-events-last__title {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 1.875rem;
+    max-width: 43.25rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .s-events-cities {
+    padding: 3.125rem 0;
+  }
+
+  .s-events-cities__items {
+    gap: 1.1875rem;
+    align-items: flex-start;
+  }
+
+  .s-events-last {
+    margin: 3.875rem 0;
+  }
+
+  .s-events-last__wrap {
+    gap: 1.875rem;
+  }
+
+  .s-events-last__info {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding-top: 1.875rem;
+    flex-direction: row-reverse;
+    gap: 2.625rem;
+  }
+
+  .s-events-last__image {
+    width: 50%;
+  }
+
+  .s-events-last__title {
+    bottom: -6.25rem;
+    left: 4.375rem;
+    max-width: 67.1875rem;
+    font-size: 3.75rem;
+    line-height: 4.375rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .s-events-last__date {
+    font-size: 1.1875rem;
+    line-height: 1.4375rem;
+  }
+
+  .s-events-last__text {
+    max-width: 25rem;
+    font-size: 1.1875rem;
+    line-height: 1.4375rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .s-events-last {
+    margin: 4.6875rem 0 0;
+  }
+
+  .s-events-last__title {
+    bottom: 0;
+    font-size: 5.9375rem;
+    line-height: 6.9375rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .s-events-cities__items {
+    gap: 2.5rem;
+  }
+
+  .s-events-last {
+    margin: 5.625rem 0 0;
+  }
+
+  .s-events-last__date {
+    font-size: 1.3125rem;
+    line-height: 1.5625rem;
+  }
+
+  .s-events-last__text {
+    max-width: 26.875rem;
+    font-size: 1.3125rem;
+    line-height: 1.5625rem;
+  }
+
+  .s-events-last__title {
+    bottom: -2.8125rem;
+    font-size: 6.875rem;
+    line-height: 8.0625rem;
+  }
+}
 /*# sourceMappingURL=maps/events_page.css.map */
