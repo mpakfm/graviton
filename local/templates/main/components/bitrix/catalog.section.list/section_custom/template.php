@@ -69,6 +69,7 @@ $images      = [];
 $imagesIds   = [];
 $lines       = [];
 $activeChild = [];
+$cntProducts = 0;
 // Если мы в родительской секции
 if ($arResult['SECTION']['DEPTH_LEVEL'] == 1) {
     foreach ($arResult['SECTIONS'] as &$section) {
@@ -97,6 +98,7 @@ if ($arResult['SECTION']['DEPTH_LEVEL'] == 1) {
                     $el['URL'] = '/catalog/' . $arResult['SECTION']['CODE'] . '/' . $section['CODE'] . '/' . $item['CODE'] . '/' . $el['CODE'];
                     $item['PRODUCTS'][] = $el;
                 }
+                $cntProducts = $cntProducts + count($item['PRODUCTS']);
                 $section['CHILDREN'][] = $item;
             }
         }
@@ -113,6 +115,9 @@ if (!empty($imagesIds)) {
     }
 }
 
+if (!$cntProducts)  {
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/local/pages/under_construction.php';
+} else {
 ?>
 <main class="main">
 <section class="s-top-categories">
@@ -356,3 +361,4 @@ if (array_key_exists(3, $chain)) {
     </div>
 </section>
 </main>
+<?php } ?>

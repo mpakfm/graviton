@@ -66,14 +66,14 @@ FROM b_iblock_element el
         $propCenter = CacheSelector::getIblockProperty($iblockCentres, 'CENTER');
         $propCity   = CacheSelector::getIblockProperty($iblockCentres, 'CITY');
         $propWork   = CacheSelector::getIblockProperty($iblockCentres, 'WORK');
-        $propAdress = CacheSelector::getIblockProperty($iblockCentres, 'ADRESS');
+        $propAdress = CacheSelector::getIblockProperty($iblockCentres, 'ADDRESS');
         $propPhone1 = CacheSelector::getIblockProperty($iblockCentres, 'PHONE1');
         $propPhone2 = CacheSelector::getIblockProperty($iblockCentres, 'PHONE2');
         $propEmail  = CacheSelector::getIblockProperty($iblockCentres, 'EMAIL');
 
         $con = Application::getConnection();
         $sql = "SELECT el.ID, el.NAME, c.NAME as CITY, c.ID as CITY_ID, SUBSTRING(c.NAME, 1, 1) as LETTER,
-        ct.VALUE as CENTER, w.VALUE as WORK, a.VALUE as ADRESS, ph1.VALUE as PHONE1, ph2.VALUE as PHONE2, e.VALUE as EMAIL 
+        ct.VALUE as CENTER, w.VALUE as WORK, a.VALUE as ADDRESS, ph1.VALUE as PHONE1, ph2.VALUE as PHONE2, e.VALUE as EMAIL 
         FROM b_iblock_element el
         INNER JOIN b_iblock_element_property p ON p.IBLOCK_ELEMENT_ID = el.ID
         INNER JOIN b_iblock_element c ON c.ID = p.VALUE

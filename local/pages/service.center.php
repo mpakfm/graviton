@@ -63,10 +63,15 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
             $cities = \Library\Tools\ServiceLetters::getCities();
             $full = \Library\Tools\ServiceLetters::getFull();
 
-            \Mpakfm\Printu::obj($letters)->title('$letters')->response('html');
-            \Mpakfm\Printu::obj($cities)->title('$cities')->response('html');
-            \Mpakfm\Printu::obj($full)->title('$full')->response('html');
             ?>
+            <script>
+            let letters = <?=json_encode($letters);?>;
+            let cities = <?=json_encode($cities);?>;
+            let full = <?=json_encode($full);?>;
+            console.log(letters);
+            console.log(cities);
+            console.log(full);
+            </script>
         </section>
         <section class="s-support-contact s-support-contact-legal">
             <div class="l-default">
