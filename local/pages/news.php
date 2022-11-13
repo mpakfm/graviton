@@ -25,10 +25,6 @@ if (!empty($breadcrumb->uriItem)) {
     $ITEM = $breadcrumb->uriItem[0];
 }
 
-$APPLICATION->SetTitle("Graviton - Новости");
-$APPLICATION->SetPageProperty('description', 'Graviton description');
-$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
-
 $iblock = CacheSelector::getIblockId('news', 'content');
 
 $filter = [];
