@@ -70,6 +70,10 @@
   background: #d91745;
 }
 
+.s-events-last__image {
+  margin-left: auto;
+}
+
 .s-events-last__date {
   margin-bottom: 1.25rem;
   font-size: 0.9375rem;
@@ -92,6 +96,87 @@
   line-height: 2.1875rem;
   color: #ceced0;
   letter-spacing: -0.03em;
+}
+
+.s-events-last-detail {
+  position: relative;
+  max-width: 100%;
+}
+
+.s-events-last-detail .l-default {
+  position: relative;
+}
+
+.s-events-last-detail .s-events-last__image {
+  position: relative;
+  width: 100%;
+  height: 16.5625rem;
+}
+
+.s-events-last-detail .s-events-last__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.s-events-last-detail .s-events-last__image:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(90deg, #000000 -10.56%, rgba(0, 0, 0, 0) 84.99%);
+}
+
+.s-events-last-detail .s-events-last__title {
+  position: absolute;
+  left: 0;
+  bottom: -2.8125rem;
+  line-height: 90%;
+}
+
+.s-events-last-detail .s-events-last__wrap {
+  position: relative;
+  padding-top: 12px;
+}
+
+.s-events-last-detail .s-events-last__wrap::before {
+  position: absolute;
+  top: -0.0625rem;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  background: #333333;
+  content: "";
+}
+
+.s-events-last-detail .s-events-last__wrap::after {
+  position: absolute;
+  top: -0.0625rem;
+  left: 0;
+  width: 19%;
+  max-width: 1131px;
+  height: 0.125rem;
+  background: #f4f4f2;
+  transition: all 0.4s ease;
+  content: "";
+}
+
+.s-events-last-detail .s-events-last__wrap:hover::after {
+  width: 50%;
+  background: #d91745;
+}
+
+.s-events-last-detail .s-events-last__date {
+  max-width: fit-content;
+  color: #CECED0;
+  margin-top: 3.4375rem;
+  margin-left: auto;
+  margin-bottom: 0;
 }
 
 .events-page {
@@ -150,6 +235,31 @@
     font-size: 2.5rem;
     line-height: 2.5rem;
   }
+
+  .s-events-last-detail .s-events-last__image {
+    width: 36.5rem;
+    height: 27.5rem;
+  }
+
+  .s-events-last-detail .s-events-last__image img {
+    object-fit: cover;
+  }
+
+  .s-events-last-detail .s-events-last__title {
+    bottom: 1.5625rem;
+    font-size: 4.375rem;
+  }
+
+  .s-events-last-detail .s-events-last__wrap::before {
+    max-width: 585px;
+  }
+
+  .s-events-last-detail .s-events-last__date {
+    width: 36.5rem;
+    margin-top: 0.625rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -186,9 +296,34 @@
   .s-events-last__title {
     bottom: -6.25rem;
     left: 4.375rem;
-    max-width: 67.1875rem;
     font-size: 3.75rem;
     line-height: 4.375rem;
+  }
+
+  .s-events-last-detail .s-events-last__image {
+    width: 38.1875rem;
+    height: 26rem;
+  }
+
+  .s-events-last-detail .s-events-last__title {
+    bottom: unset;
+    top: 20%;
+    font-size: 5.625rem;
+  }
+
+  .s-events-last-detail .s-events-last__wrap::before {
+    max-width: 578px;
+  }
+
+  .s-events-last-detail .s-events-last__date {
+    width: 100%;
+    max-width: 66.625rem;
+    transform: translateY(-40px);
+    margin: 0 auto;
+  }
+
+  .s-events-last-detail .s-events-last__date span {
+    display: block;
   }
 }
 
@@ -213,7 +348,34 @@
   .s-events-last__title {
     bottom: 0;
     font-size: 5.9375rem;
+    max-width: 67.1875rem;
     line-height: 6.9375rem;
+  }
+
+  .s-events-last-detail {
+    max-width: 93.5rem;
+  }
+
+  .s-events-last-detail .s-events-last__image {
+    width: 52.6875rem;
+    height: 39.6875rem;
+  }
+
+  .s-events-last-detail .s-events-last__title {
+    top: 25%;
+    font-size: 8.75rem;
+  }
+
+  .s-events-last-detail .s-events-last__wrap::before {
+    max-width: 1131px;
+  }
+
+  .s-events-last-detail .s-events-last__date {
+    transform: translateY(-20px);
+  }
+
+  .s-events-last-detail .s-events-last__date span {
+    display: inline-block;
   }
 }
 
@@ -240,7 +402,12 @@
   .s-events-last__title {
     bottom: -2.8125rem;
     font-size: 6.875rem;
+    max-width: 75rem;
     line-height: 8.0625rem;
+  }
+
+  .s-events-last-detail .s-events-last__title {
+    font-size: 9.375rem;
   }
 }
 /*# sourceMappingURL=maps/events_page.css.map */
