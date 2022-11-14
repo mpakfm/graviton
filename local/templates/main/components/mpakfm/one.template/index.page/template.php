@@ -152,7 +152,7 @@ $sliderNews = [
     "IBLOCK_TYPE"            => "content",
     "IBLOCKS"                => ["events", "news"], //news, events
     "LIMIT"                  => ["events" => 10, "news" => 2], //news, events
-    "FIELD_CODE"             => ["ID", "CODE", "NAME", "PROPERTY_TOP_DATE", "PROPERTY_TOP_TITLE", "PROPERTY_TOP_PLACE"], // "PROPERTY_IS_PUB", "PROPERTY_TOP_DATE", "PROPERTY_IS_SLIDER"
+    "FIELD_CODE"             => ["ID", "CODE", "NAME", "PROPERTY_TOP_DATE", "PROPERTY_TOP_TITLE", "PROPERTY_TOP_PLACE", "PROPERTY_CITY"], // "PROPERTY_IS_PUB", "PROPERTY_TOP_DATE", "PROPERTY_IS_SLIDER"
     "FILTER_REQUIRED_FIELDS" => ["PROPERTY_IS_SLIDER"],
 
     "IS_ACTIVE_DATE"     => false,

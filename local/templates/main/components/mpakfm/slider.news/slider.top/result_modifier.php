@@ -30,6 +30,9 @@ foreach ($arResult['ITEMS'] as &$item) {
         $arResult['NEWS'][] = $item;
     }
     if ($item['IBLOCK_ID'] == $blockEventsId) {
+        if (empty($item['PROPERTY_TOP_PLACE_VALUE'])) {
+
+        }
         if (empty($item['PROPERTY_TOP_TITLE_VALUE'])) {
             $item['PROPERTY_TOP_TITLE_VALUE'] = $item['NAME'];
         }
