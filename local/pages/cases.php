@@ -27,9 +27,6 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/case
 
 $iblock = CacheSelector::getIblockId('cases', 'content');
 
-\Mpakfm\Printu::obj($SECTION)->title('$SECTION');
-\Mpakfm\Printu::obj($ITEM)->title('$ITEM');
-
 if (!empty($ITEM)) {
     $params = [
         "DISPLAY_DATE" => "Y",

@@ -14,4 +14,3 @@ while($section = $stmt->Fetch())
 {
     $arResult['SECTIONS'][] = $section;
 }
-\Mpakfm\Printu::obj($arResult)->title('$arResult');

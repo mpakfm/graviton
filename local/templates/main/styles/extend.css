@@ -15,3 +15,6 @@
 .search__result {
     top: 26px;
 }
+.s-events-cities__item.active {
+    border: 0.0625rem solid #d91745;
+}

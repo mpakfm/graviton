@@ -20,6 +20,7 @@
 $this->setFrameMode(true);
 
 ?>
+<main class="main">
 <section class="news-detail" style="background-image: url(img/news/back.jpg)">
     <div class="l-default">
         <div class="l-content">
@@ -78,3 +79,4 @@ $this->setFrameMode(true);
         </div>
     </div>
 </section>
+</main>
