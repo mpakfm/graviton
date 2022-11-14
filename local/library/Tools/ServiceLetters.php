@@ -10,6 +10,7 @@
 namespace Library\Tools;
 
 use Bitrix\Main\Application;
+use Mpakfm\Printu;
 
 class ServiceLetters
 {
@@ -88,9 +89,26 @@ FROM b_iblock_element el
         $items = [];
         while ($item = $stmt->fetch()) {
             $center = explode(',', $item['CENTER']);
-            $item['CENTER'] = $center;
-            $items[$item['CITY_ID']][] = $item;
+            if (!array_key_exists($item['CITY_ID'], $items)) {
+                $items[$item['CITY_ID']] = [
+                    'name'  => $item['CITY'],
+                    'items' => [],
+                ];
+            }
+            $items[$item['CITY_ID']]['items'][] = [
+                'ID' => $item['ID'],
+                'NAME' => $item['NAME'],
+                'CITY' => $item['CITY'],
+                'CITY_ID' => $item['CITY_ID'],
+                'LETTER' => $item['LETTER'],
+                'WORK' => $item['WORK'],
+                'ADDRESS' => $item['ADDRESS'],
+                'PHONE1' => $item['PHONE1'],
+                'PHONE2' => $item['PHONE2'],
+                'EMAIL' => $item['EMAIL'],
+                'CENTER' => $center,
+            ];
         }
-        return $items;
+        return array_values($items);
     }
 }
