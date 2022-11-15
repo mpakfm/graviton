@@ -106,12 +106,14 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                         <div class="s-social__phone-btn btn-social">Позвонить</div>
                     </div>
                     <div class="s-social__send">
-                        <div class="s-social__send-item phone"><a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a><a class="s-social__phone-btn btn-social">Позвонить</a></div>
+                        <div class="s-social__send-item phone">
+                            <a class="s-social__item-text" href="tel:88005008886">8-800-500-88-86</a>
+                            <a class="s-social__phone-btn btn-social" href="tel:88005008886">Позвонить</a></div>
                         <div class="s-social__send-item support">
-                            <div class="s-social__item-text">Обратитесь в службу технической поддержки</div><a class="s-social__item-btn btn-social">Написать</a>
+                            <div class="s-social__item-text">Обратитесь в службу технической поддержки</div><a class="s-social__item-btn btn-social" href="mailto:support@graviton.ru">Написать</a>
                         </div>
                         <div class="s-social__send-item mail">
-                            <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div><a class="s-social__item-btn btn-social">Написать</a>
+                            <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div><a class="s-social__item-btn btn-social" href="mailto:sale@graviton.ru">Написать</a>
                         </div>
                     </div>
                     <div class="s-social__link">

@@ -154,7 +154,7 @@ $breadcrumb->setBodyClass();
             <div class="close"><span></span><span></span></div>
             <div class="s-contact-us__item">
                 <a class="s-contact-us__item-phone" href="tel:+78005008886">8-800-500-88-86</a>
-                <a class="s-contact-us__item-btn btn btn--grey" href="tel:+78005008886">Позвонить</a>
+                <a class="s-contact-us__item-btn btn btn--grey" href="tel:88005008886">Позвонить</a>
             </div>
             <div class="s-contact-us__item">
                 <div class="s-contact-us__item-title">Свяжитесь с нами по электронной почте</div>
@@ -162,7 +162,7 @@ $breadcrumb->setBodyClass();
             </div>
             <div class="s-contact-us__item">
                 <div class="s-contact-us__item-title">Обратитесь в службу технической поддержки</div>
-                <a class="s-contact-us__item-btn btn btn--grey" href="mailto:sale@graviton.ru">Написать</a>
+                <a class="s-contact-us__item-btn btn btn--grey" href="mailto:support@graviton.ru">Написать</a>
             </div>
             <div class="btn btn--cancel btn--grey">Отмена</div>
         </div>
