@@ -159,7 +159,9 @@ class Breadcrumb
                     break;
                 case"NEWS":
                     if ($this->uriItem) {
-                        $this->bodyStr = 'data-scroll-container style="background-image: url(img/news/back.jpg)';
+                        $this->bodyStr = 'class="news-detail-page" data-scroll-container';
+                    } else {
+                        $this->bodyStr = 'class="news-page" data-scroll-container';
                     }
                     break;
                 case"CASES":
