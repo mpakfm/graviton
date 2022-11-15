@@ -20,6 +20,21 @@ if ($arResult['META_TAGS']['TITLE']) {
     $APPLICATION->SetTitle($arResult['META_TAGS']['TITLE']);
 }
 $isAdmin = $USER->IsAdmin();
+
+$partners = [
+    "IBLOCK_TYPE"            => "content",
+    "IBLOCKS"                => ["partners"],
+    "FIELD_CODE"             => ["ID", "CODE", "NAME", "PREVIEW_PICTURE"],
+    "FILTER_REQUIRED_FIELDS" => ["PROPERTY_IS_SHOW_PRODUCT"],
+    "SORT_BY1"               => "SORT",
+    "SORT_ORDER1"            => "ASC",
+    "SORT_BY2"               => "NAME",
+    "SORT_ORDER2"            => "ASC",
+    "CACHE_TYPE"             => "Y",
+    "CACHE_TIME"             => "3600",
+    "CACHE_GROUPS"           => "Y",
+];
+
 ?>
 <section class="s-product-about" style="background-image: url(img/bg/product_page.jpg);">
     <div class="l-default">
@@ -460,19 +475,9 @@ $isAdmin = $USER->IsAdmin();
     </div>
 </div>
 <?php } ?>
-<section class="s-partners" id="s-partners">
-    <div class="l-default">
-        <h2 class="title title--h2 text-center">Где купить ?</h2>
-        <div class="s-partners__items s-partners__type-two">
-            <div class="s-partners__item"><img src="img/svg/logos/3logic.svg" alt=""></div>
-            <div class="s-partners__item"><img src="img/svg/logos/elbrus.svg" alt=""></div>
-            <div class="s-partners__item"><img src="img/svg/logos/basealt.svg" alt=""></div>
-            <div class="s-partners__item"><img src="img/svg/logos/astralinux.svg" alt=""></div>
-            <div class="s-partners__item"><img src="img/svg/logos/code.svg" alt=""></div>
-            <div class="s-partners__item s-partners__btn-wrap"><a class="s-partners__btn" href="mailto:mail@mail.com">Стать партнером</a></div>
-        </div>
-    </div>
-</section>
+
+<?$APPLICATION->IncludeComponent("mpakfm:news.line", "product.partners", $partners);?>
+
 <section class="s-feedback">
     <div class="s-feedback__content">
         <div class="s-feedback__content-top">

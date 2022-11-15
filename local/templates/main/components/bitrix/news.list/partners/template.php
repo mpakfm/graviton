@@ -23,8 +23,6 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
 $cnt = 0;
 $max = ceil(count($arResult["ITEMS"]) / 5) * 5;
-\Mpakfm\Printu::obj($arResult)->title('ITEMS');
-\Mpakfm\Printu::obj($max)->title('$max');
 ?>
 <section class="s-partners-page">
     <div class="l-default">

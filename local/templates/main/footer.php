@@ -48,6 +48,20 @@ $menuSupportParams = [
     "CACHE_GROUPS" => "Y",
 ];
 
+$partners = [
+    "IBLOCK_TYPE"            => "content",
+    "IBLOCKS"                => ["partners"],
+    "FIELD_CODE"             => ["ID", "CODE", "NAME", "PREVIEW_PICTURE"],
+    "FILTER_REQUIRED_FIELDS" => ["PROPERTY_IS_SHOW_POPUP"],
+    "SORT_BY1"               => "SORT",
+    "SORT_ORDER1"            => "ASC",
+    "SORT_BY2"               => "NAME",
+    "SORT_ORDER2"            => "ASC",
+    "CACHE_TYPE"             => "Y",
+    "CACHE_TIME"             => "3600",
+    "CACHE_GROUPS"           => "Y",
+];
+
 $breadcrumb = Breadcrumb::init()::$chain;
 
 ?>
@@ -300,18 +314,7 @@ $breadcrumb = Breadcrumb::init()::$chain;
                 <img src="/local/templates/main/img/goods/no-image-240x130.png" />
             </picture>
         </div>
-        <div class="popup-categories__partners">
-            <h2 class="title title--h2 text-center">Где купить ?</h2>
-            <div class="s-partners__wrapper">
-                <div class="s-partners__items">
-                    <div class="s-partners__item"><img src="img/svg/logos/3logic.svg" alt=""></div>
-                    <div class="s-partners__item"><img src="img/svg/logos/elbrus.svg" alt=""></div>
-                    <div class="s-partners__item"><img src="img/svg/logos/basealt.svg" alt=""></div>
-                    <div class="s-partners__item"><img src="img/svg/logos/astralinux.svg" alt=""></div>
-                    <div class="s-partners__item"><img src="img/svg/logos/code.svg" alt=""></div>
-                </div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent("mpakfm:news.line", "footer.partners", $partners);?>
     </div>
 </div>
 </body>

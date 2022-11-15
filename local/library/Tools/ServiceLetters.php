@@ -10,7 +10,6 @@
 namespace Library\Tools;
 
 use Bitrix\Main\Application;
-use Mpakfm\Printu;
 
 class ServiceLetters
 {
