@@ -93,7 +93,7 @@ $this->setFrameMode(true);
                                            name="form_email_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_email_' . $keys[0]]) ? 'value="' . $_POST['form_email_' . $keys[0]] . '"' : '');?>
                                            placeholder="Введите реальный E-mail на него придет письмо  подтверждения" required>
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -105,6 +105,9 @@ $this->setFrameMode(true);
                                     <input id="form_text_<?=$keys[0];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
                                            name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                            placeholder="+7(ХХХ)ХХХХХХХ">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
+                                    <?php } ?>
                                 </div>
                                 <?php
                             break;
@@ -114,7 +117,10 @@ $this->setFrameMode(true);
                                     <label for="form_text_<?=$keys[0];?>"><?=$item['TITLE'];?></label>
                                     <input id="form_text_<?=$keys[0];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
                                            name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
-                                           placeholder="Введите фамилию имя и отвечтво">
+                                           placeholder="Введите фамилию имя и отчество">
+                                    <?php if ($item['IS_ERROR']) {?>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
+                                    <?php } ?>
                                 </div>
                                 <?php
                             break;
@@ -142,8 +148,8 @@ $this->setFrameMode(true);
                                 <div class="form__checkbox-text"><?=$item['TITLE'];?></div>
                             </div>
                             <?php if ($item['IS_ERROR']) {?>
-                            <p><?=$item['ERROR_MESSAGE'];?></p>
-                        <?php } ?>
+                                <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
+                            <?php } ?>
                             <?php
                             break;
                     }

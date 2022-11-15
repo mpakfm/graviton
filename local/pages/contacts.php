@@ -61,7 +61,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                                 <div class="s-contacts__box-text">Москвская область, Старое Ярославское ш., д. 1</div>
                             </div>
                             <div class="s-contacts__box-container">
-                                <div class="s-contacts__box-subtitle">Телефон:</div><a class="s-contacts__box-text" href="tel:+79653100777">+7 965 310-07-77</a>
+                                <div class="s-contacts__box-subtitle">Телефон:</div><a class="s-contacts__box-text" href="tel:+79653100777">8 800 500-88-86</a>
                             </div>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">E-mail:</div><a class="s-contacts__box-text" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
@@ -70,8 +70,8 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                     </div>
                     <div class="s-contacts__information">
                         <div class="s-contacts__information-item">ООО «Новый Ай Ти Проект»</div>
-                        <div class="s-contacts__information-item"><span>ИНН :</span>  7724338125</div>
-                        <div class="s-contacts__information-item"><span>ОГРН :</span>  99999999999</div>
+                        <div class="s-contacts__information-item"><span>ИНН :</span>  7724338125 / 772401001</div>
+                        <div class="s-contacts__information-item"><span>ОГРН :</span>  1157746958830</div>
                         <div class="s-contacts__information-item"><span>Юридический адрес :</span> 115487, г. Москва, ул. Нагатинская, дом 16</div>
                     </div>
                     <div class="s-contacts__driving">

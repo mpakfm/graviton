@@ -61,7 +61,7 @@ $this->setFrameMode(true);
                                                 name="form_email_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_email_' . $keys[0]]) ? 'value="' . $_POST['form_email_' . $keys[0]] . '"' : '');?>
                                                 placeholder="Введите реальный E-mail на него придет письмо  подтверждения">
                                         <?php if ($item['IS_ERROR']) {?>
-                                            <p><?=$item['ERROR_MESSAGE'];?></p>
+                                            <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                         <?php } ?>
                                     </div>
                                     <?php
@@ -74,7 +74,7 @@ $this->setFrameMode(true);
                                                name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                                placeholder="+7(ХХХ)ХХХХХХХ">
                                         <?php if ($item['IS_ERROR']) {?>
-                                            <p><?=$item['ERROR_MESSAGE'];?></p>
+                                            <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                         <?php } ?>
                                     </div>
                                     <?php
@@ -87,7 +87,7 @@ $this->setFrameMode(true);
                                                name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                                placeholder="Введите фамилию имя и отчество">
                                         <?php if ($item['IS_ERROR']) {?>
-                                            <p><?=$item['ERROR_MESSAGE'];?></p>
+                                            <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                         <?php } ?>
                                     </div>
                                     <?php
@@ -102,7 +102,7 @@ $this->setFrameMode(true);
                                             <div class="form__checkbox-text"><?=$item['TITLE'];?></div>
                                         </div>
                                         <?php if ($item['IS_ERROR']) {?>
-                                            <p><?=$item['ERROR_MESSAGE'];?></p>
+                                            <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                         <?php } ?>
                                         <input type="hidden" name="web_form_apply" value="Y" />
                                         <button class="btn" type="submit" name="web_form_apply" value="<?=GetMessage("FORM_APPLY")?>">Отправить</button>

@@ -40,7 +40,7 @@ $this->setFrameMode(true);
                                            name="form_email_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_email_' . $keys[0]]) ? 'value="' . $_POST['form_email_' . $keys[0]] . '"' : '');?>
                                            placeholder="Введите реальный E-mail на него придет письмо  подтверждения">
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -53,7 +53,7 @@ $this->setFrameMode(true);
                                            name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                            placeholder="Введите фамилию имя и отвечтво">
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -66,7 +66,7 @@ $this->setFrameMode(true);
                                            name="form_text_<?=$keys[0];?>" type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                            placeholder="+7(ХХХ)ХХХХХХХ">
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -91,7 +91,7 @@ $this->setFrameMode(true);
                                            type="text" <?=(!empty($_POST['form_text_' . $keys[0]]) ? 'value="' . $_POST['form_text_' . $keys[0]] . '"' : '');?>
                                            placeholder="0000000000000-0000">
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -104,7 +104,7 @@ $this->setFrameMode(true);
                                               type="text" <?=(!empty($_POST['form_textarea_' . $keys[0]]) ? 'value="' . $_POST['form_textarea_' . $keys[0]] . '"' : '');?>
                                               placeholder="Введите ваш вопрос"></textarea>
                                     <?php if ($item['IS_ERROR']) {?>
-                                        <p><?=$item['ERROR_MESSAGE'];?></p>
+                                        <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
                                     <?php } ?>
                                 </div>
                                 <?php
@@ -144,8 +144,8 @@ $this->setFrameMode(true);
                                 <div class="form__checkbox-text"><?=$item['TITLE'];?></div>
                             </div>
                             <?php if ($item['IS_ERROR']) {?>
-                            <p><?=$item['ERROR_MESSAGE'];?></p>
-                        <?php } ?>
+                                <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
+                            <?php } ?>
                             <?php
                             break;
                     }
