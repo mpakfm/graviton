@@ -629,7 +629,7 @@
 .s-service-centres .l-default:after {
   position: absolute;
   bottom: 0;
-  left: calc(-100% + 70px);
+  left: calc(-100% + 90px);
   width: 100%;
   height: 1px;
   background: #d91745;
@@ -639,7 +639,7 @@
 .s-service-centres .l-default:before {
   z-index: 1;
   position: absolute;
-  right: calc(-100% + 70px);
+  right: calc(-100% + 90px);
   bottom: 0;
   width: 100%;
   height: 1px;
@@ -1521,6 +1521,16 @@
   .s-reviews .form__submit {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1699px) {
+  .s-service-centres .l-default:after {
+    left: calc(-100% + 70px);
+  }
+
+  .s-service-centres .l-default:before {
+    right: calc(-100% + 70px);
   }
 }
 

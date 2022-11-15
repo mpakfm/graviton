@@ -171,6 +171,9 @@ class Breadcrumb
                 case"ABOUT":
                     $this->bodyStr = 'class="about-page" data-scroll-container';
                     break;
+                case"SUPPORT":
+                    $this->bodyStr = 'class="support-page" data-scroll-container';
+                    break;
                 case"SERVICE-LEGAL":
                     $this->bodyStr = 'class="legal_support-page" data-scroll-container';
                     break;

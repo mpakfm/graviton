@@ -15,12 +15,13 @@ use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
-define("BODY_CLASS", "PAGE");
+define("BODY_CLASS", "SUPPORT");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/legal_support_page.css">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/legal_support_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/support_page.css">', true);
+Asset::getInstance()->addString('<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;amp;apikey=ff858df4-79a0-4758-99fd-ccd094a8dcc7" defer="defer"></script>', false, AssetLocation::BODY_END);
+Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/support_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
 $formServiceId  = CacheSelector::getFormId('SIMPLE_FORM_1');
 $formResponceId = CacheSelector::getFormId('SIMPLE_FORM_2');
@@ -41,38 +42,26 @@ $menuParams = [
 $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
 
 ?>
+<script>
+    <?php $full = \Library\Tools\ServiceLetters::getFull(); ?>
+    const serviceCentresList = <?=json_encode($full);?>;
+</script>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
         <section class="s-banner">
             <div class="l-default">
                 <div class="s-banner__title">
-                    <h1 class="title title--h1-banner s-banner__title title--medium"><?=$pageItem['NAME'];?></h1>
+                    <h1 class="title title--h1-banner s-banner__title title--medium">Обратитесь в службу поддержки Гравитон </h1>
                 </div>
             </div>
             <div class="s-banner__img">
                 <picture>
-                    <source srcset="img/legal/banner.jpg" type="image/jpg" media="(min-width: 768px)"/>
-                    <source srcset="img/legal/banner-small.jpg" type="image/jpg" media="(max-width: 768px)"/><img src="img/legal/banner.jpg" alt=""/>
+                    <source srcset="img/support/banner.jpg" type="image/jpg" media="(min-width: 768px)"/>
+                    <source srcset="img/support/banner-small.jpg" type="image/jpg" media="(max-width: 768px)"/><img src="img/support/banner.jpg" alt=""/>
                 </picture>
             </div>
         </section>
-        <section>
-            <?php
 
-            $letters = \Library\Tools\ServiceLetters::getLetters();
-            $cities = \Library\Tools\ServiceLetters::getCities();
-            $full = \Library\Tools\ServiceLetters::getFull();
-
-            ?>
-            <script>
-            let letters = <?=json_encode($letters);?>;
-            let cities = <?=json_encode($cities);?>;
-            let full = <?=json_encode($full);?>;
-            console.log(letters);
-            console.log(cities);
-            console.log(full);
-            </script>
-        </section>
         <section class="s-support-contact s-support-contact-legal">
             <div class="l-default">
                 <div class="s-support-contact__top">
@@ -104,37 +93,98 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
                 </div>
             </div>
         </section>
-        <section class="s-support-contact s-support-contact-legal">
+        <section class="s-service-centres">
             <div class="l-default">
-                <div class="s-support-contact__content">
-                    <div class="news-detail__content">
-                        <div class="news-detail__content--title">Сервисные центры</div>
-                        <div class="news-detail__content--text">
-                            <p>Сеть сервисных центров осуществляет гарантийное и постгарантийное обслуживание вычислительной техники Гравитон на всей территории России.</p>
-                            <p>Инженерная помощь осуществляется как в сервисных центрах, так и на месте эксплуатации - силами выездных специалистов</p>
+                <div class="s-service-centres__info">
+                    <h2 class="s-service-centres__title">Сервисные центры</h2>
+                    <div class="s-service-centres__text">
+                        <p>Сеть сервисных центров осуществляет гарантийное и постгарантийное обслуживание вычислительной техники Гравитон на всей территории России.</p>
+                        <p>Инженерная помощь осуществляется как в сервисных центрах, так и на месте эксплуатации - силами выездных специалистов</p>
+                    </div>
+                </div>
+                <div class="s-service-centres__tabs">
+                    <div class="s-service-centres__tab is-active"><a class="s-service-centres__tab-link" data-tab="tab-support_0">
+                            <div class="s-service-centres__tab-title">На карте</div></a></div>
+                    <div class="s-service-centres__tab"><a class="s-service-centres__tab-link" data-tab="tab-support_1">
+                            <div class="s-service-centres__tab-title">Списком</div></a></div>
+                </div>
+            </div>
+        </section>
+        <div class="s-service-centres__tab-contents">
+            <div class="s-service-centres__tab-content is-active" id="tab-support_0">
+                <div class="l-default">
+                    <div class="s-service-centres__map" id="serviceCentres"></div>
+                </div>
+            </div>
+            <div class="s-service-centres__tab-content" id="tab-support_1">
+                <div class="l-default">
+                    <div class="s-service-centres__list">
+                        <div class="s-service-centres__list-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="s-requested-info">
+            <div class="l-default">
+                <h2 class="s-requested-info__title">Часто запрашиваемая информация</h2>
+                <div class="s-requested-info__items">
+                    <div class="s-requested-info__item">
+                        <div class="s-requested-info__item-info">
+                            <div class="s-requested-info__item-title">Поддержка по использованию ПО</div>
+                            <div class="s-requested-info__item-text">Узнайте больше об установке драйверов и их использования.</div>
                         </div>
-
-                        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","responce",Array(
-                                "SEF_MODE" => "Y",
-                                "WEB_FORM_ID" => $formResponceId,
-                                "LIST_URL" => "/page/" . Breadcrumb::$uri,
-                                "EDIT_URL" => Breadcrumb::$uri,
-                                "SUCCESS_URL" => Breadcrumb::$uri,
-                                "CHAIN_ITEM_TEXT" => "",
-                                "CHAIN_ITEM_LINK" => "",
-                                "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                                "USE_EXTENDED_ERRORS" => "Y",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "3600",
-                                "SEF_FOLDER" => "/",
-                                "VARIABLE_ALIASES" => Array(
-                                )
-                            )
-                        );?>
+                        <div class="s-requested-info__item-bottom"><a class="s-requested-info__item-link" href=""><span>Подробнее</span><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></a></div>
+                    </div>
+                    <div class="s-requested-info__item">
+                        <div class="s-requested-info__item-info">
+                            <div class="s-requested-info__item-title">Ремонт и обслуживание</div>
+                            <div class="s-requested-info__item-text">Посмотрите какие варианты ремонта и обслуживания устройств доступны в вашем регионе.</div>
+                        </div>
+                        <div class="s-requested-info__item-bottom"><a class="s-requested-info__item-link" href=""><span>Подробнее</span><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></a></div>
+                    </div>
+                    <div class="s-requested-info__item">
+                        <div class="s-requested-info__item-info">
+                            <div class="s-requested-info__item-title">Статус ремонта</div>
+                            <div class="s-requested-info__item-text">Легко и быстро проверяйте как продвигается ремонт ваших продуктов.</div>
+                        </div>
+                        <div class="s-requested-info__item-bottom"><a class="s-requested-info__item-link" href=""><span>Подробнее</span><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></a></div>
+                    </div>
+                    <div class="s-requested-info__item">
+                        <div class="s-requested-info__item-info">
+                            <div class="s-requested-info__item-title">Сообщества поддержки Гравитон</div>
+                            <div class="s-requested-info__item-text">Посмотрите какие варианты ремонта и обслуживания устройств доступны в вашем регионе.</div>
+                        </div>
+                        <div class="s-requested-info__item-bottom"><a class="s-requested-info__item-link" href=""><span>Подробнее</span><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></a></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","reviews",Array(
+                "SEF_MODE" => "Y",
+                "WEB_FORM_ID" => $formResponceId,
+                "LIST_URL" => "/page/" . Breadcrumb::$uri,
+                "EDIT_URL" => Breadcrumb::$uri,
+                "SUCCESS_URL" => Breadcrumb::$uri,
+                "CHAIN_ITEM_TEXT" => "",
+                "CHAIN_ITEM_LINK" => "",
+                "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                "USE_EXTENDED_ERRORS" => "Y",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "3600",
+                "SEF_FOLDER" => "/",
+                "VARIABLE_ALIASES" => Array(
+                )
+            )
+        );?>
 
         <div class="s-feedback">
             <div class="s-feedback__content">
