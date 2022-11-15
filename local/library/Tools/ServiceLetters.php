@@ -101,11 +101,11 @@ FROM b_iblock_element el
                 'CITY' => $item['CITY'],
                 'CITY_ID' => $item['CITY_ID'],
                 'LETTER' => $item['LETTER'],
-                'WORK' => $item['WORK'],
-                'ADDRESS' => $item['ADDRESS'],
-                'PHONE1' => $item['PHONE1'],
-                'PHONE2' => $item['PHONE2'],
-                'EMAIL' => $item['EMAIL'],
+                'WORK' => $item['WORK'] ? $item['WORK'] : '',
+                'ADDRESS' => $item['ADDRESS'] ? $item['ADDRESS'] : '',
+                'PHONE1' => $item['PHONE1'] ? $item['PHONE1'] : '',
+                'PHONE2' => $item['PHONE2'] ? $item['PHONE2'] : '',
+                'EMAIL' => $item['EMAIL'] ? $item['EMAIL'] : '',
                 'CENTER' => $center,
             ];
         }

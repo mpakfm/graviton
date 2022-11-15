@@ -45,6 +45,7 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
 <script>
     <?php $full = \Library\Tools\ServiceLetters::getFull(); ?>
     const serviceCentresList = <?=json_encode($full);?>;
+    console.log('serviceCentresList:', serviceCentresList);
 </script>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
