@@ -11,7 +11,7 @@
 
 $arResult['FORM_HEADER'] = str_replace('form', 'form class="s-support-form s-support-form-drivers form"', $arResult['FORM_HEADER']);
 
-$sql = "SELECT * FROM b_form_field WHERE FORM_ID = '{$arParams['WEB_FORM_ID']}'";
+$sql = "SELECT * FROM b_form_field WHERE FORM_ID = '{$arParams['WEB_FORM_ID']}' AND ACTIVE = 'Y'";
 $con = \Bitrix\Main\Application::getConnection();
 
 $stmt   = $con->query($sql);
