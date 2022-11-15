@@ -132,7 +132,7 @@ $this->setFrameMode(true);
                     <div class="s-support-form__contacts-mobile"></div>
                 </div>
                 <div class="s-support-form__contacts-links"><a class="s-support-form__contacts-phone" href="tel:88005517575">
-                        <label>Позвоните нам</label><span> 8 800 551-75-75</span></a>
+                        <label>Позвоните нам</label><span> 8 800 500-88-86</span></a>
                     <a class="s-support-form__contacts-email" href="mailto:support@graviton.ru">
                         <label>Напишите нам</label><span>support@graviton.ru</span></a></div>
             </div>

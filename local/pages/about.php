@@ -174,64 +174,6 @@ $filesParams = [
 
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","about.files", $filesParams);?>
 
-        <!--
-        <section class="s-company-materials">
-            <div class="l-default">
-                <h2 class="s-company-materials__title">Материалы о компании</h2>
-                <div class="s-company-materials__items"><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">История компании</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Краткое описание</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Полное описание</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Каталог продуктов</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Брендбук</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Лого бук</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Логотипы для полиграфии</div></a><a class="s-company-materials__item" href="#" download>
-                        <div class="s-company-materials__item-icon">
-                            <svg class="ico ico-mono-icon-download">
-                                <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                            </svg>
-                        </div>
-                        <div class="s-company-materials__item-title">Логотипы для web</div></a>
-                </div>
-            </div>
-        </section>
-        -->
-
         <?$APPLICATION->IncludeComponent("bitrix:form.result.new","about",Array(
                 "SEF_MODE" => "Y",
                 "WEB_FORM_ID" => $formPressId,

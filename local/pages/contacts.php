@@ -32,7 +32,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                     <div class="s-contacts__tabs">
                         <button class="s-contacts__item --office is-active" type="button" data-tab-target="tab_office">
                             <div class="s-contacts__item-title">Офис</div>
-                            <div class="s-contacts__item-prefix"><span>Сюда надо написать какой-то текст а то пусто!!!</span></div>
+                            <div class="s-contacts__item-prefix"><span></span></div>
                         </button>
                         <button class="s-contacts__item --stock" type="button" data-tab-target="tab_stock">
                             <div class="s-contacts__item-title">Склад</div>
@@ -79,18 +79,18 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                         <div class="s-contacts__driving-prefix">Если вы планируете посетить наш офис или проехать на склад Гравитон, воспользуйтесь нашими рекомендациями. Скачайте схему проезда.</div>
                         <div class="s-contacts__driving-location">
                             <div class="s-contacts__location-item">
-                                <div class="s-contacts__location-title">Главный офис</div><a class="s-contacts__location-btn">
+                                <div class="s-contacts__location-title">Главный офис</div><a class="s-contacts__location-btn" href="/upload/kievskaya.png">
                                     <svg class="ico ico-mono-download">
                                         <use xlink:href="img/sprite-mono.svg#ico-mono-download"></use>
                                     </svg>
-                                    <div class="s-contacts__location-size">76 мб</div></a>
+                                    <div class="s-contacts__location-size">1.33 мб</div></a>
                             </div>
                             <div class="s-contacts__location-item">
-                                <div class="s-contacts__location-title">Производство / склад</div><a class="s-contacts__location-btn">
+                                <div class="s-contacts__location-title">Производство / склад</div><a class="s-contacts__location-btn" href="/upload/holmogori.png">
                                     <svg class="ico ico-mono-download">
                                         <use xlink:href="img/sprite-mono.svg#ico-mono-download"></use>
                                     </svg>
-                                    <div class="s-contacts__location-size">76 мб</div></a>
+                                    <div class="s-contacts__location-size">518.47 кб</div></a>
                             </div>
                         </div>
                     </div>
