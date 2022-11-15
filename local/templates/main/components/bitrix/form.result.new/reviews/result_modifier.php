@@ -9,7 +9,7 @@
 /** @var array $arParams */
 /** @var array $arResult */
 
-$arResult['FORM_HEADER'] = str_replace('form', 'form class="s-reviews__columns form"', $arResult['FORM_HEADER']);
+$arResult['FORM_HEADER'] = str_replace('form', 'form class="form"', $arResult['FORM_HEADER']);
 
 $sql = "SELECT * FROM b_form_field WHERE FORM_ID = '{$arParams['WEB_FORM_ID']}'";
 $con = \Bitrix\Main\Application::getConnection();
