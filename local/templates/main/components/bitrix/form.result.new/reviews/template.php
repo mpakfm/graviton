@@ -124,7 +124,6 @@ $this->setFrameMode(true);
                         <div class="form__submit">
                             <input type="hidden" name="web_form_apply" value="Y" />
                             <div class="reviews__form-mobile"></div>
-                            <!--<div class="btn">Отправить</div>-->
                             <button class="btn" type="submit" name="web_form_apply" value="<?=GetMessage("FORM_APPLY")?>">Отправить</button>
                         </div>
                     </div>
