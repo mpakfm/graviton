@@ -25,7 +25,7 @@ class Version55_form_press_20221103225813 extends Version
   'FIRST_SITE_ID' => NULL,
   'IMAGE_ID' => NULL,
   'USE_CAPTCHA' => 'N',
-  'DESCRIPTION' => 'Пригасить спикера для учатстия в мероприятии или запросить дополнительную информацию',
+  'DESCRIPTION' => 'Пригласить спикера для участия в мероприятии или запросить дополнительную информацию',
   'DESCRIPTION_TYPE' => 'text',
   'FORM_TEMPLATE' => '',
   'USE_DEFAULT_TEMPLATE' => 'Y',
@@ -47,24 +47,24 @@ class Version55_form_press_20221103225813 extends Version
   'C_FIELDS' => '0',
   'QUESTIONS' => '4',
   'STATUSES' => '1',
-  'arSITE' => 
+  'arSITE' =>
   array (
     0 => 's1',
   ),
-  'arMENU' => 
+  'arMENU' =>
   array (
     'en' => 'Контакты для прессы',
     'ru' => 'Контакты для прессы',
   ),
-  'arGROUP' => 
+  'arGROUP' =>
   array (
   ),
-  'arMAIL_TEMPLATE' => 
+  'arMAIL_TEMPLATE' =>
   array (
   ),
 ));
         $formHelper->saveStatuses($formId, array (
-  0 => 
+  0 =>
   array (
     'CSS' => 'statusgreen',
     'C_SORT' => '100',
@@ -77,7 +77,7 @@ class Version55_form_press_20221103225813 extends Version
   ),
 ));
         $formHelper->saveFields($formId, array (
-  0 => 
+  0 =>
   array (
     'ACTIVE' => 'Y',
     'TITLE' => 'Ваше предложение и наименование компании',
@@ -94,9 +94,9 @@ class Version55_form_press_20221103225813 extends Version
     'COMMENTS' => 'Введите ваш предложение',
     'FILTER_TITLE' => 'Ваше предложение и наименование компании',
     'RESULTS_TABLE_TITLE' => 'Ваше предложение и наименование компании',
-    'ANSWERS' => 
+    'ANSWERS' =>
     array (
-      0 => 
+      0 =>
       array (
         'MESSAGE' => ' ',
         'VALUE' => '',
@@ -108,11 +108,11 @@ class Version55_form_press_20221103225813 extends Version
         'ACTIVE' => 'Y',
       ),
     ),
-    'VALIDATORS' => 
+    'VALIDATORS' =>
     array (
     ),
   ),
-  1 => 
+  1 =>
   array (
     'ACTIVE' => 'Y',
     'TITLE' => 'E-mail',
@@ -129,9 +129,9 @@ class Version55_form_press_20221103225813 extends Version
     'COMMENTS' => 'Введите реальный E-mail на него придет письмо  подтверждения',
     'FILTER_TITLE' => 'E-mail',
     'RESULTS_TABLE_TITLE' => 'E-mail',
-    'ANSWERS' => 
+    'ANSWERS' =>
     array (
-      0 => 
+      0 =>
       array (
         'MESSAGE' => ' ',
         'VALUE' => '',
@@ -143,11 +143,11 @@ class Version55_form_press_20221103225813 extends Version
         'ACTIVE' => 'Y',
       ),
     ),
-    'VALIDATORS' => 
+    'VALIDATORS' =>
     array (
     ),
   ),
-  2 => 
+  2 =>
   array (
     'ACTIVE' => 'Y',
     'TITLE' => 'ФИО',
@@ -164,9 +164,9 @@ class Version55_form_press_20221103225813 extends Version
     'COMMENTS' => 'Введите фамилию имя и отечество',
     'FILTER_TITLE' => 'ФИО',
     'RESULTS_TABLE_TITLE' => 'ФИО',
-    'ANSWERS' => 
+    'ANSWERS' =>
     array (
-      0 => 
+      0 =>
       array (
         'MESSAGE' => ' ',
         'VALUE' => '',
@@ -178,11 +178,11 @@ class Version55_form_press_20221103225813 extends Version
         'ACTIVE' => 'Y',
       ),
     ),
-    'VALIDATORS' => 
+    'VALIDATORS' =>
     array (
     ),
   ),
-  3 => 
+  3 =>
   array (
     'ACTIVE' => 'Y',
     'TITLE' => 'Телефон',
@@ -199,9 +199,9 @@ class Version55_form_press_20221103225813 extends Version
     'COMMENTS' => '+7(ХХХ)ХХХХХХХ',
     'FILTER_TITLE' => 'Телефон',
     'RESULTS_TABLE_TITLE' => 'Телефон',
-    'ANSWERS' => 
+    'ANSWERS' =>
     array (
-      0 => 
+      0 =>
       array (
         'MESSAGE' => ' ',
         'VALUE' => '',
@@ -213,7 +213,7 @@ class Version55_form_press_20221103225813 extends Version
         'ACTIVE' => 'Y',
       ),
     ),
-    'VALIDATORS' => 
+    'VALIDATORS' =>
     array (
     ),
   ),
@@ -225,4 +225,3 @@ class Version55_form_press_20221103225813 extends Version
         //your code ...
     }
 }
-

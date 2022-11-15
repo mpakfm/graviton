@@ -12,6 +12,7 @@
 /** @var string $ITEM */
 /** @var string $OTHER */
 
+use Bitrix\Main\Page\Asset;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
 
@@ -33,6 +34,7 @@ if (!$USER->IsAdmin()) {
 }
 
 if (!empty($ITEM)) {
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/news_detail_page.css?t=' . time() . '">', true);
     $params = [
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
@@ -87,6 +89,7 @@ if (!empty($ITEM)) {
         "AJAX_OPTION_HISTORY" => "N",
     ];
 } else {
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/news_page.css?t=' . time() . '">', true);
     $params = [
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
@@ -145,10 +148,12 @@ if (!empty($ITEM)) {
 
 ?>
 <main class="main">
+    <div class="wrapper">
     <?php if (!empty($ITEM)) { ?>
         <?$APPLICATION->IncludeComponent("bitrix:news.detail","news",$params);?>
     <?php } else { ?>
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","custom",$params);?>
     <?php } ?>
+    </div>
 </main>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

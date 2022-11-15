@@ -156,7 +156,7 @@ $filesParams = [
                         </defs>
                 </div></svg>
                 <div class="s-about-video__iframe">
-                    <iframe src="https://rutube.ru/play/embed/a3b8399664d67e91eaf58e64117f2108" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://rutube.ru/video/839827f470bbe55fd9f5efda45342fce/" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen loading="lazy"></iframe>
                     <div class="s-about-video__icon"><img src="img/svg/play-about.svg" alt=""></div>
                 </div>
                 <div class="s-about-video__text"><svg width="332" height="34" viewBox="0 0 332 34" fill="none" xmlns="http://www.w3.org/2000/svg">
