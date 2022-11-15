@@ -43,132 +43,8 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
 
 ?>
 <script>
-    <?php
-
-    $letters = \Library\Tools\ServiceLetters::getLetters();
-    $cities = \Library\Tools\ServiceLetters::getCities();
-    $full = \Library\Tools\ServiceLetters::getFull();
-
-    ?>
-        //let letters = <?//=json_encode($letters);?>//;
-        //let cities = <?//=json_encode($cities);?>//;
-        //let full = <?//=json_encode($full);?>//;
-        //console.log(letters);
-        //console.log(cities);
-        //console.log(full);
+    <?php $full = \Library\Tools\ServiceLetters::getFull(); ?>
     const serviceCentresList = <?=json_encode($full);?>;
-    console.log('serviceCentresList', serviceCentresList);
-    /*
-        const serviceCentresList = [
-            {
-                name: "Омск",
-                items: [
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Омск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Омск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Омск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Омск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Омск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                ],
-            },
-            {
-                name: "Москва",
-                items: [
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Москва",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [42.058668, 44.216342],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                ],
-            },
-            {
-                name: "Черкеск",
-                items: [
-                    {
-                        ID: 1522,
-                        NAME: "СКК Компьютерная клиника №091 ООО «Компьютерофф»",
-                        CITY: "Черкесск",
-                        CITY_ID: 1456,
-                        LETTER: "Ч",
-                        CENTER: [50.446977, 30.505269],
-                        WORK: "с 9:00 до 18:00 пн-пт",
-                        ADDRESS: "ул. Советская, д 72",
-                        PHONE1: "+7 (8782) 268063",
-                        PHONE2: "",
-                        EMAIL: "klinika№091@yandex.ru",
-                    },
-                ],
-            },
-        ];
-
-     */
 </script>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
@@ -185,8 +61,6 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
                 </picture>
             </div>
         </section>
-
-
 
         <section class="s-support-contact s-support-contact-legal">
             <div class="l-default">
@@ -294,37 +168,23 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'servisnye-tsentry');
             </div>
         </section>
 
-        <section class="s-support-contact s-support-contact-legal">
-            <div class="l-default">
-                <div class="s-support-contact__content">
-                    <div class="news-detail__content">
-                        <div class="news-detail__content--title">Сервисные центры</div>
-                        <div class="news-detail__content--text">
-                            <p>Сеть сервисных центров осуществляет гарантийное и постгарантийное обслуживание вычислительной техники Гравитон на всей территории России.</p>
-                            <p>Инженерная помощь осуществляется как в сервисных центрах, так и на месте эксплуатации - силами выездных специалистов</p>
-                        </div>
-
-                        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","responce",Array(
-                                "SEF_MODE" => "Y",
-                                "WEB_FORM_ID" => $formResponceId,
-                                "LIST_URL" => "/page/" . Breadcrumb::$uri,
-                                "EDIT_URL" => Breadcrumb::$uri,
-                                "SUCCESS_URL" => Breadcrumb::$uri,
-                                "CHAIN_ITEM_TEXT" => "",
-                                "CHAIN_ITEM_LINK" => "",
-                                "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                                "USE_EXTENDED_ERRORS" => "Y",
-                                "CACHE_TYPE" => "A",
-                                "CACHE_TIME" => "3600",
-                                "SEF_FOLDER" => "/",
-                                "VARIABLE_ALIASES" => Array(
-                                )
-                            )
-                        );?>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <?$APPLICATION->IncludeComponent("bitrix:form.result.new","reviews",Array(
+                "SEF_MODE" => "Y",
+                "WEB_FORM_ID" => $formResponceId,
+                "LIST_URL" => "/page/" . Breadcrumb::$uri,
+                "EDIT_URL" => Breadcrumb::$uri,
+                "SUCCESS_URL" => Breadcrumb::$uri,
+                "CHAIN_ITEM_TEXT" => "",
+                "CHAIN_ITEM_LINK" => "",
+                "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                "USE_EXTENDED_ERRORS" => "Y",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "3600",
+                "SEF_FOLDER" => "/",
+                "VARIABLE_ALIASES" => Array(
+                )
+            )
+        );?>
 
         <div class="s-feedback">
             <div class="s-feedback__content">

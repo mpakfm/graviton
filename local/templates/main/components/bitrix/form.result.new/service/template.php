@@ -44,7 +44,7 @@ $this->setFrameMode(true);
                             case"email":
                                 ?>
                                 <div class="form__input">
-                                    <label for="form_email_<?=$item['ID'];?>"><?=$item['TITLE'];?></label>
+                                    <label for="form_email_<?=$item['ID'];?>"><?=$item['TITLE'];?>*</label>
                                     <input id="form_email_<?=$item['ID'];?>" <?=($item['IS_ERROR'] ? 'class="js-error"' : '');?>
                                            name="form_email_<?=$item['ID'];?>" type="text" <?=(!empty($_POST['form_email_' . $item['ID']]) ? 'value="' . $_POST['form_email_' . $item['ID']] . '"' : '');?>
                                            placeholder="Введите реальный E-mail на него придет письмо  подтверждения">
@@ -132,8 +132,9 @@ $this->setFrameMode(true);
                     <div class="s-support-form__contacts-mobile"></div>
                 </div>
                 <div class="s-support-form__contacts-links"><a class="s-support-form__contacts-phone" href="tel:88005517575">
-                        <label>Позвоните нам</label><span> 8 800 551-75-75</span></a><a class="s-support-form__contacts-email" href="mailto:sc@3l.ru">
-                        <label>Напишите нам</label><span>sc@3l.ru</span></a></div>
+                        <label>Позвоните нам</label><span> 8 800 551-75-75</span></a>
+                    <a class="s-support-form__contacts-email" href="mailto:support@graviton.ru">
+                        <label>Напишите нам</label><span>support@graviton.ru</span></a></div>
             </div>
         </div>
     </div>
