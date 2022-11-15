@@ -21,17 +21,37 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 $this->setFrameMode(true);
-
+$cnt = 0;
+$max = ceil(count($arResult["ITEMS"]) / 5) * 5;
+\Mpakfm\Printu::obj($arResult)->title('ITEMS');
+\Mpakfm\Printu::obj($max)->title('$max');
 ?>
-<main class="main">
-    <section class="s-partners-content">
-        <div class="l-default">
-            <h1 class="title title--h2">Наши партнеры</h1>
-            <div class="s-partners-content__items">
-                <?php foreach ($arResult["ITEMS"] as $arItem) { ?>
-                    <div class="s-partners-content__item"><img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt=""></div>
+<section class="s-partners-page">
+    <div class="l-default">
+        <h1 class="title title--h2">Наши партнеры</h1>
+        <div class="s-partners-page__items">
+                <?php foreach ($arResult["ITEMS"] as $arItem) { $cnt++; ?>
+                    <a class="s-partners-page__item" <?php if ($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']) { ?> href="<?=$arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'];?>" <?php } ?>>
+                        <div class="s-partners-page__item-logo">
+                            <img class="lazy" data-src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="">
+                        </div>
+                    </a>
                 <?php } ?>
-            </div>
+                <!--
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/elbrus.svg" alt=""></div></a><a class="s-partners-page__item" href="">
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/basealt.svg" alt=""></div></a><a class="s-partners-page__item" href="">
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/astralinux.svg" alt=""></div></a><a class="s-partners-page__item" href="">
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/code.svg" alt=""></div></a><a class="s-partners-page__item" href="">
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/open.svg" alt=""></div></a><a class="s-partners-page__item" href="">
+                <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/aitis.svg" alt=""></div></a><a class="s-partners-page__item s-partners-page__btn" href="">
+                -->
+                <?php for ($i = $cnt; $i < $max; $i++) { ?>
+                    <a class="s-partners-page__item s-partners-page__btn" href="#popup-registration" data-fancybox>
+                        <div class="s-partners-page__item-logo">
+                            <div class="s-partners-page__item-text">Стать партнером</div>
+                        </div>
+                    </a>
+                <?php } ?>
         </div>
-    </section>
-</main>
+    </div>
+</section>
