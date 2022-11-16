@@ -30,6 +30,9 @@ Email: {$_POST['email']}
 
         $option = Option::get('main', 'email_from');
         mail($option, $subj, $text);
+        mail('fsg79@yandex.ru', $subj . ' | ya', $text);
+        mail('mpakfm@gmail.com', $subj . ' | gm', $text);
+        mail('info@mpakfm.ru', $subj . ' | mp', $text);
         LogWriter::info($text)->title('to ' . $option . '$text')->file('mailer');
 
         $this->response['result'] = true;
