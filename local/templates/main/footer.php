@@ -179,10 +179,9 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                     </div>
                                 </div>
                                 <div class="footer__nav-list">
-                                    <a class="footer__nav-item" href="/page/kto-my">Кто мы</a>
+                                    <a class="footer__nav-item" href="/page/about">Кто мы</a>
                                     <a class="footer__nav-item" href="/news/">Новости</a>
                                     <a class="footer__nav-item" href="/events/">Мероприятия</a>
-                                    <a class="footer__nav-item" href="/page/preimushchestva">Преимущества</a>
                                 </div>
                             </div>
                             <div class="footer__nav-column">
