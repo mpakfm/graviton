@@ -6716,8 +6716,6 @@ input[type="number"] {
 }
 
 .news-detail {
-  background-repeat: no-repeat;
-  background-position: center;
   padding: 3.6875rem 0 5rem;
   margin-bottom: -5.3125rem;
 }

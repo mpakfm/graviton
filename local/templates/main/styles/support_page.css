@@ -559,6 +559,10 @@
   margin-bottom: 0;
 }
 
+.s-reviews .form__submit {
+  margin: 0;
+}
+
 .s-reviews .form label {
   margin-bottom: 11px;
 }
@@ -1506,6 +1510,11 @@
   .s-reviews .form__input:nth-child(2),
   .s-reviews .form__submit:nth-child(2) {
     margin-bottom: 37px;
+  }
+
+  .s-reviews .form__input:nth-child(3),
+  .s-reviews .form__submit:nth-child(3) {
+    min-height: 95px;
   }
 
   .s-reviews .form__checkbox {
