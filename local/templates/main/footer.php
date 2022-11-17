@@ -317,7 +317,7 @@ $breadcrumb = Breadcrumb::init()::$chain;
                 <img src="/local/templates/main/img/goods/no-image-240x130.png" />
             </picture>
         </div>
-        <?//$APPLICATION->IncludeComponent("mpakfm:news.line", "footer.partners", $partners);?>
+        <?$APPLICATION->IncludeComponent("mpakfm:news.line", "footer.partners", $partners);?>
     </div>
 </div>
 </body>

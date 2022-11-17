@@ -77,7 +77,7 @@ $productLinkNum = count($breadcrumb) - 1;
                     }
                 });
             </script>
-            <a class="product-header__btn btn btn--bordered" href="#popup-registration" data-fancybox=""> <div class="product-header__btn-text">Стать партнером</div></a>
+            <!--<a class="product-header__btn btn btn--bordered" href="#popup-registration" data-fancybox=""> <div class="product-header__btn-text">Стать партнером</div></a>-->
             <div class="product-header__burger"><span></span><span></span></div>
         </div>
     </div>

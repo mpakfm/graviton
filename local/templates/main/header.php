@@ -112,6 +112,7 @@ $breadcrumb->setBodyClass();
                 <div class="header__phone"><a class="header__phone-link" href="tel:+78005008886">8-800-500-88-86</a>
                     <div class="header__phone-text">круглосуточно</div>
                 </div>
+                <!--
                 <a class="header__btn btn btn--bordered" href="#popup-registration" data-fancybox>
                     <div class="header__btn-icon">
                         <svg class="ico ico-color-emblem">
@@ -124,7 +125,7 @@ $breadcrumb->setBodyClass();
                             <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
                         </svg>
                     </div>
-                </a>
+                </a>-->
                 <div class="header__burger"><span> </span><span> </span></div>
             </div>
         </div>

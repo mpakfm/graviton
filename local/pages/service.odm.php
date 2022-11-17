@@ -76,7 +76,7 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'kontraktnaya-razrabotka');
             <div class="l-default">
                 <h2 class="title title--h2 s-services-cards__title">ГРАВИТОН берет на себя весь цикл контрактной разработки, который включает в себя следующие этапы:</h2>
                 <div class="s-services-cards__items">
-                    <div class="s-services-cards__btn"><a class="btn btn--bordered" href="#popup-registration" data-fancybox>Стать партнером</a></div>
+                    <!--<div class="s-services-cards__btn"><a class="btn btn--bordered" href="#popup-registration" data-fancybox>Стать партнером</a></div>-->
                     <div class="service-card">
                         <div class="service-card__number">1</div>
                         <div class="service-card__text">Подготовка материала для грамотного написания технического задания нашими специалистами. Доработка технического задания.</div>

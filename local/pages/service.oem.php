@@ -69,7 +69,7 @@ $pageItem = CacheSelector::getIblockElement($iblock, 'oem');
                             <p>Получите продукт, который успешно работает не только сегодня, но и когда потребности в бизнесе и технологиях изменяться.</p>
                             <p>Наши специалисты проанализируют целевые потребности и поставленные задачи, чтобы помочь сохранить высокий темп роста вашего бизнеса вместе с ГРАВИТОН.</p>
                         </div>
-                        <div class="s-services-cards__texts-btn"><a class="btn btn--bordered" href="#popup-registration" data-fancybox>Стать партнером</a></div>
+                        <!--<div class="s-services-cards__texts-btn"><a class="btn btn--bordered" href="#popup-registration" data-fancybox>Стать партнером</a></div>-->
                     </div>
                     <div class="service-card">
                         <div class="service-card__number">1</div>
