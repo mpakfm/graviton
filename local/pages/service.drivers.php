@@ -95,11 +95,11 @@ $serverParams = [
 
 ?>
     <main class="main">
-        <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
+        <?//$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
         <section class="s-banner">
             <div class="l-default">
                 <div class="s-banner__title">
-                    <h1 class="title title--h1-banner s-banner__title title--medium">Драйвера</h1>
+                    <h1 class="title title--h1-banner s-banner__title title--medium">Драйверы</h1>
                 </div>
             </div>
             <div class="s-banner__img">

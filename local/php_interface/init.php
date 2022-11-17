@@ -36,22 +36,3 @@ EventManager::getInstance()->unRegisterEventHandler(
 );
 
 $breadcrumb = Breadcrumb::init();
-if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
-    $breadcrumb->setIblock('product', 'catalog')->setChain(str_replace('/', '', 'catalog'));
-} elseif (strpos($_SERVER['REQUEST_URI'], '/events') === 0) {
-    $breadcrumb->setIblock('events', 'content')->setChain('events');
-} elseif (strpos($_SERVER['REQUEST_URI'], '/news') === 0) {
-    $breadcrumb->setIblock('news', 'content')->setChain('news');
-} elseif (strpos($_SERVER['REQUEST_URI'], '/cases') === 0) {
-    $breadcrumb->setIblock('cases', 'content')->setChain('cases');
-} elseif (strpos($_SERVER['REQUEST_URI'], '/partners') === 0) {
-    $breadcrumb->setIblock('partners', 'content')->setChain('partners');
-} elseif (strpos($_SERVER['REQUEST_URI'], '/contacts') === 0) {
-    $breadcrumb->setChain('', [
-        'type' => 'section',
-        'link' => '/contacts',
-        'name' => "Контакты",
-    ]);
-} elseif (strpos($_SERVER['REQUEST_URI'], '/page/') === 0) {
-    $breadcrumb->setIblock('pages', 'content')->setChain();
-}
