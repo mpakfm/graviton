@@ -136,6 +136,7 @@ class Breadcrumb
                         'name' => $item['NAME'],
                     ];
                     self::$menuActivCodes[] = $item['CODE'];
+                    self::$isSectionNotFound = null;
                 } else {
                     self::$isItemNotFound = true;
                 }
