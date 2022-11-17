@@ -33,6 +33,10 @@ class Breadcrumb
     public static $code;
     /** @var array */
     public static $menuActivCodes;
+    /** @var bool */
+    public static $isSectionNotFound;
+    /** @var bool */
+    public static $isItemNotFound;
 
     /** @var Breadcrumb */
     public static $obj;
@@ -101,7 +105,7 @@ class Breadcrumb
         }
 
         foreach ($this->parts as $part) {
-            if (empty($part) || ($sefFolder && $part == '/' . $sefFolder . '/')) {
+            if (empty($part) || ($sefFolder && $part == $sefFolder) || ($sefFolder && $part == '/' . $sefFolder . '/') || ($sefFolder && $part == '/' . $sefFolder)) {
                 continue;
             }
             if ($this->iblock['ID']) {
@@ -117,6 +121,8 @@ class Breadcrumb
                     ];
                     self::$menuActivCodes[] = $section['CODE'];
                     continue;
+                } else {
+                    self::$isSectionNotFound = true;
                 }
                 $item = CIBlockElement::GetList([], ['CODE' => $part, 'IBLOCK_ID' => $this->iblock['ID']])->Fetch();
                 if ($item) {
@@ -130,6 +136,8 @@ class Breadcrumb
                         'name' => $item['NAME'],
                     ];
                     self::$menuActivCodes[] = $item['CODE'];
+                } else {
+                    self::$isItemNotFound = true;
                 }
             }
         }

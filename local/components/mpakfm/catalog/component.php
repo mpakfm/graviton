@@ -84,6 +84,11 @@ if($arParams["SEF_MODE"] == "Y")
         $breadcrumb = Breadcrumb::init();
         $breadcrumb->setIblock('product', 'catalog')->setChain(str_replace('/', '', $arParams["SEF_FOLDER"]));
 
+        if (Breadcrumb::$isItemNotFound || Breadcrumb::$isSectionNotFound) {
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/' . '404.php';
+            return;
+        }
+
         if (!empty($breadcrumb->uriItem)) {
             $componentPage = "element";
             $arVariables['ELEMENT_CODE'] = $breadcrumb->uriItem[0]; //$uriProduct[0];
