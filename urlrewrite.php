@@ -99,13 +99,12 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array (
-        'CONDITION' => "#^/page/support/zagruzka-drayverov/?(\?.*)?#",
+        'CONDITION' => "#^/page/zagruzka-drayverov/?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",
         'ID'        => "",
         'PATH'      => "/local/pages/service.drivers.php",
         'SORT'      => 100,
     ),
-    // /page/services/kontraktnaya-razrabotka
     array (
         'CONDITION' => "#^/page/services/kontraktnaya-razrabotka/?(\?.*)?#",
         'RULE'      => "PARAMS=\$1",

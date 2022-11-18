@@ -45,6 +45,25 @@ class Breadcrumb
     {
         if (!self::$obj) {
             self::$obj = new Breadcrumb();
+            if (strpos($_SERVER['REQUEST_URI'], '/catalog') === 0) {
+                self::$obj->setIblock('product', 'catalog')->setChain(str_replace('/', '', 'catalog'));
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/events') === 0) {
+                self::$obj->setIblock('events', 'content')->setChain('events');
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/news') === 0) {
+                self::$obj->setIblock('news', 'content')->setChain('news');
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/cases') === 0) {
+                self::$obj->setIblock('cases', 'content')->setChain('cases');
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/partners') === 0) {
+                self::$obj->setIblock('partners', 'content')->setChain('partners');
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/contacts') === 0) {
+                self::$obj->setChain('', [
+                    'type' => 'section',
+                    'link' => '/contacts',
+                    'name' => "Контакты",
+                ]);
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/page/') === 0) {
+                self::$obj->setIblock('pages', 'content')->setChain();
+            }
         }
         return self::$obj;
     }
