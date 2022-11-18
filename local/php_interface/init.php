@@ -34,5 +34,6 @@ EventManager::getInstance()->unRegisterEventHandler(
     "\\Bitrix\\Seo\\AdvTabEngine",
     "eventHandler"
 );
+AddEventHandler('form', 'onAfterResultAdd', ["\\Library\\Tools\\B24Sender", "onAfterResultAdd"]);
 
 $breadcrumb = Breadcrumb::init();

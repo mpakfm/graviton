@@ -40,6 +40,8 @@ define('ROOT_SERVER_PATH', $serverRootPath['root']);
 define('ROOT_SERVER_BITRIX', $serverRootPath['bitrix']);
 define('ROOT_SERVER_SITE', $serverRootPath['site']);
 
+define('B24_TOKEN', 'TOKEN');
+
 if (isset($serverRootPath['url'])) {
     define('ROOT_SERVER_URL', $serverRootPath['url']);
     if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)) {

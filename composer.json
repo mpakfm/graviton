@@ -25,10 +25,11 @@
   },
   "require": {
     "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-curl": "*",
     "mpakfm/printu": "^2.0",
     "phpunit/phpunit": "8.5",
-    "guzzlehttp/guzzle": "^7.4",
-    "ext-mbstring": "*"
+    "guzzlehttp/guzzle": "^7.4"
   },
   "config": {
     "allow-plugins": {
