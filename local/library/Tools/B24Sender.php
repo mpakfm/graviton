@@ -26,7 +26,30 @@ class B24Sender
         $stmt = \CFormField::GetList($webFormId, 'ALL');
         $fields = [];
         while ($field = $stmt->Fetch()) {
-            $fields[$field['COMMENTS']] = $field['ID'];
+            if ($webFormId == 2 && $field['COMMENTS'] == 'category') {
+                $stmtAnsw = \CFormAnswer::GetList($field['ID']);
+                $answ = [];
+                while ($item = $stmtAnsw->Fetch()) {
+                    $answ[$item['ID']] = $item['MESSAGE'];
+                }
+                $fields[$field['COMMENTS']] = [
+                    'VARNAME' => $field['VARNAME'],
+                    'ANS'     => $answ,
+                ];
+            } elseif ($webFormId == 2 && $field['COMMENTS'] == 'rating') {
+                $stmtAnsw = \CFormAnswer::GetList($field['ID']);
+                $answ = [];
+                while ($item = $stmtAnsw->Fetch()) {
+                    $answ[$item['ID']] = $item['MESSAGE'];
+                }
+                $fields[$field['COMMENTS']] = [
+                    'VARNAME' => $field['VARNAME'],
+                    'ANS'     => $answ,
+                ];
+            } else {
+                $answer = \CFormAnswer::GetList($field['ID'])->Fetch();
+                $fields[$field['COMMENTS']] = $answer['ID'];
+            }
         }
         $data = [];
         switch ($webFormId) {
@@ -37,10 +60,16 @@ class B24Sender
                 $data['description'] = 'Название формы: ' . $formResult['NAME'] . ' Серийный номер: ' . $_POST['form_text_' . $fields['serial']] . ' Вопрос: ' . $_POST['form_textarea_' . $fields['question']];
                 break;
             case"2": // Отзывы
+                $cat   = $_POST['form_dropdown_' . $fields['category']['VARNAME']];
+                $ratio = $_POST['form_radio_' . $fields['rating']['VARNAME']];
+
                 $data['email']       = $_POST['form_email_' . $fields['email']];
                 $data['name']        = $_POST['form_text_' . $fields['fio']];
                 $data['phone']       = $_POST['form_text_' . $fields['phone']];
-                $data['description'] = 'Название формы: ' . $formResult['NAME'] . ' Категория: ' . $_POST['form_dropdown_' . $fields['category']] . ' Общий рейтинг: ' . $_POST['form_radio_' . $fields['rating']] . ' ' . $_POST['form_textarea_' . $fields['review']];
+                $data['description'] = 'Название формы: ' . $formResult['NAME'] .
+                    ' Категория: ' . $fields['category']['ANS'][$cat] .
+                    ' Общий рейтинг: ' . $fields['rating']['ANS'][$ratio] .
+                    ' Ваш отзыв: ' . $_POST['form_textarea_' . $fields['review']];
                 break;
             case"3": // Контакты для прессы
                 $data['email']       = $_POST['form_email_' . $fields['email']];
@@ -77,6 +106,8 @@ class B24Sender
         } else {
             $data['channel_answer'] = self::channel_mail;
         }
+
+        Printu::obj($data)->title('[B24Sender::sendData] $data');
 
         $postFields = json_encode($data);
         $resource   = curl_init($landerUrl);
