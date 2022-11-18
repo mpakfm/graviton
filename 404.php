@@ -39,28 +39,28 @@ Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_
                             Посмотрите видео<br />
                             о компании Гравитон
                         </div>
-                        <a class="s-error__item-button btn btn--bordered" href="">Смотреть</a>
+                        <a class="s-error__item-button btn btn--bordered" href="https://rutube.ru/video/839827f470bbe55fd9f5efda45342fce/">Смотреть</a>
                     </div>
                     <div class="s-error__item">
                         <div class="s-error__item-text">
                             Выйти на связь с<br />
                             командой Гравитон
                         </div>
-                        <a class="s-error__item-button btn btn--bordered" href="">Связаться с нами</a>
+                        <a class="s-error__item-button btn btn--bordered" href="mailto:sale@graviton.ru">Связаться с нами</a>
                     </div>
                     <div class="s-error__item">
                         <div class="s-error__item-text">
                             Скачать каталог<br />
                             продукции Гравитон
                         </div>
-                        <a class="s-error__item-button btn btn--bordered" download href="">Скачать</a>
+                        <a class="s-error__item-button btn btn--bordered" download href="/page/about/1616">Скачать</a>
                     </div>
                     <div class="s-error__item">
                         <div class="s-error__item-text">
                             Новости из<br />
                             жизни компании
                         </div>
-                        <a class="s-error__item-button btn btn--bordered" href="">Перейти</a>
+                        <a class="s-error__item-button btn btn--bordered" href="/news">Перейти</a>
                     </div>
                 </div>
             </div>
