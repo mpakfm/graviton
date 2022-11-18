@@ -9,8 +9,6 @@
 
 namespace Library\Tools;
 
-use Mpakfm\Printu;
-
 class B24Sender
 {
     const region        = 895;
@@ -96,6 +94,7 @@ class B24Sender
         }
 
         $dt = new \DateTime();
+
         $data['date']    = $dt->format('Y-m-d H:i:s');
         $data['region']  = self::region;
         $data['channel'] = self::channel;
@@ -106,8 +105,6 @@ class B24Sender
         } else {
             $data['channel_answer'] = self::channel_mail;
         }
-
-        Printu::obj($data)->title('[B24Sender::sendData] $data');
 
         $postFields = json_encode($data);
         $resource   = curl_init($landerUrl);
@@ -125,7 +122,7 @@ class B24Sender
 
         $response = curl_exec($resource);
         curl_close($resource);
-        Printu::obj($response)->title('[B24Sender::sendData] $response');
+        LogWriter::obj($response)->title('[B24Sender::sendData] $response');
         return $response;
     }
 }
