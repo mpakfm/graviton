@@ -107,7 +107,7 @@ class B24Sender
         }
 
         $postFields = json_encode($data);
-        $resource   = \curl_init($landerUrl);
+        $resource   = curl_init($landerUrl);
 
         curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($resource, CURLOPT_FOLLOWLOCATION, true);
