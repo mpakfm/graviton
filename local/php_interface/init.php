@@ -27,8 +27,6 @@ spl_autoload_register(function ($class) {
 
 LogWriter::setPath(__DIR__ . '/../log');
 
-\Mpakfm\Printu::obj($_SERVER['REQUEST_URI'])->title('[init.php] REQUEST_URI')->dt();
-
 EventManager::getInstance()->unRegisterEventHandler(
     "main",
     "OnAdminIBlockElementEdit",

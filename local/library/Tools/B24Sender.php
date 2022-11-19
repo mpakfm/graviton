@@ -21,9 +21,7 @@ class B24Sender
     {
         $formResult = \CFormResult::GetByID($resultId)->Fetch();
 
-        \Mpakfm\Printu::obj($resultId)->title('[B24Sender] $resultId')->dt();
-
-        $stmt = \CFormField::GetList($webFormId, 'ALL');
+        $stmt   = \CFormField::GetList($webFormId, 'ALL');
         $fields = [];
         while ($field = $stmt->Fetch()) {
             if ($webFormId == 2 && $field['COMMENTS'] == 'category') {
@@ -124,7 +122,6 @@ class B24Sender
 
         $response = curl_exec($resource);
         curl_close($resource);
-        LogWriter::obj($response)->title('[B24Sender::sendData] $response');
         return $response;
     }
 }
