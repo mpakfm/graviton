@@ -27,6 +27,8 @@ spl_autoload_register(function ($class) {
 
 LogWriter::setPath(__DIR__ . '/../log');
 
+\Mpakfm\Printu::obj($_SERVER['REQUEST_URI'])->title('[init.php] REQUEST_URI')->dt();
+
 EventManager::getInstance()->unRegisterEventHandler(
     "main",
     "OnAdminIBlockElementEdit",
@@ -34,6 +36,6 @@ EventManager::getInstance()->unRegisterEventHandler(
     "\\Bitrix\\Seo\\AdvTabEngine",
     "eventHandler"
 );
-//AddEventHandler('form', 'onAfterResultAdd', ["\\Library\\Tools\\B24Sender", "onAfterResultAdd"]);
+AddEventHandler('form', 'onAfterResultAdd', ["\\Library\\Tools\\B24Sender", "onAfterResultAdd"]);
 
 $breadcrumb = Breadcrumb::init();

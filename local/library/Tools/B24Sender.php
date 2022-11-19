@@ -21,6 +21,8 @@ class B24Sender
     {
         $formResult = \CFormResult::GetByID($resultId)->Fetch();
 
+        \Mpakfm\Printu::obj($resultId)->title('[B24Sender] $resultId')->dt();
+
         $stmt = \CFormField::GetList($webFormId, 'ALL');
         $fields = [];
         while ($field = $stmt->Fetch()) {
