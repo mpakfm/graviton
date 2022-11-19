@@ -17,7 +17,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $landerUrl = 'https://graviton.ru/local/ajax/controller.php?className=CheckCurl&action=tryRequest';
 
 $resource   = curl_init($landerUrl);
-
-\Mpakfm\Printu::obj($resource)->title('$resource')->response('html');
-
+?>
+<main class="main">
+    <?php \Mpakfm\Printu::obj($resource)->title('$resource')->response('html'); ?>
+</main>
+<?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
