@@ -7,10 +7,11 @@
  * Time:    13:22
  */
 
+require_once($_SERVER["DOCUMENT_ROOT"] . '/vendor/autoload.php');
 require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 
 $landerUrl = 'https://graviton.ru/local/ajax/controller.php?className=CheckCurl&action=tryRequest';
 
 $resource   = curl_init($landerUrl);
 
-echo '$resource: ' . $resource;
+\Mpakfm\Printu::obj($resource)->title('$resource')->response('html');
