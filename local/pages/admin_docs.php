@@ -28,6 +28,8 @@ $newsIblock = \Library\Tools\CacheSelector::getIblockId('news', 'content');
                 <h1>Документация по админке</h1>
                 <a name="top"></a>
                 <ul>
+                    <li><a class="admin-link" href="/admin-docs#home">Главная, seo и тексты</a></li>
+                    <li><a class="admin-link" href="/admin-docs#pages">Страницы, seo</a></li>
                     <li>
                         <a class="admin-link" href="/admin-docs#catalog">Каталог</a>
                         <ul>
@@ -52,6 +54,31 @@ $newsIblock = \Library\Tools\CacheSelector::getIblockId('news', 'content');
                     <li><a class="admin-link" href="/admin-docs#subscribe">Подписка</a></li>
 <!--                    <li><a class="admin-link" href="/admin-docs#events">События</a></li>-->
                 </ul>
+                <h2><a name="home">*</a> Главная, seo и тексты</h2>
+                <div>
+                    <p><a class="admin-link" href="/admin-docs#top">вверх</a></p>
+                    <p>Работа с главной страницей ведется в инфоблоке "Текстовые блоки" в разделе <a href="https://graviton.ru/bitrix/admin/iblock_list_admin.php?IBLOCK_ID=12&type=content&lang=ru&find_section_section=61&SECTION_ID=61&apply_filter=Y">"Главная"</a>. Коды элементов нельзя менять иначе собьется программная загрузка текстов из этого инфоблока.</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-46.png"></p>
+                </div>
+                <h2><a name="pages">*</a> Страницы, seo</h2>
+                <div>
+                    <p><a class="admin-link" href="/admin-docs#top">вверх</a></p>
+                    <p>Все страницы, кроме Каталога содержат управляемые SEO мета-тэги. Только для Главной они настраиваются в Текстовых блоках, а для всех прочих страниц в инфоблоке Страницы.</p>
+                    <p>Для каждой страницы сайта специльно создан элемент в инфоблоке "Страницы". Именно там на вкладке СЕО можно управлять мета-тэгами.</p>
+                    <p>Начнем по меню с раздела Услуги. Там две страницы: ODM и OEM</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-23.png"></p>
+                    <p>Если не устраивают мета-тэги по шаблону, можно установить любые другие значения</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-24.png"></p>
+                    <p>Раздел Поддержка:</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-28.png"></p>
+                    <p>И все остальные страницы в корневом разделе:</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-29.png"></p>
+                    <p>Важно помнить, что среди просто страниц если списочные со своим списком разделов и элементов, где необходимы свои собственные мета-тэги. Это Новости, Мероприятия и Кейсы. Если страница открывается в корневой раздел списка, то мета-тэги будут показаны из элемента инфоблока "Страницы". Если же открывается раздел или какой-то конкретный элемент, то мета-тэги будут показаы по правилам соответствующего инфоблока.</p>
+                    <p>Мета-тэг TITLE для страницы Новости, когда не вбран ни раздел ни любая новость и тэг ставится из настроек страницы инфоблока "Страницы"</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-34.png"></p>
+                    <p>А вот TITLE уже по правилам инфоблока "Новости" для детальной:</p>
+                    <p><img src="/local/templates/main/img/admin/2022-11-22_01-36.png"></p>
+                </div>
 
                 <h2><a name="catalog">*</a> Каталог</h2>
                 <div>
