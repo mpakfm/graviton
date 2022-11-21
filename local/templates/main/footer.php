@@ -205,7 +205,7 @@ $breadcrumb = Breadcrumb::init()::$chain;
                     <div class="footer__row">
                         <div class="footer__info">
                             <div class="footer__address-container">
-                                <div class="footer__address">Москва, Бизнес центр "Легион 3", Киевская улица, 7</div>
+                                <div class="footer__address">Москва, Бизнес центр «Легион 3», Киевская улица, 7</div>
                             </div>
                             <div class="footer__contact">
                                 <a class="footer__email" href="mailto:sale@graviton.ru">sale@graviton.ru</a>
