@@ -45,7 +45,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                             <a class="s-contacts__box-popup" href="https://yandex.ru/map-widget/v1/-/CCUZMZfxSB" data-fancybox data-type="iframe">посмотреть на карте</a>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Адрес:</div>
-                                <div class="s-contacts__box-text">Москва, Киевская улица, 7к1</div>
+                                <div class="s-contacts__box-text">Москва, Киевская улица, 7к2</div>
                             </div>
                             <div class="s-contacts__box-container">
                                 <div class="s-contacts__box-subtitle">Телефон:</div><a class="s-contacts__box-text" href="tel:88005008886">8 800 500-88-86</a>
@@ -116,7 +116,7 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cont
                             <div class="s-social__item-text">Свяжитесь с нами по электронной почте</div><a class="s-social__item-btn btn-social" href="mailto:sale@graviton.ru">Написать</a>
                         </div>
                     </div>
-                    <div class="s-social__link">
+                    <div class="s-social__link" style="display: none;">
                         <a class="s-social__link-item" href="javascript:void(0);"><img src="img/svg/tg.svg" alt="telegram"></a>
                         <a class="s-social__link-item" href="javascript:void(0);">  <img src="img/svg/vk.svg" alt="vk"></a>
                         <a class="s-social__link-item" href="javascript:void(0);"><img src="img/svg/youtube.svg" alt="youtube"></a></div>

@@ -26,13 +26,17 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/deve
                 <div class="s-develop__title">Страница</div>
                 <div class="s-develop__subtitle">находится  <span>в  разработке</span></div>
             </div>
-            <div class="s-develop__docs"><a class="s-develop__doc" href="javascript:void(0);">
+            <div class="s-develop__docs">
+                <a class="s-develop__doc" href="https://rutube.ru/video/839827f470bbe55fd9f5efda45342fce/">
                     <div class="s-develop__doc-text">Посмотрите видео о компании Гравитон</div>
-                    <div class="s-develop__doc-btn btn btn--bordered">Смотреть</div></a><a class="s-develop__doc" href="javascript:void(0);" download>
+                    <div class="s-develop__doc-btn btn btn--bordered">Смотреть</div></a>
+                <a class="s-develop__doc" href="/page/about/1616" download>
                     <div class="s-develop__doc-text">Скачать катлог продукции Гравитон</div>
-                    <div class="s-develop__doc-btn btn btn--bordered">Скачать</div></a><a class="s-develop__doc" href="javascript:void(0);">
+                    <div class="s-develop__doc-btn btn btn--bordered">Скачать</div></a>
+                <a class="s-develop__doc" href="mailto:sale@graviton.ru">
                     <div class="s-develop__doc-text">Выйти на связь с командой Гравитон</div>
-                    <div class="s-develop__doc-btn btn btn--bordered">Связаться с нами</div></a><a class="s-develop__doc" href="javascript:void(0);">
+                    <div class="s-develop__doc-btn btn btn--bordered">Связаться с нами</div></a>
+                <a class="s-develop__doc" href="/news">
                     <div class="s-develop__doc-text">Новости из жизни копании</div>
                     <div class="s-develop__doc-btn btn btn--bordered">Перейти</div></a>
             </div>

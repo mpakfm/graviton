@@ -25,7 +25,7 @@ $buttonId = $this->randString();
             <button class="btn btn--bordered" type="submit">Подписаться</button>
         </div>
     </div>
-    <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО “Гравитон” на условиях политики конфиденциальности</div>
+    <div class="footer__checkbox">Я соглашаюсь получать рекламные и иные сообщения от ООО «Новый Ай Ти Проект» на условиях политики конфиденциальности</div>
 </form>
 
 
