@@ -10,6 +10,7 @@
 namespace Library\Tools;
 
 use Bitrix\Iblock\InheritedProperty\ElementValues;
+use Mpakfm\Printu;
 
 class Seo
 {
@@ -26,6 +27,16 @@ class Seo
         $item   = CacheSelector::getIblockElement($iblock, self::indexCode);
         $ipropValues = new ElementValues($iblock,$item['ID']);
         $iproperties  = $ipropValues->getValues();
+        $APPLICATION->SetTitle(array_key_exists('ELEMENT_META_TITLE', $iproperties) ? $iproperties['ELEMENT_META_TITLE'] : self::defaultTitle);
+        $APPLICATION->SetPageProperty('description', array_key_exists('ELEMENT_META_DESCRIPTION', $iproperties) ? $iproperties['ELEMENT_META_DESCRIPTION'] : self::defaultDescription);
+        $APPLICATION->SetPageProperty('keywords', array_key_exists('ELEMENT_META_KEYWORDS', $iproperties) ? $iproperties['ELEMENT_META_KEYWORDS'] : self::defaultKeywords);
+    }
+
+    public static function setPage(int $iblockId, int $itemId)
+    {
+        global $APPLICATION;
+        $ipropValues = new ElementValues($iblockId,$itemId);
+        $iproperties = $ipropValues->getValues();
         $APPLICATION->SetTitle(array_key_exists('ELEMENT_META_TITLE', $iproperties) ? $iproperties['ELEMENT_META_TITLE'] : self::defaultTitle);
         $APPLICATION->SetPageProperty('description', array_key_exists('ELEMENT_META_DESCRIPTION', $iproperties) ? $iproperties['ELEMENT_META_DESCRIPTION'] : self::defaultDescription);
         $APPLICATION->SetPageProperty('keywords', array_key_exists('ELEMENT_META_KEYWORDS', $iproperties) ? $iproperties['ELEMENT_META_KEYWORDS'] : self::defaultKeywords);

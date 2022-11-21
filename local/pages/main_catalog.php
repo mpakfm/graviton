@@ -14,9 +14,9 @@ define("BODY_CLASS", "CATALOG");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-$APPLICATION->SetTitle("Graviton - каталог");
-$APPLICATION->SetPageProperty('description', 'Graviton description');
-$APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
+$APPLICATION->SetTitle("Graviton / Каталог");
+$APPLICATION->SetPageProperty('description', 'Graviton / Каталог');
+$APPLICATION->SetPageProperty('keywords', 'Graviton / Каталог');
 
 $iblock = CacheSelector::getIblockId('product', 'catalog');
 

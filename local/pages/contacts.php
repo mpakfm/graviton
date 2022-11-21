@@ -10,6 +10,8 @@
 
 use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
+use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "CONTACTS");
 
@@ -21,6 +23,10 @@ $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/contacts.css?t=' . time() . '">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/contacts_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+
+$iblock   = CacheSelector::getIblockId('pages', 'content');
+$pageItem = CacheSelector::getIblockElement($iblock, 'contacts');
+Seo::setPage($iblock, $pageItem['ID']);
 
 ?>
     <main class="main">

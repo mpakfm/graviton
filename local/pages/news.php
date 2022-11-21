@@ -15,6 +15,7 @@
 use Bitrix\Main\Page\Asset;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "NEWS");
 
@@ -26,7 +27,13 @@ if (!empty($breadcrumb->uriItem)) {
     $ITEM = $breadcrumb->uriItem[0];
 }
 
-$iblock = CacheSelector::getIblockId('news', 'content');
+$iblock      = CacheSelector::getIblockId('news', 'content');
+$iblockPages = CacheSelector::getIblockId('pages', 'content');
+
+$pageItem = CacheSelector::getIblockElement($iblockPages, 'news');
+if (!$SECTION && !$ITEM) {
+    Seo::setPage($iblockPages, $pageItem['ID']);
+}
 
 $filter = [];
 if (!$USER->IsAdmin()) {
@@ -56,14 +63,11 @@ if (!empty($ITEM)) {
         "PROPERTY_CODE" => Array("DESCRIPTION"),
         "IBLOCK_URL" => "news.php?ID=#IBLOCK_ID#\"",
         "DETAIL_URL" => "",
-        "SET_TITLE" => "Y",
+        "SET_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_CANONICAL_URL" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "BROWSER_TITLE" => "-",
-        "SET_META_KEYWORDS" => "Y",
-        "META_KEYWORDS" => "-",
-        "SET_META_DESCRIPTION" => "Y",
-        "META_DESCRIPTION" => "-",
+        "SET_BROWSER_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_KEYWORDS" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_DESCRIPTION" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_STATUS_404" => "Y",
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
@@ -110,10 +114,10 @@ if (!empty($ITEM)) {
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
+        "SET_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_BROWSER_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_KEYWORDS" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_DESCRIPTION" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
         "ADD_SECTIONS_CHAIN" => "Y",

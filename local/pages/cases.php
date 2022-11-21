@@ -15,6 +15,7 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "CASES");
 
@@ -25,7 +26,13 @@ $breadcrumb = Breadcrumb::init();
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/cases_page.css?t=' . time() . '">', true);
 Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/cases_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
 
-$iblock = CacheSelector::getIblockId('cases', 'content');
+$iblock      = CacheSelector::getIblockId('cases', 'content');
+$iblockPages = CacheSelector::getIblockId('pages', 'content');
+
+$pageItem = CacheSelector::getIblockElement($iblockPages, 'cases');
+if (!$SECTION && !$ITEM) {
+    Seo::setPage($iblockPages, $pageItem['ID']);
+}
 
 if (!empty($ITEM)) {
     $params = [
@@ -43,14 +50,11 @@ if (!empty($ITEM)) {
         "FIELD_CODE" => Array("ID"),
         "PROPERTY_CODE" => Array("DESCRIPTION"),
         "DETAIL_URL" => "",
-        "SET_TITLE" => "Y",
+        "SET_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_CANONICAL_URL" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "BROWSER_TITLE" => "-",
-        "SET_META_KEYWORDS" => "Y",
-        "META_KEYWORDS" => "-",
-        "SET_META_DESCRIPTION" => "Y",
-        "META_DESCRIPTION" => "-",
+        "SET_BROWSER_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_KEYWORDS" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_DESCRIPTION" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_STATUS_404" => "Y",
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
@@ -92,10 +96,10 @@ if (!empty($ITEM)) {
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
+        "SET_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_BROWSER_TITLE" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_KEYWORDS" => (!$SECTION && !$ITEM ? "N" : "Y"),
+        "SET_META_DESCRIPTION" => (!$SECTION && !$ITEM ? "N" : "Y"),
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
         "ADD_SECTIONS_CHAIN" => "Y",
