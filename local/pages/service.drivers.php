@@ -14,6 +14,7 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "SERVICE-DRIVERS");
 
@@ -53,20 +54,9 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/driv
 
 $formServiceId  = CacheSelector::getFormId('SIMPLE_FORM_4');
 
-$iblock     = CacheSelector::getIblockId('pages', 'content');
-$menuParams = [
-    "IBLOCK_TYPE" => "content",
-    "IBLOCK_ID" => $iblock,
-    "SORT_BY1" => "SORT",
-    "SORT_ORDER1" => "ASC",
-    "PARENT_SECTION_CODE" => "support",
-    "CACHE_TYPE" => "Y",
-    "CACHE_TIME" => "3600",
-    "CACHE_FILTER" => "Y",
-    "CACHE_GROUPS" => "Y",
-];
-
+$iblock   = CacheSelector::getIblockId('pages', 'content');
 $pageItem = CacheSelector::getIblockElement($iblock, 'zagruzka-drayverov');
+Seo::setPage($iblock, $pageItem['ID']);
 
 $clientParams = [
     "IBLOCK_TYPE" => "files",
@@ -75,6 +65,10 @@ $clientParams = [
     "SORT_ORDER1" => "ASC",
     "PARENT_SECTION_CODE" => "clients",
     "PROPERTY_CODE" => ["FILE"],
+    "SET_TITLE" => "N",
+    "SET_BROWSER_TITLE" => "N",
+    "SET_META_KEYWORDS" => "N",
+    "SET_META_DESCRIPTION" => "N",
     "CACHE_TYPE" => "Y",
     "CACHE_TIME" => "3600",
     "CACHE_FILTER" => "Y",
@@ -87,6 +81,10 @@ $serverParams = [
     "SORT_ORDER1" => "ASC",
     "PARENT_SECTION_CODE" => "servers",
     "PROPERTY_CODE" => ["FILE"],
+    "SET_TITLE" => "N",
+    "SET_BROWSER_TITLE" => "N",
+    "SET_META_KEYWORDS" => "N",
+    "SET_META_DESCRIPTION" => "N",
     "CACHE_TYPE" => "Y",
     "CACHE_TIME" => "3600",
     "CACHE_FILTER" => "Y",
@@ -95,7 +93,6 @@ $serverParams = [
 
 ?>
     <main class="main">
-        <?//$APPLICATION->IncludeComponent("mpakfm:news.list","menu.support", $menuParams);?>
         <section class="s-banner">
             <div class="l-default">
                 <div class="s-banner__title">

@@ -12,6 +12,7 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "SERVICE-OEM");
 
@@ -27,6 +28,10 @@ $menuParams = [
     "SORT_BY1" => "SORT",
     "SORT_ORDER1" => "ASC",
     "PARENT_SECTION_CODE" => "services",
+    "SET_TITLE" => "N",
+    "SET_BROWSER_TITLE" => "N",
+    "SET_META_KEYWORDS" => "N",
+    "SET_META_DESCRIPTION" => "N",
     "CACHE_TYPE" => "Y",
     "CACHE_TIME" => "3600",
     "CACHE_FILTER" => "Y",
@@ -34,7 +39,7 @@ $menuParams = [
 ];
 
 $pageItem = CacheSelector::getIblockElement($iblock, 'oem');
-
+Seo::setPage($iblock, $pageItem['ID']);
 ?>
     <main class="main">
         <?$APPLICATION->IncludeComponent("mpakfm:news.list","menu.service", $menuParams);?>

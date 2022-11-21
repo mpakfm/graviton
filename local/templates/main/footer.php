@@ -234,8 +234,8 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                 </a>
                             </div>
                             <div class="footer__nav-column">
-                                <a class="footer__nav-top" href="/page/support/zagruzka-drayverov">
-                                    <div class="footer__nav-title">Документация</div>
+                                <a class="footer__nav-top" href="/page/zagruzka-drayverov">
+                                    <div class="footer__nav-title">Драйверы</div>
                                     <div class="footer__nav-arrow">
                                         <svg class="ico ico-mono-arrow-fat">
                                             <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>

@@ -14,6 +14,7 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "EVENTS");
 
@@ -24,7 +25,13 @@ Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/even
 
 $breadcrumb = Breadcrumb::init();
 
-$iblock = CacheSelector::getIblockId('events', 'content');
+$iblock      = CacheSelector::getIblockId('events', 'content');
+$iblockPages = CacheSelector::getIblockId('pages', 'content');
+
+$pageItem = CacheSelector::getIblockElement($iblockPages, 'events');
+if (!$CODE) {
+    Seo::setPage($iblockPages, $pageItem['ID']);
+}
 
 if (!empty($CODE)) {
     $params = [
@@ -91,10 +98,10 @@ if (!empty($CODE)) {
         "DETAIL_URL" => "",
         "PREVIEW_TRUNCATE_LEN" => "",
         "ACTIVE_DATE_FORMAT" => "d.m.Y",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_META_DESCRIPTION" => "N",
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
         "ADD_SECTIONS_CHAIN" => "Y",

@@ -11,6 +11,7 @@
 
 use Bitrix\Main\Page\Asset;
 use Library\Tools\CacheSelector;
+use Library\Tools\Seo;
 
 define("BODY_CLASS", "PARTNERS");
 
@@ -22,7 +23,11 @@ $APPLICATION->SetTitle("Graviton - Партнёры");
 $APPLICATION->SetPageProperty('description', 'Graviton description');
 $APPLICATION->SetPageProperty('keywords', 'Graviton keywords');
 
-$iblock = CacheSelector::getIblockId('partners', 'content');
+$iblock      = CacheSelector::getIblockId('partners', 'content');
+$iblockPages = CacheSelector::getIblockId('pages', 'content');
+
+$pageItem = CacheSelector::getIblockElement($iblockPages, 'partners');
+Seo::setPage($iblockPages, $pageItem['ID']);
 
 ?>
 <div class="wrapper">
@@ -44,10 +49,10 @@ $iblock = CacheSelector::getIblockId('partners', 'content');
         "FIELD_CODE" => ['ID', 'NAME', 'PREVIEW_PICTURE'],
         "PROPERTY_CODE" => ['LINK'],
         "CHECK_DATES" => "N",
-        "SET_TITLE" => "Y",
-        "SET_BROWSER_TITLE" => "Y",
-        "SET_META_KEYWORDS" => "Y",
-        "SET_META_DESCRIPTION" => "Y",
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_META_DESCRIPTION" => "N",
         "SET_LAST_MODIFIED" => "Y",
         "INCLUDE_SUBSECTIONS" => "Y",
         "CACHE_TYPE" => "Y",
