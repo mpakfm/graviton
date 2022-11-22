@@ -17,3 +17,11 @@
 .s-events-cities__item.active {
     border: 0.0625rem solid #d91745;
 }
+#header-registration .form__input label span {
+    color: #656669;
+}
+#popup-registration-success .title {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 2em;
+}
