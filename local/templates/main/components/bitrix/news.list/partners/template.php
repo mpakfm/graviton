@@ -44,8 +44,8 @@ $max = ceil(count($arResult["ITEMS"]) / 5) * 5;
                 <div class="s-partners-page__item-logo"><img class="lazy" data-src="img/svg/logos/aitis.svg" alt=""></div></a><a class="s-partners-page__item s-partners-page__btn" href="">
                 -->
                 <?php for ($i = $cnt; $i < $max; $i++) { ?>
-                    <!--<a class="s-partners-page__item s-partners-page__btn" href="#popup-registration" data-fancybox>-->
-                    <a class="s-partners-page__item s-partners-page__btn" href="javascript:void(0);">
+                    <a class="s-partners-page__item s-partners-page__btn" href="#popup-registration" data-fancybox>
+                    <!--<a class="s-partners-page__item s-partners-page__btn" href="javascript:void(0);">-->
                         <div class="s-partners-page__item-logo">
                             <div class="s-partners-page__item-text">Стать партнером</div>
                         </div>

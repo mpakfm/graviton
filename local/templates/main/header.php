@@ -112,7 +112,7 @@ $breadcrumb->setBodyClass();
                 <div class="header__phone"><a class="header__phone-link" href="tel:+78005008886">8-800-500-88-86</a>
                     <div class="header__phone-text">круглосуточно</div>
                 </div>
-                <!--
+
                 <a class="header__btn btn btn--bordered" href="#popup-registration" data-fancybox>
                     <div class="header__btn-icon">
                         <svg class="ico ico-color-emblem">
@@ -125,7 +125,7 @@ $breadcrumb->setBodyClass();
                             <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
                         </svg>
                     </div>
-                </a>-->
+                </a>
                 <div class="header__burger"><span> </span><span> </span></div>
             </div>
         </div>
@@ -189,24 +189,29 @@ $breadcrumb->setBodyClass();
             <h5 class="form__title">Форма регистрации</h5>
             <div class="form__inputs">
                 <div class="form__input">
-                    <label>E-mail </label>
+                    <label>E-mail* </label>
                     <input type="email" placeholder="Введите реальный E-mail на него придет письмо  подтверждения" name="email" />
+                    <label class="error-label"></label>
                 </div>
                 <div class="form__input">
                     <label>ФИО</label>
                     <input type="text" placeholder="Введите фамилию, имя и отчество" name="name" />
+                    <label class="error-label"></label>
                 </div>
                 <div class="form__input">
                     <label>Телефон </label>
                     <input type="text" placeholder="+7(ХХХ)ХХХХХХХ" name="phone" />
+                    <label class="error-label"></label>
                 </div>
                 <div class="form__input">
-                    <label>ИНН</label>
+                    <label>ИНН* <span>(Только 10 цифр)</span></label>
                     <input type="number" placeholder="9999999999" name="inn" />
+                    <label class="error-label"></label>
                 </div>
                 <div class="form__input">
                     <label>Название компании </label>
                     <input type="text" placeholder="Введите название компании" name="company" />
+                    <label class="error-label"></label>
                 </div>
             </div>
             <div class="form__checkboxes">
@@ -215,11 +220,13 @@ $breadcrumb->setBodyClass();
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я не робот</div>
                 </div>
+                <label class="error-label"></label>
                 <div class="form__checkbox">
                     <input name="terms" class="form__checkbox-input" type="checkbox" checked />
                     <div class="form__checkbox-btn"></div>
                     <div class="form__checkbox-text">Я согласен с условиями обработки персональных данных.</div>
                 </div>
+                <label class="error-label"></label>
             </div>
             <button class="form__submit btn btn--black" type="submit">Отправить</button>
         </form>

@@ -21,6 +21,7 @@ function handlers() {
         popup.find('picture img').attr('src', image);
     });
     $('#header-registration').submit(function(){
+        $('#header-registration label.error-label').text('');
         $('#header-registration input').removeClass('js-error');
         $('#header-registration .form__checkbox-btn').removeClass('js-error');
         let cx = getCx();
@@ -34,14 +35,22 @@ function handlers() {
         let terms = $('#header-registration input[name="terms"]');
         if (email.val() === '') {
             email.addClass('js-error');
+            email.next().text('Требуется указать email');
+            isError = true;
+        }
+        if (inn.val().length !== 10) {
+            inn.addClass('js-error');
+            inn.next().text('Требуется указать 10 цифр');
             isError = true;
         }
         if (!robot.prop('checked')) {
             robot.next().addClass('js-error');
+            robot.parent().next().text('Требуется отметить');
             isError = true;
         }
         if (!terms.prop('checked')) {
             terms.next().addClass('js-error');
+            terms.parent().next().text('Требуется отметить');
             isError = true;
         }
         if (isError) {
@@ -51,7 +60,7 @@ function handlers() {
         url = '/local/ajax/controller.php?className=Partners&action=mailer';
         let data = {
             email: email.val(),
-            name: name.val(),
+            fio: name.val(),
             phone: phone.val(),
             inn: inn.val(),
             company: company.val(),
@@ -62,9 +71,17 @@ function handlers() {
             type: 'POST',
             data: data,
             success: function (data) {
-                console.log('success data', data);
                 if (data.result) {
+                    email.val('');
+                    name.val('');
+                    phone.val('');
+                    inn.val('');
+                    company.val('');
                     $.fancybox.close();
+                    $.fancybox.open({
+                        src: '#popup-registration-success',
+                        type: 'inline'
+                    });
                 } else {
 
                 }

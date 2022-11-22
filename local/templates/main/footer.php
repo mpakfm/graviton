@@ -265,9 +265,9 @@ $breadcrumb = Breadcrumb::init()::$chain;
     </div>
 </footer>
 
-<div class="popup popup-form popup-registration" id="popup-registration">
+<div class="popup popup-form popup-registration" id="popup-registration2">
     <form class="form">
-        <h5 class="form__title">Форма регистрации</h5>
+        <h5 class="form__title">Форма регистрации2</h5>
         <div class="form__inputs">
             <div class="form__input">
                 <label>E-mail </label>
@@ -304,6 +304,11 @@ $breadcrumb = Breadcrumb::init()::$chain;
         </div>
         <button class="form__submit btn btn--black" type="submit">Отправить</button>
     </form>
+</div>
+<div class="popup popup-categories" id="popup-registration-success">
+    <div class="popup-categories__container">
+        <div class="title">Спасибо за регистрацию</div>
+    </div>
 </div>
 
 <div class="popup popup-categories" id="popup-categories">
