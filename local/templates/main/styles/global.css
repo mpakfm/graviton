@@ -6186,8 +6186,8 @@ textarea {
 }
 
 .popup-registration {
-  max-width: 310px;
-  margin: 0 32px;
+  max-width: 19.375rem;
+  margin: 0 2rem;
 }
 
 .popup-form {
@@ -6239,21 +6239,21 @@ textarea {
 }
 
 .popup-categories {
-  width: 64rem;
   overflow: hidden;
+  width: 64rem;
   background: #424346;
 }
 
 .popup-categories__container {
-  background: linear-gradient(357.79deg, #202020 1.85%, rgba(40, 46, 66, 0) 69.85%);
   padding: 2.5rem 0 0;
+  background: linear-gradient(357.79deg, #202020 1.85%, rgba(40, 46, 66, 0) 69.85%);
 }
 
 .popup-categories__title {
+  margin-bottom: 1.25rem;
   font-size: 1.4375rem;
   line-height: 1.625rem;
   text-align: center;
-  margin-bottom: 1.25rem;
 }
 
 .popup-categories__img {
@@ -6268,9 +6268,9 @@ textarea {
 }
 
 .popup-categories__partners .title--h2 {
+  padding: 0.9375rem 1.5625rem;
   font-size: 1.1875rem;
   color: #000203;
-  padding: 0.9375rem 1.5625rem;
 }
 
 .popup-categories__partners .s-partners__wrapper {
@@ -6279,31 +6279,90 @@ textarea {
 }
 
 .popup-success {
-  background: linear-gradient(7.85deg, #424346 1.58%, #1D1E21 100%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding: 94px 67px 71px;
+  padding: 5.875rem 4.1875rem 4.4375rem;
+  background: linear-gradient(7.85deg, #424346 1.58%, #1d1e21 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
 .popup-success img {
-  margin: 0 auto 24px;
+  margin: 0 auto 1.5rem;
 }
 
 .popup-success__title {
-  max-width: 266px;
-  font-size: 25px;
+  max-width: 16.625rem;
+  margin: 0 auto;
+  margin-bottom: 4.25rem;
+  font-size: 1.5625rem;
   line-height: 120%;
   text-align: center;
   color: #656669;
-  margin: 0 auto;
-  margin-bottom: 68px;
 }
 
 .popup-success__text {
-  font-size: 19px;
-  line-height: 120%;
+  font-size: 1.1875rem;
   font-weight: 600;
+  line-height: 120%;
   text-align: center;
+  color: #000203;
+}
+
+.popup-thanks {
+  max-width: 26.875rem;
+  padding: 3.375rem 2.6875rem;
+  background: linear-gradient(7.85deg, #424346 1.58%, #1d1e21 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.popup-thanks__title {
+  margin-bottom: 1.875rem;
+  font-size: 1.5625rem;
+  line-height: 1.8125rem;
+  color: #656669;
+}
+
+.popup-thanks__text {
+  margin-bottom: 1.125rem;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  color: #ffffff;
+}
+
+.popup-thanks__data {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.375rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.popup-thanks__item {
+  font-size: 1.1875rem;
+  font-weight: 300;
+  line-height: 110%;
+}
+
+.popup-thanks__item-title {
+  margin-bottom: 1.125rem;
+  color: #656669;
+}
+
+.popup-thanks__item-value {
+  cursor: pointer;
+  color: #ebebef;
+  transition: 0.5s color ease;
+}
+
+.popup-thanks__item-value:hover {
+  color: #d50032;
+}
+
+.popup-thanks__team {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 110%;
+  text-align: right;
   color: #000203;
 }
 
@@ -7490,6 +7549,14 @@ input[type="number"] {
   .popup-categories__title {
     font-size: 2.5rem;
     line-height: 2.9375rem;
+  }
+
+  .popup-thanks__data {
+    flex-wrap: nowrap;
+  }
+
+  .popup-thanks__item._phone {
+    text-align: right;
   }
 
   .news .l-content {
@@ -9223,7 +9290,7 @@ input[type="number"] {
 
 @media (max-width: 992px) {
   .popup-form {
-    padding: 40px 20px;
+    padding: 2.5rem 1.25rem;
   }
 }
 
@@ -10136,16 +10203,16 @@ input[type="number"] {
   }
 
   .popup-success {
-    padding: 41px 35px 52px;
+    padding: 2.5625rem 2.1875rem 3.25rem;
   }
 
   .popup-success img {
-    margin: 0 auto 17px;
+    margin: 0 auto 1.0625rem;
   }
 
   .popup-success__title {
-    font-size: 19px;
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
+    font-size: 1.1875rem;
   }
 
   .news-detail__date {
@@ -10342,29 +10409,29 @@ input[type="number"] {
   }
 
   .popup-form {
-    padding: 25px;
+    padding: 1.5625rem;
   }
 
   .popup-form .form__title {
-    font-size: 19px;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1875rem;
   }
 
   .popup-form .form__input:nth-child(3) {
-    max-width: 140px;
+    max-width: 8.75rem;
     margin-right: 0.6875rem;
   }
 
   .popup-form .form__input:nth-child(4) {
-    max-width: 98px;
+    max-width: 6.125rem;
   }
 
   .popup-form .form__checkboxes {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   .popup-form .form__checkbox-text {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
 
   .footer {
