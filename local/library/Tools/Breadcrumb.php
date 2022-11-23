@@ -196,7 +196,11 @@ class Breadcrumb
                     $this->bodyStr = 'class="cases-page" data-scroll-container';
                     break;
                 case"EVENTS":
-                    $this->bodyStr = 'class="events-page" data-scroll-container';
+                    if ($this->uriItem) {
+                        $this->bodyStr = 'class="event-page" data-scroll-container';
+                    } else {
+                        $this->bodyStr = 'class="events-page" data-scroll-container';
+                    }
                     break;
                 case"ABOUT":
                     $this->bodyStr = 'class="about-page" data-scroll-container';
