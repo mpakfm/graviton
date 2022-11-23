@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 <section class="s-goods">
     <div class="l-default">
         <div class="content-active">
-            <h2 class="title title--h2 s-goods__title">Новинки</h2>
+            <h2 class="title title--h2 s-goods__title"><?php if ($arResult['IS_ONLY_ONE_FILTER']) {?><?=$arResult['PROPERTIES'][0]['NAME'];?><?php } else { ?>Продукты<?php } ?></h2>
 
             <div class="s-goods__items">
                 <?php foreach($arResult['ITEMS'] as $product) { ?>
