@@ -40,7 +40,7 @@ $breadcrumb->setBodyClass();
     <title><?$APPLICATION->ShowTitle();?></title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <base href="<?=SITE_TEMPLATE_PATH;?>/">
 
     <?php if (ROOT_SERVER == 'PRODUCTION') { ?>
