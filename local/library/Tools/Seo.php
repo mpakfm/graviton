@@ -10,7 +10,6 @@
 namespace Library\Tools;
 
 use Bitrix\Iblock\InheritedProperty\ElementValues;
-use Mpakfm\Printu;
 
 class Seo
 {

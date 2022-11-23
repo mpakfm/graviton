@@ -12,6 +12,9 @@ use Library\Tools\CacheSelector;
 
 class Filter extends \CBitrixComponent
 {
+    public $isOnlyOneFilter;
+    public $filters = [];
+
     public function onPrepareComponentParams($params): array
     {
         $params = parent::onPrepareComponentParams($params);
@@ -22,10 +25,17 @@ class Filter extends \CBitrixComponent
         foreach ($_REQUEST as $field => $value) {
             //arrFilter_56=1904655245
             $parts = explode('_', $field);
+            if ($parts[0] == 'arrFilter' && array_key_exists(1, $parts)) {
+                $this->filters[$parts[1]] = $value;
+            }
             if (!array_key_exists(1, $parts)) {
                 continue;
             }
             $params['FACET_ID'][] = $parts[1] * 2;
+        }
+
+        if (count($this->filters) == 1) {
+            $this->isOnlyOneFilter = true;
         }
 
         return $params;
@@ -34,6 +44,12 @@ class Filter extends \CBitrixComponent
     public function getData()
     {
         $iblockId = CacheSelector::getIblockId('product', 'catalog');
+        foreach ($this->filters as $propertyId => $value) {
+            $prop = CIBlockProperty::GetByID($propertyId, $iblockId)->Fetch();
+            $this->arResult['PROPERTIES'][] = $prop;
+        }
+        $this->arResult['IS_ONLY_ONE_FILTER'] = $this->isOnlyOneFilter;
+
         $strFacet = implode(',', $this->arParams['FACET_ID']);
 
         $con = Application::getConnection();

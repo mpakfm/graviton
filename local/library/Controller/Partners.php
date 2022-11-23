@@ -14,7 +14,6 @@ use Bitrix\Main\Config\Option;
 use Bitrix\Main\Loader;
 use Library\Tools\CacheSelector;
 use Library\Tools\LogWriter;
-use Mpakfm\Printu;
 
 class Partners extends AbstractController
 {
