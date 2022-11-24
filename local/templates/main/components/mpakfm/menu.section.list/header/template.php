@@ -24,6 +24,18 @@ use Library\Tools\Breadcrumb;
             </div>
             <nav class="menu">
                 <div class="menu__items">
+                    <?php if ($USER->IsAdmin()) { ?>
+                    <div class="menu__item">
+                        <a class="menu__item-link " href="/bitrix">
+                            <div class="menu__item-text">Bitrix</div>
+                        </a>
+                        <div class="menu__item-icon">
+                            <svg class="ico ico-mono-arrow-fat">
+                                <use xlink:href="img/sprite-mono.svg#ico-mono-arrow-fat"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <?php } ?>
                     <?php $depthMain     = 2; ?>
                     <?php $depthLeft     = 3; ?>
                     <?php $isLeftSubMenu = false; ?>
