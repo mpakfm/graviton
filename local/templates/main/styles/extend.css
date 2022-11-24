@@ -4,6 +4,19 @@
     opacity: 0.4;
     cursor: default;
 }
+.header__wrapper {
+    position: relative;
+}
+.header__links-item {
+    position: absolute;
+    top: 6px;
+    left: -35px;
+}
+@media (max-width: 768px) {
+    .header__links-item {
+        left: 35px;
+    }
+}
 .admin-link {
     color: #e4f0f7;
     text-decoration: underline;

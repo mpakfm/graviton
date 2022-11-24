@@ -13,6 +13,22 @@ use Bitrix\Main\Page\Asset;
 use Bitrix\Main\Page\AssetLocation;
 use Library\Tools\Breadcrumb;
 use Library\Tools\CookieSecret;
+use Library\Tools\Url;
+
+$currPage    = Url::getCurrentPage();
+$hasGetPrams = false;
+if (strpos($currPage, '?')) {
+    $hasGetPrams = true;
+}
+// link for Cache
+if (strpos($currPage, 'clear_cache=Y') !== false) {
+    $linkCache = str_replace(['?clear_cache=Y', '&clear_cache=Y'], ['?', ''], $currPage);
+    $onCache   = true;
+} else {
+    $concat    = ($hasGetPrams ? '&' : '?') . 'clear_cache=Y';
+    $linkCache = $currPage . $concat;
+    $onCache   = false;
+}
 
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/global.css?t=' . time() . '">', true);
 Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/extend.css?t=' . time() . '">', true);
@@ -109,6 +125,21 @@ $breadcrumb->setBodyClass();
                     </a>
                 </div>
                 <?$APPLICATION->IncludeComponent("bitrix:search.form", "header", $searchParam);?>
+                <?php if ($USER->IsAdmin()) { ?>
+                    <?php if ($onCache) { ?>
+                        <a href="<?=$linkCache;?>" class="header__links-item button" title="Включить кэш">
+                            <svg style="width: 24px; color: #9F9F9F;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                            </svg>
+                        </a><!-- header__links-item -->
+                    <?php } else { ?>
+                        <a href="<?=$linkCache;?>" class="header__links-item button" title="Сбросить кэш">
+                            <svg style="width: 24px; color: #9F9F9F;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                        </a><!-- header__links-item -->
+                    <?php } ?>
+                <?php } ?>
                 <div class="header__phone"><a class="header__phone-link" href="tel:+78005008886">8-800-500-88-86</a>
                     <div class="header__phone-text">круглосуточно</div>
                 </div>
