@@ -305,11 +305,13 @@ $breadcrumb = Breadcrumb::init()::$chain;
         <button class="form__submit btn btn--black" type="submit">Отправить</button>
     </form>
 </div>
+<!--
 <div class="popup popup-categories" id="popup-registration-success">
     <div class="popup-categories__container">
         <div class="title">Спасибо за регистрацию</div>
     </div>
 </div>
+-->
 
 <div class="popup popup-categories" id="popup-categories">
     <div class="popup-categories__container">
@@ -324,6 +326,24 @@ $breadcrumb = Breadcrumb::init()::$chain;
         </div>
         <?$APPLICATION->IncludeComponent("mpakfm:news.line", "footer.partners", $partners);?>
     </div>
+</div>
+<div class="popup popup-success" id="popup-success">
+    <div class="popup-success__check"><img src="img/svg/check-success.svg" alt=""></div>
+    <div class="popup-success__title">Спасибо за подписку на рассылку!</div>
+    <div class="popup-success__text">Команда Гравитон</div>
+</div>
+<div class="popup popup-thanks" id="popup-thanks">
+    <div class="popup-thanks__title">Спасибо<br> за регистрацию!</div>
+    <div class="popup-thanks__text">Мы подтверждаем, что получили ваше сообщение. Если у Вас возникнут какие-либо вопросы, свяжитесь с нами:</div>
+    <div class="popup-thanks__data">
+        <div class="popup-thanks__item">
+            <div class="popup-thanks__item-title">Электронная почта:</div><a class="popup-thanks__item-value" href="mailto:contact@graviton.ru">contact@graviton.ru</a>
+        </div>
+        <div class="popup-thanks__item _phone">
+            <div class="popup-thanks__item-title">Телефон:</div><a class="popup-thanks__item-value" href="tel:88005008886">8-800-500-88-86</a>
+        </div>
+    </div>
+    <div class="popup-thanks__team">Команда Гравитон</div>
 </div>
 </body>
 </html>
