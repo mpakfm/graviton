@@ -78,10 +78,7 @@ function handlers() {
                     inn.val('');
                     company.val('');
                     $.fancybox.close();
-                    $.fancybox.open({
-                        src: '#popup-registration-success',
-                        type: 'inline'
-                    });
+                    $('.popup-thanks').fancybox().trigger('click');
                 } else {
 
                 }
