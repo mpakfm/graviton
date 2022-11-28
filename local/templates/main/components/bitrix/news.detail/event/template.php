@@ -77,6 +77,7 @@ $this->setFrameMode(true);
     <?php } ?>
 
     <section class="s-events-slider">
+        <?php /** ?>
         <?php if (array_key_exists('DETAIL_PHOTO', $arResult['DISPLAY_PROPERTIES'])) { ?>
         <div class='scroll-animations-example' data-scroll-container>
             <div class='scrollsection' data-scroll-section>
@@ -88,6 +89,7 @@ $this->setFrameMode(true);
             </div>
         </div>
         <?php } ?>
+        <?php */ ?>
         <div class="s-events-slider__more">
             <a class="s-events-slider__more-text" href="/events">Венуться к списку мероприятий</a>
             <div class="s-events-slider__more-arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
