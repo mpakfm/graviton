@@ -93,7 +93,7 @@ if (is_array($arCloudParams["arrFILTER"])) {
         <div class="l-default">
             <div class="s-searching-results__top">
                 <h1 class="s-searching-results__title">Результаты поиска<span>“<?=$arResult["REQUEST"]["QUERY"]?>”</span></h1>
-                <div class="s-searching-results__found">Найдено <?=$arResult['NAV_RESULT']->NavRecordCount;?> <?=Stringer::plural($arResult['NAV_RESULT']->NavRecordCount, ['совпадения', 'совпадения', 'совпадений']); ?></div>
+                <div class="s-searching-results__found">Найдено <?=$arResult['NAV_RESULT']->NavRecordCount;?> <?=Stringer::plural($arResult['NAV_RESULT']->NavRecordCount, ['совпадение', 'совпадения', 'совпадений']); ?></div>
             </div>
             <div class="s-searching-results__main">
                 <div class="s-searching-results__dropdown">
