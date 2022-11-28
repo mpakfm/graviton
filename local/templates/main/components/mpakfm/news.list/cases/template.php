@@ -62,7 +62,7 @@ if ($arParams['AJAX_MODE'] != 'Y') {
                         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                         ?>
                         <div id="<?=$this->GetEditAreaId($arItem['ID']);?>" <?php if ($arParams['AJAX_MODE'] == 'Y' && $key == 0) { ?>data-pageurl="<?=$arResult["NAV_STRING"]?>"<?php } ?> class="s-cases-card" data-category="<?=$arItem['IBLOCK_SECTION_ID'];?>">
-                            <div class="s-cases-card__top"><?=$arItem['ID'];?>.</div>
+                            <!-- <div class="s-cases-card__top"><?=$arItem['ID'];?>.</div> -->
                             <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])) { ?>
                             <div class="s-cases-card__img">
                                 <picture>
@@ -85,12 +85,16 @@ if ($arParams['AJAX_MODE'] != 'Y') {
                                     <?=$arItem["PREVIEW_TEXT"]?>
                                 </div>
                             </div>
-                            <div class="s-cases-card__bottom"><a class="s-cases-card__link" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
+                            <div class="s-cases-card__bottom">
+                                <a class="s-cases-card__link" href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
                                     <div class="s-cases-card__link-text">Посмотреть кейс</div>
-                                    <div class="s-cases-card__link-arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <div class="s-cases-card__link-arrow">
+                                        <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 1H19L13.6486 6" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
-                                    </div></a></div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     <?php } ?>
                     <?php if ($arParams['AJAX_MODE'] != 'Y') { ?>

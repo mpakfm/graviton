@@ -105,7 +105,8 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                 <li class="breadcrumbs__item" itemscope="itemscope" itemprop="itemListElement" itemtype="https://schema.org/ListItem">
                                     <a class="breadcrumbs__link" href="<?=$part['link'];?>" itemprop="item" title="<?=$part['name'];?>">
                                         <meta itemprop="position" content="<?=($key + 1);?>" />
-                                        <span itemprop="name"><?=$part['name'];?></span></a>
+                                        <span itemprop="name"><?=$part['name'];?></span>
+                                    </a>
                                 </li>
                             <?php } elseif ($part['type'] == 'item') { ?>
                                 <li class="breadcrumbs__item">
@@ -151,7 +152,7 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                     </div>
                                 </a>
                                 <div class="footer__nav-list">
-                                    <a class="footer__nav-item" href="/catalog/systems_on_russian_cpus/">Системы на Российских ЦПУ</a>
+                                    <a class="footer__nav-item" href="/catalog/?set_filter=y&arrFilter_182=y">Системы на Российских ЦПУ</a>
                                     <a class="footer__nav-item" href="/catalog/server_solutions/">Серверные решения</a>
                                     <a class="footer__nav-item" href="/catalog/client_solutions/">Клиентские решения</a>
                                     <a class="footer__nav-item" href="/catalog/motherboards/">Материнские платы</a>
@@ -194,7 +195,7 @@ $breadcrumb = Breadcrumb::init()::$chain;
                                     </div>
                                 </div>
                                 <div class="footer__nav-list">
-                                    <a class="footer__nav-item" href="/page/services/kontraktnaya-razrabotka">Контрактная разработка</a>
+                                    <a class="footer__nav-item" href="/page/services/kontraktnaya-razrabotka">ODM</a>
                                     <a class="footer__nav-item" href="/page/services/oem">ОЕМ</a>
                                 </div>
                             </div>

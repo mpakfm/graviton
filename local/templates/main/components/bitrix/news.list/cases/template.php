@@ -53,7 +53,7 @@ if ($arParams['AJAX_MODE'] != 'Y') {
                         $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
                         ?>
                         <div id="<?=$this->GetEditAreaId($arItem['ID']);?>" class="s-cases-card" data-category="<?=$arItem['IBLOCK_SECTION_ID'];?>">
-                            <div class="s-cases-card__top"><?=$arItem['ID'];?>.</div>
+                            <!-- <div class="s-cases-card__top"><?=$arItem['ID'];?>.</div> -->
                             <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])) { ?>
                             <div class="s-cases-card__img">
                                 <picture>
