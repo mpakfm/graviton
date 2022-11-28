@@ -343,6 +343,8 @@ class SearchPage extends \CBitrixComponent
             $this->arResult["NAV_STRING"]      = $obSearch->GetPageNavStringEx($navComponentObject, $this->arParams["PAGER_TITLE"], $this->arParams["PAGER_TEMPLATE"], $this->arParams["PAGER_SHOW_ALWAYS"]);
             $this->arResult["NAV_CACHED_DATA"] = $navComponentObject->GetTemplateCachedData();
             $this->arResult["NAV_RESULT"]      = $obSearch;
+            \Mpakfm\Printu::obj($this->arResult["NAV_RESULT"])->title('[CLASS] NAV_RESULT');
+            \Mpakfm\Printu::obj($this->arResult["NAV_RESULT"]->NavRecordCount)->title('[CLASS] NAV_RESULT NavRecordCount');
 
             $this->arResult["TAGS_CHAIN"] = [];
             $url                          = [];

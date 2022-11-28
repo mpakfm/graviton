@@ -165,7 +165,7 @@ $partners = [
 
     </div>
 </section>
-<?php if (!empty($arResult['PROPERTIES']['BENEFIT1_TITLE']['~VALUE']['TEXT'])) { ?>
+<?php if (!empty($arResult['PROPERTIES']['BENEFIT1_TITLE']['~VALUE']['TEXT']) || !empty($arResult['PROPERTIES']['BENEFIT2_TITLE']['~VALUE']['TEXT'])) { ?>
 <section class="s-product-benefits" id="products-benefits">
     <div class="l-default">
         <div class="s-product-benefits__items">
@@ -173,8 +173,6 @@ $partners = [
                 <div class="s-product-benefits__item-image">
                     <?php if (!empty($arResult['FILES'][$arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE']])) { ?>
                         <img src="<?=$arResult['FILES'][$arResult['PROPERTIES']['BENEFIT1_IMG']['VALUE']]['SRC'];?>" alt="">
-                    <?php } else { ?>
-                        <img src="./img/product-benefit/1.png" alt="">
                     <?php } ?>
                 </div>
                 <div class="s-product-benefits__item-info">
@@ -186,8 +184,6 @@ $partners = [
                 <div class="s-product-benefits__item-image">
                     <?php if (!empty($arResult['FILES'][$arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE']])) { ?>
                         <img src="<?=$arResult['FILES'][$arResult['PROPERTIES']['BENEFIT2_IMG']['VALUE']]['SRC'];?>" alt="">
-                    <?php } else { ?>
-                        <img src="./img/product-benefit/2.png" alt="">
                     <?php } ?>
                 </div>
                 <div class="s-product-benefits__item-info">
@@ -198,41 +194,6 @@ $partners = [
         </div>
     </div>
 </section>
-<?php } else { ?>
-    <section class="s-product-benefits" id="products-benefits">
-        <div class="l-default">
-            <div class="s-product-benefits__items">
-                <div class="s-product-benefits__item">
-                    <div class="s-product-benefits__item-image"><img src="./img/product-benefit/1.png" alt=""></div>
-                    <div class="s-product-benefits__item-info">
-                        <div class="s-product-benefits__item-title">БЕЗОПАСНОСТЬ И<br> ПЕРЕДАЧА ДАННЫХ</div>
-                        <div class="s-product-benefits__item-text">
-                            <?php if ($isAdmin) { ?>
-                                <p><b>Не заполнено поле "Ячейки. 1. Текст" для товара: <a style="text-decoration: underline;" href="/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=<?=$arResult['IBLOCK_ID'];?>&type=catalog&lang=ru&ID=<?=$arResult['ID'];?>&find_section_section=<?=$arResult['IBLOCK_SECTION_ID'];?>"><?=$arResult['CODE'];?></a></b></p>
-                            <?php } else { ?>
-                                <p><b>Не заполнено поле "Ячейки. 1. Текст" для товара: <?=$arResult['CODE'];?></b></p>
-                            <?php } ?>
-                            <p><b>Текст для примера:</b> Слот для дополнительного беспроводного адаптера. Этот же разъем может использоваться для установки АПМДЗ-модуля. Поддерживаются модули Соболь, Аккорд и другие, популярные в государственных органах Российской Федерации.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="s-product-benefits__item">
-                    <div class="s-product-benefits__item-image"><img src="./img/product-benefit/2.png" alt=""></div>
-                    <div class="s-product-benefits__item-info">
-                        <div class="s-product-benefits__item-title">ЗАЩИТА ОТ ВОДЫ</div>
-                        <div class="s-product-benefits__item-text">
-                            <?php if ($isAdmin) { ?>
-                                <p><b>Не заполнено поле "Ячейки. 2. Текст" для товара: <a style="text-decoration: underline;" href="/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=<?=$arResult['IBLOCK_ID'];?>&type=catalog&lang=ru&ID=<?=$arResult['ID'];?>&find_section_section=<?=$arResult['IBLOCK_SECTION_ID'];?>"><?=$arResult['CODE'];?></a></b></p>
-                            <?php } else { ?>
-                                <p><b>Не заполнено поле "Ячейки. 2. Текст" для товара: <?=$arResult['CODE'];?></b></p>
-                            <?php } ?>
-                            <p><b>Текст для примера:</b> Клавиатура с защитой от пролития жидкостей. При этом каждая клавиша содержит индивидуальный резиновый защитный слой, предотвращающий попадание жидкости и крошек внутрь механизма.</p><p>Отзывчивый тачпад с двумя аппаратными кнопками для ретроградов.Кнопка мгновенной блокировки в верхнем правом углу.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 <?php } ?>
 <?php if ($arResult['IS_T']) { ?>
 <section class="s-product-tech" id="products-tech">

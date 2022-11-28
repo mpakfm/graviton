@@ -10,6 +10,9 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
+use Library\Tools\CacheSelector;
+
 $this->setFrameMode(true);
 
 $arViewModeList = $arResult['VIEW_MODE_LIST'];
@@ -59,6 +62,8 @@ $strSectionEdit = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
 $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
 $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
 
+$rusPropsId = CacheSelector::getIblockPropertyId($arParams["IBLOCK_ID"], 'RUS');
+
 ?>
 <section class="s-top-categories">
     <div class="l-default">
@@ -97,6 +102,16 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                         </a>
                     </div>
                     <?php } ?>
+                    <div class="swiper-slide s-top-categories__slide <?=(array_key_exists('arrFilter_' . $rusPropsId, $_REQUEST) ? 'active-categories' : '');?>">
+                        <a class="s-top-categories__item" href="/catalog/?set_filter=y&arrFilter_<?=$rusPropsId;?>=y">
+                            <div class="s-top-categories__item-img">
+                                <picture>
+                                    <img src="/local/templates/main/img/categories/russian.png" alt=""/>
+                                </picture>
+                            </div>
+                            <div class="s-top-categories__item-title">Системы на российских ЦПУ</div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
