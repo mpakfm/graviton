@@ -21,62 +21,100 @@ $this->setFrameMode(true);
 
 ?>
 <main class="main">
-<section class="news-detail">
-    <div class="l-default">
-        <div class="l-content">
-            <div class="news-detail__container">
-                <?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-                    <div class="news-detail__date">
-                        <div class="news-detail__date--day"><?=$arResult["DISPLAY_ACTIVE_FROM_DAY"]?> </div>
-                        <div class="news-detail__date--month"><?=$arResult["DISPLAY_ACTIVE_FROM_MONTH"]?></div>
-                    </div>
-                <?endif;?>
-                <div class="news-detail__content">
-                    <div class="news-detail__content--img">
-                        <?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-                            <div class="news-detail__topic">
-                                <div class="news-detail__topic--day"><?=$arResult["DISPLAY_ACTIVE_FROM_DAY"]?> </div>
-                                <div class="news-detail__topic--month"><?=$arResult["DISPLAY_ACTIVE_FROM_MONTH"]?></div>
-                            </div>
-                        <?endif;?>
-                        <?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-                            <picture>
-                                <source data-srcset="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" type="image/jpg"/>
-                                <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="undefined"/>
-                            </picture>
-                        <?endif?>
-                    </div>
-                    <?php if ($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]) { ?>
-                    <div class="news-detail__content--title"><?=$arResult["NAME"]?></div>
+    <section class="s-events-last s-events-last-detail">
+        <div class="l-default">
+            <div class="s-events-last__wrap">
+
+                <div class="s-events-last__image">
+                    <?php if (!empty($arResult['DETAIL_PICTURE']) && $arResult['DETAIL_PICTURE']['SRC'] != '') { ?>
+                    <img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>" alt="<?=$arResult['NAME'];?>">
                     <?php } ?>
-                    <div class="news-detail__content--text">
-                        <?if($arResult["DETAIL_TEXT"] <> ''):?>
-                            <?echo $arResult["DETAIL_TEXT"];?>
-                        <?endif?>
+                </div>
+                <h1 class="s-events-last__title"><?=$arResult['DISPLAY_PROPERTIES']['TOP_TITLE']['DISPLAY_VALUE'];?></h1>
+            </div>
+            <div class="s-events-last__date"><span><?=$arResult['DISPLAY_PROPERTIES']['TOP_PLACE']['DISPLAY_VALUE'];?>,</span> <?=$arResult['DISPLAY_PROPERTIES']['TOP_DATE']['DISPLAY_VALUE'];?></div>
+        </div>
+    </section>
+    <section class="s-events-description">
+        <div class="l-default">
+            <div class="s-events-description__wrapper">
+                <div class="s-events-description__content">
+                    <?php if ($arResult['DISPLAY_PROPERTIES']['DETAIL_SUB_TITLE']['DISPLAY_VALUE'] != '') { ?>
+                    <h2 class="s-events-description__title"><?=$arResult['DISPLAY_PROPERTIES']['DETAIL_SUB_TITLE']['DISPLAY_VALUE'];?></h2>
+                    <?php } ?>
+                    <div class="s-events-description__text">
+                        <?=$arResult['DETAIL_TEXT'];?>
                     </div>
-                    <div class="news-detail__more">
-                        <a class="news-detail__more--all" href="/events">
-                            Вернуться к списку мероприятий
-                            <svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1H19L13.6486 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-<!--                        <div class="news-detail__more--btn">-->
-<!--                            <a class="news-detail__btn--prev">-->
-<!--                                <svg class="ico ico-color-arrow-circle">-->
-<!--                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>-->
-<!--                                </svg>-->
-<!--                            </a>-->
-<!--                            <a class="news-detail__btn--next">-->
-<!--                                <svg class="ico ico-color-arrow-circle">-->
-<!--                                    <use xlink:href="img/sprite-color.svg#ico-color-arrow-circle"></use>-->
-<!--                                </svg>-->
-<!--                            </a>-->
-<!--                        </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php if (array_key_exists('DETAIL_BANNER', $arResult['DISPLAY_PROPERTIES']) || array_key_exists('DETAIL_SLOGAN', $arResult['DISPLAY_PROPERTIES'])) { ?>
+    <section class="s-events-banner">
+        <div class="l-default">
+            <div class="s-events-banner__wrapper">
+                <?php if (array_key_exists('DETAIL_BANNER', $arResult['DISPLAY_PROPERTIES']) && $arResult['DISPLAY_PROPERTIES']['DETAIL_BANNER']['FILE_VALUE']['SRC'] != '') { ?>
+                <div class="s-events-banner__img"><img src="<?=$arResult['DISPLAY_PROPERTIES']['DETAIL_BANNER']['FILE_VALUE']['SRC'];?>" alt="<?=$arResult['DISPLAY_PROPERTIES']['DETAIL_SLOGAN']['DISPLAY_VALUE'];?>"></div>
+                <?php } ?>
+                <?php if (array_key_exists('DETAIL_SLOGAN', $arResult['DISPLAY_PROPERTIES'])) { ?>
+                <h2 class="s-events-banner__title"><?=$arResult['DISPLAY_PROPERTIES']['DETAIL_SLOGAN']['DISPLAY_VALUE'];?></h2>
+                <?php } ?>
+            </div>
+        </div>
+    </section>
+    <?php } ?>
+    <?php if (array_key_exists('DETAIL_LINK', $arResult['DISPLAY_PROPERTIES'])) { ?>
+    <section class="s-events-btn">
+        <div class="l-default">
+            <div class="s-events-btn__wrapper">
+                <h3 class="s-events-btn__title">Принять участие в мероприятии</h3>
+                <div class="s-events-btn__container">
+                    <div id="blackhole"><a class="centerHover" href="<?=$arResult['DISPLAY_PROPERTIES']['DETAIL_LINK']['DISPLAY_VALUE'];?>"><span>Зарегистрироваться</span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php } ?>
+
+    <section class="s-events-slider">
+        <?php /** ?>
+        <?php if (array_key_exists('DETAIL_PHOTO', $arResult['DISPLAY_PROPERTIES'])) { ?>
+        <div class='scroll-animations-example' data-scroll-container>
+            <div class='scrollsection' data-scroll-section>
+                <?php foreach ($arResult['DISPLAY_PROPERTIES']['DETAIL_PHOTO']['FILE_VALUE'] as $photo) { ?>
+                <div class='item -normal' data-scroll data-scroll-speed="2">
+                    <img class='image' src='<?=$photo['SRC'];?>'>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+        <?php } ?>
+        <?php */ ?>
+        <div class="s-events-slider__more">
+            <a class="s-events-slider__more-text" href="/events">Венуться к списку мероприятий</a>
+            <div class="s-events-slider__more-arrow"><svg width="20" height="7" viewBox="0 0 20 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 1H1L6.35135 6" stroke="#424346" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <div class="s-feedback">
+        <div class="s-feedback__content">
+            <div class="s-feedback__content-top">
+                <div class="l-default">
+                    <div class="s-feedback__item">
+                        <div class="s-feedback__item-text">Остались вопросы? Свяжитесь с нами</div>
+                    </div>
+                    <div class="s-feedback__item"><a class="s-feedback__item-btn" href="mailto:sale@graviton.ru"> Связаться с нами</a></div>
+                </div>
+            </div>
+            <div class="s-feedback__content-bottom">
+                <div class="l-default">
+                    <div class="s-feedback__item">
+                        <div class="s-feedback__item-note">*Вышеприведенные характеристики являются теоретическими величинами и зависят от дизайна продукта. Для предоставления точной информации об устройствах и для обеспечения ее соответствия с харакетристиками и функциями фактических продуктов компания Гравитон может вносить изменения в режиме реального времени. Сведения о продукции могут быть изменены без предварительного уведомления.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
 </main>

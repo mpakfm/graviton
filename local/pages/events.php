@@ -20,9 +20,6 @@ define("BODY_CLASS", "EVENTS");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/events_page.css?t=' . time() . '">', true);
-Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/events_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
-
 $breadcrumb = Breadcrumb::init();
 
 $iblock      = CacheSelector::getIblockId('events', 'content');
@@ -34,6 +31,9 @@ if (!$CODE) {
 }
 
 if (!empty($CODE)) {
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/event_page.css?t=' . time() . '">', true);
+    Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/event_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+
     $params = [
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
@@ -46,8 +46,8 @@ if (!empty($CODE)) {
         "IBLOCK_ID" => $iblock,
         "ELEMENT_CODE" => $CODE,
         "CHECK_DATES" => "N",
-        "FIELD_CODE" => Array("ID"),
-        "PROPERTY_CODE" => Array("DESCRIPTION"),
+        "FIELD_CODE" => ['ID', 'NAME', 'ACTIVE_FROM', 'ACTIVE_TO', 'DETAIL_PICTURE', 'DETAIL_TEXT'],
+        "PROPERTY_CODE" => ['TOP_DATE', 'TOP_TITLE', 'TOP_PLACE', 'CITY', 'DETAIL_SUB_TITLE', 'DETAIL_BANNER', 'DETAIL_SLOGAN', 'DETAIL_LINK', 'DETAIL_PHOTO'],
         "DETAIL_URL" => "",
         "SET_TITLE" => "Y",
         "SET_CANONICAL_URL" => "Y",
@@ -78,6 +78,9 @@ if (!empty($CODE)) {
         "AJAX_OPTION_JUMP" => "N",
     ];
 } else {
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . SITE_TEMPLATE_PATH . '/styles/events_page.css?t=' . time() . '">', true);
+    Asset::getInstance()->addString('<script src="' . SITE_TEMPLATE_PATH . '/js/events_page.js?t=' . time() . '" defer="defer"></script>', false, AssetLocation::BODY_END);
+
     $params = [
         "DISPLAY_DATE" => "Y",
         "DISPLAY_NAME" => "Y",
