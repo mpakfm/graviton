@@ -384,19 +384,21 @@ $partners = [
                                 <?php foreach($arResult['PROPERTIES']['M_DOCS']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                                 <div class="s-product-docs__item">
                                     <div class="s-product-docs__item-col">
-                                        <div class="s-product-docs__item-title">
+                                        <a class="s-product-docs__item-title" href="<?=$file['SRC'];?>" target="_blank">
                                             <?php if (!empty($arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key])) { ?>
                                                 <?=$arResult['PROPERTIES']['M_DOCS']['DESCRIPTION'][$key];?>
                                             <?php } else { ?>
                                                 <?=$file['ORIGINAL_NAME'];?>
                                             <?php } ?>
-                                        </div>
+                                        </a>
                                     </div>
                                     <div class="s-product-docs__item-col">
-                                        <div class="s-product-docs__item-info"><a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
+                                        <div class="s-product-docs__item-info">
+                                            <a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
                                                 <svg class="ico ico-mono-icon-download">
                                                     <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                                                </svg></a>
+                                                </svg>
+                                            </a>
                                             <div class="s-product-docs__item-size"><?=$file['MB_SIZE'];?> МБ</div>
                                         </div>
                                     </div>
@@ -412,20 +414,21 @@ $partners = [
                             <?php foreach($arResult['PROPERTIES']['M_SERT']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                             <div class="s-product-docs__item">
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-title">
+                                    <a class="s-product-docs__item-title" href="<?=$file['SRC'];?>" target="_blank">
                                         <?php if (!empty($arResult['PROPERTIES']['M_SERT']['DESCRIPTION'][$key])) { ?>
                                             <?=$arResult['PROPERTIES']['M_SERT']['DESCRIPTION'][$key];?>
                                         <?php } else { ?>
                                             <?=$file['ORIGINAL_NAME'];?>
                                         <?php } ?>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="s-product-docs__item-col">
                                     <div class="s-product-docs__item-info">
                                         <a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
                                             <svg class="ico ico-mono-icon-download">
                                                 <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <div class="s-product-docs__item-size"><?=$file['MB_SIZE'];?> МБ</div>
                                     </div>
                                 </div>
@@ -441,19 +444,21 @@ $partners = [
                             <?php foreach($arResult['PROPERTIES']['M_DRIVERS']['VALUE'] as $key => $fileId) { $file = $arResult['FILES'][$fileId]; ?>
                             <div class="s-product-docs__item">
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-title">
+                                    <a class="s-product-docs__item-title" href="<?=$file['SRC'];?>" target="_blank">
                                         <?php if (!empty($arResult['PROPERTIES']['M_DRIVERS']['DESCRIPTION'][$key])) { ?>
                                             <?=$arResult['PROPERTIES']['M_DRIVERS']['DESCRIPTION'][$key];?>
                                         <?php } else { ?>
                                             <?=$file['ORIGINAL_NAME'];?>
                                         <?php } ?>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="s-product-docs__item-col">
-                                    <div class="s-product-docs__item-info"><a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
+                                    <div class="s-product-docs__item-info">
+                                        <a class="s-product-docs__item-download" href="<?=$file['SRC'];?>" download>
                                             <svg class="ico ico-mono-icon-download">
                                                 <use xlink:href="img/sprite-mono.svg#ico-mono-icon-download"></use>
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <div class="s-product-docs__item-size"><?=$file['MB_SIZE'];?> МБ</div>
                                     </div>
                                 </div>
