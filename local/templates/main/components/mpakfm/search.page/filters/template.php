@@ -18,6 +18,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+use Library\Tools\Stringer;
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -80,11 +82,6 @@ if (is_array($arCloudParams["arrFILTER"])) {
                     <?php foreach ($arResult['LAST_QUERY'] as $item) { ?>
                     <a class="s-past-searches__item" href="/search?q=<?=$item['PHRASE'];?>" style="background-image: url(img/s-search/bg-item.png)"><?=$item['PHRASE'];?></a>
                     <?php } ?>
-                    <!--
-                    <a class="s-past-searches__item" href="" style="background-image: url(img/s-search/bg-item.png)">Ноутбук для школы с мощностью 16гб...</a>
-                    <a class="s-past-searches__item" href="" style="background-image: url(img/s-search/bg-item.png)">Ноутбук для школы с мощностью 16гб...</a>
-                    <a class="s-past-searches__item" href="" style="background-image: url(img/s-search/bg-item.png)">Ноутбук для школы с мощностью 16гб...</a>
-                    -->
                 </div>
             </div>
         </div>
@@ -96,7 +93,7 @@ if (is_array($arCloudParams["arrFILTER"])) {
         <div class="l-default">
             <div class="s-searching-results__top">
                 <h1 class="s-searching-results__title">Результаты поиска<span>“<?=$arResult["REQUEST"]["QUERY"]?>”</span></h1>
-                <div class="s-searching-results__found">Найдено <?=count($arResult["SEARCH"]);?> совпадения</div>
+                <div class="s-searching-results__found">Найдено <?=$arResult['NAV_RESULT']->NavRecordCount;?> <?=Stringer::plural($arResult['NAV_RESULT']->NavRecordCount, ['совпадения', 'совпадения', 'совпадений']); ?></div>
             </div>
             <div class="s-searching-results__main">
                 <div class="s-searching-results__dropdown">

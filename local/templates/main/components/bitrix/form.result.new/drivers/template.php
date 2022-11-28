@@ -141,7 +141,7 @@ $this->setFrameMode(true);
                             <div class="form__checkbox">
                                 <input class="form__checkbox-input" type="checkbox" name="form_checkbox_<?=$item['SID'];?>[]" value="<?=$keys[0];?>">
                                 <div class="form__checkbox-btn <?=($item['IS_ERROR'] ? 'js-error' : '');?>"></div>
-                                <div class="form__checkbox-text"><?=$item['TITLE'];?></div>
+                                <div class="form__checkbox-text"><a href="/upload/privacy_policy.pdf"><?=$item['TITLE'];?></a></div>
                             </div>
                             <?php if ($item['IS_ERROR']) {?>
                                 <label class="error-label"><?=$item['ERROR_MESSAGE'];?></label>
