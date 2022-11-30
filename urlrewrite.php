@@ -71,7 +71,7 @@ $arUrlRewrite=array (
         'SORT'      => 100,
     ),
     array(
-        'CONDITION' => '#^/programmnoe-obespechenie-graviton-secure-bios-boot(/)?#',
+        'CONDITION' => '#^/programmnoe-obespechenie-graviton-secure-bios-boot/?(\?.*)?#',
         'RULE'      => 'CODE=programmnoe-obespechenie-graviton-secure-bios-boot',
         'ID'        => null,
         'PATH'      => '/local/pages/one.page.php',

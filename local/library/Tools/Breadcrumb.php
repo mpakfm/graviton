@@ -61,6 +61,8 @@ class Breadcrumb
                     'link' => '/contacts',
                     'name' => "Контакты",
                 ]);
+            } elseif (strpos($_SERVER['REQUEST_URI'], '/programmnoe-obespechenie-graviton-secure-bios-boot') === 0) {
+                self::$obj->setIblock('pages', 'content')->setChain();
             } elseif (strpos($_SERVER['REQUEST_URI'], '/page/') === 0) {
                 self::$obj->setIblock('pages', 'content')->setChain();
             }
