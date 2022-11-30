@@ -70,6 +70,13 @@ $arUrlRewrite=array (
         'PATH'      => "/local/pages/partners.php",
         'SORT'      => 100,
     ),
+    array(
+        'CONDITION' => '#^/programmnoe-obespechenie-graviton-secure-bios-boot(/)?#',
+        'RULE'      => 'CODE=programmnoe-obespechenie-graviton-secure-bios-boot',
+        'ID'        => null,
+        'PATH'      => '/local/pages/one.page.php',
+        'SORT'      => 200,
+    ),
     array (
         'CONDITION' => "#^/page/support/servisnye-tsentry/?(\?.*)?#",
         'RULE'      => "SECTION=\$2&CODE=\$4&PARAMS=\$5",//SECTION=$2&ITEM=$4&OTHER=$5
