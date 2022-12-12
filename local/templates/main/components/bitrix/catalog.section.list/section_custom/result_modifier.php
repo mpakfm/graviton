@@ -1,6 +1,11 @@
 <?php
+/** @var CMain $APPLICATION */
 /** @var array $arParams */
 /** @var array $arResult */
+
+use Bitrix\Iblock\InheritedProperty\SectionValues;
+use Library\Tools\Breadcrumb;
+use Library\Tools\CacheSelector;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
@@ -100,4 +105,10 @@ if (0 < $arResult['SECTIONS_COUNT'])
 	}
 }
 
-?>
+$metaSection = CacheSelector::getSectionByCode($arParams['IBLOCK_ID'], Breadcrumb::$code);
+$ipropValues = new SectionValues($arParams['IBLOCK_ID'], $metaSection['ID']);
+$ipropMeta   = $ipropValues->getValues();
+
+$APPLICATION->SetTitle($ipropMeta["SECTION_META_TITLE"]);
+$APPLICATION->SetPageProperty("keywords", $ipropMeta["SECTION_META_KEYWORDS"]);
+$APPLICATION->SetPageProperty("description", $ipropMeta["SECTION_META_DESCRIPTION"]);
