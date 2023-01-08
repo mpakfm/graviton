@@ -125,7 +125,7 @@
 }
 
 .s-support-form__contacts-title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 120%;
 }
 
@@ -144,10 +144,10 @@
 
 .s-support-form__contacts-phone span,
 .s-support-form__contacts-email span {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 120%;
   white-space: nowrap;
-  font-size: 40px;
+  font-size: 2.5rem;
   color: #656669;
 }
 
@@ -206,7 +206,7 @@
 
 .s-support-form .form__title {
   min-height: 92px;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1;
   margin-bottom: 43px;
 }
@@ -264,7 +264,7 @@
 
 .s-support-form .form__radio {
   position: relative;
-  margin-right: 40px;
+  margin-right: 2.5rem;
 }
 
 .s-support-form .form__radio:last-child {
@@ -299,7 +299,7 @@
 }
 
 .s-support-form__title {
-  font-size: 50px;
+  font-size: 3.125rem;
   line-height: 120%;
   color: #4E5056;
   letter-spacing: -0.03em;
@@ -339,7 +339,7 @@
 
 .s-support-contact__descriptions {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .s-support-contact__subtitle {
@@ -453,7 +453,7 @@
 }
 
 .s-reviews .form__title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 120%;
   margin-bottom: 20px;
 }
@@ -470,7 +470,7 @@
 }
 
 .s-reviews .form__raitings {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .s-reviews .form__raitings-text {
@@ -576,7 +576,7 @@
 }
 
 .s-reviews .form__checkbox {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .s-reviews .form__submit {
@@ -1693,7 +1693,7 @@
   }
 
   .s-support-form__title {
-    font-size: 40px;
+    font-size: 2.5rem;
     text-align: left;
     margin-bottom: 60px;
   }
@@ -1796,7 +1796,7 @@
 
 @media (max-width: 991px) {
   .s-support-form__info {
-    margin-top: 50px;
+    margin-top: 3.125rem;
   }
 
   .s-support-form__contacts-title {
@@ -1819,7 +1819,7 @@
   }
 
   .s-support-form__mobile {
-    margin-top: 50px;
+    margin-top: 3.125rem;
   }
 
   .s-support-form .form__title {
@@ -1841,7 +1841,7 @@
 
   .s-support-form__title {
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
   }
 
   .s-support-form-drivers {
@@ -1908,7 +1908,7 @@
   }
 
   .s-reviews .form__raitings {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
 
   .s-reviews__columns {
@@ -2078,7 +2078,7 @@
 
   .s-support-contact__title {
     font-size: 13px;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
 
   .s-support-contact__caption {
@@ -2117,7 +2117,7 @@
 
   .s-reviews__caption {
     top: -60px;
-    right: 50px;
+    right: 3.125rem;
     font-size: 70px;
   }
 

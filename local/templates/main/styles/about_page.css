@@ -211,11 +211,11 @@
 }
 
 .s-about-graviton-page .s-about-graviton__texts-title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 120%;
   font-weight: 900;
   color: #ceced0;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .s-about-graviton-page .s-about-graviton__texts p {
@@ -247,7 +247,7 @@
 
 .s-about-graviton-page .s-about-graviton__bottom-title {
   width: 80%;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 120%;
 }
 
@@ -352,7 +352,7 @@
 }
 
 .s-about-contacts__title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1;
   margin-bottom: 1.125rem;
 }
@@ -386,7 +386,7 @@
 
 .s-about-contacts .form__columns {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .s-about-contacts .form__textarea {
@@ -885,12 +885,12 @@
   .s-about-graviton-page .s-about-graviton__bottom-icon img {
     display: block;
     width: auto;
-    height: 50px;
+    height: 3.125rem;
   }
 
   .s-about-graviton-page .s-about-graviton__bottom-title {
     font-size: 30px;
-    margin-right: 40px;
+    margin-right: 2.5rem;
   }
 
   .s-about-graviton-page .title-page {
